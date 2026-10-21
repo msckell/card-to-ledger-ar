@@ -1,0 +1,59 @@
+# Plan de cuentas de Andes Labs SRL (fictional company). Short Argentine style chart.
+# `kind` drives the journal: asset and liability accounts are monetary items in USD that are
+# remeasured at month end. `ai_allowed` marks the accounts the AI may suggest (expenses only).
+accounts:
+  - code: "1.1.01"
+    name: Banco cuenta corriente ARS
+    kind: asset_ars
+  - code: "1.1.02"
+    name: Cuenta USDC
+    kind: asset_usd
+  - code: "1.1.09"
+    name: Partidas pendientes de imputación
+    kind: suspense
+  - code: "2.1.01"
+    name: Tarjeta corporativa a pagar
+    kind: liability_usd
+  - code: "5.1.01"
+    name: Publicidad y marketing
+    kind: expense
+    ai_allowed: true
+  - code: "5.1.02"
+    name: Servicios de nube
+    kind: expense
+    ai_allowed: true
+  - code: "5.1.03"
+    name: Licencias de software
+    kind: expense
+    ai_allowed: true
+  - code: "5.1.04"
+    name: Honorarios de contratistas del exterior
+    kind: expense
+    ai_allowed: true
+  - code: "5.1.05"
+    name: Viajes y viáticos
+    kind: expense
+    ai_allowed: true
+  - code: "5.1.06"
+    name: Comidas y representación
+    kind: expense
+    ai_allowed: true
+  - code: "5.1.07"
+    name: Eventos y conferencias
+    kind: expense
+    ai_allowed: true
+  - code: "5.1.08"
+    name: Gastos de oficina y equipamiento menor
+    kind: expense
+    ai_allowed: true
+  - code: "5.1.09"
+    name: Capacitación y suscripciones
+    kind: expense
+    ai_allowed: true
+  - code: "5.1.10"
+    name: Comisiones y gastos bancarios
+    kind: expense
+    ai_allowed: true
+  - code: "5.2.01"
+    name: Diferencias de cambio
+    kind: fx_result

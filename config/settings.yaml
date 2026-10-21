@@ -1,0 +1,45 @@
+company:
+  name: Andes Labs SRL
+  description: Fictional Argentine SaaS company with about 40 people. Synthetic data.
+  functional_currency: ARS
+
+period:
+  month: "2026-09"
+  start: "2026-09-01"
+  end: "2026-09-30"
+
+fx:
+  # Official USD/ARS series from ArgentinaDatos, snapshot in data/fx/.
+  source_url: https://api.argentinadatos.com/v1/cotizaciones/dolares/oficial
+  crypto_source_url: https://api.argentinadatos.com/v1/cotizaciones/dolares/cripto
+  snapshot_from: "2026-08-25"
+  snapshot_to: "2026-09-30"
+  # Assumption, to validate with an accountant: which side of the quote and which day.
+  rate_side: venta # official seller rate
+  date_basis: posted_at # the day the movement is posted in the export
+  # USDC is treated as 1 USD. Assumption, to validate with an accountant.
+  usdc_per_usd: "1"
+
+opening_balances:
+  # Synthetic. Valued at the official seller rate of the last day of the previous month.
+  as_of: "2026-08-31"
+  usdc: "180000.00"
+  card_payable_usd: "41237.18" # August card statement, settled in September
+
+matching:
+  # A receipt can be dated up to this many days before the posting date, or 1 day after.
+  date_window_before: 4
+  date_window_after: 1
+  # Receipt amount differences at or below this are treated as equal (rounding on the receipt).
+  amount_tolerance_cents: 0
+  # Merchant similarity needed to pair a receipt whose amount does not match.
+  merchant_similarity_min: "0.5"
+  duplicate_window_days: 2
+  refund_lookback_days: 60
+
+ai:
+  # Accuracy the auto accepted AI suggestions must reach on labeled data before the
+  # threshold is used. The eval picks the lowest threshold that reaches it.
+  target_accuracy: "0.95"
+  min_accepted_for_threshold: 5
+  thresholds: ["0.50", "0.55", "0.60", "0.65", "0.70", "0.75", "0.80", "0.85", "0.90", "0.95"]

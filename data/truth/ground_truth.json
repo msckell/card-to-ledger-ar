@@ -1,0 +1,3796 @@
+{
+  "note": "Ground truth written by the generator. The engine and the AI never read it.",
+  "seed": 20260930,
+  "transactions": {
+    "TX-0001": {
+      "account": "5.1.10",
+      "receipt_id": null,
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "fee"
+    },
+    "TX-0002": {
+      "account": "5.1.03",
+      "receipt_id": "RC-0044",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "workspace"
+    },
+    "TX-0003": {
+      "account": "5.1.03",
+      "receipt_id": "RC-0206",
+      "anomalies": [],
+      "ambiguous_merchant": true,
+      "merchant_key": "screenstudio"
+    },
+    "TX-0004": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0089",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "starbucks"
+    },
+    "TX-0005": {
+      "account": "5.1.06",
+      "receipt_id": null,
+      "anomalies": [
+        "missing_receipt"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0006": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0104",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0007": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0086",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0008": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0190",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0009": {
+      "account": "1.1.02",
+      "receipt_id": null,
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "topup"
+    },
+    "TX-0010": {
+      "account": "5.1.02",
+      "receipt_id": "RC-0005",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "aws"
+    },
+    "TX-0011": {
+      "account": "5.1.03",
+      "receipt_id": "RC-0143",
+      "anomalies": [],
+      "ambiguous_merchant": true,
+      "merchant_key": "calendly"
+    },
+    "TX-0012": {
+      "account": "5.1.01",
+      "receipt_id": "RC-0016",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "gads"
+    },
+    "TX-0013": {
+      "account": "5.1.02",
+      "receipt_id": "RC-0141",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "gcp"
+    },
+    "TX-0014": {
+      "account": "5.1.03",
+      "receipt_id": "RC-0019",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "openai"
+    },
+    "TX-0015": {
+      "account": "5.1.02",
+      "receipt_id": "RC-0174",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "aws"
+    },
+    "TX-0016": {
+      "account": "5.1.01",
+      "receipt_id": "RC-0052",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "gads"
+    },
+    "TX-0017": {
+      "account": "5.1.03",
+      "receipt_id": "RC-0099",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "openai"
+    },
+    "TX-0018": {
+      "account": "5.1.07",
+      "receipt_id": "RC-0149",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "saastr"
+    },
+    "TX-0019": {
+      "account": "5.1.03",
+      "receipt_id": "RC-0108",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "slack"
+    },
+    "TX-0020": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0142",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0021": {
+      "account": "5.1.06",
+      "receipt_id": null,
+      "anomalies": [
+        "missing_receipt"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0022": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0034",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0023": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0151",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0024": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0100",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "booking"
+    },
+    "TX-0025": {
+      "account": "5.1.02",
+      "receipt_id": "RC-0058",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "datadog"
+    },
+    "TX-0026": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0024",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "starbucks"
+    },
+    "TX-0027": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0110",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0028": {
+      "account": "5.1.05",
+      "receipt_id": null,
+      "anomalies": [
+        "missing_receipt"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0029": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0160",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0030": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0013",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0031": {
+      "account": "2.1.01",
+      "receipt_id": null,
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "settlement"
+    },
+    "TX-0032": {
+      "account": "5.1.01",
+      "receipt_id": "RC-0207",
+      "anomalies": [],
+      "ambiguous_merchant": true,
+      "merchant_key": "betalist"
+    },
+    "TX-0033": {
+      "account": "5.1.02",
+      "receipt_id": null,
+      "anomalies": [
+        "missing_receipt"
+      ],
+      "ambiguous_merchant": true,
+      "merchant_key": "namecheap"
+    },
+    "TX-0034": {
+      "account": "5.1.03",
+      "receipt_id": "RC-0009",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "notion"
+    },
+    "TX-0035": {
+      "account": "5.1.09",
+      "receipt_id": "RC-0102",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "substack"
+    },
+    "TX-0036": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0176",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0037": {
+      "account": "5.1.01",
+      "receipt_id": "RC-0171",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "gads"
+    },
+    "TX-0038": {
+      "account": "5.1.06",
+      "receipt_id": null,
+      "anomalies": [
+        "missing_receipt"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0039": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0214",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0040": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0079",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0041": {
+      "account": "5.1.02",
+      "receipt_id": "RC-0193",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "vercel"
+    },
+    "TX-0042": {
+      "account": "5.1.03",
+      "receipt_id": "RC-0185",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "figma"
+    },
+    "TX-0043": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0178",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0044": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0018",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0045": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0025",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0046": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0201",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0047": {
+      "account": "5.1.09",
+      "receipt_id": "RC-0091",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "udemy"
+    },
+    "TX-0048": {
+      "account": "5.1.08",
+      "receipt_id": "RC-0146",
+      "anomalies": [],
+      "ambiguous_merchant": true,
+      "merchant_key": "wework"
+    },
+    "TX-0049": {
+      "account": "5.1.05",
+      "receipt_id": null,
+      "anomalies": [
+        "refund_original_not_in_period"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "booking",
+      "refund_of": null
+    },
+    "TX-0050": {
+      "account": "5.1.01",
+      "receipt_id": "RC-0026",
+      "anomalies": [],
+      "ambiguous_merchant": true,
+      "merchant_key": "fiverr"
+    },
+    "TX-0051": {
+      "account": "5.1.03",
+      "receipt_id": "RC-0032",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "github"
+    },
+    "TX-0052": {
+      "account": "5.1.03",
+      "receipt_id": "RC-0179",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "github"
+    },
+    "TX-0053": {
+      "account": "5.1.09",
+      "receipt_id": "RC-0202",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "substack"
+    },
+    "TX-0054": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0120",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "ubereats"
+    },
+    "TX-0055": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0113",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0056": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0072",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0057": {
+      "account": "5.1.05",
+      "receipt_id": null,
+      "anomalies": [
+        "duplicate"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber",
+      "duplicate_of": "TX-0056"
+    },
+    "TX-0058": {
+      "account": "5.1.02",
+      "receipt_id": "RC-0199",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "cloudflare"
+    },
+    "TX-0059": {
+      "account": "5.1.07",
+      "receipt_id": "RC-0112",
+      "anomalies": [],
+      "ambiguous_merchant": true,
+      "merchant_key": "meetup"
+    },
+    "TX-0060": {
+      "account": "5.1.09",
+      "receipt_id": "RC-0132",
+      "anomalies": [],
+      "ambiguous_merchant": true,
+      "merchant_key": "economist"
+    },
+    "TX-0061": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0111",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "airbnb"
+    },
+    "TX-0062": {
+      "account": "5.1.01",
+      "receipt_id": "RC-0204",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "meta"
+    },
+    "TX-0063": {
+      "account": "5.1.09",
+      "receipt_id": "RC-0085",
+      "anomalies": [],
+      "ambiguous_merchant": true,
+      "merchant_key": "gumroad"
+    },
+    "TX-0064": {
+      "account": "5.1.03",
+      "receipt_id": null,
+      "anomalies": [
+        "missing_receipt"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "linear"
+    },
+    "TX-0065": {
+      "account": "5.1.01",
+      "receipt_id": null,
+      "anomalies": [
+        "missing_receipt"
+      ],
+      "ambiguous_merchant": true,
+      "merchant_key": "mgomez"
+    },
+    "TX-0066": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0004",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0067": {
+      "account": "5.1.06",
+      "receipt_id": null,
+      "anomalies": [
+        "missing_receipt"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0068": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0039",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0069": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0211",
+      "anomalies": [
+        "amount_mismatch"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "ubereats",
+      "mismatch_kind": "receipt_in_ars"
+    },
+    "TX-0070": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0041",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0071": {
+      "account": "5.1.05",
+      "receipt_id": null,
+      "anomalies": [
+        "missing_receipt"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0072": {
+      "account": "5.1.07",
+      "receipt_id": "RC-0103",
+      "anomalies": [
+        "amount_mismatch"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "websummit",
+      "mismatch_kind": "receipt_in_eur"
+    },
+    "TX-0073": {
+      "account": "5.1.03",
+      "receipt_id": null,
+      "anomalies": [
+        "missing_receipt"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "atlassian"
+    },
+    "TX-0074": {
+      "account": "5.1.09",
+      "receipt_id": "RC-0196",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "coursera"
+    },
+    "TX-0075": {
+      "account": "5.1.07",
+      "receipt_id": "RC-0165",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "eventbrite"
+    },
+    "TX-0076": {
+      "account": "5.1.01",
+      "receipt_id": "RC-0066",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "meta"
+    },
+    "TX-0077": {
+      "account": "5.1.01",
+      "receipt_id": "RC-0006",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "gads"
+    },
+    "TX-0078": {
+      "account": "5.1.01",
+      "receipt_id": "RC-0054",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "gads"
+    },
+    "TX-0079": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0192",
+      "anomalies": [
+        "amount_mismatch"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "marriott",
+      "mismatch_kind": "hotel_folio_lower_than_charge"
+    },
+    "TX-0080": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0127",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "starbucks"
+    },
+    "TX-0081": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0170",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0082": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0105",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0083": {
+      "account": "5.1.05",
+      "receipt_id": null,
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "airbnb",
+      "refund_of": "TX-0061"
+    },
+    "TX-0084": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0186",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "aa"
+    },
+    "TX-0085": {
+      "account": "5.1.01",
+      "receipt_id": "RC-0028",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "meta"
+    },
+    "TX-0086": {
+      "account": "5.1.01",
+      "receipt_id": "RC-0068",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "meta"
+    },
+    "TX-0087": {
+      "account": "5.1.10",
+      "receipt_id": null,
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "fee"
+    },
+    "TX-0088": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0096",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "starbucks"
+    },
+    "TX-0089": {
+      "account": "5.1.06",
+      "receipt_id": null,
+      "anomalies": [
+        "missing_receipt"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0090": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0011",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "ubereats"
+    },
+    "TX-0091": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0194",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0092": {
+      "account": "5.1.04",
+      "receipt_id": "RC-0173",
+      "anomalies": [
+        "amount_mismatch"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "contractor",
+      "mismatch_kind": "invoice_differs_from_payout"
+    },
+    "TX-0093": {
+      "account": "5.1.03",
+      "receipt_id": "RC-0209",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "zoom"
+    },
+    "TX-0094": {
+      "account": "5.1.03",
+      "receipt_id": "RC-0022",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "onepassword"
+    },
+    "TX-0095": {
+      "account": "5.1.01",
+      "receipt_id": "RC-0180",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "meta"
+    },
+    "TX-0096": {
+      "account": "5.1.01",
+      "receipt_id": "RC-0168",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "meta"
+    },
+    "TX-0097": {
+      "account": "5.1.03",
+      "receipt_id": "RC-0082",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "openai"
+    },
+    "TX-0098": {
+      "account": "5.1.09",
+      "receipt_id": "RC-0001",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "oreilly"
+    },
+    "TX-0099": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0117",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0100": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0136",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0101": {
+      "account": "5.1.01",
+      "receipt_id": "RC-0060",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "meta"
+    },
+    "TX-0102": {
+      "account": "5.1.01",
+      "receipt_id": "RC-0145",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "linkedin"
+    },
+    "TX-0103": {
+      "account": "5.1.03",
+      "receipt_id": "RC-0205",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "loom"
+    },
+    "TX-0104": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0131",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "starbucks"
+    },
+    "TX-0105": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0071",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0106": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0076",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0107": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0177",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0108": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0043",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0109": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0187",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0110": {
+      "account": "1.1.02",
+      "receipt_id": null,
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "topup"
+    },
+    "TX-0111": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0197",
+      "anomalies": [],
+      "ambiguous_merchant": true,
+      "merchant_key": "airalo"
+    },
+    "TX-0112": {
+      "account": "5.1.03",
+      "receipt_id": "RC-0090",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "anthropic"
+    },
+    "TX-0113": {
+      "account": "5.1.01",
+      "receipt_id": "RC-0203",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "meta"
+    },
+    "TX-0114": {
+      "account": "5.1.03",
+      "receipt_id": "RC-0094",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "miro"
+    },
+    "TX-0115": {
+      "account": "5.1.06",
+      "receipt_id": null,
+      "anomalies": [
+        "missing_receipt"
+      ],
+      "ambiguous_merchant": true,
+      "merchant_key": "bluebottle"
+    },
+    "TX-0116": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0093",
+      "anomalies": [],
+      "ambiguous_merchant": true,
+      "merchant_key": "bluebottle"
+    },
+    "TX-0117": {
+      "account": "5.1.06",
+      "receipt_id": null,
+      "anomalies": [
+        "duplicate"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "starbucks",
+      "duplicate_of": "TX-0104"
+    },
+    "TX-0118": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0181",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0119": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0172",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0120": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0080",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0121": {
+      "account": "5.1.04",
+      "receipt_id": "RC-0166",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "contractor"
+    },
+    "TX-0122": {
+      "account": "5.1.04",
+      "receipt_id": "RC-0035",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "contractor"
+    },
+    "TX-0123": {
+      "account": "5.1.03",
+      "receipt_id": null,
+      "anomalies": [
+        "duplicate"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "anthropic",
+      "duplicate_of": "TX-0112"
+    },
+    "TX-0124": {
+      "account": "5.1.03",
+      "receipt_id": "RC-0092",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "hubspot"
+    },
+    "TX-0125": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0007",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "latam"
+    },
+    "TX-0126": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0135",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "marriott"
+    },
+    "TX-0127": {
+      "account": "5.1.08",
+      "receipt_id": "RC-0050",
+      "anomalies": [],
+      "ambiguous_merchant": true,
+      "merchant_key": "printshop"
+    },
+    "TX-0128": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0123",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0129": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0155",
+      "anomalies": [
+        "amount_mismatch"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast",
+      "mismatch_kind": "tip_added_after_receipt"
+    },
+    "TX-0130": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0014",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0131": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0200",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0132": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0097",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0133": {
+      "account": "5.1.03",
+      "receipt_id": "RC-0144",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "docusign"
+    },
+    "TX-0134": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0161",
+      "anomalies": [],
+      "ambiguous_merchant": true,
+      "merchant_key": "dutyfree"
+    },
+    "TX-0135": {
+      "account": "5.1.01",
+      "receipt_id": "RC-0215",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "gads"
+    },
+    "TX-0136": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0128",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0137": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0095",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "aerolineas"
+    },
+    "TX-0138": {
+      "account": "5.1.03",
+      "receipt_id": "RC-0074",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "canva"
+    },
+    "TX-0139": {
+      "account": "5.1.01",
+      "receipt_id": "RC-0098",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "gads"
+    },
+    "TX-0140": {
+      "account": "5.1.09",
+      "receipt_id": "RC-0062",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "substack"
+    },
+    "TX-0141": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0038",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0142": {
+      "account": "5.1.04",
+      "receipt_id": "RC-0033",
+      "anomalies": [],
+      "ambiguous_merchant": true,
+      "merchant_key": "upwork"
+    },
+    "TX-0143": {
+      "account": "5.1.03",
+      "receipt_id": "RC-0156",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "anthropic"
+    },
+    "TX-0144": {
+      "account": "5.1.03",
+      "receipt_id": "RC-0053",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "figma"
+    },
+    "TX-0145": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0070",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "starbucks"
+    },
+    "TX-0146": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0051",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "starbucks"
+    },
+    "TX-0147": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0153",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0148": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0183",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0149": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0003",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0150": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0124",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0151": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0049",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0152": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0017",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0153": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0175",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0154": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0189",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0155": {
+      "account": "5.1.09",
+      "receipt_id": "RC-0159",
+      "anomalies": [
+        "amount_mismatch"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "udemy",
+      "mismatch_kind": "receipt_in_ars"
+    },
+    "TX-0156": {
+      "account": "5.1.08",
+      "receipt_id": "RC-0167",
+      "anomalies": [],
+      "ambiguous_merchant": true,
+      "merchant_key": "bestbuy"
+    },
+    "TX-0157": {
+      "account": "5.1.01",
+      "receipt_id": "RC-0084",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "meta"
+    },
+    "TX-0158": {
+      "account": "5.1.01",
+      "receipt_id": "RC-0191",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "linkedin"
+    },
+    "TX-0159": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0137",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "starbucks"
+    },
+    "TX-0160": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0037",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0161": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0029",
+      "anomalies": [
+        "amount_mismatch"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast",
+      "mismatch_kind": "tip_added_after_receipt"
+    },
+    "TX-0162": {
+      "account": "5.1.02",
+      "receipt_id": null,
+      "anomalies": [
+        "missing_receipt"
+      ],
+      "ambiguous_merchant": true,
+      "merchant_key": "twilio"
+    },
+    "TX-0163": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0208",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "ubereats"
+    },
+    "TX-0164": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0184",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0165": {
+      "account": "5.1.05",
+      "receipt_id": null,
+      "anomalies": [
+        "missing_receipt"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0166": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0109",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0167": {
+      "account": "5.1.08",
+      "receipt_id": "RC-0157",
+      "anomalies": [],
+      "ambiguous_merchant": true,
+      "merchant_key": "amzn_office"
+    },
+    "TX-0168": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0210",
+      "anomalies": [
+        "amount_mismatch"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "hilton",
+      "mismatch_kind": "hotel_folio_lower_than_charge"
+    },
+    "TX-0169": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0057",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "latam"
+    },
+    "TX-0170": {
+      "account": "5.1.03",
+      "receipt_id": "RC-0129",
+      "anomalies": [],
+      "ambiguous_merchant": true,
+      "merchant_key": "tailwind"
+    },
+    "TX-0171": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0138",
+      "anomalies": [],
+      "ambiguous_merchant": true,
+      "merchant_key": "lyft"
+    },
+    "TX-0172": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0195",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "starbucks"
+    },
+    "TX-0173": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0010",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "starbucks"
+    },
+    "TX-0174": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0182",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0175": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0119",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0176": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0139",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0177": {
+      "account": "5.1.01",
+      "receipt_id": "RC-0065",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "meta"
+    },
+    "TX-0178": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0023",
+      "anomalies": [],
+      "ambiguous_merchant": true,
+      "merchant_key": "lyft"
+    },
+    "TX-0179": {
+      "account": "5.1.05",
+      "receipt_id": null,
+      "anomalies": [
+        "missing_receipt"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "marriott"
+    },
+    "TX-0180": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0147",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0181": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0077",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber",
+      "legit_repeat_of": "TX-0180"
+    },
+    "TX-0182": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0106",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0183": {
+      "account": "5.1.04",
+      "receipt_id": "RC-0042",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "contractor"
+    },
+    "TX-0184": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0162",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "airbnb"
+    },
+    "TX-0185": {
+      "account": "5.1.10",
+      "receipt_id": null,
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "fee"
+    },
+    "TX-0186": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0115",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "starbucks"
+    },
+    "TX-0187": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0081",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "starbucks"
+    },
+    "TX-0188": {
+      "account": "5.1.01",
+      "receipt_id": null,
+      "anomalies": [
+        "missing_receipt"
+      ],
+      "ambiguous_merchant": true,
+      "merchant_key": "stickermule"
+    },
+    "TX-0189": {
+      "account": "5.1.07",
+      "receipt_id": "RC-0163",
+      "anomalies": [],
+      "ambiguous_merchant": true,
+      "merchant_key": "productcamp"
+    },
+    "TX-0190": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0118",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0191": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0126",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0192": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0107",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0193": {
+      "account": "5.1.03",
+      "receipt_id": "RC-0064",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "anthropic"
+    },
+    "TX-0194": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0030",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "copa"
+    },
+    "TX-0195": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0021",
+      "anomalies": [],
+      "ambiguous_merchant": true,
+      "merchant_key": "costco"
+    },
+    "TX-0196": {
+      "account": "5.1.07",
+      "receipt_id": "RC-0008",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "eventbrite"
+    },
+    "TX-0197": {
+      "account": "5.1.01",
+      "receipt_id": "RC-0150",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "gads"
+    },
+    "TX-0198": {
+      "account": "5.1.05",
+      "receipt_id": null,
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "latam",
+      "refund_of": "TX-0169"
+    },
+    "TX-0199": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0047",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "starbucks"
+    },
+    "TX-0200": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0087",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0201": {
+      "account": "5.1.05",
+      "receipt_id": null,
+      "anomalies": [
+        "missing_receipt"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0202": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0083",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "aa"
+    },
+    "TX-0203": {
+      "account": "5.1.01",
+      "receipt_id": null,
+      "anomalies": [
+        "missing_receipt"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "meta"
+    },
+    "TX-0204": {
+      "account": "5.1.03",
+      "receipt_id": null,
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "figma",
+      "refund_of": "TX-0144"
+    },
+    "TX-0205": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0125",
+      "anomalies": [
+        "amount_mismatch"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast",
+      "mismatch_kind": "tip_added_after_receipt"
+    },
+    "TX-0206": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0158",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0207": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0212",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0208": {
+      "account": "5.1.06",
+      "receipt_id": null,
+      "anomalies": [
+        "missing_receipt"
+      ],
+      "ambiguous_merchant": true,
+      "merchant_key": "doordash"
+    },
+    "TX-0209": {
+      "account": "5.1.07",
+      "receipt_id": "RC-0073",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "eventbrite"
+    },
+    "TX-0210": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0188",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "starbucks"
+    },
+    "TX-0211": {
+      "account": "5.1.06",
+      "receipt_id": null,
+      "anomalies": [
+        "duplicate"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "starbucks",
+      "duplicate_of": "TX-0210"
+    },
+    "TX-0212": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0130",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "starbucks"
+    },
+    "TX-0213": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0121",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0214": {
+      "account": "5.1.03",
+      "receipt_id": "RC-0046",
+      "anomalies": [],
+      "ambiguous_merchant": true,
+      "merchant_key": "apple"
+    },
+    "TX-0215": {
+      "account": "5.1.01",
+      "receipt_id": "RC-0031",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "linkedin"
+    },
+    "TX-0216": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0045",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0217": {
+      "account": "5.1.06",
+      "receipt_id": null,
+      "anomalies": [
+        "duplicate"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast",
+      "duplicate_of": "TX-0216"
+    },
+    "TX-0218": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0116",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0219": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0198",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0220": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0059",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0221": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0061",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "airbnb"
+    },
+    "TX-0222": {
+      "account": "5.1.03",
+      "receipt_id": "RC-0040",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "anthropic"
+    },
+    "TX-0223": {
+      "account": "5.1.01",
+      "receipt_id": "RC-0012",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "meta"
+    },
+    "TX-0224": {
+      "account": "5.1.01",
+      "receipt_id": "RC-0075",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "gads"
+    },
+    "TX-0225": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0164",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "latam"
+    },
+    "TX-0226": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0027",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0227": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0056",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0228": {
+      "account": "1.1.02",
+      "receipt_id": null,
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "topup"
+    },
+    "TX-0229": {
+      "account": "5.1.02",
+      "receipt_id": "RC-0154",
+      "anomalies": [],
+      "ambiguous_merchant": true,
+      "merchant_key": "sendgrid"
+    },
+    "TX-0230": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0078",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "uber"
+    },
+    "TX-0231": {
+      "account": "5.1.04",
+      "receipt_id": "RC-0063",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "contractor"
+    },
+    "TX-0232": {
+      "account": "5.1.04",
+      "receipt_id": "RC-0020",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "contractor"
+    },
+    "TX-0233": {
+      "account": "5.1.04",
+      "receipt_id": "RC-0069",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "contractor"
+    },
+    "TX-0234": {
+      "account": "5.1.04",
+      "receipt_id": "RC-0140",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "contractor"
+    },
+    "TX-0235": {
+      "account": "5.1.04",
+      "receipt_id": "RC-0048",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "contractor"
+    },
+    "TX-0236": {
+      "account": "5.1.04",
+      "receipt_id": null,
+      "anomalies": [
+        "missing_receipt"
+      ],
+      "ambiguous_merchant": false,
+      "merchant_key": "contractor"
+    },
+    "TX-0237": {
+      "account": "5.1.04",
+      "receipt_id": "RC-0015",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "contractor"
+    },
+    "TX-0238": {
+      "account": "5.1.04",
+      "receipt_id": "RC-0169",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "contractor"
+    },
+    "TX-0239": {
+      "account": "5.1.09",
+      "receipt_id": "RC-0122",
+      "anomalies": [],
+      "ambiguous_merchant": true,
+      "merchant_key": "amzn_book"
+    },
+    "TX-0240": {
+      "account": "5.1.03",
+      "receipt_id": "RC-0002",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "anthropic"
+    },
+    "TX-0241": {
+      "account": "5.1.05",
+      "receipt_id": "RC-0152",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "copa"
+    },
+    "TX-0242": {
+      "account": "5.1.10",
+      "receipt_id": null,
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "fee"
+    },
+    "TX-0243": {
+      "account": "5.1.06",
+      "receipt_id": "RC-0101",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "toast"
+    },
+    "TX-0244": {
+      "account": "5.1.02",
+      "receipt_id": "RC-0213",
+      "anomalies": [],
+      "ambiguous_merchant": true,
+      "merchant_key": "twilio"
+    },
+    "TX-0245": {
+      "account": "5.1.04",
+      "receipt_id": "RC-0134",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "contractor"
+    },
+    "TX-0246": {
+      "account": "5.1.04",
+      "receipt_id": "RC-0067",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "contractor"
+    },
+    "TX-0247": {
+      "account": "5.1.04",
+      "receipt_id": "RC-0133",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "contractor"
+    },
+    "TX-0248": {
+      "account": "5.1.04",
+      "receipt_id": "RC-0148",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "contractor"
+    },
+    "TX-0249": {
+      "account": "5.1.04",
+      "receipt_id": "RC-0055",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "contractor"
+    },
+    "TX-0250": {
+      "account": "5.1.04",
+      "receipt_id": "RC-0036",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "contractor"
+    },
+    "TX-0251": {
+      "account": "5.1.04",
+      "receipt_id": "RC-0114",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "contractor"
+    },
+    "TX-0252": {
+      "account": "5.1.04",
+      "receipt_id": "RC-0088",
+      "anomalies": [],
+      "ambiguous_merchant": false,
+      "merchant_key": "contractor"
+    }
+  },
+  "receipts": {
+    "RC-0001": {
+      "txn_id": "TX-0098",
+      "vendor": "O'Reilly Media, Inc.",
+      "date": "2026-09-11",
+      "amount": "456.58",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0002": {
+      "txn_id": "TX-0240",
+      "vendor": "Anthropic, PBC",
+      "date": "2026-09-30",
+      "amount": "554.86",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0003": {
+      "txn_id": "TX-0149",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-18",
+      "amount": "34.97",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0004": {
+      "txn_id": "TX-0066",
+      "vendor": "Coya Miami",
+      "date": "2026-09-09",
+      "amount": "89.65",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0005": {
+      "txn_id": "TX-0010",
+      "vendor": "Amazon Web Services EMEA SARL",
+      "date": "2026-08-31",
+      "amount": "3753.57",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0006": {
+      "txn_id": "TX-0077",
+      "vendor": "Google Ireland Ltd",
+      "date": "2026-09-11",
+      "amount": "1005.68",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0007": {
+      "txn_id": "TX-0125",
+      "vendor": "LATAM Airlines Group",
+      "date": "2026-09-14",
+      "amount": "287.64",
+      "currency": "USD",
+      "layout": "es",
+      "language": "es"
+    },
+    "RC-0008": {
+      "txn_id": "TX-0196",
+      "vendor": "Eventbrite",
+      "date": "2026-09-23",
+      "amount": "51.43",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0009": {
+      "txn_id": "TX-0034",
+      "vendor": "Notion Labs, Inc.",
+      "date": "2026-09-04",
+      "amount": "335.46",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0010": {
+      "txn_id": "TX-0173",
+      "vendor": "Starbucks Coffee Company",
+      "date": "2026-09-21",
+      "amount": "21.72",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0011": {
+      "txn_id": "TX-0090",
+      "vendor": "Uber Portier B.V.",
+      "date": "2026-09-10",
+      "amount": "116.37",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0012": {
+      "txn_id": "TX-0223",
+      "vendor": "Meta Platforms Ireland Ltd",
+      "date": "2026-09-27",
+      "amount": "361.25",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0013": {
+      "txn_id": "TX-0030",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-04",
+      "amount": "7.04",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0014": {
+      "txn_id": "TX-0130",
+      "vendor": "Shake Shack Madison",
+      "date": "2026-09-14",
+      "amount": "143.05",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0015": {
+      "txn_id": "TX-0237",
+      "vendor": "Sara Lindqvist",
+      "date": "2026-09-26",
+      "amount": "5200.00",
+      "currency": "USDC",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0016": {
+      "txn_id": "TX-0012",
+      "vendor": "Google Ireland Ltd",
+      "date": "2026-08-31",
+      "amount": "516.10",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0017": {
+      "txn_id": "TX-0152",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-19",
+      "amount": "9.97",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0018": {
+      "txn_id": "TX-0044",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-07",
+      "amount": "25.73",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0019": {
+      "txn_id": "TX-0014",
+      "vendor": "OpenAI, LLC",
+      "date": "2026-08-31",
+      "amount": "204.65",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0020": {
+      "txn_id": "TX-0232",
+      "vendor": "Andrei Popescu",
+      "date": "2026-09-27",
+      "amount": "3300.00",
+      "currency": "USDC",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0021": {
+      "txn_id": "TX-0195",
+      "vendor": "Costco Wholesale",
+      "date": "2026-09-23",
+      "amount": "141.72",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0022": {
+      "txn_id": "TX-0094",
+      "vendor": "1Password",
+      "date": "2026-09-13",
+      "amount": "314.11",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0023": {
+      "txn_id": "TX-0178",
+      "vendor": "Lyft, Inc.",
+      "date": "2026-09-21",
+      "amount": "34.76",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0024": {
+      "txn_id": "TX-0026",
+      "vendor": "Starbucks Coffee Company",
+      "date": "2026-09-03",
+      "amount": "27.67",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0025": {
+      "txn_id": "TX-0045",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-07",
+      "amount": "24.77",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0026": {
+      "txn_id": "TX-0050",
+      "vendor": "Fiverr International",
+      "date": "2026-09-08",
+      "amount": "204.22",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0027": {
+      "txn_id": "TX-0226",
+      "vendor": "Joe's Pizza",
+      "date": "2026-09-27",
+      "amount": "23.71",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0028": {
+      "txn_id": "TX-0085",
+      "vendor": "Meta Platforms Ireland Ltd",
+      "date": "2026-09-12",
+      "amount": "468.58",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0029": {
+      "txn_id": "TX-0161",
+      "vendor": "Zuma Miami",
+      "date": "2026-09-19",
+      "amount": "80.07",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0030": {
+      "txn_id": "TX-0194",
+      "vendor": "Copa Airlines",
+      "date": "2026-09-23",
+      "amount": "499.74",
+      "currency": "USD",
+      "layout": "flight",
+      "language": "en"
+    },
+    "RC-0031": {
+      "txn_id": "TX-0215",
+      "vendor": "LinkedIn Ireland Unlimited Company",
+      "date": "2026-09-27",
+      "amount": "492.83",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0032": {
+      "txn_id": "TX-0051",
+      "vendor": "GitHub, Inc.",
+      "date": "2026-09-08",
+      "amount": "221.18",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0033": {
+      "txn_id": "TX-0142",
+      "vendor": "Upwork Global Inc.",
+      "date": "2026-09-18",
+      "amount": "683.64",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0034": {
+      "txn_id": "TX-0022",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-03",
+      "amount": "23.70",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0035": {
+      "txn_id": "TX-0122",
+      "vendor": "Tomasz Nowak",
+      "date": "2026-09-13",
+      "amount": "4200.00",
+      "currency": "USDC",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0036": {
+      "txn_id": "TX-0250",
+      "vendor": "Mateo Silva",
+      "date": "2026-09-29",
+      "amount": "3400.00",
+      "currency": "USDC",
+      "layout": "es",
+      "language": "es"
+    },
+    "RC-0037": {
+      "txn_id": "TX-0160",
+      "vendor": "Shake Shack Madison",
+      "date": "2026-09-18",
+      "amount": "50.68",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0038": {
+      "txn_id": "TX-0141",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-17",
+      "amount": "45.59",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0039": {
+      "txn_id": "TX-0068",
+      "vendor": "Sweetgreen Market St",
+      "date": "2026-09-09",
+      "amount": "59.97",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0040": {
+      "txn_id": "TX-0222",
+      "vendor": "Anthropic, PBC",
+      "date": "2026-09-27",
+      "amount": "863.55",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0041": {
+      "txn_id": "TX-0070",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-09",
+      "amount": "42.50",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0042": {
+      "txn_id": "TX-0183",
+      "vendor": "Kenji Watanabe",
+      "date": "2026-09-21",
+      "amount": "5050.00",
+      "currency": "USDC",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0043": {
+      "txn_id": "TX-0108",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-13",
+      "amount": "12.33",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0044": {
+      "txn_id": "TX-0002",
+      "vendor": "Google Workspace",
+      "date": "2026-08-30",
+      "amount": "566.34",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0045": {
+      "txn_id": "TX-0216",
+      "vendor": "Joe's Pizza",
+      "date": "2026-09-25",
+      "amount": "88.24",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0046": {
+      "txn_id": "TX-0214",
+      "vendor": "Apple Services",
+      "date": "2026-09-27",
+      "amount": "9.99",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0047": {
+      "txn_id": "TX-0199",
+      "vendor": "Starbucks Coffee Company",
+      "date": "2026-09-22",
+      "amount": "29.29",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0048": {
+      "txn_id": "TX-0235",
+      "vendor": "Laura Méndez",
+      "date": "2026-09-26",
+      "amount": "3000.00",
+      "currency": "USDC",
+      "layout": "es",
+      "language": "es"
+    },
+    "RC-0049": {
+      "txn_id": "TX-0151",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-18",
+      "amount": "33.97",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0050": {
+      "txn_id": "TX-0127",
+      "vendor": "Sunset Print Shop",
+      "date": "2026-09-15",
+      "amount": "95.69",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0051": {
+      "txn_id": "TX-0146",
+      "vendor": "Starbucks Coffee Company",
+      "date": "2026-09-18",
+      "amount": "28.44",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0052": {
+      "txn_id": "TX-0016",
+      "vendor": "Google Ireland Ltd",
+      "date": "2026-09-01",
+      "amount": "933.77",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0053": {
+      "txn_id": "TX-0144",
+      "vendor": "Figma, Inc.",
+      "date": "2026-09-17",
+      "amount": "107.85",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0054": {
+      "txn_id": "TX-0078",
+      "vendor": "Google Ireland Ltd",
+      "date": "2026-09-11",
+      "amount": "309.32",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0055": {
+      "txn_id": "TX-0249",
+      "vendor": "Kenji Watanabe",
+      "date": "2026-09-27",
+      "amount": "4650.00",
+      "currency": "USDC",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0056": {
+      "txn_id": "TX-0227",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-27",
+      "amount": "39.00",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0057": {
+      "txn_id": "TX-0169",
+      "vendor": "LATAM Airlines Group",
+      "date": "2026-09-20",
+      "amount": "316.74",
+      "currency": "USD",
+      "layout": "es",
+      "language": "es"
+    },
+    "RC-0058": {
+      "txn_id": "TX-0025",
+      "vendor": "Datadog, Inc.",
+      "date": "2026-09-04",
+      "amount": "1044.78",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0059": {
+      "txn_id": "TX-0220",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-27",
+      "amount": "28.89",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0060": {
+      "txn_id": "TX-0101",
+      "vendor": "Meta Platforms Ireland Ltd",
+      "date": "2026-09-13",
+      "amount": "302.71",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0061": {
+      "txn_id": "TX-0221",
+      "vendor": "Airbnb Payments",
+      "date": "2026-09-26",
+      "amount": "915.82",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0062": {
+      "txn_id": "TX-0140",
+      "vendor": "Substack Inc.",
+      "date": "2026-09-17",
+      "amount": "9.96",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0063": {
+      "txn_id": "TX-0231",
+      "vendor": "Ana Ribeiro",
+      "date": "2026-09-26",
+      "amount": "3600.00",
+      "currency": "USDC",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0064": {
+      "txn_id": "TX-0193",
+      "vendor": "Anthropic, PBC",
+      "date": "2026-09-24",
+      "amount": "214.82",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0065": {
+      "txn_id": "TX-0177",
+      "vendor": "Meta Platforms Ireland Ltd",
+      "date": "2026-09-20",
+      "amount": "222.37",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0066": {
+      "txn_id": "TX-0076",
+      "vendor": "Meta Platforms Ireland Ltd",
+      "date": "2026-09-10",
+      "amount": "1248.74",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0067": {
+      "txn_id": "TX-0246",
+      "vendor": "Emily Carter",
+      "date": "2026-09-27",
+      "amount": "4100.00",
+      "currency": "USDC",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0068": {
+      "txn_id": "TX-0086",
+      "vendor": "Meta Platforms Ireland Ltd",
+      "date": "2026-09-11",
+      "amount": "588.24",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0069": {
+      "txn_id": "TX-0233",
+      "vendor": "Bruno Costa",
+      "date": "2026-09-28",
+      "amount": "2900.00",
+      "currency": "USDC",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0070": {
+      "txn_id": "TX-0145",
+      "vendor": "Starbucks Coffee Company",
+      "date": "2026-09-18",
+      "amount": "25.03",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0071": {
+      "txn_id": "TX-0105",
+      "vendor": "Sweetgreen Market St",
+      "date": "2026-09-13",
+      "amount": "111.33",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0072": {
+      "txn_id": "TX-0056",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-07",
+      "amount": "42.94",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0073": {
+      "txn_id": "TX-0209",
+      "vendor": "Eventbrite",
+      "date": "2026-09-25",
+      "amount": "128.43",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0074": {
+      "txn_id": "TX-0138",
+      "vendor": "Canva Pty Ltd",
+      "date": "2026-09-17",
+      "amount": "174.16",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0075": {
+      "txn_id": "TX-0224",
+      "vendor": "Google Ireland Ltd",
+      "date": "2026-09-28",
+      "amount": "585.56",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0076": {
+      "txn_id": "TX-0106",
+      "vendor": "Sweetgreen Market St",
+      "date": "2026-09-13",
+      "amount": "156.22",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0077": {
+      "txn_id": "TX-0181",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-22",
+      "amount": "25.12",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0078": {
+      "txn_id": "TX-0230",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-29",
+      "amount": "47.11",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0079": {
+      "txn_id": "TX-0040",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-05",
+      "amount": "8.33",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0080": {
+      "txn_id": "TX-0120",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-14",
+      "amount": "47.38",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0081": {
+      "txn_id": "TX-0187",
+      "vendor": "Starbucks Coffee Company",
+      "date": "2026-09-23",
+      "amount": "11.25",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0082": {
+      "txn_id": "TX-0097",
+      "vendor": "OpenAI, LLC",
+      "date": "2026-09-12",
+      "amount": "256.48",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0083": {
+      "txn_id": "TX-0202",
+      "vendor": "American Airlines",
+      "date": "2026-09-25",
+      "amount": "1152.88",
+      "currency": "USD",
+      "layout": "flight",
+      "language": "en"
+    },
+    "RC-0084": {
+      "txn_id": "TX-0157",
+      "vendor": "Meta Platforms Ireland Ltd",
+      "date": "2026-09-20",
+      "amount": "1278.29",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0085": {
+      "txn_id": "TX-0063",
+      "vendor": "Gumroad",
+      "date": "2026-09-09",
+      "amount": "25.47",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0086": {
+      "txn_id": "TX-0007",
+      "vendor": "Zuma Miami",
+      "date": "2026-08-30",
+      "amount": "150.13",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0087": {
+      "txn_id": "TX-0200",
+      "vendor": "Zuma Miami",
+      "date": "2026-09-24",
+      "amount": "119.63",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0088": {
+      "txn_id": "TX-0252",
+      "vendor": "Priya Raman",
+      "date": "2026-09-27",
+      "amount": "3350.00",
+      "currency": "USDC",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0089": {
+      "txn_id": "TX-0004",
+      "vendor": "Starbucks Coffee Company",
+      "date": "2026-08-31",
+      "amount": "10.09",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0090": {
+      "txn_id": "TX-0112",
+      "vendor": "Anthropic, PBC",
+      "date": "2026-09-15",
+      "amount": "222.25",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0091": {
+      "txn_id": "TX-0047",
+      "vendor": "Udemy, Inc.",
+      "date": "2026-09-07",
+      "amount": "24.29",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0092": {
+      "txn_id": "TX-0124",
+      "vendor": "HubSpot, Inc.",
+      "date": "2026-09-14",
+      "amount": "899.72",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0093": {
+      "txn_id": "TX-0116",
+      "vendor": "Blue Bottle Coffee",
+      "date": "2026-09-15",
+      "amount": "38.21",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0094": {
+      "txn_id": "TX-0114",
+      "vendor": "RealtimeBoard, Inc. (Miro)",
+      "date": "2026-09-15",
+      "amount": "119.79",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0095": {
+      "txn_id": "TX-0137",
+      "vendor": "Aerolíneas Argentinas",
+      "date": "2026-09-18",
+      "amount": "364.66",
+      "currency": "USD",
+      "layout": "es",
+      "language": "es"
+    },
+    "RC-0096": {
+      "txn_id": "TX-0088",
+      "vendor": "Starbucks Coffee Company",
+      "date": "2026-09-12",
+      "amount": "21.06",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0097": {
+      "txn_id": "TX-0132",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-16",
+      "amount": "18.54",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0098": {
+      "txn_id": "TX-0139",
+      "vendor": "Google Ireland Ltd",
+      "date": "2026-09-18",
+      "amount": "1014.25",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0099": {
+      "txn_id": "TX-0017",
+      "vendor": "OpenAI, LLC",
+      "date": "2026-09-03",
+      "amount": "445.31",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0100": {
+      "txn_id": "TX-0024",
+      "vendor": "Booking.com B.V.",
+      "date": "2026-09-03",
+      "amount": "239.51",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0101": {
+      "txn_id": "TX-0243",
+      "vendor": "La Mar Cebicheria",
+      "date": "2026-09-30",
+      "amount": "25.13",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0102": {
+      "txn_id": "TX-0035",
+      "vendor": "Substack Inc.",
+      "date": "2026-09-04",
+      "amount": "15.82",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0103": {
+      "txn_id": "TX-0072",
+      "vendor": "Web Summit",
+      "date": "2026-09-09",
+      "amount": "644.00",
+      "currency": "EUR",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0104": {
+      "txn_id": "TX-0006",
+      "vendor": "The Smith Midtown",
+      "date": "2026-08-31",
+      "amount": "77.60",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0105": {
+      "txn_id": "TX-0082",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-09",
+      "amount": "9.48",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0106": {
+      "txn_id": "TX-0182",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-21",
+      "amount": "31.32",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0107": {
+      "txn_id": "TX-0192",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-22",
+      "amount": "29.65",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0108": {
+      "txn_id": "TX-0019",
+      "vendor": "Slack Technologies, LLC",
+      "date": "2026-09-03",
+      "amount": "342.36",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0109": {
+      "txn_id": "TX-0166",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-20",
+      "amount": "31.31",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0110": {
+      "txn_id": "TX-0027",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-02",
+      "amount": "9.02",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0111": {
+      "txn_id": "TX-0061",
+      "vendor": "Airbnb Payments",
+      "date": "2026-09-10",
+      "amount": "743.41",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0112": {
+      "txn_id": "TX-0059",
+      "vendor": "SF Devs Meetup",
+      "date": "2026-09-09",
+      "amount": "43.00",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0113": {
+      "txn_id": "TX-0055",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-07",
+      "amount": "10.90",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0114": {
+      "txn_id": "TX-0251",
+      "vendor": "Nikhil Rao",
+      "date": "2026-09-27",
+      "amount": "2700.00",
+      "currency": "USDC",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0115": {
+      "txn_id": "TX-0186",
+      "vendor": "Starbucks Coffee Company",
+      "date": "2026-09-22",
+      "amount": "14.28",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0116": {
+      "txn_id": "TX-0218",
+      "vendor": "The Smith Midtown",
+      "date": "2026-09-27",
+      "amount": "118.15",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0117": {
+      "txn_id": "TX-0099",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-12",
+      "amount": "30.08",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0118": {
+      "txn_id": "TX-0190",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-22",
+      "amount": "13.04",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0119": {
+      "txn_id": "TX-0175",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-20",
+      "amount": "28.96",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0120": {
+      "txn_id": "TX-0054",
+      "vendor": "Uber Portier B.V.",
+      "date": "2026-09-07",
+      "amount": "32.79",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0121": {
+      "txn_id": "TX-0213",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-25",
+      "amount": "31.33",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0122": {
+      "txn_id": "TX-0239",
+      "vendor": "Amazon.com Services LLC",
+      "date": "2026-09-30",
+      "amount": "29.62",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0123": {
+      "txn_id": "TX-0128",
+      "vendor": "Shake Shack Madison",
+      "date": "2026-09-15",
+      "amount": "26.66",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0124": {
+      "txn_id": "TX-0150",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-19",
+      "amount": "27.79",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0125": {
+      "txn_id": "TX-0205",
+      "vendor": "Zuma Miami",
+      "date": "2026-09-24",
+      "amount": "48.24",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0126": {
+      "txn_id": "TX-0191",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-22",
+      "amount": "37.83",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0127": {
+      "txn_id": "TX-0080",
+      "vendor": "Starbucks Coffee Company",
+      "date": "2026-09-10",
+      "amount": "24.64",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0128": {
+      "txn_id": "TX-0136",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-17",
+      "amount": "18.28",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0129": {
+      "txn_id": "TX-0170",
+      "vendor": "Tailwind Labs Inc.",
+      "date": "2026-09-20",
+      "amount": "299.00",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0130": {
+      "txn_id": "TX-0212",
+      "vendor": "Starbucks Coffee Company",
+      "date": "2026-09-25",
+      "amount": "6.39",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0131": {
+      "txn_id": "TX-0104",
+      "vendor": "Starbucks Coffee Company",
+      "date": "2026-09-14",
+      "amount": "21.54",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0132": {
+      "txn_id": "TX-0060",
+      "vendor": "The Economist Newspaper Ltd",
+      "date": "2026-09-09",
+      "amount": "21.99",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0133": {
+      "txn_id": "TX-0247",
+      "vendor": "Fatima Alaoui",
+      "date": "2026-09-28",
+      "amount": "2500.00",
+      "currency": "USDC",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0134": {
+      "txn_id": "TX-0245",
+      "vendor": "Camila Restrepo",
+      "date": "2026-09-27",
+      "amount": "2700.00",
+      "currency": "USDC",
+      "layout": "es",
+      "language": "es"
+    },
+    "RC-0135": {
+      "txn_id": "TX-0126",
+      "vendor": "Marriott International",
+      "date": "2026-09-15",
+      "amount": "547.23",
+      "currency": "USD",
+      "layout": "hotel",
+      "language": "en"
+    },
+    "RC-0136": {
+      "txn_id": "TX-0100",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-13",
+      "amount": "37.59",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0137": {
+      "txn_id": "TX-0159",
+      "vendor": "Starbucks Coffee Company",
+      "date": "2026-09-20",
+      "amount": "19.31",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0138": {
+      "txn_id": "TX-0171",
+      "vendor": "Lyft, Inc.",
+      "date": "2026-09-19",
+      "amount": "21.09",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0139": {
+      "txn_id": "TX-0176",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-21",
+      "amount": "38.27",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0140": {
+      "txn_id": "TX-0234",
+      "vendor": "Daniel Okafor",
+      "date": "2026-09-27",
+      "amount": "2800.00",
+      "currency": "USDC",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0141": {
+      "txn_id": "TX-0013",
+      "vendor": "Google Cloud EMEA Limited",
+      "date": "2026-09-01",
+      "amount": "1364.43",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0142": {
+      "txn_id": "TX-0020",
+      "vendor": "La Mar Cebicheria",
+      "date": "2026-09-01",
+      "amount": "44.68",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0143": {
+      "txn_id": "TX-0011",
+      "vendor": "Calendly LLC",
+      "date": "2026-09-02",
+      "amount": "68.33",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0144": {
+      "txn_id": "TX-0133",
+      "vendor": "Docusign, Inc.",
+      "date": "2026-09-16",
+      "amount": "73.60",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0145": {
+      "txn_id": "TX-0102",
+      "vendor": "LinkedIn Ireland Unlimited Company",
+      "date": "2026-09-13",
+      "amount": "767.06",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0146": {
+      "txn_id": "TX-0048",
+      "vendor": "WeWork",
+      "date": "2026-09-07",
+      "amount": "42.95",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0147": {
+      "txn_id": "TX-0180",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-22",
+      "amount": "25.12",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0148": {
+      "txn_id": "TX-0248",
+      "vendor": "Ivan Petrenko",
+      "date": "2026-09-27",
+      "amount": "3900.00",
+      "currency": "USDC",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0149": {
+      "txn_id": "TX-0018",
+      "vendor": "SaaStr Inc.",
+      "date": "2026-09-03",
+      "amount": "775.93",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0150": {
+      "txn_id": "TX-0197",
+      "vendor": "Google Ireland Ltd",
+      "date": "2026-09-24",
+      "amount": "1091.76",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0151": {
+      "txn_id": "TX-0023",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-03",
+      "amount": "9.13",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0152": {
+      "txn_id": "TX-0241",
+      "vendor": "Copa Airlines",
+      "date": "2026-09-29",
+      "amount": "884.67",
+      "currency": "USD",
+      "layout": "flight",
+      "language": "en"
+    },
+    "RC-0153": {
+      "txn_id": "TX-0147",
+      "vendor": "Coya Miami",
+      "date": "2026-09-18",
+      "amount": "116.48",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0154": {
+      "txn_id": "TX-0229",
+      "vendor": "Twilio SendGrid",
+      "date": "2026-09-28",
+      "amount": "90.00",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0155": {
+      "txn_id": "TX-0129",
+      "vendor": "Shake Shack Madison",
+      "date": "2026-09-14",
+      "amount": "110.22",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0156": {
+      "txn_id": "TX-0143",
+      "vendor": "Anthropic, PBC",
+      "date": "2026-09-19",
+      "amount": "140.58",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0157": {
+      "txn_id": "TX-0167",
+      "vendor": "Amazon.com Services LLC",
+      "date": "2026-09-20",
+      "amount": "149.83",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0158": {
+      "txn_id": "TX-0206",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-24",
+      "amount": "45.78",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0159": {
+      "txn_id": "TX-0155",
+      "vendor": "Udemy, Inc.",
+      "date": "2026-09-19",
+      "amount": "56042.85",
+      "currency": "ARS",
+      "layout": "es",
+      "language": "es"
+    },
+    "RC-0160": {
+      "txn_id": "TX-0029",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-03",
+      "amount": "29.21",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0161": {
+      "txn_id": "TX-0134",
+      "vendor": "Duty Free Americas",
+      "date": "2026-09-16",
+      "amount": "142.45",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0162": {
+      "txn_id": "TX-0184",
+      "vendor": "Airbnb Payments",
+      "date": "2026-09-23",
+      "amount": "1184.22",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0163": {
+      "txn_id": "TX-0189",
+      "vendor": "Product Camp Buenos Aires",
+      "date": "2026-09-23",
+      "amount": "48.29",
+      "currency": "USD",
+      "layout": "es",
+      "language": "es"
+    },
+    "RC-0164": {
+      "txn_id": "TX-0225",
+      "vendor": "LATAM Airlines Group",
+      "date": "2026-09-28",
+      "amount": "411.56",
+      "currency": "USD",
+      "layout": "es",
+      "language": "es"
+    },
+    "RC-0165": {
+      "txn_id": "TX-0075",
+      "vendor": "Eventbrite",
+      "date": "2026-09-11",
+      "amount": "76.62",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0166": {
+      "txn_id": "TX-0121",
+      "vendor": "Sara Lindqvist",
+      "date": "2026-09-12",
+      "amount": "5450.00",
+      "currency": "USDC",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0167": {
+      "txn_id": "TX-0156",
+      "vendor": "Best Buy",
+      "date": "2026-09-20",
+      "amount": "94.38",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0168": {
+      "txn_id": "TX-0096",
+      "vendor": "Meta Platforms Ireland Ltd",
+      "date": "2026-09-12",
+      "amount": "266.09",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0169": {
+      "txn_id": "TX-0238",
+      "vendor": "Tomasz Nowak",
+      "date": "2026-09-28",
+      "amount": "4450.00",
+      "currency": "USDC",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0170": {
+      "txn_id": "TX-0081",
+      "vendor": "La Mar Cebicheria",
+      "date": "2026-09-10",
+      "amount": "51.69",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0171": {
+      "txn_id": "TX-0037",
+      "vendor": "Google Ireland Ltd",
+      "date": "2026-09-05",
+      "amount": "813.83",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0172": {
+      "txn_id": "TX-0119",
+      "vendor": "Sweetgreen Market St",
+      "date": "2026-09-14",
+      "amount": "132.77",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0173": {
+      "txn_id": "TX-0092",
+      "vendor": "Lucas Moreau",
+      "date": "2026-09-11",
+      "amount": "4650.00",
+      "currency": "USDC",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0174": {
+      "txn_id": "TX-0015",
+      "vendor": "Amazon Web Services EMEA SARL",
+      "date": "2026-09-01",
+      "amount": "2748.67",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0175": {
+      "txn_id": "TX-0153",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-19",
+      "amount": "12.92",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0176": {
+      "txn_id": "TX-0036",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-04",
+      "amount": "34.10",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0177": {
+      "txn_id": "TX-0107",
+      "vendor": "The Smith Midtown",
+      "date": "2026-09-13",
+      "amount": "116.74",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0178": {
+      "txn_id": "TX-0043",
+      "vendor": "The Smith Midtown",
+      "date": "2026-09-05",
+      "amount": "127.50",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0179": {
+      "txn_id": "TX-0052",
+      "vendor": "GitHub, Inc.",
+      "date": "2026-09-08",
+      "amount": "359.36",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0180": {
+      "txn_id": "TX-0095",
+      "vendor": "Meta Platforms Ireland Ltd",
+      "date": "2026-09-11",
+      "amount": "1023.50",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0181": {
+      "txn_id": "TX-0118",
+      "vendor": "Shake Shack Madison",
+      "date": "2026-09-14",
+      "amount": "114.90",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0182": {
+      "txn_id": "TX-0174",
+      "vendor": "Zuma Miami",
+      "date": "2026-09-19",
+      "amount": "97.97",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0183": {
+      "txn_id": "TX-0148",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-18",
+      "amount": "46.83",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0184": {
+      "txn_id": "TX-0164",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-19",
+      "amount": "27.05",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0185": {
+      "txn_id": "TX-0042",
+      "vendor": "Figma, Inc.",
+      "date": "2026-09-07",
+      "amount": "90.10",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0186": {
+      "txn_id": "TX-0084",
+      "vendor": "American Airlines",
+      "date": "2026-09-12",
+      "amount": "1322.01",
+      "currency": "USD",
+      "layout": "flight",
+      "language": "en"
+    },
+    "RC-0187": {
+      "txn_id": "TX-0109",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-13",
+      "amount": "7.66",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0188": {
+      "txn_id": "TX-0210",
+      "vendor": "Starbucks Coffee Company",
+      "date": "2026-09-25",
+      "amount": "26.63",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0189": {
+      "txn_id": "TX-0154",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-19",
+      "amount": "11.42",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0190": {
+      "txn_id": "TX-0008",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-01",
+      "amount": "45.13",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0191": {
+      "txn_id": "TX-0158",
+      "vendor": "LinkedIn Ireland Unlimited Company",
+      "date": "2026-09-18",
+      "amount": "388.56",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0192": {
+      "txn_id": "TX-0079",
+      "vendor": "Marriott International",
+      "date": "2026-09-10",
+      "amount": "293.76",
+      "currency": "USD",
+      "layout": "hotel",
+      "language": "en"
+    },
+    "RC-0193": {
+      "txn_id": "TX-0041",
+      "vendor": "Vercel Inc.",
+      "date": "2026-09-05",
+      "amount": "265.37",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0194": {
+      "txn_id": "TX-0091",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-10",
+      "amount": "39.95",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0195": {
+      "txn_id": "TX-0172",
+      "vendor": "Starbucks Coffee Company",
+      "date": "2026-09-20",
+      "amount": "16.41",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0196": {
+      "txn_id": "TX-0074",
+      "vendor": "Coursera Inc.",
+      "date": "2026-09-10",
+      "amount": "200.85",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0197": {
+      "txn_id": "TX-0111",
+      "vendor": "Airalo",
+      "date": "2026-09-13",
+      "amount": "14.33",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0198": {
+      "txn_id": "TX-0219",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-25",
+      "amount": "16.20",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0199": {
+      "txn_id": "TX-0058",
+      "vendor": "Cloudflare, Inc.",
+      "date": "2026-09-08",
+      "amount": "120.13",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0200": {
+      "txn_id": "TX-0131",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-15",
+      "amount": "14.41",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0201": {
+      "txn_id": "TX-0046",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-06",
+      "amount": "22.01",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0202": {
+      "txn_id": "TX-0053",
+      "vendor": "Substack Inc.",
+      "date": "2026-09-08",
+      "amount": "19.68",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0203": {
+      "txn_id": "TX-0113",
+      "vendor": "Meta Platforms Ireland Ltd",
+      "date": "2026-09-14",
+      "amount": "892.63",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0204": {
+      "txn_id": "TX-0062",
+      "vendor": "Meta Platforms Ireland Ltd",
+      "date": "2026-09-09",
+      "amount": "1209.24",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0205": {
+      "txn_id": "TX-0103",
+      "vendor": "Loom, Inc.",
+      "date": "2026-09-12",
+      "amount": "119.08",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0206": {
+      "txn_id": "TX-0003",
+      "vendor": "Screen Studio",
+      "date": "2026-08-31",
+      "amount": "91.26",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0207": {
+      "txn_id": "TX-0032",
+      "vendor": "BetaList",
+      "date": "2026-09-04",
+      "amount": "129.00",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0208": {
+      "txn_id": "TX-0163",
+      "vendor": "Uber Portier B.V.",
+      "date": "2026-09-20",
+      "amount": "136.32",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0209": {
+      "txn_id": "TX-0093",
+      "vendor": "Zoom Communications, Inc.",
+      "date": "2026-09-12",
+      "amount": "114.56",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0210": {
+      "txn_id": "TX-0168",
+      "vendor": "Hilton Hotels",
+      "date": "2026-09-20",
+      "amount": "899.99",
+      "currency": "USD",
+      "layout": "hotel",
+      "language": "en"
+    },
+    "RC-0211": {
+      "txn_id": "TX-0069",
+      "vendor": "Uber Portier B.V.",
+      "date": "2026-09-09",
+      "amount": "77348.65",
+      "currency": "ARS",
+      "layout": "es",
+      "language": "es"
+    },
+    "RC-0212": {
+      "txn_id": "TX-0207",
+      "vendor": "Uber B.V.",
+      "date": "2026-09-23",
+      "amount": "17.90",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0213": {
+      "txn_id": "TX-0244",
+      "vendor": "Twilio Inc.",
+      "date": "2026-09-28",
+      "amount": "158.45",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    },
+    "RC-0214": {
+      "txn_id": "TX-0039",
+      "vendor": "The Smith Midtown",
+      "date": "2026-09-06",
+      "amount": "46.71",
+      "currency": "USD",
+      "layout": "pos",
+      "language": "en"
+    },
+    "RC-0215": {
+      "txn_id": "TX-0135",
+      "vendor": "Google Ireland Ltd",
+      "date": "2026-09-16",
+      "amount": "1046.97",
+      "currency": "USD",
+      "layout": "saas",
+      "language": "en"
+    }
+  }
+}

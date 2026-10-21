@@ -1,0 +1,186 @@
+{
+  "note": "Measured against the generator's ground truth. Synthetic data, one month.",
+  "transactions": 252,
+  "extraction": {
+    "template_parser": {
+      "per_field": {
+        "vendor": {
+          "correct": 215,
+          "total": 215,
+          "accuracy": "1.000",
+          "small_sample": false
+        },
+        "date": {
+          "correct": 215,
+          "total": 215,
+          "accuracy": "1.000",
+          "small_sample": false
+        },
+        "amount": {
+          "correct": 215,
+          "total": 215,
+          "accuracy": "1.000",
+          "small_sample": false
+        },
+        "currency": {
+          "correct": 215,
+          "total": 215,
+          "accuracy": "1.000",
+          "small_sample": false
+        },
+        "all_fields": {
+          "correct": 215,
+          "total": 215,
+          "accuracy": "1.000",
+          "small_sample": false
+        }
+      },
+      "by_layout": {
+        "es": {
+          "correct": 10,
+          "total": 10,
+          "accuracy": "1.000",
+          "small_sample": true
+        },
+        "flight": {
+          "correct": 4,
+          "total": 4,
+          "accuracy": "1.000",
+          "small_sample": true
+        },
+        "hotel": {
+          "correct": 3,
+          "total": 3,
+          "accuracy": "1.000",
+          "small_sample": true
+        },
+        "pos": {
+          "correct": 45,
+          "total": 45,
+          "accuracy": "1.000",
+          "small_sample": false
+        },
+        "saas": {
+          "correct": 153,
+          "total": 153,
+          "accuracy": "1.000",
+          "small_sample": false
+        }
+      },
+      "errors": []
+    },
+    "ai": null
+  },
+  "receipt_matching": {
+    "correct": 214,
+    "total": 215,
+    "accuracy": "0.995",
+    "small_sample": false,
+    "wrong": [
+      {
+        "txn_id": "TX-0069",
+        "expected": "RC-0211",
+        "got": null
+      }
+    ]
+  },
+  "anomalies": {
+    "missing_receipt": {
+      "planted": 20,
+      "caught_in_review": 20,
+      "found": 21,
+      "true_positives": 20,
+      "false_positives": 1,
+      "missed": 0,
+      "missed_ids": [],
+      "false_positive_ids": [
+        "TX-0069"
+      ]
+    },
+    "duplicate": {
+      "planted": 5,
+      "caught_in_review": 5,
+      "found": 5,
+      "true_positives": 5,
+      "false_positives": 0,
+      "missed": 0,
+      "missed_ids": [],
+      "false_positive_ids": []
+    },
+    "amount_mismatch": {
+      "planted": 9,
+      "caught_in_review": 9,
+      "found": 8,
+      "true_positives": 8,
+      "false_positives": 0,
+      "missed": 1,
+      "missed_ids": [
+        "TX-0069"
+      ],
+      "false_positive_ids": []
+    },
+    "refund_original_not_in_period": {
+      "planted": 1,
+      "caught_in_review": 1,
+      "found": 0,
+      "true_positives": 0,
+      "false_positives": 0,
+      "missed": 1,
+      "missed_ids": [
+        "TX-0049"
+      ],
+      "false_positive_ids": []
+    },
+    "legit_repeat_not_flagged": true
+  },
+  "accounts": {
+    "rules": {
+      "correct": 209,
+      "total": 213,
+      "accuracy": "0.981",
+      "small_sample": false,
+      "errors": [
+        {
+          "txn_id": "TX-0054",
+          "rule_id": "R-016",
+          "descriptor": "UBER *EATS MAQ7K",
+          "got": "5.1.05",
+          "expected": "5.1.06"
+        },
+        {
+          "txn_id": "TX-0069",
+          "rule_id": "R-016",
+          "descriptor": "UBER *EATS HC9E7",
+          "got": "5.1.05",
+          "expected": "5.1.06"
+        },
+        {
+          "txn_id": "TX-0090",
+          "rule_id": "R-016",
+          "descriptor": "UBER *EATS S5KNQ",
+          "got": "5.1.05",
+          "expected": "5.1.06"
+        },
+        {
+          "txn_id": "TX-0163",
+          "rule_id": "R-016",
+          "descriptor": "UBER *EATS 9AVFX",
+          "got": "5.1.05",
+          "expected": "5.1.06"
+        }
+      ]
+    }
+  },
+  "threshold": {
+    "recommended": null,
+    "rows": [],
+    "why": "AI not run yet"
+  },
+  "explanations": null,
+  "split": {
+    "rules": 191,
+    "ai": 0,
+    "review": 61
+  },
+  "llm_usage": null
+}
