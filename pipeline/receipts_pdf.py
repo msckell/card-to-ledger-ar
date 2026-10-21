@@ -28,7 +28,7 @@ def es_amount(cents: int) -> str:
 
 
 def _canvas(path: Path, size) -> Canvas:
-    c = Canvas(str(path), pagesize=size, pageCompression=1)
+    c = Canvas(str(path), pagesize=size, pageCompression=1, invariant=1)
     c.setAuthor("Card to Ledger AR synthetic data")
     c.setTitle("Synthetic receipt")
     return c

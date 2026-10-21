@@ -10,13 +10,13 @@ Every amount is synthetic. Exchange rates come from the cited snapshot in data/f
 
 from __future__ import annotations
 
-import json
 import random
 import shutil
 from dataclasses import dataclass, field
 from datetime import date, timedelta
 
 from pipeline import fx
+from pipeline.jsonio import write_json
 from pipeline.money import cents_str, convert, to_cents
 from pipeline.paths import RAW, RECEIPTS, TRUTH
 from pipeline.receipts_pdf import render
@@ -709,16 +709,14 @@ def build(seed: int = SEED) -> dict:
         "generated_by": f"pipeline/generate.py seed {seed}",
         "transactions": export_rows,
     }
-    (RAW / "transactions.json").write_text(json.dumps(export, indent=2, ensure_ascii=False) + "\n",
-                                           encoding="utf-8")
+    write_json(RAW / "transactions.json", export)
     truth = {
         "note": "Ground truth written by the generator. The engine and the AI never read it.",
         "seed": seed,
         "transactions": truth_tx,
         "receipts": dict(sorted(truth_rc.items())),
     }
-    (TRUTH / "ground_truth.json").write_text(json.dumps(truth, indent=2, ensure_ascii=False) + "\n",
-                                             encoding="utf-8")
+    write_json(TRUTH / "ground_truth.json", truth)
     counts: dict[str, int] = {}
     for tr in truth_tx.values():
         for a in tr["anomalies"]:
