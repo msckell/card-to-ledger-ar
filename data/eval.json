@@ -69,7 +69,81 @@
       },
       "errors": []
     },
-    "ai": null
+    "ai": {
+      "per_field": {
+        "vendor": {
+          "correct": 214,
+          "total": 215,
+          "accuracy": "0.995",
+          "small_sample": false
+        },
+        "date": {
+          "correct": 215,
+          "total": 215,
+          "accuracy": "1.000",
+          "small_sample": false
+        },
+        "amount": {
+          "correct": 215,
+          "total": 215,
+          "accuracy": "1.000",
+          "small_sample": false
+        },
+        "currency": {
+          "correct": 215,
+          "total": 215,
+          "accuracy": "1.000",
+          "small_sample": false
+        },
+        "all_fields": {
+          "correct": 214,
+          "total": 215,
+          "accuracy": "0.995",
+          "small_sample": false
+        }
+      },
+      "by_layout": {
+        "es": {
+          "correct": 10,
+          "total": 10,
+          "accuracy": "1.000",
+          "small_sample": true
+        },
+        "flight": {
+          "correct": 4,
+          "total": 4,
+          "accuracy": "1.000",
+          "small_sample": true
+        },
+        "hotel": {
+          "correct": 3,
+          "total": 3,
+          "accuracy": "1.000",
+          "small_sample": true
+        },
+        "pos": {
+          "correct": 45,
+          "total": 45,
+          "accuracy": "1.000",
+          "small_sample": false
+        },
+        "saas": {
+          "correct": 152,
+          "total": 153,
+          "accuracy": "0.993",
+          "small_sample": false
+        }
+      },
+      "errors": [
+        {
+          "receipt_id": "RC-0206",
+          "layout": "saas",
+          "fields": [
+            "vendor"
+          ]
+        }
+      ]
+    }
   },
   "receipt_matching": {
     "correct": 214,
@@ -169,18 +243,168 @@
           "expected": "5.1.06"
         }
       ]
+    },
+    "ai": {
+      "correct": 27,
+      "total": 30,
+      "accuracy": "0.900",
+      "small_sample": false,
+      "errors": [
+        {
+          "txn_id": "TX-0050",
+          "got": "5.1.04",
+          "expected": "5.1.01",
+          "confidence": "0.80"
+        },
+        {
+          "txn_id": "TX-0065",
+          "got": "5.1.04",
+          "expected": "5.1.01",
+          "confidence": "0.40"
+        },
+        {
+          "txn_id": "TX-0127",
+          "got": "5.1.01",
+          "expected": "5.1.08",
+          "confidence": "0.72"
+        }
+      ]
     }
   },
   "threshold": {
-    "recommended": null,
-    "rows": [],
-    "why": "AI not run yet"
+    "target_accuracy": "0.95",
+    "suggestions": 30,
+    "rows": [
+      {
+        "threshold": "0.50",
+        "accepted": 29,
+        "share_auto_accepted": "0.967",
+        "accuracy": "0.931",
+        "errors_accepted": 2
+      },
+      {
+        "threshold": "0.55",
+        "accepted": 29,
+        "share_auto_accepted": "0.967",
+        "accuracy": "0.931",
+        "errors_accepted": 2
+      },
+      {
+        "threshold": "0.60",
+        "accepted": 29,
+        "share_auto_accepted": "0.967",
+        "accuracy": "0.931",
+        "errors_accepted": 2
+      },
+      {
+        "threshold": "0.65",
+        "accepted": 28,
+        "share_auto_accepted": "0.933",
+        "accuracy": "0.929",
+        "errors_accepted": 2
+      },
+      {
+        "threshold": "0.70",
+        "accepted": 27,
+        "share_auto_accepted": "0.900",
+        "accuracy": "0.926",
+        "errors_accepted": 2
+      },
+      {
+        "threshold": "0.75",
+        "accepted": 24,
+        "share_auto_accepted": "0.800",
+        "accuracy": "0.958",
+        "errors_accepted": 1
+      },
+      {
+        "threshold": "0.80",
+        "accepted": 24,
+        "share_auto_accepted": "0.800",
+        "accuracy": "0.958",
+        "errors_accepted": 1
+      },
+      {
+        "threshold": "0.85",
+        "accepted": 20,
+        "share_auto_accepted": "0.667",
+        "accuracy": "1.000",
+        "errors_accepted": 0
+      },
+      {
+        "threshold": "0.90",
+        "accepted": 10,
+        "share_auto_accepted": "0.333",
+        "accuracy": "1.000",
+        "errors_accepted": 0
+      },
+      {
+        "threshold": "0.95",
+        "accepted": 5,
+        "share_auto_accepted": "0.167",
+        "accuracy": "1.000",
+        "errors_accepted": 0
+      }
+    ],
+    "recommended": "0.75",
+    "recommended_row": {
+      "threshold": "0.75",
+      "accepted": 24,
+      "share_auto_accepted": "0.800",
+      "accuracy": "0.958",
+      "errors_accepted": 1
+    },
+    "why": "Lowest threshold whose auto accepted suggestions reach the target accuracy of 0.95 with at least 5 accepted. Picked on this month's labeled synthetic data. In production it should be picked on a held out labeled sample and rechecked every month."
   },
-  "explanations": null,
+  "explanations": {
+    "exceptions": 44,
+    "accepted_first_try": 40,
+    "accepted_after_retry": 4,
+    "fell_back_to_template": 0,
+    "pass_rate": {
+      "correct": 44,
+      "total": 44,
+      "accuracy": "1.000",
+      "small_sample": false
+    },
+    "rejections_by_reason": {
+      "raw_figure": 4
+    }
+  },
   "split": {
     "rules": 191,
-    "ai": 0,
-    "review": 61
+    "ai": 21,
+    "review": 40
   },
-  "llm_usage": null
+  "llm_usage": {
+    "backend": "cli",
+    "steps": {
+      "extract": {
+        "calls": 430,
+        "cost_usd": 0.1398,
+        "input_tokens": 907006,
+        "output_tokens": 82640
+      },
+      "suggest": {
+        "calls": 30,
+        "cost_usd": 0.2216,
+        "input_tokens": 70389,
+        "output_tokens": 5374
+      },
+      "explain": {
+        "calls": 96,
+        "cost_usd": 0.5774,
+        "input_tokens": 173592,
+        "output_tokens": 13151
+      }
+    },
+    "models": {
+      "extract": "claude-haiku-5-5",
+      "suggest": "claude-sonnet-5-5",
+      "explain": "claude-sonnet-5-5"
+    },
+    "total_calls": 556,
+    "total_cost_usd": 0.9388,
+    "note": "Cost is the API equivalent estimate. With the CLI backend the calls run on the Claude subscription and the figure is the estimate the CLI reports."
+  }
 }

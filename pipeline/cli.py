@@ -47,8 +47,62 @@ def cmd_close(_args) -> None:
     })
 
 
+def _ai(step: str):
+    def run(_args) -> None:
+        import importlib
+
+        from pipeline.ai import store
+
+        mod = importlib.import_module(f"pipeline.ai.{step}")
+        out = mod.run()
+        usage = store.record_usage()
+        _print({"result": out, "llm_calls_total": usage["total_calls"],
+                "llm_cost_usd_total": usage["total_cost_usd"]})
+
+    return run
+
+
+def cmd_build(_args) -> None:
+    """Full build in order. AI steps reuse their committed outputs and only call the model for
+    what changed. Order: read receipts, match, suggest accounts, measure and pick the threshold,
+    close, explain the exceptions that remain, close again with the explanations, measure."""
+    from pipeline import close, eval
+    from pipeline.ai import explain, extract, store, suggest
+
+    steps = {}
+    steps["extract"] = extract.run()
+    close.run("ai")
+    steps["suggest"] = suggest.run()
+    eval.run(close.run("ai"))  # picks the threshold
+    close.run("ai")
+    steps["explain"] = explain.run()
+    c = close.run("ai")
+    usage = store.record_usage()
+    ev = eval.run(c)
+    try:
+        from pipeline import site_data
+
+        site_data.export(c, ev)
+    except ImportError:
+        pass
+    s = c["summary"]
+    _print({
+        "ai_steps": steps,
+        "split": s["split"],
+        "threshold": s["threshold"],
+        "exceptions": s["exceptions"],
+        "entry_balanced": c["entry_totals"]["balanced"],
+        "llm_calls_total": usage["total_calls"],
+        "llm_cost_usd_total": usage["total_cost_usd"],
+    })
+
+
 COMMANDS = {
+    "build": (cmd_build, "full pipeline: AI steps (cached), close, eval, site data"),
     "fx": (cmd_fx, "download the exchange rate snapshot"),
+    "ai-extract": (_ai("extract"), "AI reads every receipt (build time, cached)"),
+    "ai-suggest": (_ai("suggest"), "AI suggests accounts where no rule applies (cached)"),
+    "ai-explain": (_ai("explain"), "AI explains each exception, verified (cached)"),
     "generate": (cmd_generate, "write the synthetic month and its ground truth"),
     "close": (cmd_close, "run the close, write close.json, the Excel and eval.json"),
 }

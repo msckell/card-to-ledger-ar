@@ -1,0 +1,276 @@
+{
+  "suggestions": {
+    "TX-0003": {
+      "id": "AI-0001",
+      "account": "5.1.03",
+      "account_name": "Licencias de software",
+      "reason": "Receipt RC-0206 shows a 1-year Screen Studio license, billed to Andes Labs SRL through Paddle. This is a software license, so it fits software subscriptions and licenses.",
+      "confidence": "0.95",
+      "key": "90dd7d1bae036f9e",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0011": {
+      "id": "AI-0002",
+      "account": "5.1.03",
+      "account_name": "Licencias de software",
+      "reason": "Receipt RC-0143 from Calendly LLC shows a Teams plan for 5 seats billed to Andes Labs SRL. This is a SaaS seat subscription.",
+      "confidence": "0.96",
+      "key": "cde35c5a5ee4ead4",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0032": {
+      "id": "AI-0003",
+      "account": "5.1.01",
+      "account_name": "Publicidad y marketing",
+      "reason": "Receipt RC-0207 from BetaList, billed to Andes Labs SRL, is for a \"Featured startup listing\" at USD 129.00. This is a paid promotional placement, so it is advertising.",
+      "confidence": "0.80",
+      "key": "bd57d31b943de219",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0033": {
+      "id": "AI-0004",
+      "account": "5.1.02",
+      "account_name": "Servicios de nube",
+      "reason": "Namecheap is mainly a domain registrar and hosting provider, and the chart lists domains under cloud services. No receipt was matched, so I can't confirm what was bought. It could also be an SSL certificate, email service or a software-type product.",
+      "confidence": "0.68",
+      "key": "096f08376122366c",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0048": {
+      "id": "AI-0005",
+      "account": "5.1.08",
+      "account_name": "Gastos de oficina y equipamiento menor",
+      "reason": "The receipt shows a WeWork coworking day pass for USD 42.95 in Mexico City, billed to Andes Labs SRL. Coworking passes belong in 5.1.08. The memo says \"trip to Sao Paulo\" but the receipt is from Mexico City, so travel (5.1.05) is possible but less likely.",
+      "confidence": "0.72",
+      "key": "44013f772301121b",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0050": {
+      "id": "AI-0006",
+      "account": "5.1.04",
+      "account_name": "Honorarios de contratistas del exterior",
+      "reason": "Fiverr receipt for an explainer video script for the website, billed to Andes Labs SRL. This is freelancer work bought through a marketplace abroad (Israel), so it fits contractor fees.",
+      "confidence": "0.80",
+      "key": "5794fd655508f6be",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0059": {
+      "id": "AI-0007",
+      "account": "5.1.07",
+      "account_name": "Eventos y conferencias",
+      "reason": "Receipt RC-0112 from SF Devs Meetup shows an \"Event ticket: AI Infra Night\" for USD 43.00, billed to Andes Labs SRL. This is a meetup ticket.",
+      "confidence": "0.96",
+      "key": "c7045167c19fbd9c",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0060": {
+      "id": "AI-0008",
+      "account": "5.1.09",
+      "account_name": "Capacitación y suscripciones",
+      "reason": "Receipt from The Economist Newspaper Ltd shows a monthly digital subscription billed to Andes Labs SRL, which is a publication subscription.",
+      "confidence": "0.90",
+      "key": "a3dae4db9834a4c8",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0063": {
+      "id": "AI-0009",
+      "account": "5.1.09",
+      "account_name": "Capacitación y suscripciones",
+      "reason": "Gumroad receipt RC-0085 shows a single item, the \"Shape Up handbook bundle\", for USD 25.47. This is a digital book or handbook, so it fits books and publications.",
+      "confidence": "0.85",
+      "key": "61724eea78720a57",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0065": {
+      "id": "AI-0010",
+      "account": "5.1.04",
+      "account_name": "Honorarios de contratistas del exterior",
+      "reason": "PayPal payment to \"MGOMEZSTUDIO\", which looks like an individual or studio, for USD 588.58. No receipt or memo. Most likely a freelancer or contractor paid abroad, but it could be a software or design purchase.",
+      "confidence": "0.40",
+      "key": "14f637b71b71e5ae",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0111": {
+      "id": "AI-0011",
+      "account": "5.1.05",
+      "account_name": "Viajes y viáticos",
+      "reason": "Airalo receipt is for a 10 GB United States eSIM, which is travel connectivity. The memo is empty, so the trip is inferred, not confirmed.",
+      "confidence": "0.80",
+      "key": "6ad1c474850e7160",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0115": {
+      "id": "AI-0012",
+      "account": "5.1.06",
+      "account_name": "Comidas y representación",
+      "reason": "Blue Bottle Coffee is a coffee merchant and the cardholder memo says it was coffee with a prospect, which fits meals and client representation. No receipt was matched.",
+      "confidence": "0.88",
+      "key": "6172fd05592713b3",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0116": {
+      "id": "AI-0013",
+      "account": "5.1.06",
+      "account_name": "Comidas y representación",
+      "reason": "Blue Bottle Coffee receipt shows a muffin for USD 38.21 total, and the cardholder memo says it was coffee with a prospect. This is a client meal or coffee expense.",
+      "confidence": "0.93",
+      "key": "2b57a9982acee0ee",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0127": {
+      "id": "AI-0014",
+      "account": "5.1.01",
+      "account_name": "Publicidad y marketing",
+      "reason": "Receipt from Sunset Print Shop shows 500 business cards in 3 designs billed to Andes Labs SRL. Printed business cards are marketing materials. The memo \"client meeting\" is a possible hint at office printing, but the receipt shows the item.",
+      "confidence": "0.72",
+      "key": "06f63478e11fe66c",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0134": {
+      "id": "AI-0015",
+      "account": "5.1.06",
+      "account_name": "Comidas y representación",
+      "reason": "Receipt shows a chocolate gift set at Duty Free Americas, Miami airport, and the cardholder memo says it is a gift for a client in Sao Paulo. Client gifts go under Comidas y representación.",
+      "confidence": "0.90",
+      "key": "9d4ba82539477e55",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0142": {
+      "id": "AI-0016",
+      "account": "5.1.04",
+      "account_name": "Honorarios de contratistas del exterior",
+      "reason": "Receipt from Upwork Global Inc. shows an escrow payment for a QA testing contract, milestone 1, billed to Andes Labs SRL. This is freelancer work paid through a marketplace. The \"trip to Sao Paulo\" memo does not match the receipt.",
+      "confidence": "0.88",
+      "key": "a96566c5bb32a5fb",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0156": {
+      "id": "AI-0017",
+      "account": "5.1.08",
+      "account_name": "Gastos de oficina y equipamiento menor",
+      "reason": "Best Buy receipt lists a USB-C cable and a Logitech C920 webcam, which are small office equipment items. Memo is empty, but the receipt is clear.",
+      "confidence": "0.88",
+      "key": "2cd2725de7f23511",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0162": {
+      "id": "AI-0018",
+      "account": "5.1.02",
+      "account_name": "Servicios de nube",
+      "reason": "Descriptor is TWILIO, a usage-billed communications API (SMS, email delivery). No receipt or memo, so the exact service is not confirmed.",
+      "confidence": "0.80",
+      "key": "64d5de706327a02a",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0167": {
+      "id": "AI-0019",
+      "account": "5.1.08",
+      "account_name": "Gastos de oficina y equipamiento menor",
+      "reason": "Receipt RC-0157 from Amazon shows 3 Anker USB-C Hubs billed to Andes Labs SRL for USD 149.83. These are small hardware items, so they fit office supplies and minor equipment.",
+      "confidence": "0.90",
+      "key": "a1ab502af1fa95c8",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0170": {
+      "id": "AI-0020",
+      "account": "5.1.03",
+      "account_name": "Licencias de software",
+      "reason": "Receipt RC-0129 shows Tailwind Labs billing Andes Labs SRL for \"Tailwind Plus, team license\", USD 299.00, paid via Lemon Squeezy. This is a software license for a design/UI toolkit.",
+      "confidence": "0.90",
+      "key": "c69c54f8515d155f",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0171": {
+      "id": "AI-0021",
+      "account": "5.1.05",
+      "account_name": "Viajes y viáticos",
+      "reason": "Lyft receipt for a single ride, USD 21.09, billed to Andes Labs SRL. Ride-hailing is ground transport. The memo is empty, so the business purpose isn't stated.",
+      "confidence": "0.88",
+      "key": "b4984d45e68f556e",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0178": {
+      "id": "AI-0022",
+      "account": "5.1.05",
+      "account_name": "Viajes y viáticos",
+      "reason": "Lyft ride receipt for USD 34.76 billed to Andes Labs SRL, paid Sept 21, 2026. Ground transport fits travel. The receipt does not give the purpose of the trip.",
+      "confidence": "0.85",
+      "key": "8660485a2744d6b3",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0188": {
+      "id": "AI-0023",
+      "account": "5.1.01",
+      "account_name": "Publicidad y marketing",
+      "reason": "Sticker Mule sells custom stickers and branded printed items. The amount is USD 398.16 with no receipt or memo, so the items are unconfirmed. They are most likely logo merch or marketing materials.",
+      "confidence": "0.60",
+      "key": "2fedbd5bf7a54316",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0189": {
+      "id": "AI-0024",
+      "account": "5.1.07",
+      "account_name": "Eventos y conferencias",
+      "reason": "Receipt RC-0163 shows a general admission ticket (\"Entrada general Product Camp\") for Product Camp Buenos Aires, billed to Andes Labs SRL via Ticket Tailor. This is a conference ticket.",
+      "confidence": "0.95",
+      "key": "c782a2493d2ae3b6",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0195": {
+      "id": "AI-0025",
+      "account": "5.1.06",
+      "account_name": "Comidas y representación",
+      "reason": "Costco receipt lists sparkling water, a fruit tray and a snack variety pack. The cardholder memo says \"offsite snacks\". This is food for the team.",
+      "confidence": "0.88",
+      "key": "b9983085a64efc30",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0208": {
+      "id": "AI-0026",
+      "account": "5.1.06",
+      "account_name": "Comidas y representación",
+      "reason": "DoorDash is a food delivery merchant and the cardholder memo says \"team dinner\". No receipt was matched, so the details are unconfirmed.",
+      "confidence": "0.85",
+      "key": "2fcc5e8a40a26c3a",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0214": {
+      "id": "AI-0027",
+      "account": "5.1.03",
+      "account_name": "Licencias de software",
+      "reason": "Receipt RC-0046 from Apple Services shows a fixed monthly iCloud+ 2 TB plan for USD 9.99, billed to Andes Labs SRL. This is a flat-fee software subscription, not usage-based cloud infrastructure. 5.1.02 is the main alternative.",
+      "confidence": "0.72",
+      "key": "08f9a767e64a658e",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0229": {
+      "id": "AI-0028",
+      "account": "5.1.02",
+      "account_name": "Servicios de nube",
+      "reason": "Receipt from Twilio SendGrid shows an \"Email API Pro plan\" for USD 90.00, billed to Andes Labs SRL. Email delivery APIs fall under cloud and usage-based developer services.",
+      "confidence": "0.85",
+      "key": "ba4a654067e50349",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0239": {
+      "id": "AI-0029",
+      "account": "5.1.09",
+      "account_name": "Capacitación y suscripciones",
+      "reason": "Receipt shows a single Kindle book (\"Inspired, 2nd Edition\") billed to Andes Labs SRL. Books fall under training and subscriptions. The \"team offsite\" memo does not change that the item is a book.",
+      "confidence": "0.85",
+      "key": "44354389adc9eb47",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0244": {
+      "id": "AI-0030",
+      "account": "5.1.02",
+      "account_name": "Servicios de nube",
+      "reason": "Receipt RC-0213 from Twilio Inc. to Andes Labs SRL shows \"Programmable SMS usage, August\" for USD 158.45, a usage-billed SMS delivery service.",
+      "confidence": "0.95",
+      "key": "e7f66392a8523949",
+      "model": "claude-sonnet-5-5"
+    }
+  },
+  "model": "claude-sonnet-5-5",
+  "backend": "cli"
+}

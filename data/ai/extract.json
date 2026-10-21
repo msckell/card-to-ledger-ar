@@ -1,0 +1,1941 @@
+{
+  "receipts": {
+    "RC-0001": {
+      "vendor": "O'Reilly Media, Inc.",
+      "date": "2026-09-11",
+      "amount": "456.58",
+      "currency": "USD",
+      "key": "e78381e5118a4cf7",
+      "model": "claude-haiku-5-5",
+      "duration_s": 5.1
+    },
+    "RC-0002": {
+      "vendor": "Anthropic, PBC",
+      "date": "2026-09-30",
+      "amount": "554.86",
+      "currency": "USD",
+      "key": "5684eced79cf9811",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.0
+    },
+    "RC-0003": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-18",
+      "amount": "34.97",
+      "currency": "USD",
+      "key": "06e54948c92dad23",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.3
+    },
+    "RC-0004": {
+      "vendor": "COYA MIAMI",
+      "date": "2026-09-09",
+      "amount": "89.65",
+      "currency": "USD",
+      "key": "af0460a3e9600cca",
+      "model": "claude-haiku-5-5",
+      "duration_s": 5.4
+    },
+    "RC-0005": {
+      "vendor": "Amazon Web Services EMEA SARL",
+      "date": "2026-08-31",
+      "amount": "3753.57",
+      "currency": "USD",
+      "key": "85073d1263eb0a00",
+      "model": "claude-haiku-5-5",
+      "duration_s": 5.4
+    },
+    "RC-0006": {
+      "vendor": "Google Ireland Ltd",
+      "date": "2026-09-11",
+      "amount": "1005.68",
+      "currency": "USD",
+      "key": "2206aac25b7062b5",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.2
+    },
+    "RC-0007": {
+      "vendor": "LATAM Airlines Group",
+      "date": "2026-09-14",
+      "amount": "287.64",
+      "currency": "USD",
+      "key": "a83c26981d09a9b2",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.2
+    },
+    "RC-0008": {
+      "vendor": "Eventbrite",
+      "date": "2026-09-23",
+      "amount": "51.43",
+      "currency": "USD",
+      "key": "ea38e4757e7b2bab",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.3
+    },
+    "RC-0009": {
+      "vendor": "Notion Labs, Inc.",
+      "date": "2026-09-04",
+      "amount": "335.46",
+      "currency": "USD",
+      "key": "52c0cc5e01abaa42",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.3
+    },
+    "RC-0010": {
+      "vendor": "STARBUCKS COFFEE COMPANY",
+      "date": "2026-09-21",
+      "amount": "21.72",
+      "currency": "USD",
+      "key": "9d2fc6a91810813c",
+      "model": "claude-haiku-5-5",
+      "duration_s": 5.1
+    },
+    "RC-0011": {
+      "vendor": "Uber Portier B.V.",
+      "date": "2026-09-10",
+      "amount": "116.37",
+      "currency": "USD",
+      "key": "9814afcb9800a63c",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.4
+    },
+    "RC-0012": {
+      "vendor": "Meta Platforms Ireland Ltd",
+      "date": "2026-09-27",
+      "amount": "361.25",
+      "currency": "USD",
+      "key": "b1962264d778a19c",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.1
+    },
+    "RC-0013": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-04",
+      "amount": "7.04",
+      "currency": "USD",
+      "key": "d02c13d065cce76f",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.1
+    },
+    "RC-0014": {
+      "vendor": "SHAKE SHACK MADISON",
+      "date": "2026-09-14",
+      "amount": "143.05",
+      "currency": "USD",
+      "key": "af05a53da6cc51d1",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.3
+    },
+    "RC-0015": {
+      "vendor": "Sara Lindqvist",
+      "date": "2026-09-26",
+      "amount": "5200.00",
+      "currency": "USDC",
+      "key": "1b3b83dfa1541d7f",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.2
+    },
+    "RC-0016": {
+      "vendor": "Google Ireland Ltd",
+      "date": "2026-08-31",
+      "amount": "516.10",
+      "currency": "USD",
+      "key": "fa3707a6e2a6f8c1",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.4
+    },
+    "RC-0017": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-19",
+      "amount": "9.97",
+      "currency": "USD",
+      "key": "66b35dca62530f00",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.7
+    },
+    "RC-0018": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-07",
+      "amount": "25.73",
+      "currency": "USD",
+      "key": "1cff67497df88c3b",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.2
+    },
+    "RC-0019": {
+      "vendor": "OpenAI, LLC",
+      "date": "2026-08-31",
+      "amount": "204.65",
+      "currency": "USD",
+      "key": "fc5cd0b087265e8d",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.8
+    },
+    "RC-0020": {
+      "vendor": "Andrei Popescu",
+      "date": "2026-09-27",
+      "amount": "3300.00",
+      "currency": "USDC",
+      "key": "1b5f9ffc3cabb445",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.2
+    },
+    "RC-0021": {
+      "vendor": "COSTCO WHOLESALE",
+      "date": "2026-09-23",
+      "amount": "141.72",
+      "currency": "USD",
+      "key": "ac696f548daf5be4",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.0
+    },
+    "RC-0022": {
+      "vendor": "1Password",
+      "date": "2026-09-13",
+      "amount": "314.11",
+      "currency": "USD",
+      "key": "d2cff47e7517372f",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.6
+    },
+    "RC-0023": {
+      "vendor": "Lyft, Inc.",
+      "date": "2026-09-21",
+      "amount": "34.76",
+      "currency": "USD",
+      "key": "f9e8e069fca5d5d9",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.8
+    },
+    "RC-0024": {
+      "vendor": "STARBUCKS COFFEE COMPANY",
+      "date": "2026-09-03",
+      "amount": "27.67",
+      "currency": "USD",
+      "key": "e18f4a5899c41d2f",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.6
+    },
+    "RC-0025": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-07",
+      "amount": "24.77",
+      "currency": "USD",
+      "key": "282b0f8b01424b60",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.9
+    },
+    "RC-0026": {
+      "vendor": "Fiverr International",
+      "date": "2026-09-08",
+      "amount": "204.22",
+      "currency": "USD",
+      "key": "ee459b13d315c070",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.8
+    },
+    "RC-0027": {
+      "vendor": "JOE'S PIZZA",
+      "date": "2026-09-27",
+      "amount": "23.71",
+      "currency": "USD",
+      "key": "22209c6d8700eb64",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.3
+    },
+    "RC-0028": {
+      "vendor": "Meta Platforms Ireland Ltd",
+      "date": "2026-09-12",
+      "amount": "468.58",
+      "currency": "USD",
+      "key": "b45b81f1431684bc",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.5
+    },
+    "RC-0029": {
+      "vendor": "ZUMA MIAMI",
+      "date": "2026-09-19",
+      "amount": "80.07",
+      "currency": "USD",
+      "key": "ea5af2fa7ff6a471",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.2
+    },
+    "RC-0030": {
+      "vendor": "Copa Airlines",
+      "date": "2026-09-23",
+      "amount": "499.74",
+      "currency": "USD",
+      "key": "339e3e41d6e4d88d",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.8
+    },
+    "RC-0031": {
+      "vendor": "LinkedIn Ireland Unlimited Company",
+      "date": "2026-09-27",
+      "amount": "492.83",
+      "currency": "USD",
+      "key": "a3ffc437719c74ec",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.6
+    },
+    "RC-0032": {
+      "vendor": "GitHub, Inc.",
+      "date": "2026-09-08",
+      "amount": "221.18",
+      "currency": "USD",
+      "key": "b21c20078f11a714",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.4
+    },
+    "RC-0033": {
+      "vendor": "Upwork Global Inc.",
+      "date": "2026-09-18",
+      "amount": "683.64",
+      "currency": "USD",
+      "key": "abfeace1f630378a",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.4
+    },
+    "RC-0034": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-03",
+      "amount": "23.70",
+      "currency": "USD",
+      "key": "6c720fc7aec5132b",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.8
+    },
+    "RC-0035": {
+      "vendor": "Tomasz Nowak",
+      "date": "2026-09-13",
+      "amount": "4200.00",
+      "currency": "USDC",
+      "key": "ed3ecd5d40ff0c55",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.0
+    },
+    "RC-0036": {
+      "vendor": "Mateo Silva",
+      "date": "2026-09-29",
+      "amount": "3400.00",
+      "currency": "USDC",
+      "key": "012b9563f85b04d0",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.0
+    },
+    "RC-0037": {
+      "vendor": "SHAKE SHACK MADISON",
+      "date": "2026-09-18",
+      "amount": "50.68",
+      "currency": "USD",
+      "key": "d8bd2b9284d9411c",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.2
+    },
+    "RC-0038": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-17",
+      "amount": "45.59",
+      "currency": "USD",
+      "key": "668ab9af3a4da7b5",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.9
+    },
+    "RC-0039": {
+      "vendor": "SWEETGREEN MARKET ST",
+      "date": "2026-09-09",
+      "amount": "59.97",
+      "currency": "USD",
+      "key": "b580ce540ac863f2",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.3
+    },
+    "RC-0040": {
+      "vendor": "Anthropic, PBC",
+      "date": "2026-09-27",
+      "amount": "863.55",
+      "currency": "USD",
+      "key": "a683efa3098c853e",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.3
+    },
+    "RC-0041": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-09",
+      "amount": "42.50",
+      "currency": "USD",
+      "key": "b1f9d71bffa806d8",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.6
+    },
+    "RC-0042": {
+      "vendor": "Kenji Watanabe",
+      "date": "2026-09-21",
+      "amount": "5050.00",
+      "currency": "USDC",
+      "key": "3fa45f09c3f375a1",
+      "model": "claude-haiku-5-5",
+      "duration_s": 6.9
+    },
+    "RC-0043": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-13",
+      "amount": "12.33",
+      "currency": "USD",
+      "key": "03abc59e8276ea89",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.6
+    },
+    "RC-0044": {
+      "vendor": "Google Workspace",
+      "date": "2026-08-30",
+      "amount": "566.34",
+      "currency": "USD",
+      "key": "acf9b02c92e58177",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.9
+    },
+    "RC-0045": {
+      "vendor": "JOE'S PIZZA",
+      "date": "2026-09-25",
+      "amount": "88.24",
+      "currency": "USD",
+      "key": "26957a3161b6db44",
+      "model": "claude-haiku-5-5",
+      "duration_s": 5.2
+    },
+    "RC-0046": {
+      "vendor": "Apple Services",
+      "date": "2026-09-27",
+      "amount": "9.99",
+      "currency": "USD",
+      "key": "a8a08d496b38999e",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.0
+    },
+    "RC-0047": {
+      "vendor": "STARBUCKS COFFEE COMPANY",
+      "date": "2026-09-22",
+      "amount": "29.29",
+      "currency": "USD",
+      "key": "81995bf6032c7ed9",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.1
+    },
+    "RC-0048": {
+      "vendor": "Laura Méndez",
+      "date": "2026-09-26",
+      "amount": "3000.00",
+      "currency": "USDC",
+      "key": "8da3d6232a6aeead",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.4
+    },
+    "RC-0049": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-18",
+      "amount": "33.97",
+      "currency": "USD",
+      "key": "ede70985e5af1fca",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.9
+    },
+    "RC-0050": {
+      "vendor": "Sunset Print Shop",
+      "date": "2026-09-15",
+      "amount": "95.69",
+      "currency": "USD",
+      "key": "8e7019661fadb942",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.5
+    },
+    "RC-0051": {
+      "vendor": "STARBUCKS COFFEE COMPANY",
+      "date": "2026-09-18",
+      "amount": "28.44",
+      "currency": "USD",
+      "key": "662f6a53c8297da4",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.5
+    },
+    "RC-0052": {
+      "vendor": "Google Ireland Ltd",
+      "date": "2026-09-01",
+      "amount": "933.77",
+      "currency": "USD",
+      "key": "09ce65552c1e0302",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.3
+    },
+    "RC-0053": {
+      "vendor": "Figma, Inc.",
+      "date": "2026-09-17",
+      "amount": "107.85",
+      "currency": "USD",
+      "key": "0d14e89303a4e922",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.9
+    },
+    "RC-0054": {
+      "vendor": "Google Ireland Ltd",
+      "date": "2026-09-11",
+      "amount": "309.32",
+      "currency": "USD",
+      "key": "78ea0a276a509d88",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.5
+    },
+    "RC-0055": {
+      "vendor": "Kenji Watanabe",
+      "date": "2026-09-27",
+      "amount": "4650.00",
+      "currency": "USDC",
+      "key": "2343b8fc791c8120",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.4
+    },
+    "RC-0056": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-27",
+      "amount": "39.00",
+      "currency": "USD",
+      "key": "a3b9f067122f2060",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.1
+    },
+    "RC-0057": {
+      "vendor": "LATAM Airlines Group",
+      "date": "2026-09-20",
+      "amount": "316.74",
+      "currency": "USD",
+      "key": "e57f6ac337857cf3",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.0
+    },
+    "RC-0058": {
+      "vendor": "Datadog, Inc.",
+      "date": "2026-09-04",
+      "amount": "1044.78",
+      "currency": "USD",
+      "key": "dc2eb907a50862dc",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.2
+    },
+    "RC-0059": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-27",
+      "amount": "28.89",
+      "currency": "USD",
+      "key": "476e900d3d6fba5e",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.9
+    },
+    "RC-0060": {
+      "vendor": "Meta Platforms Ireland Ltd",
+      "date": "2026-09-13",
+      "amount": "302.71",
+      "currency": "USD",
+      "key": "b2927438e3fa383c",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.3
+    },
+    "RC-0061": {
+      "vendor": "Airbnb Payments",
+      "date": "2026-09-26",
+      "amount": "915.82",
+      "currency": "USD",
+      "key": "40c1f8597110e736",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.8
+    },
+    "RC-0062": {
+      "vendor": "Substack Inc.",
+      "date": "2026-09-17",
+      "amount": "9.96",
+      "currency": "USD",
+      "key": "4d0d133a795e0813",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.7
+    },
+    "RC-0063": {
+      "vendor": "Ana Ribeiro",
+      "date": "2026-09-26",
+      "amount": "3600.00",
+      "currency": "USDC",
+      "key": "5fab3dd3dc9a3e6f",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.1
+    },
+    "RC-0064": {
+      "vendor": "Anthropic, PBC",
+      "date": "2026-09-24",
+      "amount": "214.82",
+      "currency": "USD",
+      "key": "6d29d152ed7acc50",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.0
+    },
+    "RC-0065": {
+      "vendor": "Meta Platforms Ireland Ltd",
+      "date": "2026-09-20",
+      "amount": "222.37",
+      "currency": "USD",
+      "key": "c9c30fc4bb78a005",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.8
+    },
+    "RC-0066": {
+      "vendor": "Meta Platforms Ireland Ltd",
+      "date": "2026-09-10",
+      "amount": "1248.74",
+      "currency": "USD",
+      "key": "94b3188dfc6a66d6",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.8
+    },
+    "RC-0067": {
+      "vendor": "Emily Carter",
+      "date": "2026-09-27",
+      "amount": "4100.00",
+      "currency": "USDC",
+      "key": "c4290593e6898400",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.5
+    },
+    "RC-0068": {
+      "vendor": "Meta Platforms Ireland Ltd",
+      "date": "2026-09-11",
+      "amount": "588.24",
+      "currency": "USD",
+      "key": "64531176e26ee846",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.5
+    },
+    "RC-0069": {
+      "vendor": "Bruno Costa",
+      "date": "2026-09-28",
+      "amount": "2900.00",
+      "currency": "USDC",
+      "key": "6d9d83278bc96f24",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.5
+    },
+    "RC-0070": {
+      "vendor": "STARBUCKS COFFEE COMPANY",
+      "date": "2026-09-18",
+      "amount": "25.03",
+      "currency": "USD",
+      "key": "d0029fdb0b8e5efc",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.0
+    },
+    "RC-0071": {
+      "vendor": "SWEETGREEN MARKET ST",
+      "date": "2026-09-13",
+      "amount": "111.33",
+      "currency": "USD",
+      "key": "7f3a2c9ea2caa007",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.8
+    },
+    "RC-0072": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-07",
+      "amount": "42.94",
+      "currency": "USD",
+      "key": "757f3dc4c13e70f1",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.4
+    },
+    "RC-0073": {
+      "vendor": "Eventbrite",
+      "date": "2026-09-25",
+      "amount": "128.43",
+      "currency": "USD",
+      "key": "227f3f23478ef976",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.4
+    },
+    "RC-0074": {
+      "vendor": "Canva Pty Ltd",
+      "date": "2026-09-17",
+      "amount": "174.16",
+      "currency": "USD",
+      "key": "30438fe2f69f85f9",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.5
+    },
+    "RC-0075": {
+      "vendor": "Google Ireland Ltd",
+      "date": "2026-09-28",
+      "amount": "585.56",
+      "currency": "USD",
+      "key": "5640d4f9efcd2556",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.8
+    },
+    "RC-0076": {
+      "vendor": "SWEETGREEN MARKET ST",
+      "date": "2026-09-13",
+      "amount": "156.22",
+      "currency": "USD",
+      "key": "067eb77d97487c74",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.7
+    },
+    "RC-0077": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-22",
+      "amount": "25.12",
+      "currency": "USD",
+      "key": "16e9dc5d41adc27c",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.7
+    },
+    "RC-0078": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-29",
+      "amount": "47.11",
+      "currency": "USD",
+      "key": "31829849c212b7ec",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.7
+    },
+    "RC-0079": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-05",
+      "amount": "8.33",
+      "currency": "USD",
+      "key": "96f936f934698447",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.5
+    },
+    "RC-0080": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-14",
+      "amount": "47.38",
+      "currency": "USD",
+      "key": "8a020877a14682f0",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.8
+    },
+    "RC-0081": {
+      "vendor": "STARBUCKS COFFEE COMPANY",
+      "date": "2026-09-23",
+      "amount": "11.25",
+      "currency": "USD",
+      "key": "170e74005c34246e",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.9
+    },
+    "RC-0082": {
+      "vendor": "OpenAI, LLC",
+      "date": "2026-09-12",
+      "amount": "256.48",
+      "currency": "USD",
+      "key": "1d597c56d679a47e",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.7
+    },
+    "RC-0083": {
+      "vendor": "American Airlines",
+      "date": "2026-09-25",
+      "amount": "1152.88",
+      "currency": "USD",
+      "key": "f0aee2910f31eacd",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.2
+    },
+    "RC-0084": {
+      "vendor": "Meta Platforms Ireland Ltd",
+      "date": "2026-09-20",
+      "amount": "1278.29",
+      "currency": "USD",
+      "key": "641a4fd7087e9144",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.1
+    },
+    "RC-0085": {
+      "vendor": "Gumroad",
+      "date": "2026-09-09",
+      "amount": "25.47",
+      "currency": "USD",
+      "key": "886bd9cdb62c5dec",
+      "model": "claude-haiku-5-5",
+      "duration_s": 7.5
+    },
+    "RC-0086": {
+      "vendor": "ZUMA MIAMI",
+      "date": "2026-08-30",
+      "amount": "150.13",
+      "currency": "USD",
+      "key": "13bec4c566a2a60e",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.7
+    },
+    "RC-0087": {
+      "vendor": "ZUMA MIAMI",
+      "date": "2026-09-24",
+      "amount": "119.63",
+      "currency": "USD",
+      "key": "991940510ca67036",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.9
+    },
+    "RC-0088": {
+      "vendor": "Priya Raman",
+      "date": "2026-09-27",
+      "amount": "3350.00",
+      "currency": "USDC",
+      "key": "bcdba53a54d5f9c9",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.5
+    },
+    "RC-0089": {
+      "vendor": "STARBUCKS COFFEE COMPANY",
+      "date": "2026-08-31",
+      "amount": "10.09",
+      "currency": "USD",
+      "key": "4bce763215b19639",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.7
+    },
+    "RC-0090": {
+      "vendor": "Anthropic, PBC",
+      "date": "2026-09-15",
+      "amount": "222.25",
+      "currency": "USD",
+      "key": "080ae1b98fded84c",
+      "model": "claude-haiku-5-5",
+      "duration_s": 33.1
+    },
+    "RC-0091": {
+      "vendor": "Udemy, Inc.",
+      "date": "2026-09-07",
+      "amount": "24.29",
+      "currency": "USD",
+      "key": "75933b84b5563e79",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.4
+    },
+    "RC-0092": {
+      "vendor": "HubSpot, Inc.",
+      "date": "2026-09-14",
+      "amount": "899.72",
+      "currency": "USD",
+      "key": "a15a621c66c085c2",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.6
+    },
+    "RC-0093": {
+      "vendor": "BLUE BOTTLE COFFEE",
+      "date": "2026-09-15",
+      "amount": "38.21",
+      "currency": "USD",
+      "key": "aeffe9b95bcd58cb",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.7
+    },
+    "RC-0094": {
+      "vendor": "RealtimeBoard, Inc. (Miro)",
+      "date": "2026-09-15",
+      "amount": "119.79",
+      "currency": "USD",
+      "key": "58a1dc5fa237b1ca",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.2
+    },
+    "RC-0095": {
+      "vendor": "Aerolíneas Argentinas",
+      "date": "2026-09-18",
+      "amount": "364.66",
+      "currency": "USD",
+      "key": "eb0ef54bc0c42751",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.2
+    },
+    "RC-0096": {
+      "vendor": "STARBUCKS COFFEE COMPANY",
+      "date": "2026-09-12",
+      "amount": "21.06",
+      "currency": "USD",
+      "key": "152cd7f33dad019d",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.3
+    },
+    "RC-0097": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-16",
+      "amount": "18.54",
+      "currency": "USD",
+      "key": "c2541a6e4e167c85",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.8
+    },
+    "RC-0098": {
+      "vendor": "Google Ireland Ltd",
+      "date": "2026-09-18",
+      "amount": "1014.25",
+      "currency": "USD",
+      "key": "ee9b8d8195853bed",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.8
+    },
+    "RC-0099": {
+      "vendor": "OpenAI, LLC",
+      "date": "2026-09-03",
+      "amount": "445.31",
+      "currency": "USD",
+      "key": "7b2cbdeb0e121b99",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.2
+    },
+    "RC-0100": {
+      "vendor": "Booking.com B.V.",
+      "date": "2026-09-03",
+      "amount": "239.51",
+      "currency": "USD",
+      "key": "67744b2a241b2ba8",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.1
+    },
+    "RC-0101": {
+      "vendor": "LA MAR CEBICHERIA",
+      "date": "2026-09-30",
+      "amount": "25.13",
+      "currency": "USD",
+      "key": "f5ff244233aa10f0",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.6
+    },
+    "RC-0102": {
+      "vendor": "Substack Inc.",
+      "date": "2026-09-04",
+      "amount": "15.82",
+      "currency": "USD",
+      "key": "d8d934e7c81229f6",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.6
+    },
+    "RC-0103": {
+      "vendor": "Web Summit",
+      "date": "2026-09-09",
+      "amount": "644.00",
+      "currency": "EUR",
+      "key": "54b6df75b70da1e0",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.0
+    },
+    "RC-0104": {
+      "vendor": "THE SMITH MIDTOWN",
+      "date": "2026-08-31",
+      "amount": "77.60",
+      "currency": "USD",
+      "key": "b0d835e3f0678eaa",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.8
+    },
+    "RC-0105": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-09",
+      "amount": "9.48",
+      "currency": "USD",
+      "key": "d1fd7c8d602cdeba",
+      "model": "claude-haiku-5-5",
+      "duration_s": 12.8
+    },
+    "RC-0106": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-21",
+      "amount": "31.32",
+      "currency": "USD",
+      "key": "b422ad5aa59f5f3e",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.5
+    },
+    "RC-0107": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-22",
+      "amount": "29.65",
+      "currency": "USD",
+      "key": "892aac7e244a6606",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.7
+    },
+    "RC-0108": {
+      "vendor": "Slack Technologies, LLC",
+      "date": "2026-09-03",
+      "amount": "342.36",
+      "currency": "USD",
+      "key": "8905391b5a6f745c",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.3
+    },
+    "RC-0109": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-20",
+      "amount": "31.31",
+      "currency": "USD",
+      "key": "dfec7ad2143ab67d",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.2
+    },
+    "RC-0110": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-02",
+      "amount": "9.02",
+      "currency": "USD",
+      "key": "5ab20d41c55cc9e4",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.6
+    },
+    "RC-0111": {
+      "vendor": "Airbnb Payments",
+      "date": "2026-09-10",
+      "amount": "743.41",
+      "currency": "USD",
+      "key": "81d3448a1fe9c3ab",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.6
+    },
+    "RC-0112": {
+      "vendor": "SF Devs Meetup",
+      "date": "2026-09-09",
+      "amount": "43.00",
+      "currency": "USD",
+      "key": "371352610d9e2007",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.6
+    },
+    "RC-0113": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-07",
+      "amount": "10.90",
+      "currency": "USD",
+      "key": "bc6592dcc6b7b0a1",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.6
+    },
+    "RC-0114": {
+      "vendor": "Nikhil Rao",
+      "date": "2026-09-27",
+      "amount": "2700.00",
+      "currency": "USDC",
+      "key": "8359571b914e031e",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.1
+    },
+    "RC-0115": {
+      "vendor": "STARBUCKS COFFEE COMPANY",
+      "date": "2026-09-22",
+      "amount": "14.28",
+      "currency": "USD",
+      "key": "8b5afaacf5779497",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.2
+    },
+    "RC-0116": {
+      "vendor": "THE SMITH MIDTOWN",
+      "date": "2026-09-27",
+      "amount": "118.15",
+      "currency": "USD",
+      "key": "ea1762edc2a23d67",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.7
+    },
+    "RC-0117": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-12",
+      "amount": "30.08",
+      "currency": "USD",
+      "key": "878263400c86905d",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.6
+    },
+    "RC-0118": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-22",
+      "amount": "13.04",
+      "currency": "USD",
+      "key": "b67380d01722c4a1",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.5
+    },
+    "RC-0119": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-20",
+      "amount": "28.96",
+      "currency": "USD",
+      "key": "6b3bb54ece4d6f29",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.0
+    },
+    "RC-0120": {
+      "vendor": "Uber Portier B.V.",
+      "date": "2026-09-07",
+      "amount": "32.79",
+      "currency": "USD",
+      "key": "cb8407c556ff7209",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.4
+    },
+    "RC-0121": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-25",
+      "amount": "31.33",
+      "currency": "USD",
+      "key": "32abdd0762a9c0f5",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.7
+    },
+    "RC-0122": {
+      "vendor": "Amazon.com Services LLC",
+      "date": "2026-09-30",
+      "amount": "29.62",
+      "currency": "USD",
+      "key": "fd31d019f49ab7d3",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.5
+    },
+    "RC-0123": {
+      "vendor": "SHAKE SHACK MADISON",
+      "date": "2026-09-15",
+      "amount": "26.66",
+      "currency": "USD",
+      "key": "a711aaffa7f6b080",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.5
+    },
+    "RC-0124": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-19",
+      "amount": "27.79",
+      "currency": "USD",
+      "key": "7d00912cef9509d7",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.1
+    },
+    "RC-0125": {
+      "vendor": "ZUMA MIAMI",
+      "date": "2026-09-24",
+      "amount": "48.24",
+      "currency": "USD",
+      "key": "f208fb2578274c66",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.2
+    },
+    "RC-0126": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-22",
+      "amount": "37.83",
+      "currency": "USD",
+      "key": "6d0c2d0558284739",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.3
+    },
+    "RC-0127": {
+      "vendor": "STARBUCKS COFFEE COMPANY",
+      "date": "2026-09-10",
+      "amount": "24.64",
+      "currency": "USD",
+      "key": "28ee611ea2e0fb6f",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.4
+    },
+    "RC-0128": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-17",
+      "amount": "18.28",
+      "currency": "USD",
+      "key": "a466af6557891c33",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.7
+    },
+    "RC-0129": {
+      "vendor": "Tailwind Labs Inc.",
+      "date": "2026-09-20",
+      "amount": "299.00",
+      "currency": "USD",
+      "key": "114ac162ba61ce1b",
+      "model": "claude-haiku-5-5",
+      "duration_s": 5.1
+    },
+    "RC-0130": {
+      "vendor": "STARBUCKS COFFEE COMPANY",
+      "date": "2026-09-25",
+      "amount": "6.39",
+      "currency": "USD",
+      "key": "263cf82953aef596",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.5
+    },
+    "RC-0131": {
+      "vendor": "STARBUCKS COFFEE COMPANY",
+      "date": "2026-09-14",
+      "amount": "21.54",
+      "currency": "USD",
+      "key": "3c83118dc3c14d5c",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.2
+    },
+    "RC-0132": {
+      "vendor": "The Economist Newspaper Ltd",
+      "date": "2026-09-09",
+      "amount": "21.99",
+      "currency": "USD",
+      "key": "737c788bcace4d95",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.0
+    },
+    "RC-0133": {
+      "vendor": "Fatima Alaoui",
+      "date": "2026-09-28",
+      "amount": "2500.00",
+      "currency": "USDC",
+      "key": "a5c35da7956c7d50",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.3
+    },
+    "RC-0134": {
+      "vendor": "Camila Restrepo",
+      "date": "2026-09-27",
+      "amount": "2700.00",
+      "currency": "USDC",
+      "key": "28a28ff06dacb7aa",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.2
+    },
+    "RC-0135": {
+      "vendor": "Marriott International",
+      "date": "2026-09-15",
+      "amount": "547.23",
+      "currency": "USD",
+      "key": "254adab3c834d378",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.3
+    },
+    "RC-0136": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-13",
+      "amount": "37.59",
+      "currency": "USD",
+      "key": "3f10d49afd0e2b1e",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.6
+    },
+    "RC-0137": {
+      "vendor": "STARBUCKS COFFEE COMPANY",
+      "date": "2026-09-20",
+      "amount": "19.31",
+      "currency": "USD",
+      "key": "9c8474372207c7cd",
+      "model": "claude-haiku-5-5",
+      "duration_s": 5.2
+    },
+    "RC-0138": {
+      "vendor": "Lyft, Inc.",
+      "date": "2026-09-19",
+      "amount": "21.09",
+      "currency": "USD",
+      "key": "fefb248b6e8f28a9",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.6
+    },
+    "RC-0139": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-21",
+      "amount": "38.27",
+      "currency": "USD",
+      "key": "986a63268514964a",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.9
+    },
+    "RC-0140": {
+      "vendor": "Daniel Okafor",
+      "date": "2026-09-27",
+      "amount": "2800.00",
+      "currency": "USDC",
+      "key": "4a019621f11dfef2",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.6
+    },
+    "RC-0141": {
+      "vendor": "Google Cloud EMEA Limited",
+      "date": "2026-09-01",
+      "amount": "1364.43",
+      "currency": "USD",
+      "key": "f0859f1b0ebf6aa2",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.7
+    },
+    "RC-0142": {
+      "vendor": "LA MAR CEBICHERIA",
+      "date": "2026-09-01",
+      "amount": "44.68",
+      "currency": "USD",
+      "key": "340da0047aacfce4",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.0
+    },
+    "RC-0143": {
+      "vendor": "Calendly LLC",
+      "date": "2026-09-02",
+      "amount": "68.33",
+      "currency": "USD",
+      "key": "dab1b6298b872d5f",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.8
+    },
+    "RC-0144": {
+      "vendor": "Docusign, Inc.",
+      "date": "2026-09-16",
+      "amount": "73.60",
+      "currency": "USD",
+      "key": "e423a7e81d6048df",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.4
+    },
+    "RC-0145": {
+      "vendor": "LinkedIn Ireland Unlimited Company",
+      "date": "2026-09-13",
+      "amount": "767.06",
+      "currency": "USD",
+      "key": "e5d00d0d2f8c022d",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.5
+    },
+    "RC-0146": {
+      "vendor": "WeWork",
+      "date": "2026-09-07",
+      "amount": "42.95",
+      "currency": "USD",
+      "key": "a48b16271de8a86d",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.2
+    },
+    "RC-0147": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-22",
+      "amount": "25.12",
+      "currency": "USD",
+      "key": "0db8409a25650b5d",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.4
+    },
+    "RC-0148": {
+      "vendor": "Ivan Petrenko",
+      "date": "2026-09-27",
+      "amount": "3900.00",
+      "currency": "USDC",
+      "key": "844a9fa937775e84",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.9
+    },
+    "RC-0149": {
+      "vendor": "SaaStr Inc.",
+      "date": "2026-09-03",
+      "amount": "775.93",
+      "currency": "USD",
+      "key": "b6f2c14fcf4e3f98",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.0
+    },
+    "RC-0150": {
+      "vendor": "Google Ireland Ltd",
+      "date": "2026-09-24",
+      "amount": "1091.76",
+      "currency": "USD",
+      "key": "f4aa09dbf6fe9bb0",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.8
+    },
+    "RC-0151": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-03",
+      "amount": "9.13",
+      "currency": "USD",
+      "key": "aabe1dea7d7dc79b",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.6
+    },
+    "RC-0152": {
+      "vendor": "Copa Airlines",
+      "date": "2026-09-29",
+      "amount": "884.67",
+      "currency": "USD",
+      "key": "9747846447aa2cc5",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.4
+    },
+    "RC-0153": {
+      "vendor": "COYA MIAMI",
+      "date": "2026-09-18",
+      "amount": "116.48",
+      "currency": "USD",
+      "key": "63ecce2b8efed11f",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.0
+    },
+    "RC-0154": {
+      "vendor": "Twilio SendGrid",
+      "date": "2026-09-28",
+      "amount": "90.00",
+      "currency": "USD",
+      "key": "0c36dbaa02fb603f",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.7
+    },
+    "RC-0155": {
+      "vendor": "SHAKE SHACK MADISON",
+      "date": "2026-09-14",
+      "amount": "110.22",
+      "currency": "USD",
+      "key": "8901f28ff34d5832",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.0
+    },
+    "RC-0156": {
+      "vendor": "Anthropic, PBC",
+      "date": "2026-09-19",
+      "amount": "140.58",
+      "currency": "USD",
+      "key": "512805ca68f771d8",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.7
+    },
+    "RC-0157": {
+      "vendor": "Amazon.com Services LLC",
+      "date": "2026-09-20",
+      "amount": "149.83",
+      "currency": "USD",
+      "key": "e046a85f13559e17",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.3
+    },
+    "RC-0158": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-24",
+      "amount": "45.78",
+      "currency": "USD",
+      "key": "97c49d28e9d940a7",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.4
+    },
+    "RC-0159": {
+      "vendor": "Udemy, Inc.",
+      "date": "2026-09-19",
+      "amount": "56042.85",
+      "currency": "ARS",
+      "key": "fd2ca80d9ff040c6",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.8
+    },
+    "RC-0160": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-03",
+      "amount": "29.21",
+      "currency": "USD",
+      "key": "985eaed6edf3e65d",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.8
+    },
+    "RC-0161": {
+      "vendor": "DUTY FREE AMERICAS",
+      "date": "2026-09-16",
+      "amount": "142.45",
+      "currency": "USD",
+      "key": "51ac14754475a49d",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.4
+    },
+    "RC-0162": {
+      "vendor": "Airbnb Payments",
+      "date": "2026-09-23",
+      "amount": "1184.22",
+      "currency": "USD",
+      "key": "75e15b871e690219",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.2
+    },
+    "RC-0163": {
+      "vendor": "Product Camp Buenos Aires",
+      "date": "2026-09-23",
+      "amount": "48.29",
+      "currency": "USD",
+      "key": "fcc56edc95fe1e32",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.8
+    },
+    "RC-0164": {
+      "vendor": "LATAM Airlines Group",
+      "date": "2026-09-28",
+      "amount": "411.56",
+      "currency": "USD",
+      "key": "bcf59f55f27c93b6",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.9
+    },
+    "RC-0165": {
+      "vendor": "Eventbrite",
+      "date": "2026-09-11",
+      "amount": "76.62",
+      "currency": "USD",
+      "key": "5f46e270e6a7febd",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.9
+    },
+    "RC-0166": {
+      "vendor": "Sara Lindqvist",
+      "date": "2026-09-12",
+      "amount": "5450.00",
+      "currency": "USDC",
+      "key": "ed5525e915ebda01",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.9
+    },
+    "RC-0167": {
+      "vendor": "BEST BUY",
+      "date": "2026-09-20",
+      "amount": "94.38",
+      "currency": "USD",
+      "key": "6ca2d75f29c4a8b8",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.8
+    },
+    "RC-0168": {
+      "vendor": "Meta Platforms Ireland Ltd",
+      "date": "2026-09-12",
+      "amount": "266.09",
+      "currency": "USD",
+      "key": "95889699f311dc0a",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.5
+    },
+    "RC-0169": {
+      "vendor": "Tomasz Nowak",
+      "date": "2026-09-28",
+      "amount": "4450.00",
+      "currency": "USDC",
+      "key": "34d205949be4ba4d",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.5
+    },
+    "RC-0170": {
+      "vendor": "LA MAR CEBICHERIA",
+      "date": "2026-09-10",
+      "amount": "51.69",
+      "currency": "USD",
+      "key": "a18e60693129348d",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.2
+    },
+    "RC-0171": {
+      "vendor": "Google Ireland Ltd",
+      "date": "2026-09-05",
+      "amount": "813.83",
+      "currency": "USD",
+      "key": "7678037b1ae8ebf2",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.8
+    },
+    "RC-0172": {
+      "vendor": "SWEETGREEN MARKET ST",
+      "date": "2026-09-14",
+      "amount": "132.77",
+      "currency": "USD",
+      "key": "58e2ab4d656545ee",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.4
+    },
+    "RC-0173": {
+      "vendor": "Lucas Moreau",
+      "date": "2026-09-11",
+      "amount": "4650.00",
+      "currency": "USDC",
+      "key": "966a051a6dc84d42",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.0
+    },
+    "RC-0174": {
+      "vendor": "Amazon Web Services EMEA SARL",
+      "date": "2026-09-01",
+      "amount": "2748.67",
+      "currency": "USD",
+      "key": "58f4acf1869451fe",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.0
+    },
+    "RC-0175": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-19",
+      "amount": "12.92",
+      "currency": "USD",
+      "key": "24dec45488292fb5",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.9
+    },
+    "RC-0176": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-04",
+      "amount": "34.10",
+      "currency": "USD",
+      "key": "d44f519c24d035bc",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.5
+    },
+    "RC-0177": {
+      "vendor": "THE SMITH MIDTOWN",
+      "date": "2026-09-13",
+      "amount": "116.74",
+      "currency": "USD",
+      "key": "b475e52f2c88487f",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.6
+    },
+    "RC-0178": {
+      "vendor": "THE SMITH MIDTOWN",
+      "date": "2026-09-05",
+      "amount": "127.50",
+      "currency": "USD",
+      "key": "52d518c8cf83a068",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.5
+    },
+    "RC-0179": {
+      "vendor": "GitHub, Inc.",
+      "date": "2026-09-08",
+      "amount": "359.36",
+      "currency": "USD",
+      "key": "e417b446c8dee88c",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.6
+    },
+    "RC-0180": {
+      "vendor": "Meta Platforms Ireland Ltd",
+      "date": "2026-09-11",
+      "amount": "1023.50",
+      "currency": "USD",
+      "key": "43e742bda43fb8e8",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.8
+    },
+    "RC-0181": {
+      "vendor": "SHAKE SHACK MADISON",
+      "date": "2026-09-14",
+      "amount": "114.90",
+      "currency": "USD",
+      "key": "8a6bd3e6aadbeb60",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.9
+    },
+    "RC-0182": {
+      "vendor": "ZUMA MIAMI",
+      "date": "2026-09-19",
+      "amount": "97.97",
+      "currency": "USD",
+      "key": "18556e32dc6a376f",
+      "model": "claude-haiku-5-5",
+      "duration_s": 5.2
+    },
+    "RC-0183": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-18",
+      "amount": "46.83",
+      "currency": "USD",
+      "key": "2240436f955c837e",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.5
+    },
+    "RC-0184": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-19",
+      "amount": "27.05",
+      "currency": "USD",
+      "key": "5d8639bf4751cd1c",
+      "model": "claude-haiku-5-5",
+      "duration_s": 5.8
+    },
+    "RC-0185": {
+      "vendor": "Figma, Inc.",
+      "date": "2026-09-07",
+      "amount": "90.10",
+      "currency": "USD",
+      "key": "1b01a3717f89e9c9",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.9
+    },
+    "RC-0186": {
+      "vendor": "American Airlines",
+      "date": "2026-09-12",
+      "amount": "1322.01",
+      "currency": "USD",
+      "key": "6c9f6390883f3ec0",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.6
+    },
+    "RC-0187": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-13",
+      "amount": "7.66",
+      "currency": "USD",
+      "key": "e10cc347f8503c30",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.4
+    },
+    "RC-0188": {
+      "vendor": "STARBUCKS COFFEE COMPANY",
+      "date": "2026-09-25",
+      "amount": "26.63",
+      "currency": "USD",
+      "key": "db2b632bcc10ef6d",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.7
+    },
+    "RC-0189": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-19",
+      "amount": "11.42",
+      "currency": "USD",
+      "key": "3f514601df97c316",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.3
+    },
+    "RC-0190": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-01",
+      "amount": "45.13",
+      "currency": "USD",
+      "key": "10dc703bed4bb1e0",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.4
+    },
+    "RC-0191": {
+      "vendor": "LinkedIn Ireland Unlimited Company",
+      "date": "2026-09-18",
+      "amount": "388.56",
+      "currency": "USD",
+      "key": "0838b5bb427e6a41",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.3
+    },
+    "RC-0192": {
+      "vendor": "Marriott International",
+      "date": "2026-09-10",
+      "amount": "293.76",
+      "currency": "USD",
+      "key": "cc845b9df82925c2",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.0
+    },
+    "RC-0193": {
+      "vendor": "Vercel Inc.",
+      "date": "2026-09-05",
+      "amount": "265.37",
+      "currency": "USD",
+      "key": "b820a5bef8f55bb2",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.1
+    },
+    "RC-0194": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-10",
+      "amount": "39.95",
+      "currency": "USD",
+      "key": "b763d017471f005c",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.5
+    },
+    "RC-0195": {
+      "vendor": "STARBUCKS COFFEE COMPANY",
+      "date": "2026-09-20",
+      "amount": "16.41",
+      "currency": "USD",
+      "key": "0fed2b30f5ce8a8b",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.6
+    },
+    "RC-0196": {
+      "vendor": "Coursera Inc.",
+      "date": "2026-09-10",
+      "amount": "200.85",
+      "currency": "USD",
+      "key": "9c2714dd193a668c",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.8
+    },
+    "RC-0197": {
+      "vendor": "Airalo",
+      "date": "2026-09-13",
+      "amount": "14.33",
+      "currency": "USD",
+      "key": "98abae5cde253d35",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.8
+    },
+    "RC-0198": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-25",
+      "amount": "16.20",
+      "currency": "USD",
+      "key": "e35b0d2cc2fe42b1",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.9
+    },
+    "RC-0199": {
+      "vendor": "Cloudflare, Inc.",
+      "date": "2026-09-08",
+      "amount": "120.13",
+      "currency": "USD",
+      "key": "6923e5d160582295",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.0
+    },
+    "RC-0200": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-15",
+      "amount": "14.41",
+      "currency": "USD",
+      "key": "d18733f5abc596a4",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.7
+    },
+    "RC-0201": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-06",
+      "amount": "22.01",
+      "currency": "USD",
+      "key": "2b0041b1220289ee",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.4
+    },
+    "RC-0202": {
+      "vendor": "Substack Inc.",
+      "date": "2026-09-08",
+      "amount": "19.68",
+      "currency": "USD",
+      "key": "ada4056414ca457a",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.4
+    },
+    "RC-0203": {
+      "vendor": "Meta Platforms Ireland Ltd",
+      "date": "2026-09-14",
+      "amount": "892.63",
+      "currency": "USD",
+      "key": "bf3eeaa9941a82f8",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.0
+    },
+    "RC-0204": {
+      "vendor": "Meta Platforms Ireland Ltd",
+      "date": "2026-09-09",
+      "amount": "1209.24",
+      "currency": "USD",
+      "key": "b5cec6420de128bd",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.4
+    },
+    "RC-0205": {
+      "vendor": "Loom, Inc.",
+      "date": "2026-09-12",
+      "amount": "119.08",
+      "currency": "USD",
+      "key": "d33412c5b9d51082",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.9
+    },
+    "RC-0206": {
+      "vendor": "Paddle.com Market Ltd",
+      "date": "2026-08-31",
+      "amount": "91.26",
+      "currency": "USD",
+      "key": "00f6a68c56c82c72",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.6
+    },
+    "RC-0207": {
+      "vendor": "BetaList",
+      "date": "2026-09-04",
+      "amount": "129.00",
+      "currency": "USD",
+      "key": "f4e7e99055bf7fd8",
+      "model": "claude-haiku-5-5",
+      "duration_s": 6.2
+    },
+    "RC-0208": {
+      "vendor": "Uber Portier B.V.",
+      "date": "2026-09-20",
+      "amount": "136.32",
+      "currency": "USD",
+      "key": "b85d0c7fab0a8a5e",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.1
+    },
+    "RC-0209": {
+      "vendor": "Zoom Communications, Inc.",
+      "date": "2026-09-12",
+      "amount": "114.56",
+      "currency": "USD",
+      "key": "d8ada5c2cc5c8734",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.2
+    },
+    "RC-0210": {
+      "vendor": "Hilton Hotels",
+      "date": "2026-09-20",
+      "amount": "899.99",
+      "currency": "USD",
+      "key": "30b2e140a9670991",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.5
+    },
+    "RC-0211": {
+      "vendor": "Uber Portier B.V.",
+      "date": "2026-09-09",
+      "amount": "77348.65",
+      "currency": "ARS",
+      "key": "1795c9b6908ede52",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.8
+    },
+    "RC-0212": {
+      "vendor": "Uber B.V.",
+      "date": "2026-09-23",
+      "amount": "17.90",
+      "currency": "USD",
+      "key": "4c54f41375fb6343",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.6
+    },
+    "RC-0213": {
+      "vendor": "Twilio Inc.",
+      "date": "2026-09-28",
+      "amount": "158.45",
+      "currency": "USD",
+      "key": "bc07920a97715fb6",
+      "model": "claude-haiku-5-5",
+      "duration_s": 3.5
+    },
+    "RC-0214": {
+      "vendor": "THE SMITH MIDTOWN",
+      "date": "2026-09-06",
+      "amount": "46.71",
+      "currency": "USD",
+      "key": "a68e0a4d547e94a3",
+      "model": "claude-haiku-5-5",
+      "duration_s": 4.0
+    },
+    "RC-0215": {
+      "vendor": "Google Ireland Ltd",
+      "date": "2026-09-16",
+      "amount": "1046.97",
+      "currency": "USD",
+      "key": "d2c61346f15b13f2",
+      "model": "claude-haiku-5-5",
+      "duration_s": 6.0
+    }
+  },
+  "model": "claude-haiku-5-5",
+  "backend": "cli"
+}

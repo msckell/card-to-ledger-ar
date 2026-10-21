@@ -1,0 +1,31 @@
+{
+  "backend": "cli",
+  "steps": {
+    "extract": {
+      "calls": 430,
+      "cost_usd": 0.1398,
+      "input_tokens": 907006,
+      "output_tokens": 82640
+    },
+    "suggest": {
+      "calls": 30,
+      "cost_usd": 0.2216,
+      "input_tokens": 70389,
+      "output_tokens": 5374
+    },
+    "explain": {
+      "calls": 96,
+      "cost_usd": 0.5774,
+      "input_tokens": 173592,
+      "output_tokens": 13151
+    }
+  },
+  "models": {
+    "extract": "claude-haiku-5-5",
+    "suggest": "claude-sonnet-5-5",
+    "explain": "claude-sonnet-5-5"
+  },
+  "total_calls": 556,
+  "total_cost_usd": 0.9388,
+  "note": "Cost is the API equivalent estimate. With the CLI backend the calls run on the Claude subscription and the figure is the estimate the CLI reports."
+}

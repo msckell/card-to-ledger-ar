@@ -1,0 +1,650 @@
+{
+  "explanations": {
+    "RC-0211:receipt_unmatched": {
+      "accepted": true,
+      "text": "Receipt [RC-0211] from Uber Portier B.V. has no matching card transaction in the ledger. Check whether the charge posted under a different date, amount or merchant name, or was paid another way; if nothing turns up, discard the receipt.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "Receipt [RC-0211] from Uber Portier B.V. has no matching card transaction in the ledger. Check whether the charge posted under a different date, amount or merchant name, or was paid another way; if nothing turns up, discard the receipt.",
+          "violations": []
+        }
+      ],
+      "key": "295b38f0f4feb6d7",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0005:missing_receipt": {
+      "accepted": true,
+      "text": "This restaurant card charge [TX-0005] has no receipt in the matching window, so there is no support for it yet. Ask the cardholder for the receipt and the business purpose, and check whether it was filed under a different date or card.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "This restaurant card charge [TX-0005] has no receipt in the matching window, so there is no support for it yet. Ask the cardholder for the receipt and the business purpose, and check whether it was filed under a different date or card.",
+          "violations": []
+        }
+      ],
+      "key": "be574d08674eb924",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0021:missing_receipt": {
+      "accepted": true,
+      "text": "The bakery card charge [TX-0021] has no receipt in the matching window, so there is no support for it yet. Ask the cardholder for the receipt and check whether it was filed under a different charge or sent late.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The bakery card charge [TX-0021] has no receipt in the matching window, so there is no support for it yet. Ask the cardholder for the receipt and check whether it was filed under a different charge or sent late.",
+          "violations": []
+        }
+      ],
+      "key": "20383c5e78cc9986",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0028:missing_receipt": {
+      "accepted": true,
+      "text": "The ride charge [TX-0028] has no matching receipt in the expected window, so there is no support for it. Ask the cardholder for the receipt and confirm the trip was for business.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The ride charge [TX-0028] has no matching receipt in the expected window, so there is no support for it. Ask the cardholder for the receipt and confirm the trip was for business.",
+          "violations": []
+        }
+      ],
+      "key": "c9c47a55d2cce461",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0033:ai_below_threshold": {
+      "accepted": true,
+      "text": "The AI's cloud services suggestion [AI-0004] for this Namecheap charge [TX-0033] is not confident enough to accept, and no receipt is matched. Find the invoice or ask the cardholder what was bought, since it could be a domain, hosting, a certificate or email, then pick the account.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The AI's cloud services suggestion [AI-0004] for this Namecheap charge [TX-0033] is not confident enough to accept, and no receipt is matched. Find the invoice or ask the cardholder what was bought, since it could be a domain, hosting, a certificate or email, then pick the account.",
+          "violations": []
+        }
+      ],
+      "key": "6c76a2c7f2d16e88",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0033:missing_receipt": {
+      "accepted": true,
+      "text": "The card charge [TX-0033] from Namecheap has no receipt, so we can't tell if it was a domain, hosting, an SSL certificate or something else. Ask the cardholder for the receipt before relying on the cloud services suggestion [AI-0004], since that account is only a guess.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The card charge [TX-0033] from Namecheap has no receipt, so we can't tell if it was a domain, hosting, an SSL certificate or something else. Ask the cardholder for the receipt before relying on the cloud services suggestion [AI-0004], since that account is only a guess.",
+          "violations": []
+        }
+      ],
+      "key": "2aaa3591a7a46942",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0038:missing_receipt": {
+      "accepted": true,
+      "text": "This card charge [TX-0038] at a restaurant has no receipt in the matching window. Ask the cardholder for the receipt and check whether it was filed late or under a different charge.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "This card charge [TX-0038] at a restaurant has no receipt in the matching window. Ask the cardholder for the receipt and check whether it was filed late or under a different charge.",
+          "violations": []
+        }
+      ],
+      "key": "44a0f0ab0fd939c0",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0048:ai_below_threshold": {
+      "accepted": true,
+      "text": "The AI suggests office expenses for this coworking charge [TX-0048], but its confidence is under the threshold because the memo mentions a trip to Sao Paulo while the receipt [RC-0146] is from Mexico City. Check the receipt and ask the cardholder whether this was travel or office space, then pick the account (see AI-0005).",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The AI suggests office expenses for this coworking charge [TX-0048], but its confidence is under the threshold because the memo mentions a trip to Sao Paulo while the receipt [RC-0146] is from Mexico City. Check the receipt and ask the cardholder whether this was travel or office space, then pick the account (see AI-0005).",
+          "violations": []
+        }
+      ],
+      "key": "5fe528d099785979",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0049:refund_partial_link": {
+      "accepted": true,
+      "text": "This refund [TX-0049] was matched to the earlier charge [TX-0024] only because the merchant name is the same, and the amounts don't agree, so it may be a partial refund or belong to a different booking. Check the booking details to confirm which charge [TX-0049] actually refunds, and whether [TX-0024] has any balance left over.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "This refund [TX-0049] was matched to the earlier charge [TX-0024] only because the merchant name is the same, and the amounts don't agree, so it may be a partial refund or belong to a different booking. Check the booking details to confirm which charge [TX-0049] actually refunds, and whether [TX-0024] has any balance left over.",
+          "violations": []
+        }
+      ],
+      "key": "d1b9c4b5a532f09c",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0057:duplicate_suspected": {
+      "accepted": true,
+      "text": "[TX-0057] has the same merchant descriptor and amount as [TX-0056], posted the same day, and only a single receipt backs the pair, so it may be a repeat charge. Check with the cardholder whether separate trips took place, and dispute [TX-0057] if they did not.",
+      "attempts": 2,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "[TX-0057] has the same merchant descriptor and amount as [TX-0056], posted the same day, and only one receipt backs the pair, so one may be a repeat charge. Check with the cardholder whether two separate trips took place, and dispute [TX-0057] if only one did.",
+          "violations": [
+            "raw_figure: two"
+          ]
+        },
+        {
+          "attempt": 2,
+          "text": "[TX-0057] has the same merchant descriptor and amount as [TX-0056], posted the same day, and only a single receipt backs the pair, so it may be a repeat charge. Check with the cardholder whether separate trips took place, and dispute [TX-0057] if they did not.",
+          "violations": []
+        }
+      ],
+      "key": "7fa69eabb24db1e1",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0064:missing_receipt": {
+      "accepted": true,
+      "text": "The card charge [TX-0064] to Linear Orbit has no receipt in the matching window, so there is no support for it. Ask the cardholder for the receipt and check whether it was filed late or under a different charge.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The card charge [TX-0064] to Linear Orbit has no receipt in the matching window, so there is no support for it. Ask the cardholder for the receipt and check whether it was filed late or under a different charge.",
+          "violations": []
+        }
+      ],
+      "key": "7c6f904501dc28ed",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0065:ai_below_threshold": {
+      "accepted": true,
+      "text": "The AI's contractor-fee suggestion [AI-0010] for this PayPal charge [TX-0065] is a weak guess, and no receipt or memo supports it. Confirm with the cardholder what was bought, and whether it was a freelancer or a software or design purchase, before choosing the account.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The AI's contractor-fee suggestion [AI-0010] for this PayPal charge [TX-0065] is a weak guess, and no receipt or memo supports it. Confirm with the cardholder what was bought, and whether it was a freelancer or a software or design purchase, before choosing the account.",
+          "violations": []
+        }
+      ],
+      "key": "4556a93794a319c3",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0065:missing_receipt": {
+      "accepted": true,
+      "text": "The PayPal charge [TX-0065] has no receipt, and the payee looks like an individual or studio, so the suggested contractor account [AI-0010] is only a guess. Ask the cardholder for the receipt or invoice and confirm whether this was a contractor payment or a software or design purchase before accepting [AI-0010].",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The PayPal charge [TX-0065] has no receipt, and the payee looks like an individual or studio, so the suggested contractor account [AI-0010] is only a guess. Ask the cardholder for the receipt or invoice and confirm whether this was a contractor payment or a software or design purchase before accepting [AI-0010].",
+          "violations": []
+        }
+      ],
+      "key": "2b495b29251dffc8",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0067:missing_receipt": {
+      "accepted": true,
+      "text": "The card charge [TX-0067] at a pizza restaurant has no receipt in the matching window. Ask the cardholder for the receipt and check whether it was filed late or under a different charge.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The card charge [TX-0067] at a pizza restaurant has no receipt in the matching window. Ask the cardholder for the receipt and check whether it was filed late or under a different charge.",
+          "violations": []
+        }
+      ],
+      "key": "01f0e4256fdd2f1d",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0069:missing_receipt": {
+      "accepted": true,
+      "text": "The food delivery charge [TX-0069] on Tomás Herrera's card has no receipt in the matching window. Ask the cardholder for the receipt and check that it was a business expense.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The food delivery charge [TX-0069] on Tomás Herrera's card has no receipt in the matching window. Ask the cardholder for the receipt and check that it was a business expense.",
+          "violations": []
+        }
+      ],
+      "key": "ba0a4d36c5db4e12",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0071:missing_receipt": {
+      "accepted": true,
+      "text": "The ride-share charge [TX-0071] has no receipt in the matching window, so there is no support for it yet. Ask the cardholder for the receipt and confirm the trip was for business.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The ride-share charge [TX-0071] has no receipt in the matching window, so there is no support for it yet. Ask the cardholder for the receipt and confirm the trip was for business.",
+          "violations": []
+        }
+      ],
+      "key": "83a75cd6725c48fe",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0072:amount_mismatch": {
+      "accepted": true,
+      "text": "The card charge [TX-0072] was billed in a different currency from the receipt [RC-0103], so the amounts can't be compared directly. Check whether [RC-0103] is the final receipt for this purchase and whether the gap comes only from exchange rate or fees, or ask Sofía Paz for the final receipt.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The card charge [TX-0072] was billed in a different currency from the receipt [RC-0103], so the amounts can't be compared directly. Check whether [RC-0103] is the final receipt for this purchase and whether the gap comes only from exchange rate or fees, or ask Sofía Paz for the final receipt.",
+          "violations": []
+        }
+      ],
+      "key": "8f12cad2409d252b",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0073:missing_receipt": {
+      "accepted": true,
+      "text": "The Atlassian card charge [TX-0073] has no receipt in the matching window, so there is no support for it yet. Ask the cardholder, Diego Romero, for the receipt and check whether it was filed late or under a different charge.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The Atlassian card charge [TX-0073] has no receipt in the matching window, so there is no support for it yet. Ask the cardholder, Diego Romero, for the receipt and check whether it was filed late or under a different charge.",
+          "violations": []
+        }
+      ],
+      "key": "ae106edcf904c7a9",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0079:amount_mismatch": {
+      "accepted": true,
+      "text": "The hotel charge [TX-0079] is higher than the amount on the receipt [RC-0192], so the receipt may not be the final bill. Check whether a final folio exists, for example with added extras or a later adjustment, or record the difference as unsupported.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The hotel charge [TX-0079] is higher than the amount on the receipt [RC-0192], so the receipt may not be the final bill. Check whether a final folio exists, for example with added extras or a later adjustment, or record the difference as unsupported.",
+          "violations": []
+        }
+      ],
+      "key": "815988cf92b4b4e1",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0083:refund_partial_link": {
+      "accepted": true,
+      "text": "This refund [TX-0083] was matched to the earlier charge [TX-0061] only because the merchant name is the same, and the amounts don't match, so it may be a partial refund or belong to a different booking. Check the merchant's booking details to confirm which charge [TX-0083] actually refunds before it is applied.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "This refund [TX-0083] was matched to the earlier charge [TX-0061] only because the merchant name is the same, and the amounts don't match, so it may be a partial refund or belong to a different booking. Check the merchant's booking details to confirm which charge [TX-0083] actually refunds before it is applied.",
+          "violations": []
+        }
+      ],
+      "key": "9798297537278c8d",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0089:missing_receipt": {
+      "accepted": true,
+      "text": "The restaurant card charge [TX-0089] has no receipt in the matching window, so there is no support for the expense. Ask the cardholder for the receipt and confirm the business purpose before the charge is coded.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The restaurant card charge [TX-0089] has no receipt in the matching window, so there is no support for the expense. Ask the cardholder for the receipt and confirm the business purpose before the charge is coded.",
+          "violations": []
+        }
+      ],
+      "key": "72f39ecbf1787541",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0092:amount_mismatch": {
+      "accepted": true,
+      "text": "The contractor payout [TX-0092] is a bit lower than the amount shown on its receipt [RC-0173], so they don't agree. Check whether [RC-0173] is a draft or estimate, then ask for the final receipt or record the difference with a note.",
+      "attempts": 2,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The contractor payout [TX-0092] is slightly lower than the amount on its receipt [RC-0173], so the two don't agree. Check whether [RC-0173] is a draft or an estimate, then ask the contractor for the final receipt or record the difference with a note.",
+          "violations": [
+            "raw_figure: two"
+          ]
+        },
+        {
+          "attempt": 2,
+          "text": "The contractor payout [TX-0092] is a bit lower than the amount shown on its receipt [RC-0173], so they don't agree. Check whether [RC-0173] is a draft or estimate, then ask for the final receipt or record the difference with a note.",
+          "violations": []
+        }
+      ],
+      "key": "b0ad1a56a887861e",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0115:missing_receipt": {
+      "accepted": true,
+      "text": "No receipt was found for this coffee charge [TX-0115], so the business purpose rests only on the cardholder's memo. Ask the cardholder for the receipt and who the prospect was before accepting the suggested meals and representation account [AI-0012].",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "No receipt was found for this coffee charge [TX-0115], so the business purpose rests only on the cardholder's memo. Ask the cardholder for the receipt and who the prospect was before accepting the suggested meals and representation account [AI-0012].",
+          "violations": []
+        }
+      ],
+      "key": "37181098270b02d9",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0117:duplicate_suspected": {
+      "accepted": true,
+      "text": "[TX-0117] has the same merchant name and amount as [TX-0104] from the day before, and the lone receipt can support only one of them, so one may be a repeat charge. Check which charge the receipt matches and ask the cardholder whether both purchases were real before disputing.",
+      "attempts": 2,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "[TX-0117] has the same merchant name and amount as [TX-0104] from the day before, and only one receipt exists, so one of the two may be a repeat charge. Check which charge the receipt supports and ask the cardholder whether both purchases were real before disputing.",
+          "violations": [
+            "raw_figure: two"
+          ]
+        },
+        {
+          "attempt": 2,
+          "text": "[TX-0117] has the same merchant name and amount as [TX-0104] from the day before, and the lone receipt can support only one of them, so one may be a repeat charge. Check which charge the receipt matches and ask the cardholder whether both purchases were real before disputing.",
+          "violations": []
+        }
+      ],
+      "key": "9a9849b00238ab61",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0123:duplicate_suspected": {
+      "accepted": true,
+      "text": "[TX-0123] has the same merchant and amount as [TX-0112] from the day before, and only one receipt is on file, so it may be a repeat charge. Check with the cardholder whether both purchases were real, and only dispute [TX-0123] if the second one can't be supported.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "[TX-0123] has the same merchant and amount as [TX-0112] from the day before, and only one receipt is on file, so it may be a repeat charge. Check with the cardholder whether both purchases were real, and only dispute [TX-0123] if the second one can't be supported.",
+          "violations": []
+        }
+      ],
+      "key": "16c7b9d2a6d4f208",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0127:ai_below_threshold": {
+      "accepted": true,
+      "text": "The suggestion [AI-0014] for marketing is below the confidence cutoff because the cardholder memo on [TX-0127] (\"client meeting\") doesn't obviously fit printed business cards. Check the receipt [RC-0050] and confirm whether marketing is the right account or whether office supplies or printing fits better.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The suggestion [AI-0014] for marketing is below the confidence cutoff because the cardholder memo on [TX-0127] (\"client meeting\") doesn't obviously fit printed business cards. Check the receipt [RC-0050] and confirm whether marketing is the right account or whether office supplies or printing fits better.",
+          "violations": []
+        }
+      ],
+      "key": "8ff753cdba893e8f",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0129:amount_mismatch": {
+      "accepted": true,
+      "text": "The card charge [TX-0129] is higher than the receipt [RC-0155] matched to it, so the receipt may be a pre-tip or pre-final copy. Check whether a final itemized receipt exists, or whether the extra was a tip or added item, and confirm it fits the client meeting memo.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The card charge [TX-0129] is higher than the receipt [RC-0155] matched to it, so the receipt may be a pre-tip or pre-final copy. Check whether a final itemized receipt exists, or whether the extra was a tip or added item, and confirm it fits the client meeting memo.",
+          "violations": []
+        }
+      ],
+      "key": "71ca5a560ac4ba5e",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0155:amount_mismatch": {
+      "accepted": true,
+      "text": "The card charge [TX-0155] and the matched receipt [RC-0159] are in different currencies, so the amounts can't be compared directly. Check that [RC-0159] belongs to this purchase, then ask for the final receipt or record the currency difference.",
+      "attempts": 2,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The card charge [TX-0155] was billed in one currency, but the matched receipt [RC-0159] shows a different one, so the two amounts can't be compared directly. Check that [RC-0159] belongs to this purchase, then ask for the final receipt or record the currency difference.",
+          "violations": [
+            "raw_figure: two"
+          ]
+        },
+        {
+          "attempt": 2,
+          "text": "The card charge [TX-0155] and the matched receipt [RC-0159] are in different currencies, so the amounts can't be compared directly. Check that [RC-0159] belongs to this purchase, then ask for the final receipt or record the currency difference.",
+          "violations": []
+        }
+      ],
+      "key": "0e81df3b2da8f055",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0161:amount_mismatch": {
+      "accepted": true,
+      "text": "The card charge [TX-0161] is higher than the receipt [RC-0029] matched to it, so the receipt may be a pre-tip or itemized copy rather than the final one. Check whether the final receipt shows a tip or added items, and if not, ask Sofía Paz to explain the gap given the client meeting memo.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The card charge [TX-0161] is higher than the receipt [RC-0029] matched to it, so the receipt may be a pre-tip or itemized copy rather than the final one. Check whether the final receipt shows a tip or added items, and if not, ask Sofía Paz to explain the gap given the client meeting memo.",
+          "violations": []
+        }
+      ],
+      "key": "3e74e6b6b3cffa89",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0162:missing_receipt": {
+      "accepted": true,
+      "text": "No receipt was found for the Twilio card charge [TX-0162], so the actual service bought is unconfirmed. Ask the cardholder for the receipt and check that it supports the cloud services account suggested in [AI-0018] before accepting it.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "No receipt was found for the Twilio card charge [TX-0162], so the actual service bought is unconfirmed. Ask the cardholder for the receipt and check that it supports the cloud services account suggested in [AI-0018] before accepting it.",
+          "violations": []
+        }
+      ],
+      "key": "0bc3a3913390360c",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0165:missing_receipt": {
+      "accepted": true,
+      "text": "The ride-share charge [TX-0165] on Lucía Fernández's card has no receipt in the matching window. Ask her for the receipt and check that the trip was for business.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The ride-share charge [TX-0165] on Lucía Fernández's card has no receipt in the matching window. Ask her for the receipt and check that the trip was for business.",
+          "violations": []
+        }
+      ],
+      "key": "3dfdb98cc61c0fc0",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0168:amount_mismatch": {
+      "accepted": true,
+      "text": "The card charge [TX-0168] from the Hilton is higher than the amount on the matched receipt [RC-0210]. Check whether [RC-0210] is a preliminary bill and ask Julián for the final receipt, or confirm what the extra charge covers (for example incidentals) before recording the difference.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The card charge [TX-0168] from the Hilton is higher than the amount on the matched receipt [RC-0210]. Check whether [RC-0210] is a preliminary bill and ask Julián for the final receipt, or confirm what the extra charge covers (for example incidentals) before recording the difference.",
+          "violations": []
+        }
+      ],
+      "key": "3dd93a4331f0501b",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0179:missing_receipt": {
+      "accepted": true,
+      "text": "The hotel charge [TX-0179] on Lucía Fernández's card has no matching receipt in the search window. Ask her for the receipt, and check whether it was filed late or under a different date or amount.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The hotel charge [TX-0179] on Lucía Fernández's card has no matching receipt in the search window. Ask her for the receipt, and check whether it was filed late or under a different date or amount.",
+          "violations": []
+        }
+      ],
+      "key": "5b40cf866efd1742",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0188:ai_below_threshold": {
+      "accepted": true,
+      "text": "The AI's marketing suggestion [AI-0023] for this Sticker Mule charge [TX-0188] is low confidence, and there is no receipt or memo to show what was bought. Ask the cardholder what the items were, then pick the account yourself, since the stickers could be marketing or something else.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The AI's marketing suggestion [AI-0023] for this Sticker Mule charge [TX-0188] is low confidence, and there is no receipt or memo to show what was bought. Ask the cardholder what the items were, then pick the account yourself, since the stickers could be marketing or something else.",
+          "violations": []
+        }
+      ],
+      "key": "4e5a622d6f3d1a0e",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0188:missing_receipt": {
+      "accepted": true,
+      "text": "No receipt was found for the Sticker Mule card charge [TX-0188], so what was bought and why is unconfirmed. Ask the cardholder for the receipt and confirm it was a business purchase before accepting the marketing account suggested in [AI-0023], which is only a guess from the merchant name.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "No receipt was found for the Sticker Mule card charge [TX-0188], so what was bought and why is unconfirmed. Ask the cardholder for the receipt and confirm it was a business purchase before accepting the marketing account suggested in [AI-0023], which is only a guess from the merchant name.",
+          "violations": []
+        }
+      ],
+      "key": "83ccea5f62a9bc8b",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0198:refund_partial_link": {
+      "accepted": true,
+      "text": "This refund [TX-0198] was matched to the earlier charge [TX-0169] only because the merchant is the same, and the amounts don't match, so it may be a partial refund or belong to a different booking. Check the airline booking reference and ticket details to confirm which charge [TX-0198] actually refunds.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "This refund [TX-0198] was matched to the earlier charge [TX-0169] only because the merchant is the same, and the amounts don't match, so it may be a partial refund or belong to a different booking. Check the airline booking reference and ticket details to confirm which charge [TX-0198] actually refunds.",
+          "violations": []
+        }
+      ],
+      "key": "0830377177ecbad0",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0201:missing_receipt": {
+      "accepted": true,
+      "text": "The ride charge [TX-0201] has no receipt in the matching window, so there is nothing to support it yet. Ask the cardholder for the receipt and check that the trip was for business.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The ride charge [TX-0201] has no receipt in the matching window, so there is nothing to support it yet. Ask the cardholder for the receipt and check that the trip was for business.",
+          "violations": []
+        }
+      ],
+      "key": "48bdbfc32df03c53",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0203:missing_receipt": {
+      "accepted": true,
+      "text": "This Facebook ads charge [TX-0203] on Camila Ortiz's card has no receipt in the matching window. Ask the cardholder for the receipt, and check whether the ad platform's billing page shows a matching invoice that was filed elsewhere.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "This Facebook ads charge [TX-0203] on Camila Ortiz's card has no receipt in the matching window. Ask the cardholder for the receipt, and check whether the ad platform's billing page shows a matching invoice that was filed elsewhere.",
+          "violations": []
+        }
+      ],
+      "key": "b3dcb82a77867a97",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0205:amount_mismatch": {
+      "accepted": true,
+      "text": "The card charge [TX-0205] is higher than the receipt [RC-0125] attached to it, which may mean a tip was added after the receipt was printed or the wrong receipt was matched. Check whether [RC-0125] is the final itemized receipt for this meal, and if so, ask the cardholder for the final copy or record the difference.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The card charge [TX-0205] is higher than the receipt [RC-0125] attached to it, which may mean a tip was added after the receipt was printed or the wrong receipt was matched. Check whether [RC-0125] is the final itemized receipt for this meal, and if so, ask the cardholder for the final copy or record the difference.",
+          "violations": []
+        }
+      ],
+      "key": "7494a8e3e1e04639",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0208:missing_receipt": {
+      "accepted": true,
+      "text": "No receipt was found for this food delivery charge [TX-0208], so the team dinner described in the memo can't be confirmed. Ask the cardholder for the receipt, and check it supports the suggested meals and entertainment account [AI-0026] before anything is coded.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "No receipt was found for this food delivery charge [TX-0208], so the team dinner described in the memo can't be confirmed. Ask the cardholder for the receipt, and check it supports the suggested meals and entertainment account [AI-0026] before anything is coded.",
+          "violations": []
+        }
+      ],
+      "key": "ef38f86c8d3c6427",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0211:duplicate_suspected": {
+      "accepted": true,
+      "text": "[TX-0211] has the same merchant descriptor and amount as [TX-0210] on the same day, and only one receipt exists, so it may be a repeat charge. Ask the cardholder whether both purchases were real, and check the receipt against both before deciding whether to dispute.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "[TX-0211] has the same merchant descriptor and amount as [TX-0210] on the same day, and only one receipt exists, so it may be a repeat charge. Ask the cardholder whether both purchases were real, and check the receipt against both before deciding whether to dispute.",
+          "violations": []
+        }
+      ],
+      "key": "3316db397917c4a4",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0214:ai_below_threshold": {
+      "accepted": true,
+      "text": "The AI's account suggestion [AI-0027] for this card charge [TX-0214] falls just short of the confidence bar, so it needs a person to choose. The receipt [RC-0046] reads like a flat-fee software subscription, but check that the other account the AI named is not a better fit before you pick.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The AI's account suggestion [AI-0027] for this card charge [TX-0214] falls just short of the confidence bar, so it needs a person to choose. The receipt [RC-0046] reads like a flat-fee software subscription, but check that the other account the AI named is not a better fit before you pick.",
+          "violations": []
+        }
+      ],
+      "key": "941598f58072f470",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0217:duplicate_suspected": {
+      "accepted": true,
+      "text": "[TX-0217] has the same merchant and amount as [TX-0216] on the same day, yet only one receipt is on file. Check with the cardholder whether both purchases were real, and if not, dispute [TX-0217].",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "[TX-0217] has the same merchant and amount as [TX-0216] on the same day, yet only one receipt is on file. Check with the cardholder whether both purchases were real, and if not, dispute [TX-0217].",
+          "violations": []
+        }
+      ],
+      "key": "9fa88a4c64abf53f",
+      "model": "claude-sonnet-5-5"
+    },
+    "TX-0236:missing_receipt": {
+      "accepted": true,
+      "text": "The stablecoin payout to the contractor in [TX-0236] has no receipt or invoice in the matching window, so there is no support for it. Ask the contractor for the invoice and check whether it was filed under a different date or payment.",
+      "attempts": 1,
+      "log": [
+        {
+          "attempt": 1,
+          "text": "The stablecoin payout to the contractor in [TX-0236] has no receipt or invoice in the matching window, so there is no support for it. Ask the contractor for the invoice and check whether it was filed under a different date or payment.",
+          "violations": []
+        }
+      ],
+      "key": "fdeb9c6084b09924",
+      "model": "claude-sonnet-5-5"
+    }
+  },
+  "model": "claude-sonnet-5-5",
+  "backend": "cli"
+}
