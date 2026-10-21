@@ -1,4 +1,5 @@
 import { marked } from 'marked'
+import { useEffect } from 'react'
 import { site } from './data'
 import HowItWorks from './HowItWorks'
 import Journal from './Journal'
@@ -20,6 +21,10 @@ const NAV = [
 ] as const
 
 export default function App() {
+  // The page renders after load, so a link with #section needs a nudge to land on it.
+  useEffect(() => {
+    if (window.location.hash) document.getElementById(window.location.hash.slice(1))?.scrollIntoView()
+  }, [])
   return (
     <>
       <header className="sticky top-0 z-10 border-b border-line bg-paper/90 backdrop-blur">

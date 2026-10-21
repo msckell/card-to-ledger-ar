@@ -1388,6 +1388,12 @@
       "accuracy": "0.900",
       "small_sample": false
     },
+    "ai_resolved": {
+      "correct": 20,
+      "total": 21,
+      "accuracy": "0.952",
+      "small_sample": false
+    },
     "anomalies": {
       "missing_receipt": {
         "planted": 20,

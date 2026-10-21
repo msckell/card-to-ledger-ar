@@ -54,12 +54,12 @@ export function Cited({ text }: { text: string }) {
   )
 }
 
-export function Stat({ label, value, sub, tone }: { label: string; value: ReactNode; sub?: ReactNode; tone?: 'rules' | 'ai' | 'review' }) {
+export function Stat({ label, value, sub, tone, wide }: { label: string; value: ReactNode; sub?: ReactNode; tone?: 'rules' | 'ai' | 'review'; wide?: boolean }) {
   const color = tone === 'rules' ? 'text-rules' : tone === 'ai' ? 'text-ai' : tone === 'review' ? 'text-review' : 'text-ink'
   return (
-    <Card className="p-4">
+    <Card className={`p-4 ${wide ? 'col-span-2 sm:col-span-1' : ''}`}>
       <p className="text-xs text-muted">{label}</p>
-      <p className={`num mt-1 break-words font-serif text-xl font-semibold sm:text-2xl ${color}`}>{value}</p>
+      <p className={`num mt-1 whitespace-nowrap font-serif text-xl font-semibold sm:text-2xl ${color}`}>{value}</p>
       {sub && <p className="mt-1 text-xs text-faint">{sub}</p>}
     </Card>
   )

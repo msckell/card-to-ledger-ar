@@ -190,6 +190,7 @@ def export(close: dict, ev: dict) -> dict:
             "rules": {k: ev["accounts"]["rules"][k] for k in ("correct", "total", "accuracy")},
             "ai_accounts": {k: ev["accounts"]["ai"][k] for k in ("correct", "total", "accuracy", "small_sample")}
             if ev["accounts"].get("ai") else None,
+            "ai_resolved": ev["accounts"].get("ai_resolved"),
             "anomalies": {k: v for k, v in ev["anomalies"].items() if isinstance(v, dict)},
             "threshold": {"rows": thr["rows"], "recommended": thr["recommended"], "why": thr["why"],
                           "target": thr.get("target_accuracy"), "recommended_row": thr.get("recommended_row")},

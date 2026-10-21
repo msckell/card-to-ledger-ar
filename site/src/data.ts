@@ -76,6 +76,7 @@ export type Site = {
     matching: { correct: number; total: number; accuracy: string }
     rules: { correct: number; total: number; accuracy: string }
     ai_accounts: { correct: number; total: number; accuracy: string; small_sample: boolean } | null
+    ai_resolved: { correct: number; total: number; accuracy: string } | null
     anomalies: Record<string, Anomaly>
     threshold: { rows: ThresholdRow[]; recommended: string | null; why: string; target: string | null; recommended_row: ThresholdRow | null }
     explanations: {
