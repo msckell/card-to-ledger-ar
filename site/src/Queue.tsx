@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { site, type QueueItem } from './data'
-import { Badge, Card, Cited, Section } from './ui'
+import { Badge, Cited, Mono, Section } from './ui'
 
 const ORDER = [
   'duplicate_suspected',
@@ -13,6 +13,8 @@ const ORDER = [
   'receipt_unreadable',
   'no_rule',
 ]
+
+const PAGE = 3
 
 export default function Queue() {
   const items = site.queue
@@ -28,48 +30,51 @@ export default function Queue() {
   const [filter, setFilter] = useState<string>(types[0]?.[0] ?? '')
   const [showAll, setShowAll] = useState(false)
   const shown = items.filter((q) => q.type === filter)
-  const visible = showAll ? shown : shown.slice(0, 6)
+  const visible = showAll ? shown : shown.slice(0, PAGE)
 
   return (
     <Section
       id="queue"
-      eyebrow="2 · Review queue"
-      title="What a controller works through"
-      intro={
+      tone="paper"
+      eyebrow="The controller's view"
+      title={
         <>
-          {items.length} exceptions, each with the movement, the receipt evidence, the AI suggestion when there is one,
-          and a plain explanation. The numbers in the grey line come from code. The sentence under it is written by
-          AI and checked by a verifier, or by a template when the AI text failed the check. Everything here sits in a
-          suspense account until a person decides.
+          {items.length} open questions, each with its evidence and a next step.
         </>
       }
+      intro="This is the review queue a controller works through. Facts and figures come from code. The plain sentence is written by AI and checked by the verifier. Nothing here posts until a person decides, so these items wait in a suspense account."
     >
       <div className="-mx-4 overflow-x-auto px-4 pb-1 sm:mx-0 sm:px-0">
-        <div className="flex gap-2 sm:flex-wrap">
+        <div className="flex gap-2 sm:flex-wrap" role="tablist" aria-label="Exception type">
           {types.map(([t, c]) => (
             <button
               key={t}
+              role="tab"
+              aria-selected={filter === t}
               onClick={() => {
                 setFilter(t)
                 setShowAll(false)
               }}
-              className={`shrink-0 rounded-full border px-3 py-1.5 text-sm transition ${
-                filter === t ? 'border-ink bg-ink text-white' : 'border-line bg-card text-ink hover:border-faint'
+              className={`shrink-0 rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                filter === t ? 'bg-night text-on-night' : 'bg-card text-ink ring-1 ring-line hover:ring-faint'
               }`}
             >
-              {c.title} <span className="num opacity-70">{c.n}</span>
+              {c.title} <span className={`num ml-1 ${filter === t ? 'text-gold-light' : 'text-faint'}`}>{c.n}</span>
             </button>
           ))}
         </div>
       </div>
 
-      <div className="mt-5 grid gap-3">
+      <div className="mt-6 grid gap-4">
         {visible.map((q) => (
           <Item key={q.id} q={q} />
         ))}
       </div>
       {shown.length > visible.length && (
-        <button onClick={() => setShowAll(true)} className="mt-4 text-sm font-medium text-accent underline underline-offset-4">
+        <button
+          onClick={() => setShowAll(true)}
+          className="mt-5 rounded-full bg-card px-5 py-2.5 text-sm font-semibold ring-1 ring-line hover:ring-faint"
+        >
           Show all {shown.length}
         </button>
       )}
@@ -80,42 +85,47 @@ export default function Queue() {
 function Item({ q }: { q: QueueItem }) {
   const t = q.txn
   return (
-    <Card className="p-4 sm:p-5">
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <div className="flex items-center gap-2">
-          <span className="font-mono text-xs text-faint">{q.id}</span>
-          <span className="text-sm font-semibold">{q.title}</span>
+    <article className="rounded-3xl border border-line bg-card p-5 sm:p-6">
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div className="min-w-0">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-faint">
+            {q.title} · <Mono>{q.id}</Mono>
+          </p>
+          {t && <p className="mt-1.5 text-lg font-semibold [overflow-wrap:anywhere]">{t.descriptor}</p>}
+          {t && (
+            <p className="text-sm text-muted">
+              {t.date}
+              {t.cardholder && ` · ${t.cardholder}`}
+              {t.memo && <span className="italic"> · “{t.memo}”</span>}
+            </p>
+          )}
         </div>
-        <Badge tone="review">{q.status}</Badge>
+        {t && (
+          <div className="text-right">
+            <p className="num text-lg font-semibold">
+              {t.currency} {t.amount}
+            </p>
+            <p className="num text-xs text-faint">
+              ARS {t.ars} at {t.rate}
+            </p>
+          </div>
+        )}
       </div>
 
-      {t && (
-        <div className="mt-3 grid gap-x-6 gap-y-1 text-sm sm:grid-cols-2">
-          <p>
-            <span className="font-mono text-xs text-faint">{t.id}</span> <span className="font-medium">{t.descriptor}</span>
-          </p>
-          <p className="num sm:text-right">
-            {t.currency} {t.amount} <span className="text-faint">· ARS {t.ars} at {t.rate}</span>
-          </p>
-          <p className="text-muted">
-            {t.date}
-            {t.cardholder && ` · ${t.cardholder}`}
-            {t.memo && <span className="italic"> · “{t.memo}”</span>}
-          </p>
-          {t.proposed_account && <p className="text-muted sm:text-right">Proposed: {t.proposed_account}</p>}
-        </div>
-      )}
+      <p className="mt-4 text-[15px] leading-relaxed">
+        <Cited text={q.explanation} />
+      </p>
 
       {(q.receipt || q.ai) && (
-        <div className="mt-3 grid gap-2 sm:grid-cols-2">
+        <div className="mt-4 grid gap-3 sm:grid-cols-2">
           {q.receipt && (
-            <div className="rounded-md bg-paper p-3 text-sm">
-              <p className="text-xs font-medium uppercase tracking-wide text-faint">Receipt evidence</p>
-              <p className="mt-1">
-                <a href={q.receipt.file} target="_blank" rel="noreferrer" className="font-mono text-xs text-accent underline underline-offset-2">
+            <div className="rounded-2xl bg-paper p-4 text-sm ring-1 ring-line">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-faint">Receipt evidence</p>
+              <p className="mt-1.5">
+                {q.receipt.vendor}{' '}
+                <a href={q.receipt.file} target="_blank" rel="noreferrer" className="font-mono text-xs text-gold-text underline underline-offset-2">
                   {q.receipt.id}.pdf
-                </a>{' '}
-                {q.receipt.vendor}
+                </a>
               </p>
               <p className="num text-muted">
                 {q.receipt.date} · {q.receipt.currency ?? 'no currency'} {q.receipt.amount ?? 'no amount'}
@@ -123,27 +133,38 @@ function Item({ q }: { q: QueueItem }) {
             </div>
           )}
           {q.ai && (
-            <div className="rounded-md bg-ai-soft p-3 text-sm">
-              <p className="text-xs font-medium uppercase tracking-wide text-ai">
-                AI suggestion {q.ai.id} · confidence {q.ai.confidence}
+            <div className="rounded-2xl bg-gold-soft p-4 text-sm">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-text">
+                AI suggestion · confidence {q.ai.confidence}
               </p>
-              <p className="mt-1 font-medium">{q.ai.account}</p>
+              <p className="mt-1.5 font-semibold">{q.ai.account}</p>
               <p className="text-muted">{q.ai.reason}</p>
             </div>
           )}
         </div>
       )}
 
-      <p className="mt-3 rounded-md border border-line bg-paper px-3 py-2 font-mono text-[12px] leading-relaxed text-muted">{q.facts}</p>
-      <p className="mt-3 text-[15px] leading-relaxed">
-        <Cited text={q.explanation} />{' '}
-        <Badge tone={q.explanation_source === 'ai_verified' ? 'ai' : 'neutral'}>
-          {q.explanation_source === 'ai_verified' ? 'AI, verified' : 'Template'}
-        </Badge>
-      </p>
-      <p className="mt-2 text-sm text-muted">
-        Next step: <span className="text-ink">{q.next_step}</span>
-      </p>
-    </Card>
+      <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-line pt-4">
+        <p className="text-sm">
+          <span className="text-faint">Next step </span>
+          <span className="font-semibold">{q.next_step}</span>
+        </p>
+        <div className="flex flex-wrap items-center gap-2">
+          <Badge tone={q.explanation_source === 'ai_verified' ? 'ai' : 'neutral'}>
+            {q.explanation_source === 'ai_verified' ? 'Note by AI, verified' : 'Note by template'}
+          </Badge>
+          <Badge tone="review">{q.status}</Badge>
+        </div>
+      </div>
+
+      <details className="group mt-3 text-xs text-muted">
+        <summary className="cursor-pointer list-none select-none hover:text-ink">
+          <span className="inline-block transition-transform group-open:rotate-90">›</span> Facts from code
+          {t?.proposed_account && ' and proposed account'}
+        </summary>
+        <p className="mt-2 rounded-xl bg-paper px-3 py-2 font-mono text-[12px] leading-relaxed ring-1 ring-line">{q.facts}</p>
+        {t?.proposed_account && <p className="mt-2">Proposed account: {t.proposed_account}</p>}
+      </details>
+    </article>
   )
 }

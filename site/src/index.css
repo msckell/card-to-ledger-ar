@@ -1,32 +1,50 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
-  --font-serif: 'Source Serif 4', Georgia, serif;
+  --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 
-  --color-paper: #f7f6f2;
+  /* Surfaces */
+  --color-night: #0b0b0c;
+  --color-night-2: #161617;
+  --color-night-line: #2a2a2c;
+  --color-paper: #faf9f6;
   --color-card: #ffffff;
-  --color-ink: #1b1d1c;
-  --color-muted: #5d625f;
-  --color-faint: #8a8f8b;
-  --color-line: #e2e0d8;
-  --color-accent: #1d3b2f;
-  --color-accent-soft: #e6eee9;
-  --color-rules: #1d3b2f;
-  --color-ai: #3d5a99;
-  --color-review: #a3621a;
-  --color-ai-soft: #e8edf7;
-  --color-review-soft: #f6ecdf;
+  --color-line: #e7e5e0;
+
+  /* Text */
+  --color-ink: #141415;
+  --color-muted: #55534f;
+  --color-faint: #7d7a74;
+  --color-on-night: #f4f2ee;
+  --color-on-night-muted: #a9a59d;
+
+  /* Gold: accent on dark and in marks, a darker step for text on white (AA) */
+  --color-gold: #c29a45;
+  --color-gold-light: #dcc590;
+  --color-gold-text: #8a6a2c;
+  --color-gold-soft: #f5efe1;
+
+  /* Who resolved it. Validated with the dataviz palette checker, always shown with direct labels. */
+  --color-rules: #3b3b3f;
+  --color-ai: #c29a45;
+  --color-review: #6f7f94;
+  --color-rules-night: #d9d6cf;
+  --color-review-night: #7f93ad;
+  --color-review-soft: #eef1f5;
 }
 
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 64px;
+  scroll-padding-top: 72px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
-  background: var(--color-paper);
+  background: var(--color-card);
   color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -36,21 +54,38 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
+/* Bars and flow bands grow once when they enter the screen. */
+@media (prefers-reduced-motion: no-preference) {
+  .grow-x {
+    transform-origin: left center;
+    animation: grow-x 900ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  @keyframes grow-x {
+    from {
+      transform: scaleX(0);
+    }
+  }
+}
+
+.stripes {
+  background-image: repeating-linear-gradient(135deg, rgb(255 255 255 / 0.28) 0 3px, transparent 3px 7px);
+}
+
 .prose-memo h1 {
-  font-family: var(--font-serif);
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin: 0 0 1rem;
+  display: none;
 }
 .prose-memo h2 {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin: 1.8rem 0 0.6rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 2rem 0 0.6rem;
+  letter-spacing: -0.01em;
+}
+.prose-memo h2:first-child {
+  margin-top: 0;
 }
 .prose-memo p,
 .prose-memo li {
-  line-height: 1.65;
+  line-height: 1.7;
   color: var(--color-ink);
 }
 .prose-memo p {
@@ -67,10 +102,10 @@ body {
   list-style: decimal;
 }
 .prose-memo li {
-  margin: 0.25rem 0;
+  margin: 0.3rem 0;
 }
 .prose-memo strong {
-  font-weight: 600;
+  font-weight: 700;
 }
 .prose-memo em {
   color: var(--color-muted);
@@ -84,7 +119,11 @@ body {
 .prose-memo th,
 .prose-memo td {
   border-bottom: 1px solid var(--color-line);
-  padding: 0.4rem 0.5rem 0.4rem 0;
+  padding: 0.45rem 0.5rem 0.45rem 0;
   text-align: left;
   vertical-align: top;
+}
+.prose-memo th {
+  font-weight: 600;
+  color: var(--color-muted);
 }

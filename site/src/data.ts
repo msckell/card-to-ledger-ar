@@ -38,6 +38,31 @@ export type ThresholdRow = {
   errors_accepted: number
 }
 
+export type Flow = {
+  total: number
+  by_rule: number
+  no_rule: number
+  rules_resolved: number
+  rules_to_review: number
+  ai_resolved: number
+  ai_to_review: number
+  review_reasons: { type: string; title: string; n: number }[]
+}
+
+export type SpendRow = { account: string; name: string; ars: string; ars_compact: string; cents: number; pending: boolean }
+
+export type Example = {
+  path: 'rules' | 'ai' | 'review'
+  txn: { id: string; date: string; descriptor: string; amount: string; currency: string; rate: string; ars: string }
+  receipt: { id: string; vendor: string | null; date: string | null; amount: string | null; currency: string | null; file: string; read_by: string } | null
+  coding:
+    | { by: 'rule'; id: string; pattern: string; account: string }
+    | { by: 'ai'; id: string; confidence: string; reason: string; account: string }
+    | null
+  exception: { id: string; title: string; explanation: string; source: string; next_step: string } | null
+  posting: { line: string; account: string; basis: string; approved_by: string; status: string }
+}
+
 export type Anomaly = {
   planted: number
   caught_in_review: number
@@ -55,6 +80,8 @@ export type Site = {
     receipts: number
     spend_usd: string
     spend_ars: string
+    spend_usd_compact: string
+    spend_ars_compact: string
     card_net_usd: string
     payouts_usdc: string
     split: Split
@@ -63,6 +90,9 @@ export type Site = {
     ai_confident_but_in_review: number
     closing_rate: string
   }
+  flow: Flow
+  spend_by_account: SpendRow[]
+  examples: Example[]
   queue: QueueItem[]
   journal: {
     rows: { account: string; name: string; debe: string; haber: string }[]
@@ -86,7 +116,7 @@ export type Site = {
       fell_back_to_template: number
       rejections_by_reason: Record<string, number>
     } | null
-    decision_table: { step: string; handled_by: string; why: string; accuracy: string }[]
+    decision_table: { step: string; handled_by: string; why: string; accuracy: string; headline: string; note: string }[]
     llm_usage: { total_calls: number; total_cost_usd: number; models: Record<string, string>; backend: string } | null
   }
   methodology: { topic: string; label: string; detail: string }[]

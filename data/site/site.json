@@ -52,6 +52,8 @@
     "receipts": 215,
     "spend_usd": "132,274.72",
     "spend_ars": "203,535,812.05",
+    "spend_usd_compact": "132.3K",
+    "spend_ars_compact": "203.5M",
     "card_net_usd": "55,724.72",
     "payouts_usdc": "76,550.00",
     "split": {
@@ -64,6 +66,238 @@
     "ai_confident_but_in_review": 3,
     "closing_rate": "1545.00"
   },
+  "flow": {
+    "total": 252,
+    "by_rule": 222,
+    "no_rule": 30,
+    "rules_resolved": 191,
+    "rules_to_review": 31,
+    "ai_resolved": 21,
+    "ai_to_review": 9,
+    "review_reasons": [
+      {
+        "type": "missing_receipt",
+        "title": "Missing receipt",
+        "n": 21
+      },
+      {
+        "type": "amount_mismatch",
+        "title": "Receipt does not match the charge",
+        "n": 8
+      },
+      {
+        "type": "duplicate_suspected",
+        "title": "Possible duplicate charge",
+        "n": 5
+      },
+      {
+        "type": "ai_below_threshold",
+        "title": "AI suggestion below the threshold",
+        "n": 3
+      },
+      {
+        "type": "refund_partial_link",
+        "title": "Partial refund linked by merchant only",
+        "n": 3
+      }
+    ]
+  },
+  "spend_by_account": [
+    {
+      "account": "5.1.04",
+      "name": "Honorarios de contratistas del exterior",
+      "ars": "105,067,844.00",
+      "ars_compact": "105.1M",
+      "cents": 10506784400,
+      "pending": false
+    },
+    {
+      "account": "5.1.01",
+      "name": "Publicidad y marketing",
+      "ars": "26,016,104.75",
+      "ars_compact": "26.0M",
+      "cents": 2601610475,
+      "pending": false
+    },
+    {
+      "account": "1.1.09",
+      "name": "Partidas pendientes de imputación",
+      "ars": "22,744,110.40",
+      "ars_compact": "22.7M",
+      "cents": 2274411040,
+      "pending": true
+    },
+    {
+      "account": "5.1.05",
+      "name": "Viajes y viáticos",
+      "ars": "16,183,534.75",
+      "ars_compact": "16.2M",
+      "cents": 1618353475,
+      "pending": false
+    },
+    {
+      "account": "5.1.02",
+      "name": "Servicios de nube",
+      "ars": "14,647,522.10",
+      "ars_compact": "14.6M",
+      "cents": 1464752210,
+      "pending": false
+    },
+    {
+      "account": "5.1.03",
+      "name": "Licencias de software",
+      "ars": "10,882,931.25",
+      "ars_compact": "10.9M",
+      "cents": 1088293125,
+      "pending": false
+    },
+    {
+      "account": "5.1.06",
+      "name": "Comidas y representación",
+      "ars": "4,166,090.90",
+      "ars_compact": "4.2M",
+      "cents": 416609090,
+      "pending": false
+    },
+    {
+      "account": "5.1.07",
+      "name": "Eventos y conferencias",
+      "ars": "1,725,948.80",
+      "ars_compact": "1.7M",
+      "cents": 172594880,
+      "pending": false
+    },
+    {
+      "account": "5.1.09",
+      "name": "Capacitación y suscripciones",
+      "ars": "1,232,143.50",
+      "ars_compact": "1.2M",
+      "cents": 123214350,
+      "pending": false
+    },
+    {
+      "account": "5.1.10",
+      "name": "Comisiones y gastos bancarios",
+      "ars": "494,719.25",
+      "ars_compact": "494.7K",
+      "cents": 49471925,
+      "pending": false
+    },
+    {
+      "account": "5.1.08",
+      "name": "Gastos de oficina y equipamiento menor",
+      "ars": "374,862.35",
+      "ars_compact": "374.9K",
+      "cents": 37486235,
+      "pending": false
+    }
+  ],
+  "examples": [
+    {
+      "path": "rules",
+      "txn": {
+        "id": "TX-0002",
+        "date": "2026-09-01",
+        "descriptor": "GOOGLE *GSUITE_ANDESLA",
+        "amount": "566.34",
+        "currency": "USD",
+        "rate": "1535.00",
+        "ars": "869,331.90"
+      },
+      "receipt": {
+        "id": "RC-0044",
+        "vendor": "Google Workspace",
+        "date": "2026-08-30",
+        "amount": "566.34",
+        "currency": "USD",
+        "file": "receipts/RC-0044.pdf",
+        "read_by": "AI"
+      },
+      "coding": {
+        "by": "rule",
+        "id": "R-009",
+        "pattern": "^GOOGLE \\*(GSUITE|WORKSPACE)",
+        "account": "5.1.03 Licencias de software"
+      },
+      "exception": null,
+      "posting": {
+        "line": "JL-0003",
+        "account": "5.1.03 Licencias de software",
+        "basis": "rule R-009",
+        "approved_by": "rules engine (deterministic)",
+        "status": "posted"
+      }
+    },
+    {
+      "path": "ai",
+      "txn": {
+        "id": "TX-0003",
+        "date": "2026-09-01",
+        "descriptor": "PADDLE.NET* SCREENSTUDIO",
+        "amount": "91.26",
+        "currency": "USD",
+        "rate": "1535.00",
+        "ars": "140,084.10"
+      },
+      "receipt": {
+        "id": "RC-0206",
+        "vendor": "Paddle.com Market Ltd",
+        "date": "2026-08-31",
+        "amount": "91.26",
+        "currency": "USD",
+        "file": "receipts/RC-0206.pdf",
+        "read_by": "AI"
+      },
+      "coding": {
+        "by": "ai",
+        "id": "AI-0001",
+        "confidence": "0.95",
+        "reason": "Receipt RC-0206 shows a 1-year Screen Studio license, billed to Andes Labs SRL through Paddle. This is a software license, so it fits software subscriptions and licenses.",
+        "account": "5.1.03 Licencias de software"
+      },
+      "exception": null,
+      "posting": {
+        "line": "JL-0005",
+        "account": "5.1.03 Licencias de software",
+        "basis": "AI suggestion AI-0001",
+        "approved_by": "auto accepted: AI confidence at or above threshold",
+        "status": "posted"
+      }
+    },
+    {
+      "path": "review",
+      "txn": {
+        "id": "TX-0005",
+        "date": "2026-09-01",
+        "descriptor": "TST* LA MAR CEBICHERIA",
+        "amount": "73.22",
+        "currency": "USD",
+        "rate": "1535.00",
+        "ars": "112,392.70"
+      },
+      "receipt": null,
+      "coding": {
+        "by": "rule",
+        "id": "R-019",
+        "pattern": "^TST\\*|^STARBUCKS",
+        "account": "5.1.06 Comidas y representación"
+      },
+      "exception": {
+        "id": "EX-001",
+        "title": "Missing receipt",
+        "explanation": "This restaurant card charge [TX-0005] has no receipt in the matching window, so there is no support for it yet. Ask the cardholder for the receipt and the business purpose, and check whether it was filed under a different date or card.",
+        "source": "ai_verified",
+        "next_step": "Ask the cardholder for the receipt"
+      },
+      "posting": {
+        "line": "JL-0009",
+        "account": "1.1.09 Partidas pendientes de imputación",
+        "basis": "suspense until reviewed",
+        "approved_by": "pending review",
+        "status": "pending review"
+      }
+    }
+  ],
   "queue": [
     {
       "id": "EX-001",
@@ -1546,49 +1780,65 @@
         "step": "Convert each movement to ARS",
         "handled_by": "Rules",
         "why": "A fixed rate convention applied to cited rates. Arithmetic, not judgment.",
-        "accuracy": "Exact by construction, covered by tests"
+        "accuracy": "Exact by construction, covered by tests",
+        "headline": "Exact",
+        "note": "by construction, covered by tests"
       },
       {
         "step": "Read receipts",
         "handled_by": "AI",
         "why": "Receipts come in any layout and language. Code checks every amount the AI reads against the charge.",
-        "accuracy": "99.5% of receipts with all four fields right (the template parser, written for these four layouts, scores 100.0%)"
+        "accuracy": "99.5% of receipts with all four fields right (the template parser, written for these four layouts, scores 100.0%)",
+        "headline": "99.5%",
+        "note": "of receipts with all four fields right"
       },
       {
         "step": "Match receipts to movements",
         "handled_by": "Rules",
         "why": "Amount, date window and merchant name. Ties are not guessed, they go to a person.",
-        "accuracy": "99.5% of pairs right"
+        "accuracy": "99.5% of pairs right",
+        "headline": "99.5%",
+        "note": "of receipt pairs right"
       },
       {
         "step": "Flag duplicates, missing receipts, mismatches and refunds",
         "handled_by": "Rules",
         "why": "Each check is a precise condition that must behave the same every month.",
-        "accuracy": "35 of 35 planted problems sent to review"
+        "accuracy": "35 of 35 planted problems sent to review",
+        "headline": "35/35",
+        "note": "planted problems reached a person"
       },
       {
         "step": "Code known merchants",
         "handled_by": "Rules",
         "why": "A short rule list covers most spend and is easy to audit.",
-        "accuracy": "98.1% right"
+        "accuracy": "98.1% right",
+        "headline": "98.1%",
+        "note": "of rule coded movements right"
       },
       {
         "step": "Code merchants no rule covers",
         "handled_by": "AI above the threshold, a person below",
         "why": "Long tail of merchants. A rule per merchant does not scale, a wrong guess must not post.",
-        "accuracy": "90.0% right overall, 95.8% on the 24 accepted at 0.75"
+        "accuracy": "90.0% right overall, 95.8% on the 24 accepted at 0.75",
+        "headline": "95.8%",
+        "note": "of the 24 accepted at 0.75, 90.0% across all suggestions"
       },
       {
         "step": "Explain each exception",
         "handled_by": "AI with a verifier, template as fallback",
         "why": "Plain language helps the reviewer. Numbers come only from code.",
-        "accuracy": "44 of 44 passed the verifier"
+        "accuracy": "44 of 44 passed the verifier",
+        "headline": "44/44",
+        "note": "explanations passed the verifier"
       },
       {
         "step": "Approve and post",
         "handled_by": "A person",
         "why": "The controller owns the close. Nothing posts as final without review.",
-        "accuracy": "Not automated"
+        "accuracy": "Not automated",
+        "headline": "Human",
+        "note": "nothing posts as final without review"
       }
     ],
     "llm_usage": {
