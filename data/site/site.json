@@ -1,0 +1,1688 @@
+{
+  "meta": {
+    "title": "Card to Ledger AR",
+    "subtitle": "Independent prototype for Jeeves by Máximo Sckell",
+    "company": "Andes Labs SRL",
+    "period": "2026-09",
+    "period_label": "September 2026",
+    "fx_downloaded": "2026-10-21",
+    "fx_source": "https://api.argentinadatos.com/v1/cotizaciones/dolares/oficial",
+    "model_note": {
+      "backend": "cli",
+      "steps": {
+        "extract": {
+          "calls": 430,
+          "cost_usd": 0.1398,
+          "input_tokens": 907006,
+          "output_tokens": 82640
+        },
+        "suggest": {
+          "calls": 30,
+          "cost_usd": 0.2216,
+          "input_tokens": 70389,
+          "output_tokens": 5374
+        },
+        "explain": {
+          "calls": 96,
+          "cost_usd": 0.5774,
+          "input_tokens": 173592,
+          "output_tokens": 13151
+        }
+      },
+      "models": {
+        "extract": "claude-haiku-5-5",
+        "suggest": "claude-sonnet-5-5",
+        "explain": "claude-sonnet-5-5"
+      },
+      "total_calls": 556,
+      "total_cost_usd": 0.9388,
+      "note": "Cost is the API equivalent estimate. With the CLI backend the calls run on the Claude subscription and the figure is the estimate the CLI reports."
+    }
+  },
+  "summary": {
+    "transactions": 252,
+    "by_type": {
+      "card_fee": 4,
+      "card_purchase": 220,
+      "ars_topup": 3,
+      "card_settlement": 1,
+      "card_refund": 4,
+      "usdc_payout": 20
+    },
+    "receipts": 215,
+    "spend_usd": "132,274.72",
+    "spend_ars": "203,535,812.05",
+    "card_net_usd": "55,724.72",
+    "payouts_usdc": "76,550.00",
+    "split": {
+      "rules": 191,
+      "ai": 21,
+      "review": 40
+    },
+    "exceptions": 44,
+    "threshold": "0.75",
+    "ai_confident_but_in_review": 3,
+    "closing_rate": "1545.00"
+  },
+  "queue": [
+    {
+      "id": "EX-001",
+      "type": "missing_receipt",
+      "title": "Missing receipt",
+      "next_step": "Ask the cardholder for the receipt",
+      "facts": "TX-0005 · 2026-09-01 · TST* LA MAR CEBICHERIA · USD 73.22 · Camila Ortiz · no receipt found in the matching window",
+      "explanation": "This restaurant card charge [TX-0005] has no receipt in the matching window, so there is no support for it yet. Ask the cardholder for the receipt and the business purpose, and check whether it was filed under a different date or card.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0005",
+        "date": "2026-09-01",
+        "type": "card_purchase",
+        "descriptor": "TST* LA MAR CEBICHERIA",
+        "amount": "73.22",
+        "currency": "USD",
+        "ars": "112,392.70",
+        "rate": "1535.00",
+        "cardholder": "Camila Ortiz",
+        "memo": "",
+        "proposed_account": "5.1.06 Comidas y representación"
+      }
+    },
+    {
+      "id": "EX-002",
+      "type": "missing_receipt",
+      "title": "Missing receipt",
+      "next_step": "Ask the cardholder for the receipt",
+      "facts": "TX-0021 · 2026-09-03 · TST* TARTINE BAKERY · USD 27.40 · Camila Ortiz · no receipt found in the matching window",
+      "explanation": "The bakery card charge [TX-0021] has no receipt in the matching window, so there is no support for it yet. Ask the cardholder for the receipt and check whether it was filed under a different charge or sent late.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0021",
+        "date": "2026-09-03",
+        "type": "card_purchase",
+        "descriptor": "TST* TARTINE BAKERY",
+        "amount": "27.40",
+        "currency": "USD",
+        "ars": "42,059.00",
+        "rate": "1535.00",
+        "cardholder": "Camila Ortiz",
+        "memo": "",
+        "proposed_account": "5.1.06 Comidas y representación"
+      }
+    },
+    {
+      "id": "EX-003",
+      "type": "missing_receipt",
+      "title": "Missing receipt",
+      "next_step": "Ask the cardholder for the receipt",
+      "facts": "TX-0028 · 2026-09-04 · UBER *TRIP 66CTP · USD 20.71 · Julián Castro · no receipt found in the matching window",
+      "explanation": "The ride charge [TX-0028] has no matching receipt in the expected window, so there is no support for it. Ask the cardholder for the receipt and confirm the trip was for business.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0028",
+        "date": "2026-09-04",
+        "type": "card_purchase",
+        "descriptor": "UBER *TRIP 66CTP",
+        "amount": "20.71",
+        "currency": "USD",
+        "ars": "31,686.30",
+        "rate": "1530.00",
+        "cardholder": "Julián Castro",
+        "memo": "",
+        "proposed_account": "5.1.05 Viajes y viáticos"
+      }
+    },
+    {
+      "id": "EX-004",
+      "type": "missing_receipt",
+      "title": "Missing receipt",
+      "next_step": "Ask the cardholder for the receipt",
+      "facts": "TX-0033 · 2026-09-05 · NAMECHEAP.COM · USD 68.99 · Martín Ibarra · no receipt found in the matching window",
+      "explanation": "The card charge [TX-0033] from Namecheap has no receipt, so we can't tell if it was a domain, hosting, an SSL certificate or something else. Ask the cardholder for the receipt before relying on the cloud services suggestion [AI-0004], since that account is only a guess.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0033",
+        "date": "2026-09-05",
+        "type": "card_purchase",
+        "descriptor": "NAMECHEAP.COM",
+        "amount": "68.99",
+        "currency": "USD",
+        "ars": "105,554.70",
+        "rate": "1530.00",
+        "cardholder": "Martín Ibarra",
+        "memo": "",
+        "proposed_account": "5.1.02 Servicios de nube"
+      },
+      "ai": {
+        "id": "AI-0004",
+        "account": "5.1.02 Servicios de nube",
+        "confidence": "0.68",
+        "reason": "Namecheap is mainly a domain registrar and hosting provider, and the chart lists domains under cloud services. No receipt was matched, so I can't confirm what was bought. It could also be an SSL certificate, email service or a software-type product."
+      }
+    },
+    {
+      "id": "EX-005",
+      "type": "ai_below_threshold",
+      "title": "AI suggestion below the threshold",
+      "next_step": "Pick the account",
+      "facts": "TX-0033 · 2026-09-05 · NAMECHEAP.COM · USD 68.99 · Martín Ibarra · AI suggests 5.1.02 Servicios de nube with confidence 0.68 · threshold 0.75",
+      "explanation": "The AI's cloud services suggestion [AI-0004] for this Namecheap charge [TX-0033] is not confident enough to accept, and no receipt is matched. Find the invoice or ask the cardholder what was bought, since it could be a domain, hosting, a certificate or email, then pick the account.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0033",
+        "date": "2026-09-05",
+        "type": "card_purchase",
+        "descriptor": "NAMECHEAP.COM",
+        "amount": "68.99",
+        "currency": "USD",
+        "ars": "105,554.70",
+        "rate": "1530.00",
+        "cardholder": "Martín Ibarra",
+        "memo": "",
+        "proposed_account": "5.1.02 Servicios de nube"
+      },
+      "ai": {
+        "id": "AI-0004",
+        "account": "5.1.02 Servicios de nube",
+        "confidence": "0.68",
+        "reason": "Namecheap is mainly a domain registrar and hosting provider, and the chart lists domains under cloud services. No receipt was matched, so I can't confirm what was bought. It could also be an SSL certificate, email service or a software-type product."
+      }
+    },
+    {
+      "id": "EX-006",
+      "type": "missing_receipt",
+      "title": "Missing receipt",
+      "next_step": "Ask the cardholder for the receipt",
+      "facts": "TX-0038 · 2026-09-06 · TST* SWEETGREEN MARKET  · USD 127.14 · Diego Romero · no receipt found in the matching window",
+      "explanation": "This card charge [TX-0038] at a restaurant has no receipt in the matching window. Ask the cardholder for the receipt and check whether it was filed late or under a different charge.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0038",
+        "date": "2026-09-06",
+        "type": "card_purchase",
+        "descriptor": "TST* SWEETGREEN MARKET ",
+        "amount": "127.14",
+        "currency": "USD",
+        "ars": "194,524.20",
+        "rate": "1530.00",
+        "cardholder": "Diego Romero",
+        "memo": "",
+        "proposed_account": "5.1.06 Comidas y representación"
+      }
+    },
+    {
+      "id": "EX-007",
+      "type": "ai_below_threshold",
+      "title": "AI suggestion below the threshold",
+      "next_step": "Pick the account",
+      "facts": "TX-0048 · 2026-09-07 · WEWORK MEXICO · USD 42.95 · Valentina Sosa · AI suggests 5.1.08 Gastos de oficina y equipamiento menor with confidence 0.72 · threshold 0.75",
+      "explanation": "The AI suggests office expenses for this coworking charge [TX-0048], but its confidence is under the threshold because the memo mentions a trip to Sao Paulo while the receipt [RC-0146] is from Mexico City. Check the receipt and ask the cardholder whether this was travel or office space, then pick the account (see AI-0005).",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0048",
+        "date": "2026-09-07",
+        "type": "card_purchase",
+        "descriptor": "WEWORK MEXICO",
+        "amount": "42.95",
+        "currency": "USD",
+        "ars": "65,713.50",
+        "rate": "1530.00",
+        "cardholder": "Valentina Sosa",
+        "memo": "trip to Sao Paulo",
+        "proposed_account": "5.1.08 Gastos de oficina y equipamiento menor"
+      },
+      "ai": {
+        "id": "AI-0005",
+        "account": "5.1.08 Gastos de oficina y equipamiento menor",
+        "confidence": "0.72",
+        "reason": "The receipt shows a WeWork coworking day pass for USD 42.95 in Mexico City, billed to Andes Labs SRL. Coworking passes belong in 5.1.08. The memo says \"trip to Sao Paulo\" but the receipt is from Mexico City, so travel (5.1.05) is possible but less likely."
+      },
+      "receipt": {
+        "id": "RC-0146",
+        "vendor": "WeWork",
+        "date": "2026-09-07",
+        "amount": "42.95",
+        "currency": "USD",
+        "file": "receipts/RC-0146.pdf"
+      }
+    },
+    {
+      "id": "EX-008",
+      "type": "refund_partial_link",
+      "title": "Partial refund linked by merchant only",
+      "next_step": "Confirm which charge it refunds",
+      "facts": "TX-0049 · 2026-09-08 · BOOKING.COM HOTEL · USD 210.00 · Valentina Sosa · tentatively linked to TX-0024 posted 2026-09-04 for USD 239.51 · amounts differ",
+      "explanation": "This refund [TX-0049] was matched to the earlier charge [TX-0024] only because the merchant name is the same, and the amounts don't agree, so it may be a partial refund or belong to a different booking. Check the booking details to confirm which charge [TX-0049] actually refunds, and whether [TX-0024] has any balance left over.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0049",
+        "date": "2026-09-08",
+        "type": "card_refund",
+        "descriptor": "BOOKING.COM HOTEL",
+        "amount": "210.00",
+        "currency": "USD",
+        "ars": "321,300.00",
+        "rate": "1530.00",
+        "cardholder": "Valentina Sosa",
+        "memo": "",
+        "proposed_account": "5.1.05 Viajes y viáticos"
+      }
+    },
+    {
+      "id": "EX-009",
+      "type": "duplicate_suspected",
+      "title": "Possible duplicate charge",
+      "next_step": "Confirm with the cardholder and dispute the charge",
+      "facts": "TX-0057 · 2026-09-08 · UBER *TRIP TQ72G · USD 42.94 · Martín Ibarra · same descriptor and amount as TX-0056 posted 2026-09-08 · only one receipt",
+      "explanation": "[TX-0057] has the same merchant descriptor and amount as [TX-0056], posted the same day, and only a single receipt backs the pair, so it may be a repeat charge. Check with the cardholder whether separate trips took place, and dispute [TX-0057] if they did not.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0057",
+        "date": "2026-09-08",
+        "type": "card_purchase",
+        "descriptor": "UBER *TRIP TQ72G",
+        "amount": "42.94",
+        "currency": "USD",
+        "ars": "65,698.20",
+        "rate": "1530.00",
+        "cardholder": "Martín Ibarra",
+        "memo": "",
+        "proposed_account": "5.1.05 Viajes y viáticos"
+      }
+    },
+    {
+      "id": "EX-010",
+      "type": "missing_receipt",
+      "title": "Missing receipt",
+      "next_step": "Ask the cardholder for the receipt",
+      "facts": "TX-0064 · 2026-09-10 · LINEAR ORBIT · USD 197.14 · Tomás Herrera · no receipt found in the matching window",
+      "explanation": "The card charge [TX-0064] to Linear Orbit has no receipt in the matching window, so there is no support for it. Ask the cardholder for the receipt and check whether it was filed late or under a different charge.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0064",
+        "date": "2026-09-10",
+        "type": "card_purchase",
+        "descriptor": "LINEAR ORBIT",
+        "amount": "197.14",
+        "currency": "USD",
+        "ars": "302,609.90",
+        "rate": "1535.00",
+        "cardholder": "Tomás Herrera",
+        "memo": "",
+        "proposed_account": "5.1.03 Licencias de software"
+      }
+    },
+    {
+      "id": "EX-011",
+      "type": "missing_receipt",
+      "title": "Missing receipt",
+      "next_step": "Ask the cardholder for the receipt",
+      "facts": "TX-0065 · 2026-09-10 · PAYPAL *MGOMEZSTUDIO · USD 588.58 · Sofía Paz · no receipt found in the matching window",
+      "explanation": "The PayPal charge [TX-0065] has no receipt, and the payee looks like an individual or studio, so the suggested contractor account [AI-0010] is only a guess. Ask the cardholder for the receipt or invoice and confirm whether this was a contractor payment or a software or design purchase before accepting [AI-0010].",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0065",
+        "date": "2026-09-10",
+        "type": "card_purchase",
+        "descriptor": "PAYPAL *MGOMEZSTUDIO",
+        "amount": "588.58",
+        "currency": "USD",
+        "ars": "903,470.30",
+        "rate": "1535.00",
+        "cardholder": "Sofía Paz",
+        "memo": "",
+        "proposed_account": "5.1.04 Honorarios de contratistas del exterior"
+      },
+      "ai": {
+        "id": "AI-0010",
+        "account": "5.1.04 Honorarios de contratistas del exterior",
+        "confidence": "0.40",
+        "reason": "PayPal payment to \"MGOMEZSTUDIO\", which looks like an individual or studio, for USD 588.58. No receipt or memo. Most likely a freelancer or contractor paid abroad, but it could be a software or design purchase."
+      }
+    },
+    {
+      "id": "EX-012",
+      "type": "ai_below_threshold",
+      "title": "AI suggestion below the threshold",
+      "next_step": "Pick the account",
+      "facts": "TX-0065 · 2026-09-10 · PAYPAL *MGOMEZSTUDIO · USD 588.58 · Sofía Paz · AI suggests 5.1.04 Honorarios de contratistas del exterior with confidence 0.40 · threshold 0.75",
+      "explanation": "The AI's contractor-fee suggestion [AI-0010] for this PayPal charge [TX-0065] is a weak guess, and no receipt or memo supports it. Confirm with the cardholder what was bought, and whether it was a freelancer or a software or design purchase, before choosing the account.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0065",
+        "date": "2026-09-10",
+        "type": "card_purchase",
+        "descriptor": "PAYPAL *MGOMEZSTUDIO",
+        "amount": "588.58",
+        "currency": "USD",
+        "ars": "903,470.30",
+        "rate": "1535.00",
+        "cardholder": "Sofía Paz",
+        "memo": "",
+        "proposed_account": "5.1.04 Honorarios de contratistas del exterior"
+      },
+      "ai": {
+        "id": "AI-0010",
+        "account": "5.1.04 Honorarios de contratistas del exterior",
+        "confidence": "0.40",
+        "reason": "PayPal payment to \"MGOMEZSTUDIO\", which looks like an individual or studio, for USD 588.58. No receipt or memo. Most likely a freelancer or contractor paid abroad, but it could be a software or design purchase."
+      }
+    },
+    {
+      "id": "EX-013",
+      "type": "missing_receipt",
+      "title": "Missing receipt",
+      "next_step": "Ask the cardholder for the receipt",
+      "facts": "TX-0067 · 2026-09-10 · TST* JOES PIZZA · USD 77.73 · Camila Ortiz · no receipt found in the matching window",
+      "explanation": "The card charge [TX-0067] at a pizza restaurant has no receipt in the matching window. Ask the cardholder for the receipt and check whether it was filed late or under a different charge.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0067",
+        "date": "2026-09-10",
+        "type": "card_purchase",
+        "descriptor": "TST* JOES PIZZA",
+        "amount": "77.73",
+        "currency": "USD",
+        "ars": "119,315.55",
+        "rate": "1535.00",
+        "cardholder": "Camila Ortiz",
+        "memo": "",
+        "proposed_account": "5.1.06 Comidas y representación"
+      }
+    },
+    {
+      "id": "EX-014",
+      "type": "missing_receipt",
+      "title": "Missing receipt",
+      "next_step": "Ask the cardholder for the receipt",
+      "facts": "TX-0069 · 2026-09-10 · UBER *EATS HC9E7 · USD 50.39 · Tomás Herrera · no receipt found in the matching window",
+      "explanation": "The food delivery charge [TX-0069] on Tomás Herrera's card has no receipt in the matching window. Ask the cardholder for the receipt and check that it was a business expense.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0069",
+        "date": "2026-09-10",
+        "type": "card_purchase",
+        "descriptor": "UBER *EATS HC9E7",
+        "amount": "50.39",
+        "currency": "USD",
+        "ars": "77,348.65",
+        "rate": "1535.00",
+        "cardholder": "Tomás Herrera",
+        "memo": "",
+        "proposed_account": "5.1.05 Viajes y viáticos"
+      }
+    },
+    {
+      "id": "EX-015",
+      "type": "missing_receipt",
+      "title": "Missing receipt",
+      "next_step": "Ask the cardholder for the receipt",
+      "facts": "TX-0071 · 2026-09-10 · UBER *TRIP T386M · USD 18.81 · Julián Castro · no receipt found in the matching window",
+      "explanation": "The ride-share charge [TX-0071] has no receipt in the matching window, so there is no support for it yet. Ask the cardholder for the receipt and confirm the trip was for business.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0071",
+        "date": "2026-09-10",
+        "type": "card_purchase",
+        "descriptor": "UBER *TRIP T386M",
+        "amount": "18.81",
+        "currency": "USD",
+        "ars": "28,873.35",
+        "rate": "1535.00",
+        "cardholder": "Julián Castro",
+        "memo": "",
+        "proposed_account": "5.1.05 Viajes y viáticos"
+      }
+    },
+    {
+      "id": "EX-016",
+      "type": "amount_mismatch",
+      "title": "Receipt does not match the charge",
+      "next_step": "Ask for the final receipt or record the difference",
+      "facts": "TX-0072 · 2026-09-10 · WEB SUMMIT RIO · USD 700.96 · Sofía Paz · receipt RC-0103 shows EUR 644.00 · different currency",
+      "explanation": "The card charge [TX-0072] was billed in a different currency from the receipt [RC-0103], so the amounts can't be compared directly. Check whether [RC-0103] is the final receipt for this purchase and whether the gap comes only from exchange rate or fees, or ask Sofía Paz for the final receipt.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0072",
+        "date": "2026-09-10",
+        "type": "card_purchase",
+        "descriptor": "WEB SUMMIT RIO",
+        "amount": "700.96",
+        "currency": "USD",
+        "ars": "1,075,973.60",
+        "rate": "1535.00",
+        "cardholder": "Sofía Paz",
+        "memo": "",
+        "proposed_account": "5.1.07 Eventos y conferencias"
+      },
+      "receipt": {
+        "id": "RC-0103",
+        "vendor": "Web Summit",
+        "date": "2026-09-09",
+        "amount": "644.00",
+        "currency": "EUR",
+        "file": "receipts/RC-0103.pdf"
+      }
+    },
+    {
+      "id": "EX-017",
+      "type": "missing_receipt",
+      "title": "Missing receipt",
+      "next_step": "Ask the cardholder for the receipt",
+      "facts": "TX-0073 · 2026-09-11 · ATLASSIAN · USD 100.98 · Diego Romero · no receipt found in the matching window",
+      "explanation": "The Atlassian card charge [TX-0073] has no receipt in the matching window, so there is no support for it yet. Ask the cardholder, Diego Romero, for the receipt and check whether it was filed late or under a different charge.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0073",
+        "date": "2026-09-11",
+        "type": "card_purchase",
+        "descriptor": "ATLASSIAN",
+        "amount": "100.98",
+        "currency": "USD",
+        "ars": "155,004.30",
+        "rate": "1535.00",
+        "cardholder": "Diego Romero",
+        "memo": "",
+        "proposed_account": "5.1.03 Licencias de software"
+      }
+    },
+    {
+      "id": "EX-018",
+      "type": "amount_mismatch",
+      "title": "Receipt does not match the charge",
+      "next_step": "Ask for the final receipt or record the difference",
+      "facts": "TX-0079 · 2026-09-11 · MARRIOTT SAO PAULO · USD 333.76 · Valentina Sosa · receipt RC-0192 shows USD 293.76 · difference USD 40.00",
+      "explanation": "The hotel charge [TX-0079] is higher than the amount on the receipt [RC-0192], so the receipt may not be the final bill. Check whether a final folio exists, for example with added extras or a later adjustment, or record the difference as unsupported.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0079",
+        "date": "2026-09-11",
+        "type": "card_purchase",
+        "descriptor": "MARRIOTT SAO PAULO",
+        "amount": "333.76",
+        "currency": "USD",
+        "ars": "512,321.60",
+        "rate": "1535.00",
+        "cardholder": "Valentina Sosa",
+        "memo": "",
+        "proposed_account": "5.1.05 Viajes y viáticos"
+      },
+      "receipt": {
+        "id": "RC-0192",
+        "vendor": "Marriott International",
+        "date": "2026-09-10",
+        "amount": "293.76",
+        "currency": "USD",
+        "file": "receipts/RC-0192.pdf"
+      }
+    },
+    {
+      "id": "EX-019",
+      "type": "refund_partial_link",
+      "title": "Partial refund linked by merchant only",
+      "next_step": "Confirm which charge it refunds",
+      "facts": "TX-0083 · 2026-09-12 · AIRBNB * HMM7983 · USD 111.51 · Diego Romero · tentatively linked to TX-0061 posted 2026-09-10 for USD 743.41 · amounts differ",
+      "explanation": "This refund [TX-0083] was matched to the earlier charge [TX-0061] only because the merchant name is the same, and the amounts don't match, so it may be a partial refund or belong to a different booking. Check the merchant's booking details to confirm which charge [TX-0083] actually refunds before it is applied.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0083",
+        "date": "2026-09-12",
+        "type": "card_refund",
+        "descriptor": "AIRBNB * HMM7983",
+        "amount": "111.51",
+        "currency": "USD",
+        "ars": "170,610.30",
+        "rate": "1530.00",
+        "cardholder": "Diego Romero",
+        "memo": "",
+        "proposed_account": "5.1.05 Viajes y viáticos"
+      }
+    },
+    {
+      "id": "EX-020",
+      "type": "missing_receipt",
+      "title": "Missing receipt",
+      "next_step": "Ask the cardholder for the receipt",
+      "facts": "TX-0089 · 2026-09-12 · TST* ZUMA MIAMI · USD 145.24 · Lucía Fernández · no receipt found in the matching window",
+      "explanation": "The restaurant card charge [TX-0089] has no receipt in the matching window, so there is no support for the expense. Ask the cardholder for the receipt and confirm the business purpose before the charge is coded.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0089",
+        "date": "2026-09-12",
+        "type": "card_purchase",
+        "descriptor": "TST* ZUMA MIAMI",
+        "amount": "145.24",
+        "currency": "USD",
+        "ars": "222,217.20",
+        "rate": "1530.00",
+        "cardholder": "Lucía Fernández",
+        "memo": "",
+        "proposed_account": "5.1.06 Comidas y representación"
+      }
+    },
+    {
+      "id": "EX-021",
+      "type": "amount_mismatch",
+      "title": "Receipt does not match the charge",
+      "next_step": "Ask for the final receipt or record the difference",
+      "facts": "TX-0092 · 2026-09-12 · USDC PAYOUT LUCAS MOREAU · USDC 4,600.00 · receipt RC-0173 shows USDC 4,650.00 · difference USDC -50.00",
+      "explanation": "The contractor payout [TX-0092] is a bit lower than the amount shown on its receipt [RC-0173], so they don't agree. Check whether [RC-0173] is a draft or estimate, then ask for the final receipt or record the difference with a note.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0092",
+        "date": "2026-09-12",
+        "type": "usdc_payout",
+        "descriptor": "USDC PAYOUT LUCAS MOREAU",
+        "amount": "4,600.00",
+        "currency": "USDC",
+        "ars": "7,038,000.00",
+        "rate": "1530.00",
+        "cardholder": "",
+        "memo": "",
+        "proposed_account": "5.1.04 Honorarios de contratistas del exterior"
+      },
+      "receipt": {
+        "id": "RC-0173",
+        "vendor": "Lucas Moreau",
+        "date": "2026-09-11",
+        "amount": "4,650.00",
+        "currency": "USDC",
+        "file": "receipts/RC-0173.pdf"
+      }
+    },
+    {
+      "id": "EX-022",
+      "type": "missing_receipt",
+      "title": "Missing receipt",
+      "next_step": "Ask the cardholder for the receipt",
+      "facts": "TX-0115 · 2026-09-15 · SQ *BLUE BOTTLE COFFEE · USD 28.30 · Tomás Herrera · no receipt found in the matching window",
+      "explanation": "No receipt was found for this coffee charge [TX-0115], so the business purpose rests only on the cardholder's memo. Ask the cardholder for the receipt and who the prospect was before accepting the suggested meals and representation account [AI-0012].",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0115",
+        "date": "2026-09-15",
+        "type": "card_purchase",
+        "descriptor": "SQ *BLUE BOTTLE COFFEE",
+        "amount": "28.30",
+        "currency": "USD",
+        "ars": "43,299.00",
+        "rate": "1530.00",
+        "cardholder": "Tomás Herrera",
+        "memo": "coffee with a prospect",
+        "proposed_account": "5.1.06 Comidas y representación"
+      },
+      "ai": {
+        "id": "AI-0012",
+        "account": "5.1.06 Comidas y representación",
+        "confidence": "0.88",
+        "reason": "Blue Bottle Coffee is a coffee merchant and the cardholder memo says it was coffee with a prospect, which fits meals and client representation. No receipt was matched."
+      }
+    },
+    {
+      "id": "EX-023",
+      "type": "duplicate_suspected",
+      "title": "Possible duplicate charge",
+      "next_step": "Confirm with the cardholder and dispute the charge",
+      "facts": "TX-0117 · 2026-09-15 · STARBUCKS STORE YLFHT · USD 21.54 · Camila Ortiz · same descriptor and amount as TX-0104 posted 2026-09-14 · only one receipt",
+      "explanation": "[TX-0117] has the same merchant name and amount as [TX-0104] from the day before, and the lone receipt can support only one of them, so one may be a repeat charge. Check which charge the receipt matches and ask the cardholder whether both purchases were real before disputing.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0117",
+        "date": "2026-09-15",
+        "type": "card_purchase",
+        "descriptor": "STARBUCKS STORE YLFHT",
+        "amount": "21.54",
+        "currency": "USD",
+        "ars": "32,956.20",
+        "rate": "1530.00",
+        "cardholder": "Camila Ortiz",
+        "memo": "",
+        "proposed_account": "5.1.06 Comidas y representación"
+      }
+    },
+    {
+      "id": "EX-024",
+      "type": "duplicate_suspected",
+      "title": "Possible duplicate charge",
+      "next_step": "Confirm with the cardholder and dispute the charge",
+      "facts": "TX-0123 · 2026-09-16 · ANTHROPIC · USD 222.25 · Diego Romero · same descriptor and amount as TX-0112 posted 2026-09-15 · only one receipt",
+      "explanation": "[TX-0123] has the same merchant and amount as [TX-0112] from the day before, and only one receipt is on file, so it may be a repeat charge. Check with the cardholder whether both purchases were real, and only dispute [TX-0123] if the second one can't be supported.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0123",
+        "date": "2026-09-16",
+        "type": "card_purchase",
+        "descriptor": "ANTHROPIC",
+        "amount": "222.25",
+        "currency": "USD",
+        "ars": "340,042.50",
+        "rate": "1530.00",
+        "cardholder": "Diego Romero",
+        "memo": "",
+        "proposed_account": "5.1.03 Licencias de software"
+      }
+    },
+    {
+      "id": "EX-025",
+      "type": "ai_below_threshold",
+      "title": "AI suggestion below the threshold",
+      "next_step": "Pick the account",
+      "facts": "TX-0127 · 2026-09-16 · SQ *SUNSET PRINT SHOP · USD 95.69 · Camila Ortiz · AI suggests 5.1.01 Publicidad y marketing with confidence 0.72 · threshold 0.75",
+      "explanation": "The suggestion [AI-0014] for marketing is below the confidence cutoff because the cardholder memo on [TX-0127] (\"client meeting\") doesn't obviously fit printed business cards. Check the receipt [RC-0050] and confirm whether marketing is the right account or whether office supplies or printing fits better.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0127",
+        "date": "2026-09-16",
+        "type": "card_purchase",
+        "descriptor": "SQ *SUNSET PRINT SHOP",
+        "amount": "95.69",
+        "currency": "USD",
+        "ars": "146,405.70",
+        "rate": "1530.00",
+        "cardholder": "Camila Ortiz",
+        "memo": "client meeting",
+        "proposed_account": "5.1.01 Publicidad y marketing"
+      },
+      "ai": {
+        "id": "AI-0014",
+        "account": "5.1.01 Publicidad y marketing",
+        "confidence": "0.72",
+        "reason": "Receipt from Sunset Print Shop shows 500 business cards in 3 designs billed to Andes Labs SRL. Printed business cards are marketing materials. The memo \"client meeting\" is a possible hint at office printing, but the receipt shows the item."
+      },
+      "receipt": {
+        "id": "RC-0050",
+        "vendor": "Sunset Print Shop",
+        "date": "2026-09-15",
+        "amount": "95.69",
+        "currency": "USD",
+        "file": "receipts/RC-0050.pdf"
+      }
+    },
+    {
+      "id": "EX-026",
+      "type": "amount_mismatch",
+      "title": "Receipt does not match the charge",
+      "next_step": "Ask for the final receipt or record the difference",
+      "facts": "TX-0129 · 2026-09-16 · TST* SHAKE SHACK MADISO · USD 126.55 · Camila Ortiz · receipt RC-0155 shows USD 110.22 · difference USD 16.33",
+      "explanation": "The card charge [TX-0129] is higher than the receipt [RC-0155] matched to it, so the receipt may be a pre-tip or pre-final copy. Check whether a final itemized receipt exists, or whether the extra was a tip or added item, and confirm it fits the client meeting memo.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0129",
+        "date": "2026-09-16",
+        "type": "card_purchase",
+        "descriptor": "TST* SHAKE SHACK MADISO",
+        "amount": "126.55",
+        "currency": "USD",
+        "ars": "193,621.50",
+        "rate": "1530.00",
+        "cardholder": "Camila Ortiz",
+        "memo": "client meeting",
+        "proposed_account": "5.1.06 Comidas y representación"
+      },
+      "receipt": {
+        "id": "RC-0155",
+        "vendor": "SHAKE SHACK MADISON",
+        "date": "2026-09-14",
+        "amount": "110.22",
+        "currency": "USD",
+        "file": "receipts/RC-0155.pdf"
+      }
+    },
+    {
+      "id": "EX-027",
+      "type": "amount_mismatch",
+      "title": "Receipt does not match the charge",
+      "next_step": "Ask for the final receipt or record the difference",
+      "facts": "TX-0155 · 2026-09-19 · UDEMY ONLINE COURSE · USD 36.51 · Sofía Paz · receipt RC-0159 shows ARS 56,042.85 · different currency",
+      "explanation": "The card charge [TX-0155] and the matched receipt [RC-0159] are in different currencies, so the amounts can't be compared directly. Check that [RC-0159] belongs to this purchase, then ask for the final receipt or record the currency difference.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0155",
+        "date": "2026-09-19",
+        "type": "card_purchase",
+        "descriptor": "UDEMY ONLINE COURSE",
+        "amount": "36.51",
+        "currency": "USD",
+        "ars": "56,042.85",
+        "rate": "1535.00",
+        "cardholder": "Sofía Paz",
+        "memo": "",
+        "proposed_account": "5.1.09 Capacitación y suscripciones"
+      },
+      "receipt": {
+        "id": "RC-0159",
+        "vendor": "Udemy, Inc.",
+        "date": "2026-09-19",
+        "amount": "56,042.85",
+        "currency": "ARS",
+        "file": "receipts/RC-0159.pdf"
+      }
+    },
+    {
+      "id": "EX-028",
+      "type": "amount_mismatch",
+      "title": "Receipt does not match the charge",
+      "next_step": "Ask for the final receipt or record the difference",
+      "facts": "TX-0161 · 2026-09-20 · TST* ZUMA MIAMI · USD 91.94 · Sofía Paz · receipt RC-0029 shows USD 80.07 · difference USD 11.87",
+      "explanation": "The card charge [TX-0161] is higher than the receipt [RC-0029] matched to it, so the receipt may be a pre-tip or itemized copy rather than the final one. Check whether the final receipt shows a tip or added items, and if not, ask Sofía Paz to explain the gap given the client meeting memo.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0161",
+        "date": "2026-09-20",
+        "type": "card_purchase",
+        "descriptor": "TST* ZUMA MIAMI",
+        "amount": "91.94",
+        "currency": "USD",
+        "ars": "141,127.90",
+        "rate": "1535.00",
+        "cardholder": "Sofía Paz",
+        "memo": "client meeting",
+        "proposed_account": "5.1.06 Comidas y representación"
+      },
+      "receipt": {
+        "id": "RC-0029",
+        "vendor": "ZUMA MIAMI",
+        "date": "2026-09-19",
+        "amount": "80.07",
+        "currency": "USD",
+        "file": "receipts/RC-0029.pdf"
+      }
+    },
+    {
+      "id": "EX-029",
+      "type": "missing_receipt",
+      "title": "Missing receipt",
+      "next_step": "Ask the cardholder for the receipt",
+      "facts": "TX-0162 · 2026-09-20 · TWILIO FWB2B · USD 207.50 · Lucía Fernández · no receipt found in the matching window",
+      "explanation": "No receipt was found for the Twilio card charge [TX-0162], so the actual service bought is unconfirmed. Ask the cardholder for the receipt and check that it supports the cloud services account suggested in [AI-0018] before accepting it.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0162",
+        "date": "2026-09-20",
+        "type": "card_purchase",
+        "descriptor": "TWILIO FWB2B",
+        "amount": "207.50",
+        "currency": "USD",
+        "ars": "318,512.50",
+        "rate": "1535.00",
+        "cardholder": "Lucía Fernández",
+        "memo": "",
+        "proposed_account": "5.1.02 Servicios de nube"
+      },
+      "ai": {
+        "id": "AI-0018",
+        "account": "5.1.02 Servicios de nube",
+        "confidence": "0.80",
+        "reason": "Descriptor is TWILIO, a usage-billed communications API (SMS, email delivery). No receipt or memo, so the exact service is not confirmed."
+      }
+    },
+    {
+      "id": "EX-030",
+      "type": "missing_receipt",
+      "title": "Missing receipt",
+      "next_step": "Ask the cardholder for the receipt",
+      "facts": "TX-0165 · 2026-09-20 · UBER *TRIP AXJQT · USD 15.30 · Lucía Fernández · no receipt found in the matching window",
+      "explanation": "The ride-share charge [TX-0165] on Lucía Fernández's card has no receipt in the matching window. Ask her for the receipt and check that the trip was for business.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0165",
+        "date": "2026-09-20",
+        "type": "card_purchase",
+        "descriptor": "UBER *TRIP AXJQT",
+        "amount": "15.30",
+        "currency": "USD",
+        "ars": "23,485.50",
+        "rate": "1535.00",
+        "cardholder": "Lucía Fernández",
+        "memo": "",
+        "proposed_account": "5.1.05 Viajes y viáticos"
+      }
+    },
+    {
+      "id": "EX-031",
+      "type": "amount_mismatch",
+      "title": "Receipt does not match the charge",
+      "next_step": "Ask for the final receipt or record the difference",
+      "facts": "TX-0168 · 2026-09-21 · HILTON MIAMI DOWNTOWN · USD 984.99 · Julián Castro · receipt RC-0210 shows USD 899.99 · difference USD 85.00",
+      "explanation": "The card charge [TX-0168] from the Hilton is higher than the amount on the matched receipt [RC-0210]. Check whether [RC-0210] is a preliminary bill and ask Julián for the final receipt, or confirm what the extra charge covers (for example incidentals) before recording the difference.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0168",
+        "date": "2026-09-21",
+        "type": "card_purchase",
+        "descriptor": "HILTON MIAMI DOWNTOWN",
+        "amount": "984.99",
+        "currency": "USD",
+        "ars": "1,511,959.65",
+        "rate": "1535.00",
+        "cardholder": "Julián Castro",
+        "memo": "",
+        "proposed_account": "5.1.05 Viajes y viáticos"
+      },
+      "receipt": {
+        "id": "RC-0210",
+        "vendor": "Hilton Hotels",
+        "date": "2026-09-20",
+        "amount": "899.99",
+        "currency": "USD",
+        "file": "receipts/RC-0210.pdf"
+      }
+    },
+    {
+      "id": "EX-032",
+      "type": "missing_receipt",
+      "title": "Missing receipt",
+      "next_step": "Ask the cardholder for the receipt",
+      "facts": "TX-0179 · 2026-09-22 · MARRIOTT SAO PAULO · USD 470.08 · Lucía Fernández · no receipt found in the matching window",
+      "explanation": "The hotel charge [TX-0179] on Lucía Fernández's card has no matching receipt in the search window. Ask her for the receipt, and check whether it was filed late or under a different date or amount.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0179",
+        "date": "2026-09-22",
+        "type": "card_purchase",
+        "descriptor": "MARRIOTT SAO PAULO",
+        "amount": "470.08",
+        "currency": "USD",
+        "ars": "721,572.80",
+        "rate": "1535.00",
+        "cardholder": "Lucía Fernández",
+        "memo": "",
+        "proposed_account": "5.1.05 Viajes y viáticos"
+      }
+    },
+    {
+      "id": "EX-033",
+      "type": "missing_receipt",
+      "title": "Missing receipt",
+      "next_step": "Ask the cardholder for the receipt",
+      "facts": "TX-0188 · 2026-09-23 · STICKERMULE.COM · USD 398.16 · Tomás Herrera · no receipt found in the matching window",
+      "explanation": "No receipt was found for the Sticker Mule card charge [TX-0188], so what was bought and why is unconfirmed. Ask the cardholder for the receipt and confirm it was a business purchase before accepting the marketing account suggested in [AI-0023], which is only a guess from the merchant name.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0188",
+        "date": "2026-09-23",
+        "type": "card_purchase",
+        "descriptor": "STICKERMULE.COM",
+        "amount": "398.16",
+        "currency": "USD",
+        "ars": "611,175.60",
+        "rate": "1535.00",
+        "cardholder": "Tomás Herrera",
+        "memo": "",
+        "proposed_account": "5.1.01 Publicidad y marketing"
+      },
+      "ai": {
+        "id": "AI-0023",
+        "account": "5.1.01 Publicidad y marketing",
+        "confidence": "0.60",
+        "reason": "Sticker Mule sells custom stickers and branded printed items. The amount is USD 398.16 with no receipt or memo, so the items are unconfirmed. They are most likely logo merch or marketing materials."
+      }
+    },
+    {
+      "id": "EX-034",
+      "type": "ai_below_threshold",
+      "title": "AI suggestion below the threshold",
+      "next_step": "Pick the account",
+      "facts": "TX-0188 · 2026-09-23 · STICKERMULE.COM · USD 398.16 · Tomás Herrera · AI suggests 5.1.01 Publicidad y marketing with confidence 0.60 · threshold 0.75",
+      "explanation": "The AI's marketing suggestion [AI-0023] for this Sticker Mule charge [TX-0188] is low confidence, and there is no receipt or memo to show what was bought. Ask the cardholder what the items were, then pick the account yourself, since the stickers could be marketing or something else.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0188",
+        "date": "2026-09-23",
+        "type": "card_purchase",
+        "descriptor": "STICKERMULE.COM",
+        "amount": "398.16",
+        "currency": "USD",
+        "ars": "611,175.60",
+        "rate": "1535.00",
+        "cardholder": "Tomás Herrera",
+        "memo": "",
+        "proposed_account": "5.1.01 Publicidad y marketing"
+      },
+      "ai": {
+        "id": "AI-0023",
+        "account": "5.1.01 Publicidad y marketing",
+        "confidence": "0.60",
+        "reason": "Sticker Mule sells custom stickers and branded printed items. The amount is USD 398.16 with no receipt or memo, so the items are unconfirmed. They are most likely logo merch or marketing materials."
+      }
+    },
+    {
+      "id": "EX-035",
+      "type": "refund_partial_link",
+      "title": "Partial refund linked by merchant only",
+      "next_step": "Confirm which charge it refunds",
+      "facts": "TX-0198 · 2026-09-24 · LATAM AIRLINES B2LK8 · USD 38.00 · Lucía Fernández · tentatively linked to TX-0169 posted 2026-09-21 for USD 316.74 · amounts differ",
+      "explanation": "This refund [TX-0198] was matched to the earlier charge [TX-0169] only because the merchant is the same, and the amounts don't match, so it may be a partial refund or belong to a different booking. Check the airline booking reference and ticket details to confirm which charge [TX-0198] actually refunds.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0198",
+        "date": "2026-09-24",
+        "type": "card_refund",
+        "descriptor": "LATAM AIRLINES B2LK8",
+        "amount": "38.00",
+        "currency": "USD",
+        "ars": "58,330.00",
+        "rate": "1535.00",
+        "cardholder": "Lucía Fernández",
+        "memo": "",
+        "proposed_account": "5.1.05 Viajes y viáticos"
+      }
+    },
+    {
+      "id": "EX-036",
+      "type": "missing_receipt",
+      "title": "Missing receipt",
+      "next_step": "Ask the cardholder for the receipt",
+      "facts": "TX-0201 · 2026-09-24 · UBER *TRIP GFDW2 · USD 29.25 · Lucía Fernández · no receipt found in the matching window",
+      "explanation": "The ride charge [TX-0201] has no receipt in the matching window, so there is nothing to support it yet. Ask the cardholder for the receipt and check that the trip was for business.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0201",
+        "date": "2026-09-24",
+        "type": "card_purchase",
+        "descriptor": "UBER *TRIP GFDW2",
+        "amount": "29.25",
+        "currency": "USD",
+        "ars": "44,898.75",
+        "rate": "1535.00",
+        "cardholder": "Lucía Fernández",
+        "memo": "",
+        "proposed_account": "5.1.05 Viajes y viáticos"
+      }
+    },
+    {
+      "id": "EX-037",
+      "type": "missing_receipt",
+      "title": "Missing receipt",
+      "next_step": "Ask the cardholder for the receipt",
+      "facts": "TX-0203 · 2026-09-25 · FACEBK *ADS TKMC3 · USD 202.68 · Camila Ortiz · no receipt found in the matching window",
+      "explanation": "This Facebook ads charge [TX-0203] on Camila Ortiz's card has no receipt in the matching window. Ask the cardholder for the receipt, and check whether the ad platform's billing page shows a matching invoice that was filed elsewhere.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0203",
+        "date": "2026-09-25",
+        "type": "card_purchase",
+        "descriptor": "FACEBK *ADS TKMC3",
+        "amount": "202.68",
+        "currency": "USD",
+        "ars": "312,127.20",
+        "rate": "1540.00",
+        "cardholder": "Camila Ortiz",
+        "memo": "",
+        "proposed_account": "5.1.01 Publicidad y marketing"
+      }
+    },
+    {
+      "id": "EX-038",
+      "type": "amount_mismatch",
+      "title": "Receipt does not match the charge",
+      "next_step": "Ask for the final receipt or record the difference",
+      "facts": "TX-0205 · 2026-09-25 · TST* ZUMA MIAMI · USD 55.39 · Valentina Sosa · receipt RC-0125 shows USD 48.24 · difference USD 7.15",
+      "explanation": "The card charge [TX-0205] is higher than the receipt [RC-0125] attached to it, which may mean a tip was added after the receipt was printed or the wrong receipt was matched. Check whether [RC-0125] is the final itemized receipt for this meal, and if so, ask the cardholder for the final copy or record the difference.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0205",
+        "date": "2026-09-25",
+        "type": "card_purchase",
+        "descriptor": "TST* ZUMA MIAMI",
+        "amount": "55.39",
+        "currency": "USD",
+        "ars": "85,300.60",
+        "rate": "1540.00",
+        "cardholder": "Valentina Sosa",
+        "memo": "",
+        "proposed_account": "5.1.06 Comidas y representación"
+      },
+      "receipt": {
+        "id": "RC-0125",
+        "vendor": "ZUMA MIAMI",
+        "date": "2026-09-24",
+        "amount": "48.24",
+        "currency": "USD",
+        "file": "receipts/RC-0125.pdf"
+      }
+    },
+    {
+      "id": "EX-039",
+      "type": "missing_receipt",
+      "title": "Missing receipt",
+      "next_step": "Ask the cardholder for the receipt",
+      "facts": "TX-0208 · 2026-09-26 · DD *DOORDASH DEHYT · USD 132.46 · Tomás Herrera · no receipt found in the matching window",
+      "explanation": "No receipt was found for this food delivery charge [TX-0208], so the team dinner described in the memo can't be confirmed. Ask the cardholder for the receipt, and check it supports the suggested meals and entertainment account [AI-0026] before anything is coded.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0208",
+        "date": "2026-09-26",
+        "type": "card_purchase",
+        "descriptor": "DD *DOORDASH DEHYT",
+        "amount": "132.46",
+        "currency": "USD",
+        "ars": "204,650.70",
+        "rate": "1545.00",
+        "cardholder": "Tomás Herrera",
+        "memo": "team dinner",
+        "proposed_account": "5.1.06 Comidas y representación"
+      },
+      "ai": {
+        "id": "AI-0026",
+        "account": "5.1.06 Comidas y representación",
+        "confidence": "0.85",
+        "reason": "DoorDash is a food delivery merchant and the cardholder memo says \"team dinner\". No receipt was matched, so the details are unconfirmed."
+      }
+    },
+    {
+      "id": "EX-040",
+      "type": "duplicate_suspected",
+      "title": "Possible duplicate charge",
+      "next_step": "Confirm with the cardholder and dispute the charge",
+      "facts": "TX-0211 · 2026-09-26 · STARBUCKS STORE DEC7E · USD 26.63 · Valentina Sosa · same descriptor and amount as TX-0210 posted 2026-09-26 · only one receipt",
+      "explanation": "[TX-0211] has the same merchant descriptor and amount as [TX-0210] on the same day, and only one receipt exists, so it may be a repeat charge. Ask the cardholder whether both purchases were real, and check the receipt against both before deciding whether to dispute.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0211",
+        "date": "2026-09-26",
+        "type": "card_purchase",
+        "descriptor": "STARBUCKS STORE DEC7E",
+        "amount": "26.63",
+        "currency": "USD",
+        "ars": "41,143.35",
+        "rate": "1545.00",
+        "cardholder": "Valentina Sosa",
+        "memo": "",
+        "proposed_account": "5.1.06 Comidas y representación"
+      }
+    },
+    {
+      "id": "EX-041",
+      "type": "ai_below_threshold",
+      "title": "AI suggestion below the threshold",
+      "next_step": "Pick the account",
+      "facts": "TX-0214 · 2026-09-27 · APPLE.COM/BILL · USD 9.99 · Julián Castro · AI suggests 5.1.03 Licencias de software with confidence 0.72 · threshold 0.75",
+      "explanation": "The AI's account suggestion [AI-0027] for this card charge [TX-0214] falls just short of the confidence bar, so it needs a person to choose. The receipt [RC-0046] reads like a flat-fee software subscription, but check that the other account the AI named is not a better fit before you pick.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0214",
+        "date": "2026-09-27",
+        "type": "card_purchase",
+        "descriptor": "APPLE.COM/BILL",
+        "amount": "9.99",
+        "currency": "USD",
+        "ars": "15,434.55",
+        "rate": "1545.00",
+        "cardholder": "Julián Castro",
+        "memo": "",
+        "proposed_account": "5.1.03 Licencias de software"
+      },
+      "ai": {
+        "id": "AI-0027",
+        "account": "5.1.03 Licencias de software",
+        "confidence": "0.72",
+        "reason": "Receipt RC-0046 from Apple Services shows a fixed monthly iCloud+ 2 TB plan for USD 9.99, billed to Andes Labs SRL. This is a flat-fee software subscription, not usage-based cloud infrastructure. 5.1.02 is the main alternative."
+      },
+      "receipt": {
+        "id": "RC-0046",
+        "vendor": "Apple Services",
+        "date": "2026-09-27",
+        "amount": "9.99",
+        "currency": "USD",
+        "file": "receipts/RC-0046.pdf"
+      }
+    },
+    {
+      "id": "EX-042",
+      "type": "duplicate_suspected",
+      "title": "Possible duplicate charge",
+      "next_step": "Confirm with the cardholder and dispute the charge",
+      "facts": "TX-0217 · 2026-09-27 · TST* JOES PIZZA · USD 88.24 · Martín Ibarra · same descriptor and amount as TX-0216 posted 2026-09-27 · only one receipt",
+      "explanation": "[TX-0217] has the same merchant and amount as [TX-0216] on the same day, yet only one receipt is on file. Check with the cardholder whether both purchases were real, and if not, dispute [TX-0217].",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0217",
+        "date": "2026-09-27",
+        "type": "card_purchase",
+        "descriptor": "TST* JOES PIZZA",
+        "amount": "88.24",
+        "currency": "USD",
+        "ars": "136,330.80",
+        "rate": "1545.00",
+        "cardholder": "Martín Ibarra",
+        "memo": "",
+        "proposed_account": "5.1.06 Comidas y representación"
+      }
+    },
+    {
+      "id": "EX-043",
+      "type": "missing_receipt",
+      "title": "Missing receipt",
+      "next_step": "Ask the contractor for the invoice",
+      "facts": "TX-0236 · 2026-09-29 · USDC PAYOUT LUCAS MOREAU · USDC 4,700.00 · no receipt found in the matching window",
+      "explanation": "The stablecoin payout to the contractor in [TX-0236] has no receipt or invoice in the matching window, so there is no support for it. Ask the contractor for the invoice and check whether it was filed under a different date or payment.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "txn": {
+        "id": "TX-0236",
+        "date": "2026-09-29",
+        "type": "usdc_payout",
+        "descriptor": "USDC PAYOUT LUCAS MOREAU",
+        "amount": "4,700.00",
+        "currency": "USDC",
+        "ars": "7,261,500.00",
+        "rate": "1545.00",
+        "cardholder": "",
+        "memo": "",
+        "proposed_account": "5.1.04 Honorarios de contratistas del exterior"
+      }
+    },
+    {
+      "id": "EX-044",
+      "type": "receipt_unmatched",
+      "title": "Receipt with no transaction",
+      "next_step": "Find the transaction or discard the receipt",
+      "facts": "RC-0211 · Uber Portier B.V. · 2026-09-09 · ARS 77,348.65",
+      "explanation": "Receipt [RC-0211] from Uber Portier B.V. has no matching card transaction in the ledger. Check whether the charge posted under a different date, amount or merchant name, or was paid another way; if nothing turns up, discard the receipt.",
+      "explanation_source": "ai_verified",
+      "status": "Pending review",
+      "receipt": {
+        "id": "RC-0211",
+        "vendor": "Uber Portier B.V.",
+        "date": "2026-09-09",
+        "amount": "77,348.65",
+        "currency": "ARS",
+        "file": "receipts/RC-0211.pdf"
+      }
+    }
+  ],
+  "journal": {
+    "rows": [
+      {
+        "account": "1.1.01",
+        "name": "Banco cuenta corriente ARS",
+        "debe": "",
+        "haber": "175,000,000.00"
+      },
+      {
+        "account": "1.1.02",
+        "name": "Cuenta USDC",
+        "debe": "",
+        "haber": "10,315,172.70"
+      },
+      {
+        "account": "1.1.09",
+        "name": "Partidas pendientes de imputación",
+        "debe": "22,744,110.40",
+        "haber": ""
+      },
+      {
+        "account": "2.1.01",
+        "name": "Tarjeta corporativa a pagar",
+        "debe": "",
+        "haber": "23,001,807.00"
+      },
+      {
+        "account": "5.1.01",
+        "name": "Publicidad y marketing",
+        "debe": "26,016,104.75",
+        "haber": ""
+      },
+      {
+        "account": "5.1.02",
+        "name": "Servicios de nube",
+        "debe": "14,647,522.10",
+        "haber": ""
+      },
+      {
+        "account": "5.1.03",
+        "name": "Licencias de software",
+        "debe": "10,882,931.25",
+        "haber": ""
+      },
+      {
+        "account": "5.1.04",
+        "name": "Honorarios de contratistas del exterior",
+        "debe": "105,067,844.00",
+        "haber": ""
+      },
+      {
+        "account": "5.1.05",
+        "name": "Viajes y viáticos",
+        "debe": "16,183,534.75",
+        "haber": ""
+      },
+      {
+        "account": "5.1.06",
+        "name": "Comidas y representación",
+        "debe": "4,166,090.90",
+        "haber": ""
+      },
+      {
+        "account": "5.1.07",
+        "name": "Eventos y conferencias",
+        "debe": "1,725,948.80",
+        "haber": ""
+      },
+      {
+        "account": "5.1.08",
+        "name": "Gastos de oficina y equipamiento menor",
+        "debe": "374,862.35",
+        "haber": ""
+      },
+      {
+        "account": "5.1.09",
+        "name": "Capacitación y suscripciones",
+        "debe": "1,232,143.50",
+        "haber": ""
+      },
+      {
+        "account": "5.1.10",
+        "name": "Comisiones y gastos bancarios",
+        "debe": "494,719.25",
+        "haber": ""
+      },
+      {
+        "account": "5.2.01",
+        "name": "Diferencias de cambio",
+        "debe": "4,781,167.65",
+        "haber": ""
+      }
+    ],
+    "totals": {
+      "debe": "208,316,979.70",
+      "haber": "208,316,979.70",
+      "balanced": true
+    },
+    "lines": 511,
+    "excel": "downloads/cierre_2026-09_andes_labs.xlsx",
+    "balances": {
+      "opening_rate": "1530",
+      "closing_rate": "1545",
+      "usdc": {
+        "opening_usd": "180000.00",
+        "closing_usd": "171575.94",
+        "opening_ars": "275400000.00",
+        "book_before_ars": "262465954.75",
+        "closing_ars": "265084827.30",
+        "remeasurement_ars": "2618872.55"
+      },
+      "card_payable": {
+        "opening_usd": "41237.18",
+        "closing_usd": "55724.72",
+        "opening_ars": "63092885.40",
+        "book_before_ars": "85530312.05",
+        "closing_ars": "86094692.40",
+        "remeasurement_ars": "564380.35"
+      }
+    }
+  },
+  "eval": {
+    "extraction": {
+      "template": {
+        "vendor": "1.000",
+        "date": "1.000",
+        "amount": "1.000",
+        "currency": "1.000",
+        "all_fields": "1.000"
+      },
+      "ai": {
+        "vendor": "0.995",
+        "date": "1.000",
+        "amount": "1.000",
+        "currency": "1.000",
+        "all_fields": "0.995"
+      },
+      "receipts": 215
+    },
+    "matching": {
+      "correct": 214,
+      "total": 215,
+      "accuracy": "0.995"
+    },
+    "rules": {
+      "correct": 209,
+      "total": 213,
+      "accuracy": "0.981"
+    },
+    "ai_accounts": {
+      "correct": 27,
+      "total": 30,
+      "accuracy": "0.900",
+      "small_sample": false
+    },
+    "anomalies": {
+      "missing_receipt": {
+        "planted": 20,
+        "caught_in_review": 20,
+        "found": 21,
+        "true_positives": 20,
+        "false_positives": 1,
+        "missed": 0,
+        "missed_ids": [],
+        "false_positive_ids": [
+          "TX-0069"
+        ]
+      },
+      "duplicate": {
+        "planted": 5,
+        "caught_in_review": 5,
+        "found": 5,
+        "true_positives": 5,
+        "false_positives": 0,
+        "missed": 0,
+        "missed_ids": [],
+        "false_positive_ids": []
+      },
+      "amount_mismatch": {
+        "planted": 9,
+        "caught_in_review": 9,
+        "found": 8,
+        "true_positives": 8,
+        "false_positives": 0,
+        "missed": 1,
+        "missed_ids": [
+          "TX-0069"
+        ],
+        "false_positive_ids": []
+      },
+      "refund_original_not_in_period": {
+        "planted": 1,
+        "caught_in_review": 1,
+        "found": 0,
+        "true_positives": 0,
+        "false_positives": 0,
+        "missed": 1,
+        "missed_ids": [
+          "TX-0049"
+        ],
+        "false_positive_ids": []
+      }
+    },
+    "threshold": {
+      "rows": [
+        {
+          "threshold": "0.50",
+          "accepted": 29,
+          "share_auto_accepted": "0.967",
+          "accuracy": "0.931",
+          "errors_accepted": 2
+        },
+        {
+          "threshold": "0.55",
+          "accepted": 29,
+          "share_auto_accepted": "0.967",
+          "accuracy": "0.931",
+          "errors_accepted": 2
+        },
+        {
+          "threshold": "0.60",
+          "accepted": 29,
+          "share_auto_accepted": "0.967",
+          "accuracy": "0.931",
+          "errors_accepted": 2
+        },
+        {
+          "threshold": "0.65",
+          "accepted": 28,
+          "share_auto_accepted": "0.933",
+          "accuracy": "0.929",
+          "errors_accepted": 2
+        },
+        {
+          "threshold": "0.70",
+          "accepted": 27,
+          "share_auto_accepted": "0.900",
+          "accuracy": "0.926",
+          "errors_accepted": 2
+        },
+        {
+          "threshold": "0.75",
+          "accepted": 24,
+          "share_auto_accepted": "0.800",
+          "accuracy": "0.958",
+          "errors_accepted": 1
+        },
+        {
+          "threshold": "0.80",
+          "accepted": 24,
+          "share_auto_accepted": "0.800",
+          "accuracy": "0.958",
+          "errors_accepted": 1
+        },
+        {
+          "threshold": "0.85",
+          "accepted": 20,
+          "share_auto_accepted": "0.667",
+          "accuracy": "1.000",
+          "errors_accepted": 0
+        },
+        {
+          "threshold": "0.90",
+          "accepted": 10,
+          "share_auto_accepted": "0.333",
+          "accuracy": "1.000",
+          "errors_accepted": 0
+        },
+        {
+          "threshold": "0.95",
+          "accepted": 5,
+          "share_auto_accepted": "0.167",
+          "accuracy": "1.000",
+          "errors_accepted": 0
+        }
+      ],
+      "recommended": "0.75",
+      "why": "Lowest threshold whose auto accepted suggestions reach the target accuracy of 0.95 with at least 5 accepted. Picked on this month's labeled synthetic data. In production it should be picked on a held out labeled sample and rechecked every month.",
+      "target": "0.95",
+      "recommended_row": {
+        "threshold": "0.75",
+        "accepted": 24,
+        "share_auto_accepted": "0.800",
+        "accuracy": "0.958",
+        "errors_accepted": 1
+      }
+    },
+    "explanations": {
+      "exceptions": 44,
+      "accepted_first_try": 40,
+      "accepted_after_retry": 4,
+      "fell_back_to_template": 0,
+      "pass_rate": {
+        "correct": 44,
+        "total": 44,
+        "accuracy": "1.000",
+        "small_sample": false
+      },
+      "rejections_by_reason": {
+        "raw_figure": 4
+      }
+    },
+    "decision_table": [
+      {
+        "step": "Convert each movement to ARS",
+        "handled_by": "Rules",
+        "why": "A fixed rate convention applied to cited rates. Arithmetic, not judgment.",
+        "accuracy": "Exact by construction, covered by tests"
+      },
+      {
+        "step": "Read receipts",
+        "handled_by": "AI",
+        "why": "Receipts come in any layout and language. Code checks every amount the AI reads against the charge.",
+        "accuracy": "99.5% of receipts with all four fields right (the template parser, written for these four layouts, scores 100.0%)"
+      },
+      {
+        "step": "Match receipts to movements",
+        "handled_by": "Rules",
+        "why": "Amount, date window and merchant name. Ties are not guessed, they go to a person.",
+        "accuracy": "99.5% of pairs right"
+      },
+      {
+        "step": "Flag duplicates, missing receipts, mismatches and refunds",
+        "handled_by": "Rules",
+        "why": "Each check is a precise condition that must behave the same every month.",
+        "accuracy": "35 of 35 planted problems sent to review"
+      },
+      {
+        "step": "Code known merchants",
+        "handled_by": "Rules",
+        "why": "A short rule list covers most spend and is easy to audit.",
+        "accuracy": "98.1% right"
+      },
+      {
+        "step": "Code merchants no rule covers",
+        "handled_by": "AI above the threshold, a person below",
+        "why": "Long tail of merchants. A rule per merchant does not scale, a wrong guess must not post.",
+        "accuracy": "90.0% right overall, 95.8% on the 24 accepted at 0.75"
+      },
+      {
+        "step": "Explain each exception",
+        "handled_by": "AI with a verifier, template as fallback",
+        "why": "Plain language helps the reviewer. Numbers come only from code.",
+        "accuracy": "44 of 44 passed the verifier"
+      },
+      {
+        "step": "Approve and post",
+        "handled_by": "A person",
+        "why": "The controller owns the close. Nothing posts as final without review.",
+        "accuracy": "Not automated"
+      }
+    ],
+    "llm_usage": {
+      "backend": "cli",
+      "steps": {
+        "extract": {
+          "calls": 430,
+          "cost_usd": 0.1398,
+          "input_tokens": 907006,
+          "output_tokens": 82640
+        },
+        "suggest": {
+          "calls": 30,
+          "cost_usd": 0.2216,
+          "input_tokens": 70389,
+          "output_tokens": 5374
+        },
+        "explain": {
+          "calls": 96,
+          "cost_usd": 0.5774,
+          "input_tokens": 173592,
+          "output_tokens": 13151
+        }
+      },
+      "models": {
+        "extract": "claude-haiku-5-5",
+        "suggest": "claude-sonnet-5-5",
+        "explain": "claude-sonnet-5-5"
+      },
+      "total_calls": 556,
+      "total_cost_usd": 0.9388,
+      "note": "Cost is the API equivalent estimate. With the CLI backend the calls run on the Claude subscription and the figure is the estimate the CLI reports."
+    }
+  },
+  "methodology": [
+    {
+      "topic": "Exchange rate source",
+      "label": "documented",
+      "detail": "Official USD/ARS series from ArgentinaDatos (https://api.argentinadatos.com/v1/cotizaciones/dolares/oficial), downloaded 2026-10-21 and frozen in data/fx/usd_ars_oficial.csv. The build reads only the snapshot."
+    },
+    {
+      "topic": "Which rate and which day",
+      "label": "assumption",
+      "detail": "Official seller rate (venta) on the posting date of each movement. To validate with an accountant: buyer rate for assets, transaction date versus posting date, and Banco Nación versus BCRA Comunicación A 3500."
+    },
+    {
+      "topic": "Weekend and holiday rates",
+      "label": "assumption",
+      "detail": "The source publishes a value for every calendar day. The build uses it as published."
+    },
+    {
+      "topic": "USDC valuation",
+      "label": "assumption",
+      "detail": "One USDC is treated as one US dollar at the official rate. Whether USDC should be valued at the official, MEP or crypto rate is an open question for the accountant."
+    },
+    {
+      "topic": "ARS top ups",
+      "label": "documented",
+      "detail": "USDC received is computed from the ARS sent at the crypto dollar seller rate of that day (https://api.argentinadatos.com/v1/cotizaciones/dolares/cripto). The gap against the official rate goes to Diferencias de cambio."
+    },
+    {
+      "topic": "Month end remeasurement",
+      "label": "assumption",
+      "detail": "Cuenta USDC and Tarjeta corporativa a pagar are remeasured at the official seller rate of the last day of the month. The difference goes to Diferencias de cambio."
+    },
+    {
+      "topic": "Opening balances",
+      "label": "assumption",
+      "detail": "Synthetic opening balances as of 2026-08-31, valued at that day's official seller rate."
+    },
+    {
+      "topic": "Items in review",
+      "label": "documented",
+      "detail": "Every movement with an open exception is posted to Partidas pendientes de imputación until a person resolves it. The entry still balances."
+    },
+    {
+      "topic": "Rounding",
+      "label": "documented",
+      "detail": "Amounts are integer cents. Each converted amount is rounded half up to the cent once, and both sides of a line use the same rounded value."
+    },
+    {
+      "topic": "Transaction export format",
+      "label": "assumption",
+      "detail": "The export schema is invented for this prototype. It is not a real API."
+    },
+    {
+      "topic": "Company and transactions",
+      "label": "assumption",
+      "detail": "Andes Labs SRL is fictional. All transactions and receipts are synthetic, generated with a fixed seed together with the correct answer for each one."
+    },
+    {
+      "topic": "Taxes",
+      "label": "out of scope",
+      "detail": "No VAT, withholdings or perceptions. Receipt tax lines are part of the cost."
+    },
+    {
+      "topic": "Posting to a local accounting system",
+      "label": "out of scope",
+      "detail": "The entry is delivered as Excel. No import file for a specific local system yet."
+    }
+  ],
+  "memo": "# Card to Ledger AR · product memo\n\n*Draft for Máximo Sckell to edit. Every number in this memo is filled in at build time from the prototype's data folder. None is typed by hand.*\n\n## The problem, as a hypothesis\n\nAn Argentine company that spends in dollars with a corporate card and pays foreign contractors in USDC still keeps its books in pesos. Its month end has a last mile. Someone converts each movement at a rate they can defend, matches it to a receipt, codes it to a local chart of accounts, chases what is missing and posts one entry into a local accounting system. Global integrations sync transactions into QuickBooks, Xero or NetSuite, but they do not hand an Argentine accountant a peso entry ready to post. This comes from public information, not from customer interviews, and the first job is to test it.\n\n## Users and jobs to be done\n\n- **Controller or outside accountant.** Give me a peso entry I can defend, and show me only what needs my judgment.\n- **CFO.** Tell me when the month is closed and what it cost in pesos.\n- **Cardholder.** Tell me once what you need from me, with a link.\n\n## What the prototype measured\n\nA synthetic month of 252 movements and 215 receipts, scored against the correct answer for each one. Rules resolved 191 movements (75.8%). The AI resolved 21 above a confidence threshold of 0.75. A person gets 40 (15.9%), each with its evidence.\n\n- **Account rules** were right 98.1% of the time. The 4 misses came from one broad rule that coded food delivery as travel. Rules drift too, so they need the same monthly measurement as the AI.\n- **Receipt matching** paired 99.5% correctly. When two movements tie, the engine does not guess.\n- **Checks** sent 35 of 35 planted problems to review.\n- **AI account suggestions** for the 30 merchants no rule covers were right 90.0% of the time. At the threshold of 0.75, 24 were accepted automatically and 95.8% of those were right.\n- **AI receipt reading** got all four fields right on 99.5% of receipts. Code checks every amount it reads against the charge.\n- **AI explanations** passed the verifier in 44 of 44 cases. 0 fell back to a template.\n\n## Rules, AI or a person\n\nRules take anything that must behave the same every month: the rate convention, receipt matching, duplicate and refund checks, and known merchants. AI takes what is open ended: receipts in any layout, the long tail of merchants, and the note a reviewer reads. People keep judgment and accountability: ties, missing evidence, low confidence and the final approval. The AI never types a number into the ledger.\n\n## Metrics to track\n\n1. Days to close, from month end to an approved entry.\n2. Share of movements coded automatically, split by rules and AI.\n3. Exceptions per hundred movements, and the trend.\n4. Accuracy of automatically coded lines, audited on a sample every month.\n5. Review time per exception.\n\n## How to ship it\n\n1. Pilot with a handful of Argentine customers and their accountants. Label one real past month together. That month becomes their test set.\n2. Ship with a person reviewing everything. The AI suggests and nothing posts on its own.\n3. Turn on automatic acceptance per customer only when accuracy above the threshold holds on their own labeled month. Recheck it every month.\n4. Add the import file for the local system the pilot accountants use most.\n5. Grow the checks and the rate conventions from what those accountants ask for.\n\n## Eight questions for controllers\n\n1. Which exchange rate and which date do you use for dollar card spend, and who decided it?\n2. How do you value a USDC balance at month end, and has an auditor questioned it?\n3. Which local system do you post into, and what file does it accept?\n4. How long does the card and contractor part of the close take today, and where does the time go?\n5. What happens today when a receipt is missing at close?\n6. Which merchants do you always code by hand, and why?\n7. What would you need to see before you trust a line coded automatically?\n8. Who signs off the entry, and what evidence do they ask for?\n"
+}

@@ -12,7 +12,7 @@
       "usdc_payout": 20
     },
     "receipts": 215,
-    "receipt_source": "template",
+    "receipt_source": "ai",
     "totals": {
       "card_net_usd": "55724.72",
       "card_net_ars": "85530312.05",
@@ -24,12 +24,12 @@
     },
     "split": {
       "rules": 191,
-      "ai": 0,
-      "review": 61
+      "ai": 21,
+      "review": 40
     },
     "no_rule": 30,
-    "exceptions": 68,
-    "threshold": null,
+    "exceptions": 44,
+    "threshold": "0.75",
     "excel": "cierre_2026-09_andes_labs.xlsx"
   },
   "entry": [
@@ -48,7 +48,7 @@
     {
       "account": "1.1.09",
       "name": "Partidas pendientes de imputación",
-      "debe": "26626713.75",
+      "debe": "22744110.40",
       "haber": "0.00"
     },
     {
@@ -60,49 +60,55 @@
     {
       "account": "5.1.01",
       "name": "Publicidad y marketing",
-      "debe": "25818734.75",
+      "debe": "26016104.75",
       "haber": "0.00"
     },
     {
       "account": "5.1.02",
       "name": "Servicios de nube",
-      "debe": "14263666.85",
+      "debe": "14647522.10",
       "haber": "0.00"
     },
     {
       "account": "5.1.03",
       "name": "Licencias de software",
-      "debe": "10178995.60",
+      "debe": "10882931.25",
       "haber": "0.00"
     },
     {
       "account": "5.1.04",
       "name": "Honorarios de contratistas del exterior",
-      "debe": "103706000.00",
+      "debe": "105067844.00",
       "haber": "0.00"
     },
     {
       "account": "5.1.05",
       "name": "Viajes y viáticos",
-      "debe": "16075880.10",
+      "debe": "16183534.75",
       "haber": "0.00"
     },
     {
       "account": "5.1.06",
       "name": "Comidas y representación",
-      "debe": "3671428.65",
+      "debe": "4166090.90",
       "haber": "0.00"
     },
     {
       "account": "5.1.07",
       "name": "Eventos y conferencias",
-      "debe": "1586033.65",
+      "debe": "1725948.80",
+      "haber": "0.00"
+    },
+    {
+      "account": "5.1.08",
+      "name": "Gastos de oficina y equipamiento menor",
+      "debe": "374862.35",
       "haber": "0.00"
     },
     {
       "account": "5.1.09",
       "name": "Capacitación y suscripciones",
-      "debe": "1113639.45",
+      "debe": "1232143.50",
       "haber": "0.00"
     },
     {
@@ -224,16 +230,22 @@
       "rule_account": null,
       "receipt_id": "RC-0206",
       "receipt_match": "exact",
-      "exceptions": [
-        "no_rule"
-      ],
+      "exceptions": [],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
-      "resolved_by": "review",
-      "account": "",
-      "posted_account": "1.1.09",
-      "status": "pending review",
+      "ai": {
+        "id": "AI-0001",
+        "account": "5.1.03",
+        "account_name": "Licencias de software",
+        "reason": "Receipt RC-0206 shows a 1-year Screen Studio license, billed to Andes Labs SRL through Paddle. This is a software license, so it fits software subscriptions and licenses.",
+        "confidence": "0.95",
+        "key": "90dd7d1bae036f9e",
+        "model": "claude-sonnet-5-5"
+      },
+      "resolved_by": "ai",
+      "account": "5.1.03",
+      "posted_account": "5.1.03",
+      "status": "posted",
       "rate": "1535",
       "amount": "91.26",
       "ars": "140084.10",
@@ -508,16 +520,22 @@
       "rule_account": null,
       "receipt_id": "RC-0143",
       "receipt_match": "exact",
-      "exceptions": [
-        "no_rule"
-      ],
+      "exceptions": [],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
-      "resolved_by": "review",
-      "account": "",
-      "posted_account": "1.1.09",
-      "status": "pending review",
+      "ai": {
+        "id": "AI-0002",
+        "account": "5.1.03",
+        "account_name": "Licencias de software",
+        "reason": "Receipt RC-0143 from Calendly LLC shows a Teams plan for 5 seats billed to Andes Labs SRL. This is a SaaS seat subscription.",
+        "confidence": "0.96",
+        "key": "cde35c5a5ee4ead4",
+        "model": "claude-sonnet-5-5"
+      },
+      "resolved_by": "ai",
+      "account": "5.1.03",
+      "posted_account": "5.1.03",
+      "status": "posted",
       "rate": "1535",
       "amount": "68.33",
       "ars": "104886.55",
@@ -1246,16 +1264,22 @@
       "rule_account": null,
       "receipt_id": "RC-0207",
       "receipt_match": "exact",
-      "exceptions": [
-        "no_rule"
-      ],
+      "exceptions": [],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
-      "resolved_by": "review",
-      "account": "",
-      "posted_account": "1.1.09",
-      "status": "pending review",
+      "ai": {
+        "id": "AI-0003",
+        "account": "5.1.01",
+        "account_name": "Publicidad y marketing",
+        "reason": "Receipt RC-0207 from BetaList, billed to Andes Labs SRL, is for a \"Featured startup listing\" at USD 129.00. This is a paid promotional placement, so it is advertising.",
+        "confidence": "0.80",
+        "key": "bd57d31b943de219",
+        "model": "claude-sonnet-5-5"
+      },
+      "resolved_by": "ai",
+      "account": "5.1.01",
+      "posted_account": "5.1.01",
+      "status": "posted",
       "rate": "1530",
       "amount": "129.00",
       "ars": "197370.00",
@@ -1285,13 +1309,21 @@
       "receipt_match": null,
       "exceptions": [
         "missing_receipt",
-        "no_rule"
+        "ai_below_threshold"
       ],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
+      "ai": {
+        "id": "AI-0004",
+        "account": "5.1.02",
+        "account_name": "Servicios de nube",
+        "reason": "Namecheap is mainly a domain registrar and hosting provider, and the chart lists domains under cloud services. No receipt was matched, so I can't confirm what was bought. It could also be an SSL certificate, email service or a software-type product.",
+        "confidence": "0.68",
+        "key": "096f08376122366c",
+        "model": "claude-sonnet-5-5"
+      },
       "resolved_by": "review",
-      "account": "",
+      "account": "5.1.02",
       "posted_account": "1.1.09",
       "status": "pending review",
       "rate": "1530",
@@ -1814,13 +1846,21 @@
       "receipt_id": "RC-0146",
       "receipt_match": "exact",
       "exceptions": [
-        "no_rule"
+        "ai_below_threshold"
       ],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
+      "ai": {
+        "id": "AI-0005",
+        "account": "5.1.08",
+        "account_name": "Gastos de oficina y equipamiento menor",
+        "reason": "The receipt shows a WeWork coworking day pass for USD 42.95 in Mexico City, billed to Andes Labs SRL. Coworking passes belong in 5.1.08. The memo says \"trip to Sao Paulo\" but the receipt is from Mexico City, so travel (5.1.05) is possible but less likely.",
+        "confidence": "0.72",
+        "key": "44013f772301121b",
+        "model": "claude-sonnet-5-5"
+      },
       "resolved_by": "review",
-      "account": "",
+      "account": "5.1.08",
       "posted_account": "1.1.09",
       "status": "pending review",
       "rate": "1530",
@@ -1887,16 +1927,22 @@
       "rule_account": null,
       "receipt_id": "RC-0026",
       "receipt_match": "exact",
-      "exceptions": [
-        "no_rule"
-      ],
+      "exceptions": [],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
-      "resolved_by": "review",
-      "account": "",
-      "posted_account": "1.1.09",
-      "status": "pending review",
+      "ai": {
+        "id": "AI-0006",
+        "account": "5.1.04",
+        "account_name": "Honorarios de contratistas del exterior",
+        "reason": "Fiverr receipt for an explainer video script for the website, billed to Andes Labs SRL. This is freelancer work bought through a marketplace abroad (Israel), so it fits contractor fees.",
+        "confidence": "0.80",
+        "key": "5794fd655508f6be",
+        "model": "claude-sonnet-5-5"
+      },
+      "resolved_by": "ai",
+      "account": "5.1.04",
+      "posted_account": "5.1.04",
+      "status": "posted",
       "rate": "1530",
       "amount": "204.22",
       "ars": "312456.60",
@@ -2206,16 +2252,22 @@
       "rule_account": null,
       "receipt_id": "RC-0112",
       "receipt_match": "exact",
-      "exceptions": [
-        "no_rule"
-      ],
+      "exceptions": [],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
-      "resolved_by": "review",
-      "account": "",
-      "posted_account": "1.1.09",
-      "status": "pending review",
+      "ai": {
+        "id": "AI-0007",
+        "account": "5.1.07",
+        "account_name": "Eventos y conferencias",
+        "reason": "Receipt RC-0112 from SF Devs Meetup shows an \"Event ticket: AI Infra Night\" for USD 43.00, billed to Andes Labs SRL. This is a meetup ticket.",
+        "confidence": "0.96",
+        "key": "c7045167c19fbd9c",
+        "model": "claude-sonnet-5-5"
+      },
+      "resolved_by": "ai",
+      "account": "5.1.07",
+      "posted_account": "5.1.07",
+      "status": "posted",
       "rate": "1530",
       "amount": "43.00",
       "ars": "65790.00",
@@ -2243,16 +2295,22 @@
       "rule_account": null,
       "receipt_id": "RC-0132",
       "receipt_match": "exact",
-      "exceptions": [
-        "no_rule"
-      ],
+      "exceptions": [],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
-      "resolved_by": "review",
-      "account": "",
-      "posted_account": "1.1.09",
-      "status": "pending review",
+      "ai": {
+        "id": "AI-0008",
+        "account": "5.1.09",
+        "account_name": "Capacitación y suscripciones",
+        "reason": "Receipt from The Economist Newspaper Ltd shows a monthly digital subscription billed to Andes Labs SRL, which is a publication subscription.",
+        "confidence": "0.90",
+        "key": "a3dae4db9834a4c8",
+        "model": "claude-sonnet-5-5"
+      },
+      "resolved_by": "ai",
+      "account": "5.1.09",
+      "posted_account": "5.1.09",
+      "status": "posted",
       "rate": "1530",
       "amount": "21.99",
       "ars": "33644.70",
@@ -2350,16 +2408,22 @@
       "rule_account": null,
       "receipt_id": "RC-0085",
       "receipt_match": "exact",
-      "exceptions": [
-        "no_rule"
-      ],
+      "exceptions": [],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
-      "resolved_by": "review",
-      "account": "",
-      "posted_account": "1.1.09",
-      "status": "pending review",
+      "ai": {
+        "id": "AI-0009",
+        "account": "5.1.09",
+        "account_name": "Capacitación y suscripciones",
+        "reason": "Gumroad receipt RC-0085 shows a single item, the \"Shape Up handbook bundle\", for USD 25.47. This is a digital book or handbook, so it fits books and publications.",
+        "confidence": "0.85",
+        "key": "61724eea78720a57",
+        "model": "claude-sonnet-5-5"
+      },
+      "resolved_by": "ai",
+      "account": "5.1.09",
+      "posted_account": "5.1.09",
+      "status": "posted",
       "rate": "1535",
       "amount": "25.47",
       "ars": "39096.45",
@@ -2426,13 +2490,21 @@
       "receipt_match": null,
       "exceptions": [
         "missing_receipt",
-        "no_rule"
+        "ai_below_threshold"
       ],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
+      "ai": {
+        "id": "AI-0010",
+        "account": "5.1.04",
+        "account_name": "Honorarios de contratistas del exterior",
+        "reason": "PayPal payment to \"MGOMEZSTUDIO\", which looks like an individual or studio, for USD 588.58. No receipt or memo. Most likely a freelancer or contractor paid abroad, but it could be a software or design purchase.",
+        "confidence": "0.40",
+        "key": "14f637b71b71e5ae",
+        "model": "claude-sonnet-5-5"
+      },
       "resolved_by": "review",
-      "account": "",
+      "account": "5.1.04",
       "posted_account": "1.1.09",
       "status": "pending review",
       "rate": "1535",
@@ -4053,16 +4125,22 @@
       "rule_account": null,
       "receipt_id": "RC-0197",
       "receipt_match": "exact",
-      "exceptions": [
-        "no_rule"
-      ],
+      "exceptions": [],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
-      "resolved_by": "review",
-      "account": "",
-      "posted_account": "1.1.09",
-      "status": "pending review",
+      "ai": {
+        "id": "AI-0011",
+        "account": "5.1.05",
+        "account_name": "Viajes y viáticos",
+        "reason": "Airalo receipt is for a 10 GB United States eSIM, which is travel connectivity. The memo is empty, so the trip is inferred, not confirmed.",
+        "confidence": "0.80",
+        "key": "6ad1c474850e7160",
+        "model": "claude-sonnet-5-5"
+      },
+      "resolved_by": "ai",
+      "account": "5.1.05",
+      "posted_account": "5.1.05",
+      "status": "posted",
       "rate": "1530",
       "amount": "14.33",
       "ars": "21924.90",
@@ -4196,14 +4274,21 @@
       "receipt_id": null,
       "receipt_match": null,
       "exceptions": [
-        "missing_receipt",
-        "no_rule"
+        "missing_receipt"
       ],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
+      "ai": {
+        "id": "AI-0012",
+        "account": "5.1.06",
+        "account_name": "Comidas y representación",
+        "reason": "Blue Bottle Coffee is a coffee merchant and the cardholder memo says it was coffee with a prospect, which fits meals and client representation. No receipt was matched.",
+        "confidence": "0.88",
+        "key": "6172fd05592713b3",
+        "model": "claude-sonnet-5-5"
+      },
       "resolved_by": "review",
-      "account": "",
+      "account": "5.1.06",
       "posted_account": "1.1.09",
       "status": "pending review",
       "rate": "1530",
@@ -4233,16 +4318,22 @@
       "rule_account": null,
       "receipt_id": "RC-0093",
       "receipt_match": "exact",
-      "exceptions": [
-        "no_rule"
-      ],
+      "exceptions": [],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
-      "resolved_by": "review",
-      "account": "",
-      "posted_account": "1.1.09",
-      "status": "pending review",
+      "ai": {
+        "id": "AI-0013",
+        "account": "5.1.06",
+        "account_name": "Comidas y representación",
+        "reason": "Blue Bottle Coffee receipt shows a muffin for USD 38.21 total, and the cardholder memo says it was coffee with a prospect. This is a client meal or coffee expense.",
+        "confidence": "0.93",
+        "key": "2b57a9982acee0ee",
+        "model": "claude-sonnet-5-5"
+      },
+      "resolved_by": "ai",
+      "account": "5.1.06",
+      "posted_account": "5.1.06",
+      "status": "posted",
       "rate": "1530",
       "amount": "38.21",
       "ars": "58461.30",
@@ -4625,13 +4716,21 @@
       "receipt_id": "RC-0050",
       "receipt_match": "exact",
       "exceptions": [
-        "no_rule"
+        "ai_below_threshold"
       ],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
+      "ai": {
+        "id": "AI-0014",
+        "account": "5.1.01",
+        "account_name": "Publicidad y marketing",
+        "reason": "Receipt from Sunset Print Shop shows 500 business cards in 3 designs billed to Andes Labs SRL. Printed business cards are marketing materials. The memo \"client meeting\" is a possible hint at office printing, but the receipt shows the item.",
+        "confidence": "0.72",
+        "key": "06f63478e11fe66c",
+        "model": "claude-sonnet-5-5"
+      },
       "resolved_by": "review",
-      "account": "",
+      "account": "5.1.01",
       "posted_account": "1.1.09",
       "status": "pending review",
       "rate": "1530",
@@ -4873,16 +4972,22 @@
       "rule_account": null,
       "receipt_id": "RC-0161",
       "receipt_match": "exact",
-      "exceptions": [
-        "no_rule"
-      ],
+      "exceptions": [],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
-      "resolved_by": "review",
-      "account": "",
-      "posted_account": "1.1.09",
-      "status": "pending review",
+      "ai": {
+        "id": "AI-0015",
+        "account": "5.1.06",
+        "account_name": "Comidas y representación",
+        "reason": "Receipt shows a chocolate gift set at Duty Free Americas, Miami airport, and the cardholder memo says it is a gift for a client in Sao Paulo. Client gifts go under Comidas y representación.",
+        "confidence": "0.90",
+        "key": "9d4ba82539477e55",
+        "model": "claude-sonnet-5-5"
+      },
+      "resolved_by": "ai",
+      "account": "5.1.06",
+      "posted_account": "5.1.06",
+      "status": "posted",
       "rate": "1535",
       "amount": "142.45",
       "ars": "218660.75",
@@ -5155,16 +5260,22 @@
       "rule_account": null,
       "receipt_id": "RC-0033",
       "receipt_match": "exact",
-      "exceptions": [
-        "no_rule"
-      ],
+      "exceptions": [],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
-      "resolved_by": "review",
-      "account": "",
-      "posted_account": "1.1.09",
-      "status": "pending review",
+      "ai": {
+        "id": "AI-0016",
+        "account": "5.1.04",
+        "account_name": "Honorarios de contratistas del exterior",
+        "reason": "Receipt from Upwork Global Inc. shows an escrow payment for a QA testing contract, milestone 1, billed to Andes Labs SRL. This is freelancer work paid through a marketplace. The \"trip to Sao Paulo\" memo does not match the receipt.",
+        "confidence": "0.88",
+        "key": "a96566c5bb32a5fb",
+        "model": "claude-sonnet-5-5"
+      },
+      "resolved_by": "ai",
+      "account": "5.1.04",
+      "posted_account": "5.1.04",
+      "status": "posted",
       "rate": "1535",
       "amount": "683.64",
       "ars": "1049387.40",
@@ -5649,16 +5760,22 @@
       "rule_account": null,
       "receipt_id": "RC-0167",
       "receipt_match": "exact",
-      "exceptions": [
-        "no_rule"
-      ],
+      "exceptions": [],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
-      "resolved_by": "review",
-      "account": "",
-      "posted_account": "1.1.09",
-      "status": "pending review",
+      "ai": {
+        "id": "AI-0017",
+        "account": "5.1.08",
+        "account_name": "Gastos de oficina y equipamiento menor",
+        "reason": "Best Buy receipt lists a USB-C cable and a Logitech C920 webcam, which are small office equipment items. Memo is empty, but the receipt is clear.",
+        "confidence": "0.88",
+        "key": "2cd2725de7f23511",
+        "model": "claude-sonnet-5-5"
+      },
+      "resolved_by": "ai",
+      "account": "5.1.08",
+      "posted_account": "5.1.08",
+      "status": "posted",
       "rate": "1535",
       "amount": "94.38",
       "ars": "144873.30",
@@ -5864,14 +5981,21 @@
       "receipt_id": null,
       "receipt_match": null,
       "exceptions": [
-        "missing_receipt",
-        "no_rule"
+        "missing_receipt"
       ],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
+      "ai": {
+        "id": "AI-0018",
+        "account": "5.1.02",
+        "account_name": "Servicios de nube",
+        "reason": "Descriptor is TWILIO, a usage-billed communications API (SMS, email delivery). No receipt or memo, so the exact service is not confirmed.",
+        "confidence": "0.80",
+        "key": "64d5de706327a02a",
+        "model": "claude-sonnet-5-5"
+      },
       "resolved_by": "review",
-      "account": "",
+      "account": "5.1.02",
       "posted_account": "1.1.09",
       "status": "pending review",
       "rate": "1535",
@@ -6043,16 +6167,22 @@
       "rule_account": null,
       "receipt_id": "RC-0157",
       "receipt_match": "exact",
-      "exceptions": [
-        "no_rule"
-      ],
+      "exceptions": [],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
-      "resolved_by": "review",
-      "account": "",
-      "posted_account": "1.1.09",
-      "status": "pending review",
+      "ai": {
+        "id": "AI-0019",
+        "account": "5.1.08",
+        "account_name": "Gastos de oficina y equipamiento menor",
+        "reason": "Receipt RC-0157 from Amazon shows 3 Anker USB-C Hubs billed to Andes Labs SRL for USD 149.83. These are small hardware items, so they fit office supplies and minor equipment.",
+        "confidence": "0.90",
+        "key": "a1ab502af1fa95c8",
+        "model": "claude-sonnet-5-5"
+      },
+      "resolved_by": "ai",
+      "account": "5.1.08",
+      "posted_account": "5.1.08",
+      "status": "posted",
       "rate": "1535",
       "amount": "149.83",
       "ars": "229989.05",
@@ -6152,16 +6282,22 @@
       "rule_account": null,
       "receipt_id": "RC-0129",
       "receipt_match": "exact",
-      "exceptions": [
-        "no_rule"
-      ],
+      "exceptions": [],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
-      "resolved_by": "review",
-      "account": "",
-      "posted_account": "1.1.09",
-      "status": "pending review",
+      "ai": {
+        "id": "AI-0020",
+        "account": "5.1.03",
+        "account_name": "Licencias de software",
+        "reason": "Receipt RC-0129 shows Tailwind Labs billing Andes Labs SRL for \"Tailwind Plus, team license\", USD 299.00, paid via Lemon Squeezy. This is a software license for a design/UI toolkit.",
+        "confidence": "0.90",
+        "key": "c69c54f8515d155f",
+        "model": "claude-sonnet-5-5"
+      },
+      "resolved_by": "ai",
+      "account": "5.1.03",
+      "posted_account": "5.1.03",
+      "status": "posted",
       "rate": "1535",
       "amount": "299.00",
       "ars": "458965.00",
@@ -6189,16 +6325,22 @@
       "rule_account": null,
       "receipt_id": "RC-0138",
       "receipt_match": "exact",
-      "exceptions": [
-        "no_rule"
-      ],
+      "exceptions": [],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
-      "resolved_by": "review",
-      "account": "",
-      "posted_account": "1.1.09",
-      "status": "pending review",
+      "ai": {
+        "id": "AI-0021",
+        "account": "5.1.05",
+        "account_name": "Viajes y viáticos",
+        "reason": "Lyft receipt for a single ride, USD 21.09, billed to Andes Labs SRL. Ride-hailing is ground transport. The memo is empty, so the business purpose isn't stated.",
+        "confidence": "0.88",
+        "key": "b4984d45e68f556e",
+        "model": "claude-sonnet-5-5"
+      },
+      "resolved_by": "ai",
+      "account": "5.1.05",
+      "posted_account": "5.1.05",
+      "status": "posted",
       "rate": "1535",
       "amount": "21.09",
       "ars": "32373.15",
@@ -6436,16 +6578,22 @@
       "rule_account": null,
       "receipt_id": "RC-0023",
       "receipt_match": "exact",
-      "exceptions": [
-        "no_rule"
-      ],
+      "exceptions": [],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
-      "resolved_by": "review",
-      "account": "",
-      "posted_account": "1.1.09",
-      "status": "pending review",
+      "ai": {
+        "id": "AI-0022",
+        "account": "5.1.05",
+        "account_name": "Viajes y viáticos",
+        "reason": "Lyft ride receipt for USD 34.76 billed to Andes Labs SRL, paid Sept 21, 2026. Ground transport fits travel. The receipt does not give the purpose of the trip.",
+        "confidence": "0.85",
+        "key": "8660485a2744d6b3",
+        "model": "claude-sonnet-5-5"
+      },
+      "resolved_by": "ai",
+      "account": "5.1.05",
+      "posted_account": "5.1.05",
+      "status": "posted",
       "rate": "1535",
       "amount": "34.76",
       "ars": "53356.60",
@@ -6790,13 +6938,21 @@
       "receipt_match": null,
       "exceptions": [
         "missing_receipt",
-        "no_rule"
+        "ai_below_threshold"
       ],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
+      "ai": {
+        "id": "AI-0023",
+        "account": "5.1.01",
+        "account_name": "Publicidad y marketing",
+        "reason": "Sticker Mule sells custom stickers and branded printed items. The amount is USD 398.16 with no receipt or memo, so the items are unconfirmed. They are most likely logo merch or marketing materials.",
+        "confidence": "0.60",
+        "key": "2fedbd5bf7a54316",
+        "model": "claude-sonnet-5-5"
+      },
       "resolved_by": "review",
-      "account": "",
+      "account": "5.1.01",
       "posted_account": "1.1.09",
       "status": "pending review",
       "rate": "1535",
@@ -6826,16 +6982,22 @@
       "rule_account": null,
       "receipt_id": "RC-0163",
       "receipt_match": "exact",
-      "exceptions": [
-        "no_rule"
-      ],
+      "exceptions": [],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
-      "resolved_by": "review",
-      "account": "",
-      "posted_account": "1.1.09",
-      "status": "pending review",
+      "ai": {
+        "id": "AI-0024",
+        "account": "5.1.07",
+        "account_name": "Eventos y conferencias",
+        "reason": "Receipt RC-0163 shows a general admission ticket (\"Entrada general Product Camp\") for Product Camp Buenos Aires, billed to Andes Labs SRL via Ticket Tailor. This is a conference ticket.",
+        "confidence": "0.95",
+        "key": "c782a2493d2ae3b6",
+        "model": "claude-sonnet-5-5"
+      },
+      "resolved_by": "ai",
+      "account": "5.1.07",
+      "posted_account": "5.1.07",
+      "status": "posted",
       "rate": "1535",
       "amount": "48.29",
       "ars": "74125.15",
@@ -7038,16 +7200,22 @@
       "rule_account": null,
       "receipt_id": "RC-0021",
       "receipt_match": "exact",
-      "exceptions": [
-        "no_rule"
-      ],
+      "exceptions": [],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
-      "resolved_by": "review",
-      "account": "",
-      "posted_account": "1.1.09",
-      "status": "pending review",
+      "ai": {
+        "id": "AI-0025",
+        "account": "5.1.06",
+        "account_name": "Comidas y representación",
+        "reason": "Costco receipt lists sparkling water, a fruit tray and a snack variety pack. The cardholder memo says \"offsite snacks\". This is food for the team.",
+        "confidence": "0.88",
+        "key": "b9983085a64efc30",
+        "model": "claude-sonnet-5-5"
+      },
+      "resolved_by": "ai",
+      "account": "5.1.06",
+      "posted_account": "5.1.06",
+      "status": "posted",
       "rate": "1535",
       "amount": "141.72",
       "ars": "217540.20",
@@ -7504,14 +7672,21 @@
       "receipt_id": null,
       "receipt_match": null,
       "exceptions": [
-        "missing_receipt",
-        "no_rule"
+        "missing_receipt"
       ],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
+      "ai": {
+        "id": "AI-0026",
+        "account": "5.1.06",
+        "account_name": "Comidas y representación",
+        "reason": "DoorDash is a food delivery merchant and the cardholder memo says \"team dinner\". No receipt was matched, so the details are unconfirmed.",
+        "confidence": "0.85",
+        "key": "2fcc5e8a40a26c3a",
+        "model": "claude-sonnet-5-5"
+      },
       "resolved_by": "review",
-      "account": "",
+      "account": "5.1.06",
       "posted_account": "1.1.09",
       "status": "pending review",
       "rate": "1545",
@@ -7719,13 +7894,21 @@
       "receipt_id": "RC-0046",
       "receipt_match": "exact",
       "exceptions": [
-        "no_rule"
+        "ai_below_threshold"
       ],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
+      "ai": {
+        "id": "AI-0027",
+        "account": "5.1.03",
+        "account_name": "Licencias de software",
+        "reason": "Receipt RC-0046 from Apple Services shows a fixed monthly iCloud+ 2 TB plan for USD 9.99, billed to Andes Labs SRL. This is a flat-fee software subscription, not usage-based cloud infrastructure. 5.1.02 is the main alternative.",
+        "confidence": "0.72",
+        "key": "08f9a767e64a658e",
+        "model": "claude-sonnet-5-5"
+      },
       "resolved_by": "review",
-      "account": "",
+      "account": "5.1.03",
       "posted_account": "1.1.09",
       "status": "pending review",
       "rate": "1545",
@@ -8247,16 +8430,22 @@
       "rule_account": null,
       "receipt_id": "RC-0154",
       "receipt_match": "exact",
-      "exceptions": [
-        "no_rule"
-      ],
+      "exceptions": [],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
-      "resolved_by": "review",
-      "account": "",
-      "posted_account": "1.1.09",
-      "status": "pending review",
+      "ai": {
+        "id": "AI-0028",
+        "account": "5.1.02",
+        "account_name": "Servicios de nube",
+        "reason": "Receipt from Twilio SendGrid shows an \"Email API Pro plan\" for USD 90.00, billed to Andes Labs SRL. Email delivery APIs fall under cloud and usage-based developer services.",
+        "confidence": "0.85",
+        "key": "ba4a654067e50349",
+        "model": "claude-sonnet-5-5"
+      },
+      "resolved_by": "ai",
+      "account": "5.1.02",
+      "posted_account": "5.1.02",
+      "status": "posted",
       "rate": "1545",
       "amount": "90.00",
       "ars": "139050.00",
@@ -8601,16 +8790,22 @@
       "rule_account": null,
       "receipt_id": "RC-0122",
       "receipt_match": "exact",
-      "exceptions": [
-        "no_rule"
-      ],
+      "exceptions": [],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
-      "resolved_by": "review",
-      "account": "",
-      "posted_account": "1.1.09",
-      "status": "pending review",
+      "ai": {
+        "id": "AI-0029",
+        "account": "5.1.09",
+        "account_name": "Capacitación y suscripciones",
+        "reason": "Receipt shows a single Kindle book (\"Inspired, 2nd Edition\") billed to Andes Labs SRL. Books fall under training and subscriptions. The \"team offsite\" memo does not change that the item is a book.",
+        "confidence": "0.85",
+        "key": "44354389adc9eb47",
+        "model": "claude-sonnet-5-5"
+      },
+      "resolved_by": "ai",
+      "account": "5.1.09",
+      "posted_account": "5.1.09",
+      "status": "posted",
       "rate": "1545",
       "amount": "29.62",
       "ars": "45762.90",
@@ -8776,16 +8971,22 @@
       "rule_account": null,
       "receipt_id": "RC-0213",
       "receipt_match": "exact",
-      "exceptions": [
-        "no_rule"
-      ],
+      "exceptions": [],
       "duplicate_of": null,
       "refund_of": null,
-      "ai": null,
-      "resolved_by": "review",
-      "account": "",
-      "posted_account": "1.1.09",
-      "status": "pending review",
+      "ai": {
+        "id": "AI-0030",
+        "account": "5.1.02",
+        "account_name": "Servicios de nube",
+        "reason": "Receipt RC-0213 from Twilio Inc. to Andes Labs SRL shows \"Programmable SMS usage, August\" for USD 158.45, a usage-billed SMS delivery service.",
+        "confidence": "0.95",
+        "key": "e7f66392a8523949",
+        "model": "claude-sonnet-5-5"
+      },
+      "resolved_by": "ai",
+      "account": "5.1.02",
+      "posted_account": "5.1.02",
+      "status": "posted",
       "rate": "1545",
       "amount": "158.45",
       "ars": "244805.25",
@@ -9135,12 +9336,12 @@
       "id": "JL-0005",
       "txn_id": "TX-0003",
       "date": "2026-09-01",
-      "account": "1.1.09",
+      "account": "5.1.03",
       "debe": "140084.10",
       "haber": "0.00",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0001",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "PADDLE.NET* SCREENSTUDIO"
     },
     {
@@ -9150,9 +9351,9 @@
       "account": "2.1.01",
       "debe": "0.00",
       "haber": "140084.10",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0001",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "PADDLE.NET* SCREENSTUDIO"
     },
     {
@@ -9339,12 +9540,12 @@
       "id": "JL-0022",
       "txn_id": "TX-0011",
       "date": "2026-09-02",
-      "account": "1.1.09",
+      "account": "5.1.03",
       "debe": "104886.55",
       "haber": "0.00",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0002",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "CALENDLY"
     },
     {
@@ -9354,9 +9555,9 @@
       "account": "2.1.01",
       "debe": "0.00",
       "haber": "104886.55",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0002",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "CALENDLY"
     },
     {
@@ -9843,12 +10044,12 @@
       "id": "JL-0064",
       "txn_id": "TX-0032",
       "date": "2026-09-05",
-      "account": "1.1.09",
+      "account": "5.1.01",
       "debe": "197370.00",
       "haber": "0.00",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0003",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "BETALIST"
     },
     {
@@ -9858,9 +10059,9 @@
       "account": "2.1.01",
       "debe": "0.00",
       "haber": "197370.00",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0003",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "BETALIST"
     },
     {
@@ -10275,12 +10476,12 @@
       "id": "JL-0100",
       "txn_id": "TX-0050",
       "date": "2026-09-08",
-      "account": "1.1.09",
+      "account": "5.1.04",
       "debe": "312456.60",
       "haber": "0.00",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0006",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "FIVERR"
     },
     {
@@ -10290,9 +10491,9 @@
       "account": "2.1.01",
       "debe": "0.00",
       "haber": "312456.60",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0006",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "FIVERR"
     },
     {
@@ -10491,12 +10692,12 @@
       "id": "JL-0118",
       "txn_id": "TX-0059",
       "date": "2026-09-09",
-      "account": "1.1.09",
+      "account": "5.1.07",
       "debe": "65790.00",
       "haber": "0.00",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0007",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "SQ *SF DEVS MEETUP"
     },
     {
@@ -10506,21 +10707,21 @@
       "account": "2.1.01",
       "debe": "0.00",
       "haber": "65790.00",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0007",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "SQ *SF DEVS MEETUP"
     },
     {
       "id": "JL-0120",
       "txn_id": "TX-0060",
       "date": "2026-09-09",
-      "account": "1.1.09",
+      "account": "5.1.09",
       "debe": "33644.70",
       "haber": "0.00",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0008",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "THE ECONOMIST"
     },
     {
@@ -10530,9 +10731,9 @@
       "account": "2.1.01",
       "debe": "0.00",
       "haber": "33644.70",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0008",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "THE ECONOMIST"
     },
     {
@@ -10587,12 +10788,12 @@
       "id": "JL-0126",
       "txn_id": "TX-0063",
       "date": "2026-09-10",
-      "account": "1.1.09",
+      "account": "5.1.09",
       "debe": "39096.45",
       "haber": "0.00",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0009",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "GUMROAD.COM* SHAPEUP"
     },
     {
@@ -10602,9 +10803,9 @@
       "account": "2.1.01",
       "debe": "0.00",
       "haber": "39096.45",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0009",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "GUMROAD.COM* SHAPEUP"
     },
     {
@@ -11751,12 +11952,12 @@
       "id": "JL-0223",
       "txn_id": "TX-0111",
       "date": "2026-09-15",
-      "account": "1.1.09",
+      "account": "5.1.05",
       "debe": "21924.90",
       "haber": "0.00",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0011",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "AIRALO"
     },
     {
@@ -11766,9 +11967,9 @@
       "account": "2.1.01",
       "debe": "0.00",
       "haber": "21924.90",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0011",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "AIRALO"
     },
     {
@@ -11871,12 +12072,12 @@
       "id": "JL-0233",
       "txn_id": "TX-0116",
       "date": "2026-09-15",
-      "account": "1.1.09",
+      "account": "5.1.06",
       "debe": "58461.30",
       "haber": "0.00",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0013",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "SQ *BLUE BOTTLE COFFEE"
     },
     {
@@ -11886,9 +12087,9 @@
       "account": "2.1.01",
       "debe": "0.00",
       "haber": "58461.30",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0013",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "SQ *BLUE BOTTLE COFFEE"
     },
     {
@@ -12303,12 +12504,12 @@
       "id": "JL-0269",
       "txn_id": "TX-0134",
       "date": "2026-09-17",
-      "account": "1.1.09",
+      "account": "5.1.06",
       "debe": "218660.75",
       "haber": "0.00",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0015",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "DUTY FREE AMERICAS 23MZD"
     },
     {
@@ -12318,9 +12519,9 @@
       "account": "2.1.01",
       "debe": "0.00",
       "haber": "218660.75",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0015",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "DUTY FREE AMERICAS 23MZD"
     },
     {
@@ -12495,12 +12696,12 @@
       "id": "JL-0285",
       "txn_id": "TX-0142",
       "date": "2026-09-18",
-      "account": "1.1.09",
+      "account": "5.1.04",
       "debe": "1049387.40",
       "haber": "0.00",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0016",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "UPWORK *ESCROW RHX2D"
     },
     {
@@ -12510,9 +12711,9 @@
       "account": "2.1.01",
       "debe": "0.00",
       "haber": "1049387.40",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0016",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "UPWORK *ESCROW RHX2D"
     },
     {
@@ -12831,12 +13032,12 @@
       "id": "JL-0313",
       "txn_id": "TX-0156",
       "date": "2026-09-20",
-      "account": "1.1.09",
+      "account": "5.1.08",
       "debe": "144873.30",
       "haber": "0.00",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0017",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "BEST BUY 00012"
     },
     {
@@ -12846,9 +13047,9 @@
       "account": "2.1.01",
       "debe": "0.00",
       "haber": "144873.30",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0017",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "BEST BUY 00012"
     },
     {
@@ -13095,12 +13296,12 @@
       "id": "JL-0335",
       "txn_id": "TX-0167",
       "date": "2026-09-21",
-      "account": "1.1.09",
+      "account": "5.1.08",
       "debe": "229989.05",
       "haber": "0.00",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0019",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "AMZN MKTP US*H7N3G"
     },
     {
@@ -13110,9 +13311,9 @@
       "account": "2.1.01",
       "debe": "0.00",
       "haber": "229989.05",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0019",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "AMZN MKTP US*H7N3G"
     },
     {
@@ -13167,12 +13368,12 @@
       "id": "JL-0341",
       "txn_id": "TX-0170",
       "date": "2026-09-21",
-      "account": "1.1.09",
+      "account": "5.1.03",
       "debe": "458965.00",
       "haber": "0.00",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0020",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "LEMSQZY* TAILWIND LABS"
     },
     {
@@ -13182,21 +13383,21 @@
       "account": "2.1.01",
       "debe": "0.00",
       "haber": "458965.00",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0020",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "LEMSQZY* TAILWIND LABS"
     },
     {
       "id": "JL-0343",
       "txn_id": "TX-0171",
       "date": "2026-09-21",
-      "account": "1.1.09",
+      "account": "5.1.05",
       "debe": "32373.15",
       "haber": "0.00",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0021",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "LYFT *RIDE WV4T9"
     },
     {
@@ -13206,9 +13407,9 @@
       "account": "2.1.01",
       "debe": "0.00",
       "haber": "32373.15",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0021",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "LYFT *RIDE WV4T9"
     },
     {
@@ -13359,12 +13560,12 @@
       "id": "JL-0357",
       "txn_id": "TX-0178",
       "date": "2026-09-22",
-      "account": "1.1.09",
+      "account": "5.1.05",
       "debe": "53356.60",
       "haber": "0.00",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0022",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "LYFT *RIDE J7H7L"
     },
     {
@@ -13374,9 +13575,9 @@
       "account": "2.1.01",
       "debe": "0.00",
       "haber": "53356.60",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0022",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "LYFT *RIDE J7H7L"
     },
     {
@@ -13623,12 +13824,12 @@
       "id": "JL-0379",
       "txn_id": "TX-0189",
       "date": "2026-09-23",
-      "account": "1.1.09",
+      "account": "5.1.07",
       "debe": "74125.15",
       "haber": "0.00",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0024",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "TICKETTAILOR* PRODUCTCAMP"
     },
     {
@@ -13638,9 +13839,9 @@
       "account": "2.1.01",
       "debe": "0.00",
       "haber": "74125.15",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0024",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "TICKETTAILOR* PRODUCTCAMP"
     },
     {
@@ -13767,12 +13968,12 @@
       "id": "JL-0391",
       "txn_id": "TX-0195",
       "date": "2026-09-24",
-      "account": "1.1.09",
+      "account": "5.1.06",
       "debe": "217540.20",
       "haber": "0.00",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0025",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "COSTCO WHSE #0144"
     },
     {
@@ -13782,9 +13983,9 @@
       "account": "2.1.01",
       "debe": "0.00",
       "haber": "217540.20",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0025",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "COSTCO WHSE #0144"
     },
     {
@@ -14595,12 +14796,12 @@
       "id": "JL-0460",
       "txn_id": "TX-0229",
       "date": "2026-09-29",
-      "account": "1.1.09",
+      "account": "5.1.02",
       "debe": "139050.00",
       "haber": "0.00",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0028",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "SENDGRID"
     },
     {
@@ -14610,9 +14811,9 @@
       "account": "2.1.01",
       "debe": "0.00",
       "haber": "139050.00",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0028",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "SENDGRID"
     },
     {
@@ -14835,12 +15036,12 @@
       "id": "JL-0480",
       "txn_id": "TX-0239",
       "date": "2026-09-30",
-      "account": "1.1.09",
+      "account": "5.1.09",
       "debe": "45762.90",
       "haber": "0.00",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0029",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "AMZN MKTP US*D8TEW"
     },
     {
@@ -14850,9 +15051,9 @@
       "account": "2.1.01",
       "debe": "0.00",
       "haber": "45762.90",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0029",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "AMZN MKTP US*D8TEW"
     },
     {
@@ -14955,12 +15156,12 @@
       "id": "JL-0490",
       "txn_id": "TX-0244",
       "date": "2026-09-30",
-      "account": "1.1.09",
+      "account": "5.1.02",
       "debe": "244805.25",
       "haber": "0.00",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0030",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "TWILIO 2NWKH"
     },
     {
@@ -14970,9 +15171,9 @@
       "account": "2.1.01",
       "debe": "0.00",
       "haber": "244805.25",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
+      "basis": "AI suggestion AI-0030",
+      "status": "posted",
+      "approved_by": "auto accepted: AI confidence at or above threshold",
       "detail": "TWILIO 2NWKH"
     },
     {
@@ -15218,752 +15419,488 @@
   ],
   "exceptions": [
     {
-      "txn_id": "TX-0003",
-      "type": "no_rule",
-      "id": "EX-001",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0003 · 2026-09-01 · PADDLE.NET* SCREENSTUDIO · USD 91.26 · Sofía Paz · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0003].",
-      "explanation_source": "template",
-      "key": "TX-0003:no_rule"
-    },
-    {
       "txn_id": "TX-0005",
       "type": "missing_receipt",
-      "id": "EX-002",
+      "id": "EX-001",
       "title": "Missing receipt",
       "next_step": "Ask the cardholder for the receipt",
       "facts": "TX-0005 · 2026-09-01 · TST* LA MAR CEBICHERIA · USD 73.22 · Camila Ortiz · no receipt found in the matching window",
-      "explanation": "No receipt was found for [TX-0005]. It stays in review until the cardholder uploads one.",
-      "explanation_source": "template",
+      "explanation": "This restaurant card charge [TX-0005] has no receipt in the matching window, so there is no support for it yet. Ask the cardholder for the receipt and the business purpose, and check whether it was filed under a different date or card.",
+      "explanation_source": "ai_verified",
       "key": "TX-0005:missing_receipt"
-    },
-    {
-      "txn_id": "TX-0011",
-      "type": "no_rule",
-      "id": "EX-003",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0011 · 2026-09-02 · CALENDLY · USD 68.33 · Camila Ortiz · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0011].",
-      "explanation_source": "template",
-      "key": "TX-0011:no_rule"
     },
     {
       "txn_id": "TX-0021",
       "type": "missing_receipt",
-      "id": "EX-004",
+      "id": "EX-002",
       "title": "Missing receipt",
       "next_step": "Ask the cardholder for the receipt",
       "facts": "TX-0021 · 2026-09-03 · TST* TARTINE BAKERY · USD 27.40 · Camila Ortiz · no receipt found in the matching window",
-      "explanation": "No receipt was found for [TX-0021]. It stays in review until the cardholder uploads one.",
-      "explanation_source": "template",
+      "explanation": "The bakery card charge [TX-0021] has no receipt in the matching window, so there is no support for it yet. Ask the cardholder for the receipt and check whether it was filed under a different charge or sent late.",
+      "explanation_source": "ai_verified",
       "key": "TX-0021:missing_receipt"
     },
     {
       "txn_id": "TX-0028",
       "type": "missing_receipt",
-      "id": "EX-005",
+      "id": "EX-003",
       "title": "Missing receipt",
       "next_step": "Ask the cardholder for the receipt",
       "facts": "TX-0028 · 2026-09-04 · UBER *TRIP 66CTP · USD 20.71 · Julián Castro · no receipt found in the matching window",
-      "explanation": "No receipt was found for [TX-0028]. It stays in review until the cardholder uploads one.",
-      "explanation_source": "template",
+      "explanation": "The ride charge [TX-0028] has no matching receipt in the expected window, so there is no support for it. Ask the cardholder for the receipt and confirm the trip was for business.",
+      "explanation_source": "ai_verified",
       "key": "TX-0028:missing_receipt"
-    },
-    {
-      "txn_id": "TX-0032",
-      "type": "no_rule",
-      "id": "EX-006",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0032 · 2026-09-05 · BETALIST · USD 129.00 · Julián Castro · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0032].",
-      "explanation_source": "template",
-      "key": "TX-0032:no_rule"
     },
     {
       "txn_id": "TX-0033",
       "type": "missing_receipt",
-      "id": "EX-007",
+      "id": "EX-004",
       "title": "Missing receipt",
       "next_step": "Ask the cardholder for the receipt",
       "facts": "TX-0033 · 2026-09-05 · NAMECHEAP.COM · USD 68.99 · Martín Ibarra · no receipt found in the matching window",
-      "explanation": "No receipt was found for [TX-0033]. It stays in review until the cardholder uploads one.",
-      "explanation_source": "template",
+      "explanation": "The card charge [TX-0033] from Namecheap has no receipt, so we can't tell if it was a domain, hosting, an SSL certificate or something else. Ask the cardholder for the receipt before relying on the cloud services suggestion [AI-0004], since that account is only a guess.",
+      "explanation_source": "ai_verified",
       "key": "TX-0033:missing_receipt"
     },
     {
       "txn_id": "TX-0033",
-      "type": "no_rule",
-      "id": "EX-008",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0033 · 2026-09-05 · NAMECHEAP.COM · USD 68.99 · Martín Ibarra · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0033].",
-      "explanation_source": "template",
-      "key": "TX-0033:no_rule"
+      "type": "ai_below_threshold",
+      "id": "EX-005",
+      "title": "AI suggestion below the threshold",
+      "next_step": "Pick the account",
+      "facts": "TX-0033 · 2026-09-05 · NAMECHEAP.COM · USD 68.99 · Martín Ibarra · AI suggests 5.1.02 Servicios de nube with confidence 0.68 · threshold 0.75",
+      "explanation": "The AI's cloud services suggestion [AI-0004] for this Namecheap charge [TX-0033] is not confident enough to accept, and no receipt is matched. Find the invoice or ask the cardholder what was bought, since it could be a domain, hosting, a certificate or email, then pick the account.",
+      "explanation_source": "ai_verified",
+      "key": "TX-0033:ai_below_threshold"
     },
     {
       "txn_id": "TX-0038",
       "type": "missing_receipt",
-      "id": "EX-009",
+      "id": "EX-006",
       "title": "Missing receipt",
       "next_step": "Ask the cardholder for the receipt",
       "facts": "TX-0038 · 2026-09-06 · TST* SWEETGREEN MARKET  · USD 127.14 · Diego Romero · no receipt found in the matching window",
-      "explanation": "No receipt was found for [TX-0038]. It stays in review until the cardholder uploads one.",
-      "explanation_source": "template",
+      "explanation": "This card charge [TX-0038] at a restaurant has no receipt in the matching window. Ask the cardholder for the receipt and check whether it was filed late or under a different charge.",
+      "explanation_source": "ai_verified",
       "key": "TX-0038:missing_receipt"
     },
     {
       "txn_id": "TX-0048",
-      "type": "no_rule",
-      "id": "EX-010",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0048 · 2026-09-07 · WEWORK MEXICO · USD 42.95 · Valentina Sosa · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0048].",
-      "explanation_source": "template",
-      "key": "TX-0048:no_rule"
+      "type": "ai_below_threshold",
+      "id": "EX-007",
+      "title": "AI suggestion below the threshold",
+      "next_step": "Pick the account",
+      "facts": "TX-0048 · 2026-09-07 · WEWORK MEXICO · USD 42.95 · Valentina Sosa · AI suggests 5.1.08 Gastos de oficina y equipamiento menor with confidence 0.72 · threshold 0.75",
+      "explanation": "The AI suggests office expenses for this coworking charge [TX-0048], but its confidence is under the threshold because the memo mentions a trip to Sao Paulo while the receipt [RC-0146] is from Mexico City. Check the receipt and ask the cardholder whether this was travel or office space, then pick the account (see AI-0005).",
+      "explanation_source": "ai_verified",
+      "key": "TX-0048:ai_below_threshold"
     },
     {
       "txn_id": "TX-0049",
       "type": "refund_partial_link",
-      "id": "EX-011",
+      "id": "EX-008",
       "title": "Partial refund linked by merchant only",
       "next_step": "Confirm which charge it refunds",
       "facts": "TX-0049 · 2026-09-08 · BOOKING.COM HOTEL · USD 210.00 · Valentina Sosa · tentatively linked to TX-0024 posted 2026-09-04 for USD 239.51 · amounts differ",
-      "explanation": "[TX-0049] is a partial refund. It was linked to [TX-0024] because the merchant matches, but the amounts differ, so the link needs a person to confirm it.",
-      "explanation_source": "template",
+      "explanation": "This refund [TX-0049] was matched to the earlier charge [TX-0024] only because the merchant name is the same, and the amounts don't agree, so it may be a partial refund or belong to a different booking. Check the booking details to confirm which charge [TX-0049] actually refunds, and whether [TX-0024] has any balance left over.",
+      "explanation_source": "ai_verified",
       "key": "TX-0049:refund_partial_link"
-    },
-    {
-      "txn_id": "TX-0050",
-      "type": "no_rule",
-      "id": "EX-012",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0050 · 2026-09-08 · FIVERR · USD 204.22 · Sofía Paz · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0050].",
-      "explanation_source": "template",
-      "key": "TX-0050:no_rule"
     },
     {
       "txn_id": "TX-0057",
       "type": "duplicate_suspected",
-      "id": "EX-013",
+      "id": "EX-009",
       "title": "Possible duplicate charge",
       "next_step": "Confirm with the cardholder and dispute the charge",
       "facts": "TX-0057 · 2026-09-08 · UBER *TRIP TQ72G · USD 42.94 · Martín Ibarra · same descriptor and amount as TX-0056 posted 2026-09-08 · only one receipt",
-      "explanation": "[TX-0057] repeats the merchant and amount of [TX-0056] within a short window, and only one receipt exists. It looks like a double charge.",
-      "explanation_source": "template",
+      "explanation": "[TX-0057] has the same merchant descriptor and amount as [TX-0056], posted the same day, and only a single receipt backs the pair, so it may be a repeat charge. Check with the cardholder whether separate trips took place, and dispute [TX-0057] if they did not.",
+      "explanation_source": "ai_verified",
       "key": "TX-0057:duplicate_suspected"
-    },
-    {
-      "txn_id": "TX-0059",
-      "type": "no_rule",
-      "id": "EX-014",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0059 · 2026-09-09 · SQ *SF DEVS MEETUP · USD 43.00 · Valentina Sosa · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0059].",
-      "explanation_source": "template",
-      "key": "TX-0059:no_rule"
-    },
-    {
-      "txn_id": "TX-0060",
-      "type": "no_rule",
-      "id": "EX-015",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0060 · 2026-09-09 · THE ECONOMIST · USD 21.99 · Lucía Fernández · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0060].",
-      "explanation_source": "template",
-      "key": "TX-0060:no_rule"
-    },
-    {
-      "txn_id": "TX-0063",
-      "type": "no_rule",
-      "id": "EX-016",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0063 · 2026-09-10 · GUMROAD.COM* SHAPEUP · USD 25.47 · Tomás Herrera · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0063].",
-      "explanation_source": "template",
-      "key": "TX-0063:no_rule"
     },
     {
       "txn_id": "TX-0064",
       "type": "missing_receipt",
-      "id": "EX-017",
+      "id": "EX-010",
       "title": "Missing receipt",
       "next_step": "Ask the cardholder for the receipt",
       "facts": "TX-0064 · 2026-09-10 · LINEAR ORBIT · USD 197.14 · Tomás Herrera · no receipt found in the matching window",
-      "explanation": "No receipt was found for [TX-0064]. It stays in review until the cardholder uploads one.",
-      "explanation_source": "template",
+      "explanation": "The card charge [TX-0064] to Linear Orbit has no receipt in the matching window, so there is no support for it. Ask the cardholder for the receipt and check whether it was filed late or under a different charge.",
+      "explanation_source": "ai_verified",
       "key": "TX-0064:missing_receipt"
     },
     {
       "txn_id": "TX-0065",
       "type": "missing_receipt",
-      "id": "EX-018",
+      "id": "EX-011",
       "title": "Missing receipt",
       "next_step": "Ask the cardholder for the receipt",
       "facts": "TX-0065 · 2026-09-10 · PAYPAL *MGOMEZSTUDIO · USD 588.58 · Sofía Paz · no receipt found in the matching window",
-      "explanation": "No receipt was found for [TX-0065]. It stays in review until the cardholder uploads one.",
-      "explanation_source": "template",
+      "explanation": "The PayPal charge [TX-0065] has no receipt, and the payee looks like an individual or studio, so the suggested contractor account [AI-0010] is only a guess. Ask the cardholder for the receipt or invoice and confirm whether this was a contractor payment or a software or design purchase before accepting [AI-0010].",
+      "explanation_source": "ai_verified",
       "key": "TX-0065:missing_receipt"
     },
     {
       "txn_id": "TX-0065",
-      "type": "no_rule",
-      "id": "EX-019",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0065 · 2026-09-10 · PAYPAL *MGOMEZSTUDIO · USD 588.58 · Sofía Paz · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0065].",
-      "explanation_source": "template",
-      "key": "TX-0065:no_rule"
+      "type": "ai_below_threshold",
+      "id": "EX-012",
+      "title": "AI suggestion below the threshold",
+      "next_step": "Pick the account",
+      "facts": "TX-0065 · 2026-09-10 · PAYPAL *MGOMEZSTUDIO · USD 588.58 · Sofía Paz · AI suggests 5.1.04 Honorarios de contratistas del exterior with confidence 0.40 · threshold 0.75",
+      "explanation": "The AI's contractor-fee suggestion [AI-0010] for this PayPal charge [TX-0065] is a weak guess, and no receipt or memo supports it. Confirm with the cardholder what was bought, and whether it was a freelancer or a software or design purchase, before choosing the account.",
+      "explanation_source": "ai_verified",
+      "key": "TX-0065:ai_below_threshold"
     },
     {
       "txn_id": "TX-0067",
       "type": "missing_receipt",
-      "id": "EX-020",
+      "id": "EX-013",
       "title": "Missing receipt",
       "next_step": "Ask the cardholder for the receipt",
       "facts": "TX-0067 · 2026-09-10 · TST* JOES PIZZA · USD 77.73 · Camila Ortiz · no receipt found in the matching window",
-      "explanation": "No receipt was found for [TX-0067]. It stays in review until the cardholder uploads one.",
-      "explanation_source": "template",
+      "explanation": "The card charge [TX-0067] at a pizza restaurant has no receipt in the matching window. Ask the cardholder for the receipt and check whether it was filed late or under a different charge.",
+      "explanation_source": "ai_verified",
       "key": "TX-0067:missing_receipt"
     },
     {
       "txn_id": "TX-0069",
       "type": "missing_receipt",
-      "id": "EX-021",
+      "id": "EX-014",
       "title": "Missing receipt",
       "next_step": "Ask the cardholder for the receipt",
       "facts": "TX-0069 · 2026-09-10 · UBER *EATS HC9E7 · USD 50.39 · Tomás Herrera · no receipt found in the matching window",
-      "explanation": "No receipt was found for [TX-0069]. It stays in review until the cardholder uploads one.",
-      "explanation_source": "template",
+      "explanation": "The food delivery charge [TX-0069] on Tomás Herrera's card has no receipt in the matching window. Ask the cardholder for the receipt and check that it was a business expense.",
+      "explanation_source": "ai_verified",
       "key": "TX-0069:missing_receipt"
     },
     {
       "txn_id": "TX-0071",
       "type": "missing_receipt",
-      "id": "EX-022",
+      "id": "EX-015",
       "title": "Missing receipt",
       "next_step": "Ask the cardholder for the receipt",
       "facts": "TX-0071 · 2026-09-10 · UBER *TRIP T386M · USD 18.81 · Julián Castro · no receipt found in the matching window",
-      "explanation": "No receipt was found for [TX-0071]. It stays in review until the cardholder uploads one.",
-      "explanation_source": "template",
+      "explanation": "The ride-share charge [TX-0071] has no receipt in the matching window, so there is no support for it yet. Ask the cardholder for the receipt and confirm the trip was for business.",
+      "explanation_source": "ai_verified",
       "key": "TX-0071:missing_receipt"
     },
     {
       "txn_id": "TX-0072",
       "type": "amount_mismatch",
-      "id": "EX-023",
+      "id": "EX-016",
       "title": "Receipt does not match the charge",
       "next_step": "Ask for the final receipt or record the difference",
       "facts": "TX-0072 · 2026-09-10 · WEB SUMMIT RIO · USD 700.96 · Sofía Paz · receipt RC-0103 shows EUR 644.00 · different currency",
-      "explanation": "The receipt [RC-0103] matches [TX-0072] by merchant and date, but its amount or currency is different from the charge. The difference needs an explanation before posting.",
-      "explanation_source": "template",
+      "explanation": "The card charge [TX-0072] was billed in a different currency from the receipt [RC-0103], so the amounts can't be compared directly. Check whether [RC-0103] is the final receipt for this purchase and whether the gap comes only from exchange rate or fees, or ask Sofía Paz for the final receipt.",
+      "explanation_source": "ai_verified",
       "key": "TX-0072:amount_mismatch"
     },
     {
       "txn_id": "TX-0073",
       "type": "missing_receipt",
-      "id": "EX-024",
+      "id": "EX-017",
       "title": "Missing receipt",
       "next_step": "Ask the cardholder for the receipt",
       "facts": "TX-0073 · 2026-09-11 · ATLASSIAN · USD 100.98 · Diego Romero · no receipt found in the matching window",
-      "explanation": "No receipt was found for [TX-0073]. It stays in review until the cardholder uploads one.",
-      "explanation_source": "template",
+      "explanation": "The Atlassian card charge [TX-0073] has no receipt in the matching window, so there is no support for it yet. Ask the cardholder, Diego Romero, for the receipt and check whether it was filed late or under a different charge.",
+      "explanation_source": "ai_verified",
       "key": "TX-0073:missing_receipt"
     },
     {
       "txn_id": "TX-0079",
       "type": "amount_mismatch",
-      "id": "EX-025",
+      "id": "EX-018",
       "title": "Receipt does not match the charge",
       "next_step": "Ask for the final receipt or record the difference",
       "facts": "TX-0079 · 2026-09-11 · MARRIOTT SAO PAULO · USD 333.76 · Valentina Sosa · receipt RC-0192 shows USD 293.76 · difference USD 40.00",
-      "explanation": "The receipt [RC-0192] matches [TX-0079] by merchant and date, but its amount or currency is different from the charge. The difference needs an explanation before posting.",
-      "explanation_source": "template",
+      "explanation": "The hotel charge [TX-0079] is higher than the amount on the receipt [RC-0192], so the receipt may not be the final bill. Check whether a final folio exists, for example with added extras or a later adjustment, or record the difference as unsupported.",
+      "explanation_source": "ai_verified",
       "key": "TX-0079:amount_mismatch"
     },
     {
       "txn_id": "TX-0083",
       "type": "refund_partial_link",
-      "id": "EX-026",
+      "id": "EX-019",
       "title": "Partial refund linked by merchant only",
       "next_step": "Confirm which charge it refunds",
       "facts": "TX-0083 · 2026-09-12 · AIRBNB * HMM7983 · USD 111.51 · Diego Romero · tentatively linked to TX-0061 posted 2026-09-10 for USD 743.41 · amounts differ",
-      "explanation": "[TX-0083] is a partial refund. It was linked to [TX-0061] because the merchant matches, but the amounts differ, so the link needs a person to confirm it.",
-      "explanation_source": "template",
+      "explanation": "This refund [TX-0083] was matched to the earlier charge [TX-0061] only because the merchant name is the same, and the amounts don't match, so it may be a partial refund or belong to a different booking. Check the merchant's booking details to confirm which charge [TX-0083] actually refunds before it is applied.",
+      "explanation_source": "ai_verified",
       "key": "TX-0083:refund_partial_link"
     },
     {
       "txn_id": "TX-0089",
       "type": "missing_receipt",
-      "id": "EX-027",
+      "id": "EX-020",
       "title": "Missing receipt",
       "next_step": "Ask the cardholder for the receipt",
       "facts": "TX-0089 · 2026-09-12 · TST* ZUMA MIAMI · USD 145.24 · Lucía Fernández · no receipt found in the matching window",
-      "explanation": "No receipt was found for [TX-0089]. It stays in review until the cardholder uploads one.",
-      "explanation_source": "template",
+      "explanation": "The restaurant card charge [TX-0089] has no receipt in the matching window, so there is no support for the expense. Ask the cardholder for the receipt and confirm the business purpose before the charge is coded.",
+      "explanation_source": "ai_verified",
       "key": "TX-0089:missing_receipt"
     },
     {
       "txn_id": "TX-0092",
       "type": "amount_mismatch",
-      "id": "EX-028",
+      "id": "EX-021",
       "title": "Receipt does not match the charge",
       "next_step": "Ask for the final receipt or record the difference",
       "facts": "TX-0092 · 2026-09-12 · USDC PAYOUT LUCAS MOREAU · USDC 4,600.00 · receipt RC-0173 shows USDC 4,650.00 · difference USDC -50.00",
-      "explanation": "The receipt [RC-0173] matches [TX-0092] by merchant and date, but its amount or currency is different from the charge. The difference needs an explanation before posting.",
-      "explanation_source": "template",
+      "explanation": "The contractor payout [TX-0092] is a bit lower than the amount shown on its receipt [RC-0173], so they don't agree. Check whether [RC-0173] is a draft or estimate, then ask for the final receipt or record the difference with a note.",
+      "explanation_source": "ai_verified",
       "key": "TX-0092:amount_mismatch"
-    },
-    {
-      "txn_id": "TX-0111",
-      "type": "no_rule",
-      "id": "EX-029",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0111 · 2026-09-15 · AIRALO · USD 14.33 · Valentina Sosa · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0111].",
-      "explanation_source": "template",
-      "key": "TX-0111:no_rule"
     },
     {
       "txn_id": "TX-0115",
       "type": "missing_receipt",
-      "id": "EX-030",
+      "id": "EX-022",
       "title": "Missing receipt",
       "next_step": "Ask the cardholder for the receipt",
       "facts": "TX-0115 · 2026-09-15 · SQ *BLUE BOTTLE COFFEE · USD 28.30 · Tomás Herrera · no receipt found in the matching window",
-      "explanation": "No receipt was found for [TX-0115]. It stays in review until the cardholder uploads one.",
-      "explanation_source": "template",
+      "explanation": "No receipt was found for this coffee charge [TX-0115], so the business purpose rests only on the cardholder's memo. Ask the cardholder for the receipt and who the prospect was before accepting the suggested meals and representation account [AI-0012].",
+      "explanation_source": "ai_verified",
       "key": "TX-0115:missing_receipt"
-    },
-    {
-      "txn_id": "TX-0115",
-      "type": "no_rule",
-      "id": "EX-031",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0115 · 2026-09-15 · SQ *BLUE BOTTLE COFFEE · USD 28.30 · Tomás Herrera · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0115].",
-      "explanation_source": "template",
-      "key": "TX-0115:no_rule"
-    },
-    {
-      "txn_id": "TX-0116",
-      "type": "no_rule",
-      "id": "EX-032",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0116 · 2026-09-15 · SQ *BLUE BOTTLE COFFEE · USD 38.21 · Martín Ibarra · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0116].",
-      "explanation_source": "template",
-      "key": "TX-0116:no_rule"
     },
     {
       "txn_id": "TX-0117",
       "type": "duplicate_suspected",
-      "id": "EX-033",
+      "id": "EX-023",
       "title": "Possible duplicate charge",
       "next_step": "Confirm with the cardholder and dispute the charge",
       "facts": "TX-0117 · 2026-09-15 · STARBUCKS STORE YLFHT · USD 21.54 · Camila Ortiz · same descriptor and amount as TX-0104 posted 2026-09-14 · only one receipt",
-      "explanation": "[TX-0117] repeats the merchant and amount of [TX-0104] within a short window, and only one receipt exists. It looks like a double charge.",
-      "explanation_source": "template",
+      "explanation": "[TX-0117] has the same merchant name and amount as [TX-0104] from the day before, and the lone receipt can support only one of them, so one may be a repeat charge. Check which charge the receipt matches and ask the cardholder whether both purchases were real before disputing.",
+      "explanation_source": "ai_verified",
       "key": "TX-0117:duplicate_suspected"
     },
     {
       "txn_id": "TX-0123",
       "type": "duplicate_suspected",
-      "id": "EX-034",
+      "id": "EX-024",
       "title": "Possible duplicate charge",
       "next_step": "Confirm with the cardholder and dispute the charge",
       "facts": "TX-0123 · 2026-09-16 · ANTHROPIC · USD 222.25 · Diego Romero · same descriptor and amount as TX-0112 posted 2026-09-15 · only one receipt",
-      "explanation": "[TX-0123] repeats the merchant and amount of [TX-0112] within a short window, and only one receipt exists. It looks like a double charge.",
-      "explanation_source": "template",
+      "explanation": "[TX-0123] has the same merchant and amount as [TX-0112] from the day before, and only one receipt is on file, so it may be a repeat charge. Check with the cardholder whether both purchases were real, and only dispute [TX-0123] if the second one can't be supported.",
+      "explanation_source": "ai_verified",
       "key": "TX-0123:duplicate_suspected"
     },
     {
       "txn_id": "TX-0127",
-      "type": "no_rule",
-      "id": "EX-035",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0127 · 2026-09-16 · SQ *SUNSET PRINT SHOP · USD 95.69 · Camila Ortiz · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0127].",
-      "explanation_source": "template",
-      "key": "TX-0127:no_rule"
+      "type": "ai_below_threshold",
+      "id": "EX-025",
+      "title": "AI suggestion below the threshold",
+      "next_step": "Pick the account",
+      "facts": "TX-0127 · 2026-09-16 · SQ *SUNSET PRINT SHOP · USD 95.69 · Camila Ortiz · AI suggests 5.1.01 Publicidad y marketing with confidence 0.72 · threshold 0.75",
+      "explanation": "The suggestion [AI-0014] for marketing is below the confidence cutoff because the cardholder memo on [TX-0127] (\"client meeting\") doesn't obviously fit printed business cards. Check the receipt [RC-0050] and confirm whether marketing is the right account or whether office supplies or printing fits better.",
+      "explanation_source": "ai_verified",
+      "key": "TX-0127:ai_below_threshold"
     },
     {
       "txn_id": "TX-0129",
       "type": "amount_mismatch",
-      "id": "EX-036",
+      "id": "EX-026",
       "title": "Receipt does not match the charge",
       "next_step": "Ask for the final receipt or record the difference",
       "facts": "TX-0129 · 2026-09-16 · TST* SHAKE SHACK MADISO · USD 126.55 · Camila Ortiz · receipt RC-0155 shows USD 110.22 · difference USD 16.33",
-      "explanation": "The receipt [RC-0155] matches [TX-0129] by merchant and date, but its amount or currency is different from the charge. The difference needs an explanation before posting.",
-      "explanation_source": "template",
+      "explanation": "The card charge [TX-0129] is higher than the receipt [RC-0155] matched to it, so the receipt may be a pre-tip or pre-final copy. Check whether a final itemized receipt exists, or whether the extra was a tip or added item, and confirm it fits the client meeting memo.",
+      "explanation_source": "ai_verified",
       "key": "TX-0129:amount_mismatch"
-    },
-    {
-      "txn_id": "TX-0134",
-      "type": "no_rule",
-      "id": "EX-037",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0134 · 2026-09-17 · DUTY FREE AMERICAS 23MZD · USD 142.45 · Camila Ortiz · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0134].",
-      "explanation_source": "template",
-      "key": "TX-0134:no_rule"
-    },
-    {
-      "txn_id": "TX-0142",
-      "type": "no_rule",
-      "id": "EX-038",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0142 · 2026-09-18 · UPWORK *ESCROW RHX2D · USD 683.64 · Julián Castro · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0142].",
-      "explanation_source": "template",
-      "key": "TX-0142:no_rule"
     },
     {
       "txn_id": "TX-0155",
       "type": "amount_mismatch",
-      "id": "EX-039",
+      "id": "EX-027",
       "title": "Receipt does not match the charge",
       "next_step": "Ask for the final receipt or record the difference",
       "facts": "TX-0155 · 2026-09-19 · UDEMY ONLINE COURSE · USD 36.51 · Sofía Paz · receipt RC-0159 shows ARS 56,042.85 · different currency",
-      "explanation": "The receipt [RC-0159] matches [TX-0155] by merchant and date, but its amount or currency is different from the charge. The difference needs an explanation before posting.",
-      "explanation_source": "template",
+      "explanation": "The card charge [TX-0155] and the matched receipt [RC-0159] are in different currencies, so the amounts can't be compared directly. Check that [RC-0159] belongs to this purchase, then ask for the final receipt or record the currency difference.",
+      "explanation_source": "ai_verified",
       "key": "TX-0155:amount_mismatch"
-    },
-    {
-      "txn_id": "TX-0156",
-      "type": "no_rule",
-      "id": "EX-040",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0156 · 2026-09-20 · BEST BUY 00012 · USD 94.38 · Sofía Paz · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0156].",
-      "explanation_source": "template",
-      "key": "TX-0156:no_rule"
     },
     {
       "txn_id": "TX-0161",
       "type": "amount_mismatch",
-      "id": "EX-041",
+      "id": "EX-028",
       "title": "Receipt does not match the charge",
       "next_step": "Ask for the final receipt or record the difference",
       "facts": "TX-0161 · 2026-09-20 · TST* ZUMA MIAMI · USD 91.94 · Sofía Paz · receipt RC-0029 shows USD 80.07 · difference USD 11.87",
-      "explanation": "The receipt [RC-0029] matches [TX-0161] by merchant and date, but its amount or currency is different from the charge. The difference needs an explanation before posting.",
-      "explanation_source": "template",
+      "explanation": "The card charge [TX-0161] is higher than the receipt [RC-0029] matched to it, so the receipt may be a pre-tip or itemized copy rather than the final one. Check whether the final receipt shows a tip or added items, and if not, ask Sofía Paz to explain the gap given the client meeting memo.",
+      "explanation_source": "ai_verified",
       "key": "TX-0161:amount_mismatch"
     },
     {
       "txn_id": "TX-0162",
       "type": "missing_receipt",
-      "id": "EX-042",
+      "id": "EX-029",
       "title": "Missing receipt",
       "next_step": "Ask the cardholder for the receipt",
       "facts": "TX-0162 · 2026-09-20 · TWILIO FWB2B · USD 207.50 · Lucía Fernández · no receipt found in the matching window",
-      "explanation": "No receipt was found for [TX-0162]. It stays in review until the cardholder uploads one.",
-      "explanation_source": "template",
+      "explanation": "No receipt was found for the Twilio card charge [TX-0162], so the actual service bought is unconfirmed. Ask the cardholder for the receipt and check that it supports the cloud services account suggested in [AI-0018] before accepting it.",
+      "explanation_source": "ai_verified",
       "key": "TX-0162:missing_receipt"
-    },
-    {
-      "txn_id": "TX-0162",
-      "type": "no_rule",
-      "id": "EX-043",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0162 · 2026-09-20 · TWILIO FWB2B · USD 207.50 · Lucía Fernández · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0162].",
-      "explanation_source": "template",
-      "key": "TX-0162:no_rule"
     },
     {
       "txn_id": "TX-0165",
       "type": "missing_receipt",
-      "id": "EX-044",
+      "id": "EX-030",
       "title": "Missing receipt",
       "next_step": "Ask the cardholder for the receipt",
       "facts": "TX-0165 · 2026-09-20 · UBER *TRIP AXJQT · USD 15.30 · Lucía Fernández · no receipt found in the matching window",
-      "explanation": "No receipt was found for [TX-0165]. It stays in review until the cardholder uploads one.",
-      "explanation_source": "template",
+      "explanation": "The ride-share charge [TX-0165] on Lucía Fernández's card has no receipt in the matching window. Ask her for the receipt and check that the trip was for business.",
+      "explanation_source": "ai_verified",
       "key": "TX-0165:missing_receipt"
-    },
-    {
-      "txn_id": "TX-0167",
-      "type": "no_rule",
-      "id": "EX-045",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0167 · 2026-09-21 · AMZN MKTP US*H7N3G · USD 149.83 · Valentina Sosa · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0167].",
-      "explanation_source": "template",
-      "key": "TX-0167:no_rule"
     },
     {
       "txn_id": "TX-0168",
       "type": "amount_mismatch",
-      "id": "EX-046",
+      "id": "EX-031",
       "title": "Receipt does not match the charge",
       "next_step": "Ask for the final receipt or record the difference",
       "facts": "TX-0168 · 2026-09-21 · HILTON MIAMI DOWNTOWN · USD 984.99 · Julián Castro · receipt RC-0210 shows USD 899.99 · difference USD 85.00",
-      "explanation": "The receipt [RC-0210] matches [TX-0168] by merchant and date, but its amount or currency is different from the charge. The difference needs an explanation before posting.",
-      "explanation_source": "template",
+      "explanation": "The card charge [TX-0168] from the Hilton is higher than the amount on the matched receipt [RC-0210]. Check whether [RC-0210] is a preliminary bill and ask Julián for the final receipt, or confirm what the extra charge covers (for example incidentals) before recording the difference.",
+      "explanation_source": "ai_verified",
       "key": "TX-0168:amount_mismatch"
-    },
-    {
-      "txn_id": "TX-0170",
-      "type": "no_rule",
-      "id": "EX-047",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0170 · 2026-09-21 · LEMSQZY* TAILWIND LABS · USD 299.00 · Martín Ibarra · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0170].",
-      "explanation_source": "template",
-      "key": "TX-0170:no_rule"
-    },
-    {
-      "txn_id": "TX-0171",
-      "type": "no_rule",
-      "id": "EX-048",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0171 · 2026-09-21 · LYFT *RIDE WV4T9 · USD 21.09 · Lucía Fernández · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0171].",
-      "explanation_source": "template",
-      "key": "TX-0171:no_rule"
-    },
-    {
-      "txn_id": "TX-0178",
-      "type": "no_rule",
-      "id": "EX-049",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0178 · 2026-09-22 · LYFT *RIDE J7H7L · USD 34.76 · Diego Romero · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0178].",
-      "explanation_source": "template",
-      "key": "TX-0178:no_rule"
     },
     {
       "txn_id": "TX-0179",
       "type": "missing_receipt",
-      "id": "EX-050",
+      "id": "EX-032",
       "title": "Missing receipt",
       "next_step": "Ask the cardholder for the receipt",
       "facts": "TX-0179 · 2026-09-22 · MARRIOTT SAO PAULO · USD 470.08 · Lucía Fernández · no receipt found in the matching window",
-      "explanation": "No receipt was found for [TX-0179]. It stays in review until the cardholder uploads one.",
-      "explanation_source": "template",
+      "explanation": "The hotel charge [TX-0179] on Lucía Fernández's card has no matching receipt in the search window. Ask her for the receipt, and check whether it was filed late or under a different date or amount.",
+      "explanation_source": "ai_verified",
       "key": "TX-0179:missing_receipt"
     },
     {
       "txn_id": "TX-0188",
       "type": "missing_receipt",
-      "id": "EX-051",
+      "id": "EX-033",
       "title": "Missing receipt",
       "next_step": "Ask the cardholder for the receipt",
       "facts": "TX-0188 · 2026-09-23 · STICKERMULE.COM · USD 398.16 · Tomás Herrera · no receipt found in the matching window",
-      "explanation": "No receipt was found for [TX-0188]. It stays in review until the cardholder uploads one.",
-      "explanation_source": "template",
+      "explanation": "No receipt was found for the Sticker Mule card charge [TX-0188], so what was bought and why is unconfirmed. Ask the cardholder for the receipt and confirm it was a business purchase before accepting the marketing account suggested in [AI-0023], which is only a guess from the merchant name.",
+      "explanation_source": "ai_verified",
       "key": "TX-0188:missing_receipt"
     },
     {
       "txn_id": "TX-0188",
-      "type": "no_rule",
-      "id": "EX-052",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0188 · 2026-09-23 · STICKERMULE.COM · USD 398.16 · Tomás Herrera · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0188].",
-      "explanation_source": "template",
-      "key": "TX-0188:no_rule"
-    },
-    {
-      "txn_id": "TX-0189",
-      "type": "no_rule",
-      "id": "EX-053",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0189 · 2026-09-23 · TICKETTAILOR* PRODUCTCAMP · USD 48.29 · Diego Romero · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0189].",
-      "explanation_source": "template",
-      "key": "TX-0189:no_rule"
-    },
-    {
-      "txn_id": "TX-0195",
-      "type": "no_rule",
-      "id": "EX-054",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0195 · 2026-09-24 · COSTCO WHSE #0144 · USD 141.72 · Sofía Paz · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0195].",
-      "explanation_source": "template",
-      "key": "TX-0195:no_rule"
+      "type": "ai_below_threshold",
+      "id": "EX-034",
+      "title": "AI suggestion below the threshold",
+      "next_step": "Pick the account",
+      "facts": "TX-0188 · 2026-09-23 · STICKERMULE.COM · USD 398.16 · Tomás Herrera · AI suggests 5.1.01 Publicidad y marketing with confidence 0.60 · threshold 0.75",
+      "explanation": "The AI's marketing suggestion [AI-0023] for this Sticker Mule charge [TX-0188] is low confidence, and there is no receipt or memo to show what was bought. Ask the cardholder what the items were, then pick the account yourself, since the stickers could be marketing or something else.",
+      "explanation_source": "ai_verified",
+      "key": "TX-0188:ai_below_threshold"
     },
     {
       "txn_id": "TX-0198",
       "type": "refund_partial_link",
-      "id": "EX-055",
+      "id": "EX-035",
       "title": "Partial refund linked by merchant only",
       "next_step": "Confirm which charge it refunds",
       "facts": "TX-0198 · 2026-09-24 · LATAM AIRLINES B2LK8 · USD 38.00 · Lucía Fernández · tentatively linked to TX-0169 posted 2026-09-21 for USD 316.74 · amounts differ",
-      "explanation": "[TX-0198] is a partial refund. It was linked to [TX-0169] because the merchant matches, but the amounts differ, so the link needs a person to confirm it.",
-      "explanation_source": "template",
+      "explanation": "This refund [TX-0198] was matched to the earlier charge [TX-0169] only because the merchant is the same, and the amounts don't match, so it may be a partial refund or belong to a different booking. Check the airline booking reference and ticket details to confirm which charge [TX-0198] actually refunds.",
+      "explanation_source": "ai_verified",
       "key": "TX-0198:refund_partial_link"
     },
     {
       "txn_id": "TX-0201",
       "type": "missing_receipt",
-      "id": "EX-056",
+      "id": "EX-036",
       "title": "Missing receipt",
       "next_step": "Ask the cardholder for the receipt",
       "facts": "TX-0201 · 2026-09-24 · UBER *TRIP GFDW2 · USD 29.25 · Lucía Fernández · no receipt found in the matching window",
-      "explanation": "No receipt was found for [TX-0201]. It stays in review until the cardholder uploads one.",
-      "explanation_source": "template",
+      "explanation": "The ride charge [TX-0201] has no receipt in the matching window, so there is nothing to support it yet. Ask the cardholder for the receipt and check that the trip was for business.",
+      "explanation_source": "ai_verified",
       "key": "TX-0201:missing_receipt"
     },
     {
       "txn_id": "TX-0203",
       "type": "missing_receipt",
-      "id": "EX-057",
+      "id": "EX-037",
       "title": "Missing receipt",
       "next_step": "Ask the cardholder for the receipt",
       "facts": "TX-0203 · 2026-09-25 · FACEBK *ADS TKMC3 · USD 202.68 · Camila Ortiz · no receipt found in the matching window",
-      "explanation": "No receipt was found for [TX-0203]. It stays in review until the cardholder uploads one.",
-      "explanation_source": "template",
+      "explanation": "This Facebook ads charge [TX-0203] on Camila Ortiz's card has no receipt in the matching window. Ask the cardholder for the receipt, and check whether the ad platform's billing page shows a matching invoice that was filed elsewhere.",
+      "explanation_source": "ai_verified",
       "key": "TX-0203:missing_receipt"
     },
     {
       "txn_id": "TX-0205",
       "type": "amount_mismatch",
-      "id": "EX-058",
+      "id": "EX-038",
       "title": "Receipt does not match the charge",
       "next_step": "Ask for the final receipt or record the difference",
       "facts": "TX-0205 · 2026-09-25 · TST* ZUMA MIAMI · USD 55.39 · Valentina Sosa · receipt RC-0125 shows USD 48.24 · difference USD 7.15",
-      "explanation": "The receipt [RC-0125] matches [TX-0205] by merchant and date, but its amount or currency is different from the charge. The difference needs an explanation before posting.",
-      "explanation_source": "template",
+      "explanation": "The card charge [TX-0205] is higher than the receipt [RC-0125] attached to it, which may mean a tip was added after the receipt was printed or the wrong receipt was matched. Check whether [RC-0125] is the final itemized receipt for this meal, and if so, ask the cardholder for the final copy or record the difference.",
+      "explanation_source": "ai_verified",
       "key": "TX-0205:amount_mismatch"
     },
     {
       "txn_id": "TX-0208",
       "type": "missing_receipt",
-      "id": "EX-059",
+      "id": "EX-039",
       "title": "Missing receipt",
       "next_step": "Ask the cardholder for the receipt",
       "facts": "TX-0208 · 2026-09-26 · DD *DOORDASH DEHYT · USD 132.46 · Tomás Herrera · no receipt found in the matching window",
-      "explanation": "No receipt was found for [TX-0208]. It stays in review until the cardholder uploads one.",
-      "explanation_source": "template",
+      "explanation": "No receipt was found for this food delivery charge [TX-0208], so the team dinner described in the memo can't be confirmed. Ask the cardholder for the receipt, and check it supports the suggested meals and entertainment account [AI-0026] before anything is coded.",
+      "explanation_source": "ai_verified",
       "key": "TX-0208:missing_receipt"
-    },
-    {
-      "txn_id": "TX-0208",
-      "type": "no_rule",
-      "id": "EX-060",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0208 · 2026-09-26 · DD *DOORDASH DEHYT · USD 132.46 · Tomás Herrera · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0208].",
-      "explanation_source": "template",
-      "key": "TX-0208:no_rule"
     },
     {
       "txn_id": "TX-0211",
       "type": "duplicate_suspected",
-      "id": "EX-061",
+      "id": "EX-040",
       "title": "Possible duplicate charge",
       "next_step": "Confirm with the cardholder and dispute the charge",
       "facts": "TX-0211 · 2026-09-26 · STARBUCKS STORE DEC7E · USD 26.63 · Valentina Sosa · same descriptor and amount as TX-0210 posted 2026-09-26 · only one receipt",
-      "explanation": "[TX-0211] repeats the merchant and amount of [TX-0210] within a short window, and only one receipt exists. It looks like a double charge.",
-      "explanation_source": "template",
+      "explanation": "[TX-0211] has the same merchant descriptor and amount as [TX-0210] on the same day, and only one receipt exists, so it may be a repeat charge. Ask the cardholder whether both purchases were real, and check the receipt against both before deciding whether to dispute.",
+      "explanation_source": "ai_verified",
       "key": "TX-0211:duplicate_suspected"
     },
     {
       "txn_id": "TX-0214",
-      "type": "no_rule",
-      "id": "EX-062",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0214 · 2026-09-27 · APPLE.COM/BILL · USD 9.99 · Julián Castro · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0214].",
-      "explanation_source": "template",
-      "key": "TX-0214:no_rule"
+      "type": "ai_below_threshold",
+      "id": "EX-041",
+      "title": "AI suggestion below the threshold",
+      "next_step": "Pick the account",
+      "facts": "TX-0214 · 2026-09-27 · APPLE.COM/BILL · USD 9.99 · Julián Castro · AI suggests 5.1.03 Licencias de software with confidence 0.72 · threshold 0.75",
+      "explanation": "The AI's account suggestion [AI-0027] for this card charge [TX-0214] falls just short of the confidence bar, so it needs a person to choose. The receipt [RC-0046] reads like a flat-fee software subscription, but check that the other account the AI named is not a better fit before you pick.",
+      "explanation_source": "ai_verified",
+      "key": "TX-0214:ai_below_threshold"
     },
     {
       "txn_id": "TX-0217",
       "type": "duplicate_suspected",
-      "id": "EX-063",
+      "id": "EX-042",
       "title": "Possible duplicate charge",
       "next_step": "Confirm with the cardholder and dispute the charge",
       "facts": "TX-0217 · 2026-09-27 · TST* JOES PIZZA · USD 88.24 · Martín Ibarra · same descriptor and amount as TX-0216 posted 2026-09-27 · only one receipt",
-      "explanation": "[TX-0217] repeats the merchant and amount of [TX-0216] within a short window, and only one receipt exists. It looks like a double charge.",
-      "explanation_source": "template",
+      "explanation": "[TX-0217] has the same merchant and amount as [TX-0216] on the same day, yet only one receipt is on file. Check with the cardholder whether both purchases were real, and if not, dispute [TX-0217].",
+      "explanation_source": "ai_verified",
       "key": "TX-0217:duplicate_suspected"
-    },
-    {
-      "txn_id": "TX-0229",
-      "type": "no_rule",
-      "id": "EX-064",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0229 · 2026-09-29 · SENDGRID · USD 90.00 · Lucía Fernández · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0229].",
-      "explanation_source": "template",
-      "key": "TX-0229:no_rule"
     },
     {
       "txn_id": "TX-0236",
       "type": "missing_receipt",
-      "id": "EX-065",
+      "id": "EX-043",
       "title": "Missing receipt",
-      "next_step": "Ask the cardholder for the receipt",
+      "next_step": "Ask the contractor for the invoice",
       "facts": "TX-0236 · 2026-09-29 · USDC PAYOUT LUCAS MOREAU · USDC 4,700.00 · no receipt found in the matching window",
-      "explanation": "No receipt was found for [TX-0236]. It stays in review until the cardholder uploads one.",
-      "explanation_source": "template",
+      "explanation": "The stablecoin payout to the contractor in [TX-0236] has no receipt or invoice in the matching window, so there is no support for it. Ask the contractor for the invoice and check whether it was filed under a different date or payment.",
+      "explanation_source": "ai_verified",
       "key": "TX-0236:missing_receipt"
-    },
-    {
-      "txn_id": "TX-0239",
-      "type": "no_rule",
-      "id": "EX-066",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0239 · 2026-09-30 · AMZN MKTP US*D8TEW · USD 29.62 · Diego Romero · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0239].",
-      "explanation_source": "template",
-      "key": "TX-0239:no_rule"
-    },
-    {
-      "txn_id": "TX-0244",
-      "type": "no_rule",
-      "id": "EX-067",
-      "title": "No rule covers this merchant",
-      "next_step": "Pick the account and consider a new rule",
-      "facts": "TX-0244 · 2026-09-30 · TWILIO 2NWKH · USD 158.45 · Camila Ortiz · no account rule matches the descriptor",
-      "explanation": "No rule covers the merchant of [TX-0244].",
-      "explanation_source": "template",
-      "key": "TX-0244:no_rule"
     },
     {
       "txn_id": null,
       "receipt_id": "RC-0211",
       "type": "receipt_unmatched",
-      "id": "EX-068",
+      "id": "EX-044",
       "title": "Receipt with no transaction",
       "next_step": "Find the transaction or discard the receipt",
       "facts": "RC-0211 · Uber Portier B.V. · 2026-09-09 · ARS 77,348.65",
-      "explanation": "The receipt [RC-0211] did not match any transaction in the export.",
-      "explanation_source": "template",
+      "explanation": "Receipt [RC-0211] from Uber Portier B.V. has no matching card transaction in the ledger. Check whether the charge posted under a different date, amount or merchant name, or was paid another way; if nothing turns up, discard the receipt.",
+      "explanation_source": "ai_verified",
       "key": "RC-0211:receipt_unmatched"
     }
   ],
@@ -15973,1505 +15910,1505 @@
       "date": "2026-09-11",
       "amount_cents": "456.58",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0002": {
       "vendor": "Anthropic, PBC",
       "date": "2026-09-30",
       "amount_cents": "554.86",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0003": {
       "vendor": "Uber B.V.",
       "date": "2026-09-18",
       "amount_cents": "34.97",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0004": {
       "vendor": "COYA MIAMI",
       "date": "2026-09-09",
       "amount_cents": "89.65",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0005": {
       "vendor": "Amazon Web Services EMEA SARL",
       "date": "2026-08-31",
       "amount_cents": "3753.57",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0006": {
       "vendor": "Google Ireland Ltd",
       "date": "2026-09-11",
       "amount_cents": "1005.68",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0007": {
       "vendor": "LATAM Airlines Group",
       "date": "2026-09-14",
       "amount_cents": "287.64",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0008": {
       "vendor": "Eventbrite",
       "date": "2026-09-23",
       "amount_cents": "51.43",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0009": {
       "vendor": "Notion Labs, Inc.",
       "date": "2026-09-04",
       "amount_cents": "335.46",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0010": {
       "vendor": "STARBUCKS COFFEE COMPANY",
       "date": "2026-09-21",
       "amount_cents": "21.72",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0011": {
       "vendor": "Uber Portier B.V.",
       "date": "2026-09-10",
       "amount_cents": "116.37",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0012": {
       "vendor": "Meta Platforms Ireland Ltd",
       "date": "2026-09-27",
       "amount_cents": "361.25",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0013": {
       "vendor": "Uber B.V.",
       "date": "2026-09-04",
       "amount_cents": "7.04",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0014": {
       "vendor": "SHAKE SHACK MADISON",
       "date": "2026-09-14",
       "amount_cents": "143.05",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0015": {
       "vendor": "Sara Lindqvist",
       "date": "2026-09-26",
       "amount_cents": "5200.00",
       "currency": "USDC",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0016": {
       "vendor": "Google Ireland Ltd",
       "date": "2026-08-31",
       "amount_cents": "516.10",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0017": {
       "vendor": "Uber B.V.",
       "date": "2026-09-19",
       "amount_cents": "9.97",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0018": {
       "vendor": "Uber B.V.",
       "date": "2026-09-07",
       "amount_cents": "25.73",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0019": {
       "vendor": "OpenAI, LLC",
       "date": "2026-08-31",
       "amount_cents": "204.65",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0020": {
       "vendor": "Andrei Popescu",
       "date": "2026-09-27",
       "amount_cents": "3300.00",
       "currency": "USDC",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0021": {
       "vendor": "COSTCO WHOLESALE",
       "date": "2026-09-23",
       "amount_cents": "141.72",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0022": {
       "vendor": "1Password",
       "date": "2026-09-13",
       "amount_cents": "314.11",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0023": {
       "vendor": "Lyft, Inc.",
       "date": "2026-09-21",
       "amount_cents": "34.76",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0024": {
       "vendor": "STARBUCKS COFFEE COMPANY",
       "date": "2026-09-03",
       "amount_cents": "27.67",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0025": {
       "vendor": "Uber B.V.",
       "date": "2026-09-07",
       "amount_cents": "24.77",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0026": {
       "vendor": "Fiverr International",
       "date": "2026-09-08",
       "amount_cents": "204.22",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0027": {
       "vendor": "JOE'S PIZZA",
       "date": "2026-09-27",
       "amount_cents": "23.71",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0028": {
       "vendor": "Meta Platforms Ireland Ltd",
       "date": "2026-09-12",
       "amount_cents": "468.58",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0029": {
       "vendor": "ZUMA MIAMI",
       "date": "2026-09-19",
       "amount_cents": "80.07",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0030": {
       "vendor": "Copa Airlines",
       "date": "2026-09-23",
       "amount_cents": "499.74",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0031": {
       "vendor": "LinkedIn Ireland Unlimited Company",
       "date": "2026-09-27",
       "amount_cents": "492.83",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0032": {
       "vendor": "GitHub, Inc.",
       "date": "2026-09-08",
       "amount_cents": "221.18",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0033": {
       "vendor": "Upwork Global Inc.",
       "date": "2026-09-18",
       "amount_cents": "683.64",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0034": {
       "vendor": "Uber B.V.",
       "date": "2026-09-03",
       "amount_cents": "23.70",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0035": {
       "vendor": "Tomasz Nowak",
       "date": "2026-09-13",
       "amount_cents": "4200.00",
       "currency": "USDC",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0036": {
       "vendor": "Mateo Silva",
       "date": "2026-09-29",
       "amount_cents": "3400.00",
       "currency": "USDC",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0037": {
       "vendor": "SHAKE SHACK MADISON",
       "date": "2026-09-18",
       "amount_cents": "50.68",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0038": {
       "vendor": "Uber B.V.",
       "date": "2026-09-17",
       "amount_cents": "45.59",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0039": {
       "vendor": "SWEETGREEN MARKET ST",
       "date": "2026-09-09",
       "amount_cents": "59.97",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0040": {
       "vendor": "Anthropic, PBC",
       "date": "2026-09-27",
       "amount_cents": "863.55",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0041": {
       "vendor": "Uber B.V.",
       "date": "2026-09-09",
       "amount_cents": "42.50",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0042": {
       "vendor": "Kenji Watanabe",
       "date": "2026-09-21",
       "amount_cents": "5050.00",
       "currency": "USDC",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0043": {
       "vendor": "Uber B.V.",
       "date": "2026-09-13",
       "amount_cents": "12.33",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0044": {
       "vendor": "Google Workspace",
       "date": "2026-08-30",
       "amount_cents": "566.34",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0045": {
       "vendor": "JOE'S PIZZA",
       "date": "2026-09-25",
       "amount_cents": "88.24",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0046": {
       "vendor": "Apple Services",
       "date": "2026-09-27",
       "amount_cents": "9.99",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0047": {
       "vendor": "STARBUCKS COFFEE COMPANY",
       "date": "2026-09-22",
       "amount_cents": "29.29",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0048": {
       "vendor": "Laura Méndez",
       "date": "2026-09-26",
       "amount_cents": "3000.00",
       "currency": "USDC",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0049": {
       "vendor": "Uber B.V.",
       "date": "2026-09-18",
       "amount_cents": "33.97",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0050": {
       "vendor": "Sunset Print Shop",
       "date": "2026-09-15",
       "amount_cents": "95.69",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0051": {
       "vendor": "STARBUCKS COFFEE COMPANY",
       "date": "2026-09-18",
       "amount_cents": "28.44",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0052": {
       "vendor": "Google Ireland Ltd",
       "date": "2026-09-01",
       "amount_cents": "933.77",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0053": {
       "vendor": "Figma, Inc.",
       "date": "2026-09-17",
       "amount_cents": "107.85",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0054": {
       "vendor": "Google Ireland Ltd",
       "date": "2026-09-11",
       "amount_cents": "309.32",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0055": {
       "vendor": "Kenji Watanabe",
       "date": "2026-09-27",
       "amount_cents": "4650.00",
       "currency": "USDC",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0056": {
       "vendor": "Uber B.V.",
       "date": "2026-09-27",
       "amount_cents": "39.00",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0057": {
       "vendor": "LATAM Airlines Group",
       "date": "2026-09-20",
       "amount_cents": "316.74",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0058": {
       "vendor": "Datadog, Inc.",
       "date": "2026-09-04",
       "amount_cents": "1044.78",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0059": {
       "vendor": "Uber B.V.",
       "date": "2026-09-27",
       "amount_cents": "28.89",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0060": {
       "vendor": "Meta Platforms Ireland Ltd",
       "date": "2026-09-13",
       "amount_cents": "302.71",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0061": {
       "vendor": "Airbnb Payments",
       "date": "2026-09-26",
       "amount_cents": "915.82",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0062": {
       "vendor": "Substack Inc.",
       "date": "2026-09-17",
       "amount_cents": "9.96",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0063": {
       "vendor": "Ana Ribeiro",
       "date": "2026-09-26",
       "amount_cents": "3600.00",
       "currency": "USDC",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0064": {
       "vendor": "Anthropic, PBC",
       "date": "2026-09-24",
       "amount_cents": "214.82",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0065": {
       "vendor": "Meta Platforms Ireland Ltd",
       "date": "2026-09-20",
       "amount_cents": "222.37",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0066": {
       "vendor": "Meta Platforms Ireland Ltd",
       "date": "2026-09-10",
       "amount_cents": "1248.74",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0067": {
       "vendor": "Emily Carter",
       "date": "2026-09-27",
       "amount_cents": "4100.00",
       "currency": "USDC",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0068": {
       "vendor": "Meta Platforms Ireland Ltd",
       "date": "2026-09-11",
       "amount_cents": "588.24",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0069": {
       "vendor": "Bruno Costa",
       "date": "2026-09-28",
       "amount_cents": "2900.00",
       "currency": "USDC",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0070": {
       "vendor": "STARBUCKS COFFEE COMPANY",
       "date": "2026-09-18",
       "amount_cents": "25.03",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0071": {
       "vendor": "SWEETGREEN MARKET ST",
       "date": "2026-09-13",
       "amount_cents": "111.33",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0072": {
       "vendor": "Uber B.V.",
       "date": "2026-09-07",
       "amount_cents": "42.94",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0073": {
       "vendor": "Eventbrite",
       "date": "2026-09-25",
       "amount_cents": "128.43",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0074": {
       "vendor": "Canva Pty Ltd",
       "date": "2026-09-17",
       "amount_cents": "174.16",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0075": {
       "vendor": "Google Ireland Ltd",
       "date": "2026-09-28",
       "amount_cents": "585.56",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0076": {
       "vendor": "SWEETGREEN MARKET ST",
       "date": "2026-09-13",
       "amount_cents": "156.22",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0077": {
       "vendor": "Uber B.V.",
       "date": "2026-09-22",
       "amount_cents": "25.12",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0078": {
       "vendor": "Uber B.V.",
       "date": "2026-09-29",
       "amount_cents": "47.11",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0079": {
       "vendor": "Uber B.V.",
       "date": "2026-09-05",
       "amount_cents": "8.33",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0080": {
       "vendor": "Uber B.V.",
       "date": "2026-09-14",
       "amount_cents": "47.38",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0081": {
       "vendor": "STARBUCKS COFFEE COMPANY",
       "date": "2026-09-23",
       "amount_cents": "11.25",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0082": {
       "vendor": "OpenAI, LLC",
       "date": "2026-09-12",
       "amount_cents": "256.48",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0083": {
       "vendor": "American Airlines",
       "date": "2026-09-25",
       "amount_cents": "1152.88",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0084": {
       "vendor": "Meta Platforms Ireland Ltd",
       "date": "2026-09-20",
       "amount_cents": "1278.29",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0085": {
       "vendor": "Gumroad",
       "date": "2026-09-09",
       "amount_cents": "25.47",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0086": {
       "vendor": "ZUMA MIAMI",
       "date": "2026-08-30",
       "amount_cents": "150.13",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0087": {
       "vendor": "ZUMA MIAMI",
       "date": "2026-09-24",
       "amount_cents": "119.63",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0088": {
       "vendor": "Priya Raman",
       "date": "2026-09-27",
       "amount_cents": "3350.00",
       "currency": "USDC",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0089": {
       "vendor": "STARBUCKS COFFEE COMPANY",
       "date": "2026-08-31",
       "amount_cents": "10.09",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0090": {
       "vendor": "Anthropic, PBC",
       "date": "2026-09-15",
       "amount_cents": "222.25",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0091": {
       "vendor": "Udemy, Inc.",
       "date": "2026-09-07",
       "amount_cents": "24.29",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0092": {
       "vendor": "HubSpot, Inc.",
       "date": "2026-09-14",
       "amount_cents": "899.72",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0093": {
       "vendor": "BLUE BOTTLE COFFEE",
       "date": "2026-09-15",
       "amount_cents": "38.21",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0094": {
       "vendor": "RealtimeBoard, Inc. (Miro)",
       "date": "2026-09-15",
       "amount_cents": "119.79",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0095": {
       "vendor": "Aerolíneas Argentinas",
       "date": "2026-09-18",
       "amount_cents": "364.66",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0096": {
       "vendor": "STARBUCKS COFFEE COMPANY",
       "date": "2026-09-12",
       "amount_cents": "21.06",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0097": {
       "vendor": "Uber B.V.",
       "date": "2026-09-16",
       "amount_cents": "18.54",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0098": {
       "vendor": "Google Ireland Ltd",
       "date": "2026-09-18",
       "amount_cents": "1014.25",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0099": {
       "vendor": "OpenAI, LLC",
       "date": "2026-09-03",
       "amount_cents": "445.31",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0100": {
       "vendor": "Booking.com B.V.",
       "date": "2026-09-03",
       "amount_cents": "239.51",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0101": {
       "vendor": "LA MAR CEBICHERIA",
       "date": "2026-09-30",
       "amount_cents": "25.13",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0102": {
       "vendor": "Substack Inc.",
       "date": "2026-09-04",
       "amount_cents": "15.82",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0103": {
       "vendor": "Web Summit",
       "date": "2026-09-09",
       "amount_cents": "644.00",
       "currency": "EUR",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0104": {
       "vendor": "THE SMITH MIDTOWN",
       "date": "2026-08-31",
       "amount_cents": "77.60",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0105": {
       "vendor": "Uber B.V.",
       "date": "2026-09-09",
       "amount_cents": "9.48",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0106": {
       "vendor": "Uber B.V.",
       "date": "2026-09-21",
       "amount_cents": "31.32",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0107": {
       "vendor": "Uber B.V.",
       "date": "2026-09-22",
       "amount_cents": "29.65",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0108": {
       "vendor": "Slack Technologies, LLC",
       "date": "2026-09-03",
       "amount_cents": "342.36",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0109": {
       "vendor": "Uber B.V.",
       "date": "2026-09-20",
       "amount_cents": "31.31",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0110": {
       "vendor": "Uber B.V.",
       "date": "2026-09-02",
       "amount_cents": "9.02",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0111": {
       "vendor": "Airbnb Payments",
       "date": "2026-09-10",
       "amount_cents": "743.41",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0112": {
       "vendor": "SF Devs Meetup",
       "date": "2026-09-09",
       "amount_cents": "43.00",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0113": {
       "vendor": "Uber B.V.",
       "date": "2026-09-07",
       "amount_cents": "10.90",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0114": {
       "vendor": "Nikhil Rao",
       "date": "2026-09-27",
       "amount_cents": "2700.00",
       "currency": "USDC",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0115": {
       "vendor": "STARBUCKS COFFEE COMPANY",
       "date": "2026-09-22",
       "amount_cents": "14.28",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0116": {
       "vendor": "THE SMITH MIDTOWN",
       "date": "2026-09-27",
       "amount_cents": "118.15",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0117": {
       "vendor": "Uber B.V.",
       "date": "2026-09-12",
       "amount_cents": "30.08",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0118": {
       "vendor": "Uber B.V.",
       "date": "2026-09-22",
       "amount_cents": "13.04",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0119": {
       "vendor": "Uber B.V.",
       "date": "2026-09-20",
       "amount_cents": "28.96",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0120": {
       "vendor": "Uber Portier B.V.",
       "date": "2026-09-07",
       "amount_cents": "32.79",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0121": {
       "vendor": "Uber B.V.",
       "date": "2026-09-25",
       "amount_cents": "31.33",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0122": {
       "vendor": "Amazon.com Services LLC",
       "date": "2026-09-30",
       "amount_cents": "29.62",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0123": {
       "vendor": "SHAKE SHACK MADISON",
       "date": "2026-09-15",
       "amount_cents": "26.66",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0124": {
       "vendor": "Uber B.V.",
       "date": "2026-09-19",
       "amount_cents": "27.79",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0125": {
       "vendor": "ZUMA MIAMI",
       "date": "2026-09-24",
       "amount_cents": "48.24",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0126": {
       "vendor": "Uber B.V.",
       "date": "2026-09-22",
       "amount_cents": "37.83",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0127": {
       "vendor": "STARBUCKS COFFEE COMPANY",
       "date": "2026-09-10",
       "amount_cents": "24.64",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0128": {
       "vendor": "Uber B.V.",
       "date": "2026-09-17",
       "amount_cents": "18.28",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0129": {
       "vendor": "Tailwind Labs Inc.",
       "date": "2026-09-20",
       "amount_cents": "299.00",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0130": {
       "vendor": "STARBUCKS COFFEE COMPANY",
       "date": "2026-09-25",
       "amount_cents": "6.39",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0131": {
       "vendor": "STARBUCKS COFFEE COMPANY",
       "date": "2026-09-14",
       "amount_cents": "21.54",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0132": {
       "vendor": "The Economist Newspaper Ltd",
       "date": "2026-09-09",
       "amount_cents": "21.99",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0133": {
       "vendor": "Fatima Alaoui",
       "date": "2026-09-28",
       "amount_cents": "2500.00",
       "currency": "USDC",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0134": {
       "vendor": "Camila Restrepo",
       "date": "2026-09-27",
       "amount_cents": "2700.00",
       "currency": "USDC",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0135": {
       "vendor": "Marriott International",
       "date": "2026-09-15",
       "amount_cents": "547.23",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0136": {
       "vendor": "Uber B.V.",
       "date": "2026-09-13",
       "amount_cents": "37.59",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0137": {
       "vendor": "STARBUCKS COFFEE COMPANY",
       "date": "2026-09-20",
       "amount_cents": "19.31",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0138": {
       "vendor": "Lyft, Inc.",
       "date": "2026-09-19",
       "amount_cents": "21.09",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0139": {
       "vendor": "Uber B.V.",
       "date": "2026-09-21",
       "amount_cents": "38.27",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0140": {
       "vendor": "Daniel Okafor",
       "date": "2026-09-27",
       "amount_cents": "2800.00",
       "currency": "USDC",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0141": {
       "vendor": "Google Cloud EMEA Limited",
       "date": "2026-09-01",
       "amount_cents": "1364.43",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0142": {
       "vendor": "LA MAR CEBICHERIA",
       "date": "2026-09-01",
       "amount_cents": "44.68",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0143": {
       "vendor": "Calendly LLC",
       "date": "2026-09-02",
       "amount_cents": "68.33",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0144": {
       "vendor": "Docusign, Inc.",
       "date": "2026-09-16",
       "amount_cents": "73.60",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0145": {
       "vendor": "LinkedIn Ireland Unlimited Company",
       "date": "2026-09-13",
       "amount_cents": "767.06",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0146": {
       "vendor": "WeWork",
       "date": "2026-09-07",
       "amount_cents": "42.95",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0147": {
       "vendor": "Uber B.V.",
       "date": "2026-09-22",
       "amount_cents": "25.12",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0148": {
       "vendor": "Ivan Petrenko",
       "date": "2026-09-27",
       "amount_cents": "3900.00",
       "currency": "USDC",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0149": {
       "vendor": "SaaStr Inc.",
       "date": "2026-09-03",
       "amount_cents": "775.93",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0150": {
       "vendor": "Google Ireland Ltd",
       "date": "2026-09-24",
       "amount_cents": "1091.76",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0151": {
       "vendor": "Uber B.V.",
       "date": "2026-09-03",
       "amount_cents": "9.13",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0152": {
       "vendor": "Copa Airlines",
       "date": "2026-09-29",
       "amount_cents": "884.67",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0153": {
       "vendor": "COYA MIAMI",
       "date": "2026-09-18",
       "amount_cents": "116.48",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0154": {
       "vendor": "Twilio SendGrid",
       "date": "2026-09-28",
       "amount_cents": "90.00",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0155": {
       "vendor": "SHAKE SHACK MADISON",
       "date": "2026-09-14",
       "amount_cents": "110.22",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0156": {
       "vendor": "Anthropic, PBC",
       "date": "2026-09-19",
       "amount_cents": "140.58",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0157": {
       "vendor": "Amazon.com Services LLC",
       "date": "2026-09-20",
       "amount_cents": "149.83",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0158": {
       "vendor": "Uber B.V.",
       "date": "2026-09-24",
       "amount_cents": "45.78",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0159": {
       "vendor": "Udemy, Inc.",
       "date": "2026-09-19",
       "amount_cents": "56042.85",
       "currency": "ARS",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0160": {
       "vendor": "Uber B.V.",
       "date": "2026-09-03",
       "amount_cents": "29.21",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0161": {
       "vendor": "DUTY FREE AMERICAS",
       "date": "2026-09-16",
       "amount_cents": "142.45",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0162": {
       "vendor": "Airbnb Payments",
       "date": "2026-09-23",
       "amount_cents": "1184.22",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0163": {
       "vendor": "Product Camp Buenos Aires",
       "date": "2026-09-23",
       "amount_cents": "48.29",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0164": {
       "vendor": "LATAM Airlines Group",
       "date": "2026-09-28",
       "amount_cents": "411.56",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0165": {
       "vendor": "Eventbrite",
       "date": "2026-09-11",
       "amount_cents": "76.62",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0166": {
       "vendor": "Sara Lindqvist",
       "date": "2026-09-12",
       "amount_cents": "5450.00",
       "currency": "USDC",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0167": {
       "vendor": "BEST BUY",
       "date": "2026-09-20",
       "amount_cents": "94.38",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0168": {
       "vendor": "Meta Platforms Ireland Ltd",
       "date": "2026-09-12",
       "amount_cents": "266.09",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0169": {
       "vendor": "Tomasz Nowak",
       "date": "2026-09-28",
       "amount_cents": "4450.00",
       "currency": "USDC",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0170": {
       "vendor": "LA MAR CEBICHERIA",
       "date": "2026-09-10",
       "amount_cents": "51.69",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0171": {
       "vendor": "Google Ireland Ltd",
       "date": "2026-09-05",
       "amount_cents": "813.83",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0172": {
       "vendor": "SWEETGREEN MARKET ST",
       "date": "2026-09-14",
       "amount_cents": "132.77",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0173": {
       "vendor": "Lucas Moreau",
       "date": "2026-09-11",
       "amount_cents": "4650.00",
       "currency": "USDC",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0174": {
       "vendor": "Amazon Web Services EMEA SARL",
       "date": "2026-09-01",
       "amount_cents": "2748.67",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0175": {
       "vendor": "Uber B.V.",
       "date": "2026-09-19",
       "amount_cents": "12.92",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0176": {
       "vendor": "Uber B.V.",
       "date": "2026-09-04",
       "amount_cents": "34.10",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0177": {
       "vendor": "THE SMITH MIDTOWN",
       "date": "2026-09-13",
       "amount_cents": "116.74",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0178": {
       "vendor": "THE SMITH MIDTOWN",
       "date": "2026-09-05",
       "amount_cents": "127.50",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0179": {
       "vendor": "GitHub, Inc.",
       "date": "2026-09-08",
       "amount_cents": "359.36",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0180": {
       "vendor": "Meta Platforms Ireland Ltd",
       "date": "2026-09-11",
       "amount_cents": "1023.50",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0181": {
       "vendor": "SHAKE SHACK MADISON",
       "date": "2026-09-14",
       "amount_cents": "114.90",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0182": {
       "vendor": "ZUMA MIAMI",
       "date": "2026-09-19",
       "amount_cents": "97.97",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0183": {
       "vendor": "Uber B.V.",
       "date": "2026-09-18",
       "amount_cents": "46.83",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0184": {
       "vendor": "Uber B.V.",
       "date": "2026-09-19",
       "amount_cents": "27.05",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0185": {
       "vendor": "Figma, Inc.",
       "date": "2026-09-07",
       "amount_cents": "90.10",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0186": {
       "vendor": "American Airlines",
       "date": "2026-09-12",
       "amount_cents": "1322.01",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0187": {
       "vendor": "Uber B.V.",
       "date": "2026-09-13",
       "amount_cents": "7.66",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0188": {
       "vendor": "STARBUCKS COFFEE COMPANY",
       "date": "2026-09-25",
       "amount_cents": "26.63",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0189": {
       "vendor": "Uber B.V.",
       "date": "2026-09-19",
       "amount_cents": "11.42",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0190": {
       "vendor": "Uber B.V.",
       "date": "2026-09-01",
       "amount_cents": "45.13",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0191": {
       "vendor": "LinkedIn Ireland Unlimited Company",
       "date": "2026-09-18",
       "amount_cents": "388.56",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0192": {
       "vendor": "Marriott International",
       "date": "2026-09-10",
       "amount_cents": "293.76",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0193": {
       "vendor": "Vercel Inc.",
       "date": "2026-09-05",
       "amount_cents": "265.37",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0194": {
       "vendor": "Uber B.V.",
       "date": "2026-09-10",
       "amount_cents": "39.95",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0195": {
       "vendor": "STARBUCKS COFFEE COMPANY",
       "date": "2026-09-20",
       "amount_cents": "16.41",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0196": {
       "vendor": "Coursera Inc.",
       "date": "2026-09-10",
       "amount_cents": "200.85",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0197": {
       "vendor": "Airalo",
       "date": "2026-09-13",
       "amount_cents": "14.33",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0198": {
       "vendor": "Uber B.V.",
       "date": "2026-09-25",
       "amount_cents": "16.20",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0199": {
       "vendor": "Cloudflare, Inc.",
       "date": "2026-09-08",
       "amount_cents": "120.13",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0200": {
       "vendor": "Uber B.V.",
       "date": "2026-09-15",
       "amount_cents": "14.41",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0201": {
       "vendor": "Uber B.V.",
       "date": "2026-09-06",
       "amount_cents": "22.01",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0202": {
       "vendor": "Substack Inc.",
       "date": "2026-09-08",
       "amount_cents": "19.68",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0203": {
       "vendor": "Meta Platforms Ireland Ltd",
       "date": "2026-09-14",
       "amount_cents": "892.63",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0204": {
       "vendor": "Meta Platforms Ireland Ltd",
       "date": "2026-09-09",
       "amount_cents": "1209.24",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0205": {
       "vendor": "Loom, Inc.",
       "date": "2026-09-12",
       "amount_cents": "119.08",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0206": {
-      "vendor": "Screen Studio",
+      "vendor": "Paddle.com Market Ltd",
       "date": "2026-08-31",
       "amount_cents": "91.26",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0207": {
       "vendor": "BetaList",
       "date": "2026-09-04",
       "amount_cents": "129.00",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0208": {
       "vendor": "Uber Portier B.V.",
       "date": "2026-09-20",
       "amount_cents": "136.32",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0209": {
       "vendor": "Zoom Communications, Inc.",
       "date": "2026-09-12",
       "amount_cents": "114.56",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0210": {
       "vendor": "Hilton Hotels",
       "date": "2026-09-20",
       "amount_cents": "899.99",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0211": {
       "vendor": "Uber Portier B.V.",
       "date": "2026-09-09",
       "amount_cents": "77348.65",
       "currency": "ARS",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0212": {
       "vendor": "Uber B.V.",
       "date": "2026-09-23",
       "amount_cents": "17.90",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0213": {
       "vendor": "Twilio Inc.",
       "date": "2026-09-28",
       "amount_cents": "158.45",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0214": {
       "vendor": "THE SMITH MIDTOWN",
       "date": "2026-09-06",
       "amount_cents": "46.71",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     },
     "RC-0215": {
       "vendor": "Google Ireland Ltd",
       "date": "2026-09-16",
       "amount_cents": "1046.97",
       "currency": "USD",
-      "source": "template_parser"
+      "source": "ai"
     }
   },
   "methodology": [

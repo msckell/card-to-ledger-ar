@@ -76,7 +76,7 @@ def run(source: str | None = None) -> dict:
 
     for e in result["exceptions"]:
         e["title"] = exception_text.TITLES[e["type"]]
-        e["next_step"] = exception_text.NEXT_STEP[e["type"]]
+        e["next_step"] = exception_text.next_step(e, by_id)
         e["facts"] = exception_text.facts(e, by_id, receipts, result["threshold"])
         key = f"{e.get('txn_id') or e.get('receipt_id')}:{e['type']}"
         ex = explanations.get(key)

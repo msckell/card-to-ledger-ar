@@ -34,6 +34,13 @@ NEXT_STEP = {
 }
 
 
+def next_step(e: dict, txns: dict[str, dict]) -> str:
+    t = txns.get(e.get("txn_id") or "")
+    if e["type"] == "missing_receipt" and t and t["type"] == "usdc_payout":
+        return "Ask the contractor for the invoice"
+    return NEXT_STEP[e["type"]]
+
+
 def _money(amount: str, currency: str) -> str:
     return f"{currency} {fmt(to_cents(amount))}"
 
@@ -84,7 +91,8 @@ def template(e: dict, txns: dict[str, dict]) -> str:
     tid = e.get("txn_id")
     t = txns.get(tid or "")
     if kind == "missing_receipt":
-        return f"No receipt was found for [{tid}]. It stays in review until the cardholder uploads one."
+        who = "the contractor sends the invoice" if t and t["type"] == "usdc_payout" else "the cardholder uploads one"
+        return f"No receipt was found for [{tid}]. It stays in review until {who}."
     if kind == "duplicate_suspected":
         return (f"[{tid}] repeats the merchant and amount of [{t['duplicate_of']}] within a short window, "
                 "and only one receipt exists. It looks like a double charge.")
