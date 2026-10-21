@@ -180,8 +180,8 @@ export default function Flow() {
               ))}
             </ul>
             <p className="mt-3 text-xs text-on-night-muted">
-              Net debit per expense account in the September entry. Items in review sit in Partidas pendientes de
-              imputación until a person decides.
+              Net debit per expense account in the September entry. Items in review sit in a suspense account until a
+              person decides.
             </p>
           </div>
         </div>

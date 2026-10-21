@@ -71,9 +71,9 @@ export default function Problem() {
           <Eyebrow night>What the books need, in pesos</Eyebrow>
           <div className="mt-4 overflow-hidden rounded-xl border border-night-line text-xs">
             <div className="grid grid-cols-[1fr_auto_auto] gap-3 border-b border-night-line px-3 py-2 text-on-night-muted">
-              <span>Cuenta</span>
-              <span className="text-right">Debe</span>
-              <span className="text-right">Haber</span>
+              <span>Account</span>
+              <span className="text-right">Debit</span>
+              <span className="text-right">Credit</span>
             </div>
             {preview.map((r) => (
               <div key={r.account} className="grid grid-cols-[1fr_auto_auto] gap-3 border-b border-night-line px-3 py-2 last:border-0">
