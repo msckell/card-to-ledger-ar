@@ -65,10 +65,14 @@ export default function Hero() {
         <div className="mt-10 grid items-center gap-14 lg:grid-cols-[1.05fr_1fr] lg:gap-12">
           <div>
             <GoldRule />
-            <h1 className="mt-6 text-[2.1rem] font-semibold leading-[1.1] tracking-tight sm:text-5xl lg:text-[2.85rem]">
-              <span className="text-gold-light">{site.meta.title}</span>
-              <span className="block">The month end close for Argentine companies that spend in dollars.</span>
+            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.22em] text-gold-light">{site.meta.title}</p>
+            <h1 className="mt-3 text-5xl font-semibold leading-[1.02] tracking-tight sm:text-7xl">
+              Dollars in.
+              <span className="block text-gold-light">Pesos out.</span>
             </h1>
+            <p className="mt-5 max-w-lg text-lg leading-snug text-on-night sm:text-xl">
+              The month end close for Argentine companies that spend in dollars.
+            </p>
 
             <ol className="mt-8 grid gap-4 sm:grid-cols-3">
               {DOES.map((d) => (
