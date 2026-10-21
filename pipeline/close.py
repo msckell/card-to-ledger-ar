@@ -94,11 +94,14 @@ def run(source: str | None = None) -> dict:
         "entry_totals": result["entry_totals"],
         "balances": result["balances"],
         "transactions": txns,
-        "journal_lines": [vars(ln) | {"debe": cents_str(ln.debe), "haber": cents_str(ln.haber)}
-                          for ln in result["lines"]],
+        "journal_lines": [
+            vars(ln) | {"debe": cents_str(ln.debe), "haber": cents_str(ln.haber)} for ln in result["lines"]
+        ],
         "exceptions": result["exceptions"],
-        "receipts": {rid: {k: (cents_str(v) if k == "amount_cents" and v is not None else v)
-                           for k, v in r.items()} for rid, r in receipts.items()},
+        "receipts": {
+            rid: {k: (cents_str(v) if k == "amount_cents" and v is not None else v) for k, v in r.items()}
+            for rid, r in receipts.items()
+        },
         "methodology": methodology.items(),
     }
     OUT.mkdir(parents=True, exist_ok=True)

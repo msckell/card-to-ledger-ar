@@ -75,12 +75,16 @@ def facts(e: dict, txns: dict[str, dict], receipts: dict[str, dict], threshold: 
         return base + " · no charge with the same descriptor and a larger amount in this export"
     if kind == "refund_partial_link":
         o = txns[t["refund_of"]]
-        return base + (f" · tentatively linked to {o['id']} posted {o['posted_at']} for "
-                       f"{_money(o['amount'], o['currency'])} · amounts differ")
+        return base + (
+            f" · tentatively linked to {o['id']} posted {o['posted_at']} for "
+            f"{_money(o['amount'], o['currency'])} · amounts differ"
+        )
     if kind == "ai_below_threshold":
         ai = t["ai"]
-        return base + (f" · AI suggests {ai['account']} {account_name(ai['account'])} with confidence "
-                       f"{ai['confidence']} · threshold {threshold}")
+        return base + (
+            f" · AI suggests {ai['account']} {account_name(ai['account'])} with confidence "
+            f"{ai['confidence']} · threshold {threshold}"
+        )
     if kind == "no_rule":
         return base + " · no account rule matches the descriptor"
     return base
@@ -94,20 +98,30 @@ def template(e: dict, txns: dict[str, dict]) -> str:
         who = "the contractor sends the invoice" if t and t["type"] == "usdc_payout" else "the cardholder uploads one"
         return f"No receipt was found for [{tid}]. It stays in review until {who}."
     if kind == "duplicate_suspected":
-        return (f"[{tid}] repeats the merchant and amount of [{t['duplicate_of']}] within a short window, "
-                "and only one receipt exists. It looks like a double charge.")
+        return (
+            f"[{tid}] repeats the merchant and amount of [{t['duplicate_of']}] within a short window, "
+            "and only one receipt exists. It looks like a double charge."
+        )
     if kind == "amount_mismatch":
-        return (f"The receipt [{t['receipt_id']}] matches [{tid}] by merchant and date, but its amount or "
-                "currency is different from the charge. The difference needs an explanation before posting.")
+        return (
+            f"The receipt [{t['receipt_id']}] matches [{tid}] by merchant and date, but its amount or "
+            "currency is different from the charge. The difference needs an explanation before posting."
+        )
     if kind == "refund_original_not_found":
-        return (f"[{tid}] is a refund, but its original charge is not in this month's export. "
-                "It probably belongs to an earlier period.")
+        return (
+            f"[{tid}] is a refund, but its original charge is not in this month's export. "
+            "It probably belongs to an earlier period."
+        )
     if kind == "refund_partial_link":
-        return (f"[{tid}] is a partial refund. It was linked to [{t['refund_of']}] because the merchant "
-                "matches, but the amounts differ, so the link needs a person to confirm it.")
+        return (
+            f"[{tid}] is a partial refund. It was linked to [{t['refund_of']}] because the merchant "
+            "matches, but the amounts differ, so the link needs a person to confirm it."
+        )
     if kind == "ai_below_threshold":
-        return (f"No rule covers the merchant of [{tid}]. The AI suggestion is not confident enough to "
-                "be accepted automatically.")
+        return (
+            f"No rule covers the merchant of [{tid}]. The AI suggestion is not confident enough to "
+            "be accepted automatically."
+        )
     if kind == "no_rule":
         return f"No rule covers the merchant of [{tid}]."
     if kind == "receipt_unmatched":

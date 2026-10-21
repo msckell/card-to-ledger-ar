@@ -1,6 +1,6 @@
 # Card to Ledger AR · product memo
 
-*Draft for Máximo Sckell to edit. Every number in this memo is filled in at build time from the prototype's data folder. None is typed by hand.*
+*Every number in this memo is filled in at build time from the prototype's data folder. None is typed by hand.*
 
 ## The problem, as a hypothesis
 

@@ -65,8 +65,7 @@ def extraction_accuracy(fields: dict[str, dict], gt: dict) -> dict:
         if all(ok.values()):
             hits["all_fields"] += 1
         else:
-            errors.append({"receipt_id": rid, "layout": want["layout"],
-                           "fields": [k for k, v in ok.items() if not v]})
+            errors.append({"receipt_id": rid, "layout": want["layout"], "fields": [k for k, v in ok.items() if not v]})
     by_layout: dict[str, list[int]] = {}
     for rid, want in gt["receipts"].items():
         bucket = by_layout.setdefault(want["layout"], [0, 0])
@@ -148,8 +147,15 @@ def account_accuracy(close: dict, gt: dict) -> dict:
         if t["account"] == tr["account"]:
             rules_hits += 1
         else:
-            rule_errors.append({"txn_id": t["id"], "rule_id": t["rule_id"], "descriptor": t["descriptor"],
-                                "got": t["account"], "expected": tr["account"]})
+            rule_errors.append(
+                {
+                    "txn_id": t["id"],
+                    "rule_id": t["rule_id"],
+                    "descriptor": t["descriptor"],
+                    "got": t["account"],
+                    "expected": tr["account"],
+                }
+            )
     out = {"rules": {**_ratio(rules_hits, rules_n), "errors": rule_errors}}
     sugg = _ai_suggestions()
     if sugg:
@@ -161,8 +167,9 @@ def account_accuracy(close: dict, gt: dict) -> dict:
             if s["account"] == tr["account"]:
                 ai_hits += 1
             else:
-                ai_errors.append({"txn_id": tid, "got": s["account"], "expected": tr["account"],
-                                  "confidence": s["confidence"]})
+                ai_errors.append(
+                    {"txn_id": tid, "got": s["account"], "expected": tr["account"], "confidence": s["confidence"]}
+                )
         out["ai"] = {**_ratio(ai_hits, ai_n), "errors": ai_errors}
         resolved = [t for t in close["transactions"] if t["resolved_by"] == "ai"]
         hits = sum(1 for t in resolved if t["account"] == gt["transactions"][t["id"]]["account"])
@@ -191,14 +198,17 @@ def threshold_sweep(gt: dict) -> dict | None:
         t = Decimal(th)
         accepted = [(tid, s) for tid, s in sugg.items() if Decimal(s["confidence"]) >= t]
         hits = sum(1 for tid, s in accepted if s["account"] == gt["transactions"][tid]["account"])
-        rows.append({
-            "threshold": th,
-            "accepted": len(accepted),
-            "share_auto_accepted": str((Decimal(len(accepted)) / Decimal(n)).quantize(Decimal("0.001"))),
-            "accuracy": str((Decimal(hits) / Decimal(len(accepted))).quantize(Decimal("0.001")))
-            if accepted else None,
-            "errors_accepted": len(accepted) - hits,
-        })
+        rows.append(
+            {
+                "threshold": th,
+                "accepted": len(accepted),
+                "share_auto_accepted": str((Decimal(len(accepted)) / Decimal(n)).quantize(Decimal("0.001"))),
+                "accuracy": str((Decimal(hits) / Decimal(len(accepted))).quantize(Decimal("0.001")))
+                if accepted
+                else None,
+                "errors_accepted": len(accepted) - hits,
+            }
+        )
     recommended = None
     for r in rows:
         if r["accuracy"] is not None and Decimal(r["accuracy"]) >= target and r["accepted"] >= min_n:
@@ -206,16 +216,26 @@ def threshold_sweep(gt: dict) -> dict | None:
             break
     if recommended:
         r = next(x for x in rows if x["threshold"] == recommended)
-        why = (f"Lowest threshold whose auto accepted suggestions reach the target accuracy of "
-               f"{target} with at least {min_n} accepted. Picked on this month's labeled synthetic "
-               "data. In production it should be picked on a held out labeled sample and rechecked "
-               "every month.")
+        why = (
+            f"Lowest threshold whose auto accepted suggestions reach the target accuracy of "
+            f"{target} with at least {min_n} accepted. Picked on this month's labeled synthetic "
+            "data. In production it should be picked on a held out labeled sample and rechecked "
+            "every month."
+        )
     else:
         r = None
-        why = (f"No threshold reaches the target accuracy of {target} with at least {min_n} accepted, "
-               "so every AI suggestion goes to a person.")
-    return {"target_accuracy": str(target), "suggestions": n, "rows": rows,
-            "recommended": recommended, "recommended_row": r, "why": why}
+        why = (
+            f"No threshold reaches the target accuracy of {target} with at least {min_n} accepted, "
+            "so every AI suggestion goes to a person."
+        )
+    return {
+        "target_accuracy": str(target),
+        "suggestions": n,
+        "rows": rows,
+        "recommended": recommended,
+        "recommended_row": r,
+        "why": why,
+    }
 
 
 def explanation_stats() -> dict | None:

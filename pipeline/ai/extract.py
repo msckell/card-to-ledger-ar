@@ -57,8 +57,9 @@ def _one(rid: str) -> tuple[str, dict]:
 def run(limit: int | None = None) -> dict:
     store = load("extract.json") or {"receipts": {}}
     done = store["receipts"]
-    todo = [rid for rid in receipt_ids()
-            if rid not in done or done[rid].get("error") or done[rid].get("key") != _key(rid)]
+    todo = [
+        rid for rid in receipt_ids() if rid not in done or done[rid].get("error") or done[rid].get("key") != _key(rid)
+    ]
     if limit:
         todo = todo[:limit]
     with ThreadPoolExecutor(max_workers=workers()) as pool:

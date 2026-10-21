@@ -89,46 +89,82 @@ def _decision_table(ev: dict) -> list[dict]:
     planted = sum(v["planted"] for k, v in an.items() if isinstance(v, dict))
     caught = sum(v["caught_in_review"] for k, v in an.items() if isinstance(v, dict))
     rows = [
-        {"step": "Convert each movement to ARS", "handled_by": "Rules",
-         "why": "A fixed rate convention applied to cited rates. Arithmetic, not judgment.",
-         "accuracy": "Exact by construction, covered by tests"},
-        {"step": "Read receipts", "handled_by": "AI",
-         "why": ("Receipts come in any layout and language. Code checks every amount the AI reads "
-                 "against the charge."),
-         "accuracy": (f"{pct(ai_ex['per_field']['all_fields']['accuracy'])} of receipts with all four fields right "
-                      f"(the template parser, written for these four layouts, scores "
-                      f"{pct(tmpl['per_field']['all_fields']['accuracy'])})"
-                      if ai_ex else "not run")},
-        {"step": "Match receipts to movements", "handled_by": "Rules",
-         "why": "Amount, date window and merchant name. Ties are not guessed, they go to a person.",
-         "accuracy": f"{pct(ev['receipt_matching']['accuracy'])} of pairs right"},
-        {"step": "Flag duplicates, missing receipts, mismatches and refunds", "handled_by": "Rules",
-         "why": "Each check is a precise condition that must behave the same every month.",
-         "accuracy": f"{caught} of {planted} planted problems sent to review"},
-        {"step": "Code known merchants", "handled_by": "Rules",
-         "why": "A short rule list covers most spend and is easy to audit.",
-         "accuracy": f"{pct(ev['accounts']['rules']['accuracy'])} right"},
+        {
+            "step": "Convert each movement to ARS",
+            "handled_by": "Rules",
+            "why": "A fixed rate convention applied to cited rates. Arithmetic, not judgment.",
+            "accuracy": "Exact by construction, covered by tests",
+        },
+        {
+            "step": "Read receipts",
+            "handled_by": "AI",
+            "why": (
+                "Receipts come in any layout and language. Code checks every amount the AI reads against the charge."
+            ),
+            "accuracy": (
+                f"{pct(ai_ex['per_field']['all_fields']['accuracy'])} of receipts with all four fields right "
+                f"(the template parser, written for these four layouts, scores "
+                f"{pct(tmpl['per_field']['all_fields']['accuracy'])})"
+                if ai_ex
+                else "not run"
+            ),
+        },
+        {
+            "step": "Match receipts to movements",
+            "handled_by": "Rules",
+            "why": "Amount, date window and merchant name. Ties are not guessed, they go to a person.",
+            "accuracy": f"{pct(ev['receipt_matching']['accuracy'])} of pairs right",
+        },
+        {
+            "step": "Flag duplicates, missing receipts, mismatches and refunds",
+            "handled_by": "Rules",
+            "why": "Each check is a precise condition that must behave the same every month.",
+            "accuracy": f"{caught} of {planted} planted problems sent to review",
+        },
+        {
+            "step": "Code known merchants",
+            "handled_by": "Rules",
+            "why": "A short rule list covers most spend and is easy to audit.",
+            "accuracy": f"{pct(ev['accounts']['rules']['accuracy'])} right",
+        },
     ]
     if ev["accounts"].get("ai"):
         rec = thr.get("recommended_row")
-        rows.append({
-            "step": "Code merchants no rule covers", "handled_by": "AI above the threshold, a person below",
-            "why": "Long tail of merchants. A rule per merchant does not scale, a wrong guess must not post.",
-            "accuracy": (f"{pct(ev['accounts']['ai']['accuracy'])} right overall, "
-                         + (f"{pct(rec['accuracy'])} on the {rec['accepted']} accepted at {thr['recommended']}"
-                            if rec else "none accepted automatically")),
-        })
+        rows.append(
+            {
+                "step": "Code merchants no rule covers",
+                "handled_by": "AI above the threshold, a person below",
+                "why": "Long tail of merchants. A rule per merchant does not scale, a wrong guess must not post.",
+                "accuracy": (
+                    f"{pct(ev['accounts']['ai']['accuracy'])} right overall, "
+                    + (
+                        f"{pct(rec['accuracy'])} on the {rec['accepted']} accepted at {thr['recommended']}"
+                        if rec
+                        else "none accepted automatically"
+                    )
+                ),
+            }
+        )
     if ev.get("explanations"):
         e = ev["explanations"]
-        rows.append({
-            "step": "Explain each exception", "handled_by": "AI with a verifier, template as fallback",
-            "why": "Plain language helps the reviewer. Numbers come only from code.",
-            "accuracy": (f"{e['accepted_first_try'] + e['accepted_after_retry']} of {e['exceptions']} "
-                         "passed the verifier"),
-        })
-    rows.append({"step": "Approve and post", "handled_by": "A person",
-                 "why": "The controller owns the close. Nothing posts as final without review.",
-                 "accuracy": "Not automated"})
+        rows.append(
+            {
+                "step": "Explain each exception",
+                "handled_by": "AI with a verifier, template as fallback",
+                "why": "Plain language helps the reviewer. Numbers come only from code.",
+                "accuracy": (
+                    f"{e['accepted_first_try'] + e['accepted_after_retry']} of {e['exceptions']} passed the verifier"
+                ),
+            }
+        )
+    rows.append(
+        {
+            "step": "Approve and post",
+            "handled_by": "A person",
+            "why": "The controller owns the close. Nothing posts as final without review.",
+            "accuracy": "Not automated",
+        }
+    )
     return rows
 
 
@@ -139,8 +175,11 @@ def export(close: dict, ev: dict) -> dict:
     queue = _queue(close)
     thr_value = Decimal(s["threshold"]) if s["threshold"] else None
     confident_in_review = sum(
-        1 for t in close["transactions"]
-        if t.get("ai") and thr_value is not None and Decimal(t["ai"]["confidence"]) >= thr_value
+        1
+        for t in close["transactions"]
+        if t.get("ai")
+        and thr_value is not None
+        and Decimal(t["ai"]["confidence"]) >= thr_value
         and t["resolved_by"] == "review"
     )
     site = {
@@ -170,11 +209,19 @@ def export(close: dict, ev: dict) -> dict:
         },
         "queue": queue,
         "journal": {
-            "rows": [{**r, "debe": money(r["debe"]) if r["debe"] != "0.00" else "",
-                      "haber": money(r["haber"]) if r["haber"] != "0.00" else ""} for r in close["entry"]],
-            "totals": {"debe": money(close["entry_totals"]["debe"]),
-                       "haber": money(close["entry_totals"]["haber"]),
-                       "balanced": close["entry_totals"]["balanced"]},
+            "rows": [
+                {
+                    **r,
+                    "debe": money(r["debe"]) if r["debe"] != "0.00" else "",
+                    "haber": money(r["haber"]) if r["haber"] != "0.00" else "",
+                }
+                for r in close["entry"]
+            ],
+            "totals": {
+                "debe": money(close["entry_totals"]["debe"]),
+                "haber": money(close["entry_totals"]["haber"]),
+                "balanced": close["entry_totals"]["balanced"],
+            },
             "lines": len(close["journal_lines"]),
             "excel": f"downloads/{s['excel']}",
             "balances": close["balances"],
@@ -183,17 +230,24 @@ def export(close: dict, ev: dict) -> dict:
             "extraction": {
                 "template": {k: v["accuracy"] for k, v in ev["extraction"]["template_parser"]["per_field"].items()},
                 "ai": {k: v["accuracy"] for k, v in ev["extraction"]["ai"]["per_field"].items()}
-                if ev["extraction"]["ai"] else None,
+                if ev["extraction"]["ai"]
+                else None,
                 "receipts": ev["extraction"]["template_parser"]["per_field"]["all_fields"]["total"],
             },
             "matching": {k: ev["receipt_matching"][k] for k in ("correct", "total", "accuracy")},
             "rules": {k: ev["accounts"]["rules"][k] for k in ("correct", "total", "accuracy")},
             "ai_accounts": {k: ev["accounts"]["ai"][k] for k in ("correct", "total", "accuracy", "small_sample")}
-            if ev["accounts"].get("ai") else None,
+            if ev["accounts"].get("ai")
+            else None,
             "ai_resolved": ev["accounts"].get("ai_resolved"),
             "anomalies": {k: v for k, v in ev["anomalies"].items() if isinstance(v, dict)},
-            "threshold": {"rows": thr["rows"], "recommended": thr["recommended"], "why": thr["why"],
-                          "target": thr.get("target_accuracy"), "recommended_row": thr.get("recommended_row")},
+            "threshold": {
+                "rows": thr["rows"],
+                "recommended": thr["recommended"],
+                "why": thr["why"],
+                "target": thr.get("target_accuracy"),
+                "recommended_row": thr.get("recommended_row"),
+            },
             "explanations": ev.get("explanations"),
             "decision_table": _decision_table(ev),
             "llm_usage": ev.get("llm_usage"),
@@ -292,5 +346,3 @@ def _render_memo(site: dict) -> None:
     readme = _fill("README.template.md", vals)
     with (ROOT / "README.md").open("w", encoding="utf-8", newline="\n") as fh:
         fh.write(readme)
-
-

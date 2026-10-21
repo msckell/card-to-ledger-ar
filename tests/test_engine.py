@@ -9,12 +9,20 @@ from pipeline.money import convert, fmt, to_cents
 
 
 def _card(tid, day, desc, amount, **kw):
-    return Txn(id=tid, posted_at=date(2026, 9, day), type=kw.pop("type", "card_purchase"),
-               descriptor=desc, amount_cents=to_cents(amount), currency="USD",
-               raw={"descriptor": desc}, **kw)
+    return Txn(
+        id=tid,
+        posted_at=date(2026, 9, day),
+        type=kw.pop("type", "card_purchase"),
+        descriptor=desc,
+        amount_cents=to_cents(amount),
+        currency="USD",
+        raw={"descriptor": desc},
+        **kw,
+    )
 
 
 # ---------- money and FX ----------
+
 
 def test_to_cents_refuses_fractions_of_a_cent():
     assert to_cents("1234.5") == 123450
@@ -42,6 +50,7 @@ def test_fmt_display():
 
 # ---------- balance check ----------
 
+
 def test_summary_entry_balances_and_nets_by_account():
     lines = [
         Line("JL-1", "T1", "2026-09-01", "5.1.01", 1000, 0, "", "", "", ""),
@@ -52,7 +61,9 @@ def test_summary_entry_balances_and_nets_by_account():
     rows, d, h = engine.summarize_journal(lines)
     assert d == h == 700
     assert {r["account"]: (r["debe"], r["haber"]) for r in rows} == {
-        "5.1.01": ("7.00", "0.00"), "2.1.01": ("0.00", "7.00")}
+        "5.1.01": ("7.00", "0.00"),
+        "2.1.01": ("0.00", "7.00"),
+    }
 
 
 def test_unbalanced_journal_is_rejected():
@@ -73,6 +84,7 @@ def test_generated_close_balances():
 
 
 # ---------- duplicates ----------
+
 
 def test_duplicate_without_second_receipt_is_flagged():
     a = _card("T1", 10, "UBER *TRIP X1", "42.94", receipt_id="RC-1")
@@ -97,6 +109,7 @@ def test_same_amount_far_apart_is_not_a_duplicate():
 
 
 # ---------- refunds ----------
+
 
 def test_full_refund_offsets_its_original_account():
     orig = _card("T1", 7, "FIGMA", "90.00", rule_id="R-011", rule_account="5.1.03", receipt_id="RC-1")

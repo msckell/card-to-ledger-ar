@@ -35,8 +35,7 @@ def _num(s: str | None) -> Decimal | None:
     return Decimal(s) if s not in (None, "") else None
 
 
-def _sheet(wb: Workbook, title: str, headers: list[str], rows: list[list], money_cols=(),
-           rate_cols=(), widths=None):
+def _sheet(wb: Workbook, title: str, headers: list[str], rows: list[list], money_cols=(), rate_cols=(), widths=None):
     ws = wb.create_sheet(title)
     ws.append(headers)
     for c in ws[1]:
@@ -85,38 +84,88 @@ def write(close: dict, path: Path) -> None:
 
     entry_rows = [[r["account"], r["name"], _num(r["debe"]), _num(r["haber"])] for r in close["entry"]]
     entry_rows.append(["", "Totales", _num(close["entry_totals"]["debe"]), _num(close["entry_totals"]["haber"])])
-    ws = _sheet(wb, "Asiento", ["Cuenta", "Nombre", "Debe (ARS)", "Haber (ARS)"], entry_rows,
-                money_cols=(3, 4), widths=[10, 44, 20, 20])
+    ws = _sheet(
+        wb,
+        "Asiento",
+        ["Cuenta", "Nombre", "Debe (ARS)", "Haber (ARS)"],
+        entry_rows,
+        money_cols=(3, 4),
+        widths=[10, 44, 20, 20],
+    )
     for c in ws[ws.max_row]:
         c.font = BOLD
 
     mov = []
     for t in close["transactions"]:
-        mov.append([
-            t["id"], t["posted_at"], TYPE_ES[t["type"]], t["descriptor"], t["currency"],
-            _num(t["amount"]), _num(t["rate"]), _num(t["ars"]),
-            t["posted_account"], account_name(t["posted_account"]) if t["posted_account"] else "",
-            t["account"] or "", RESOLVED_ES[t["resolved_by"]],
-            t["rule_id"] or (t["ai"]["id"] if t["ai"] else ""),
-            t["ai"]["confidence"] if t["ai"] else "",
-            t["status"], t["receipt_id"] or "", ", ".join(t["exceptions"]),
-        ])
+        mov.append(
+            [
+                t["id"],
+                t["posted_at"],
+                TYPE_ES[t["type"]],
+                t["descriptor"],
+                t["currency"],
+                _num(t["amount"]),
+                _num(t["rate"]),
+                _num(t["ars"]),
+                t["posted_account"],
+                account_name(t["posted_account"]) if t["posted_account"] else "",
+                t["account"] or "",
+                RESOLVED_ES[t["resolved_by"]],
+                t["rule_id"] or (t["ai"]["id"] if t["ai"] else ""),
+                t["ai"]["confidence"] if t["ai"] else "",
+                t["status"],
+                t["receipt_id"] or "",
+                ", ".join(t["exceptions"]),
+            ]
+        )
     _sheet(
-        wb, "Movimientos",
-        ["ID", "Fecha", "Tipo", "Descriptor", "Moneda", "Importe", "TC", "Importe ARS",
-         "Cuenta imputada", "Nombre cuenta", "Cuenta propuesta", "Resuelto por",
-         "Regla o sugerencia", "Confianza IA", "Estado", "Comprobante", "Excepciones"],
-        mov, money_cols=(6, 8), rate_cols=(7,),
+        wb,
+        "Movimientos",
+        [
+            "ID",
+            "Fecha",
+            "Tipo",
+            "Descriptor",
+            "Moneda",
+            "Importe",
+            "TC",
+            "Importe ARS",
+            "Cuenta imputada",
+            "Nombre cuenta",
+            "Cuenta propuesta",
+            "Resuelto por",
+            "Regla o sugerencia",
+            "Confianza IA",
+            "Estado",
+            "Comprobante",
+            "Excepciones",
+        ],
+        mov,
+        money_cols=(6, 8),
+        rate_cols=(7,),
         widths=[9, 11, 22, 30, 7, 13, 10, 16, 10, 34, 10, 16, 14, 10, 15, 11, 30],
     )
 
     exc = []
     for e in close["exceptions"]:
-        exc.append([e["id"], e["type"], e.get("txn_id") or "", e.get("receipt_id") or "",
-                    e.get("facts", ""), e.get("explanation", ""), e.get("explanation_source", "")])
-    _sheet(wb, "Excepciones",
-           ["ID", "Tipo", "Movimiento", "Comprobante", "Hechos", "Explicación", "Fuente"],
-           exc, widths=[8, 24, 11, 11, 60, 70, 14])
+        exc.append(
+            [
+                e["id"],
+                e["type"],
+                e.get("txn_id") or "",
+                e.get("receipt_id") or "",
+                e.get("facts", ""),
+                e.get("explanation", ""),
+                e.get("explanation_source", ""),
+            ]
+        )
+    _sheet(
+        wb,
+        "Excepciones",
+        ["ID", "Tipo", "Movimiento", "Comprobante", "Hechos", "Explicación", "Fuente"],
+        exc,
+        widths=[8, 24, 11, 11, 60, 70, 14],
+    )
 
     met = [[m["topic"], m["label"], m["detail"]] for m in close["methodology"]]
     ws = _sheet(wb, "Metodología", ["Tema", "Etiqueta", "Detalle"], met, widths=[32, 14, 110])
