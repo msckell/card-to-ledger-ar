@@ -164,6 +164,9 @@ def account_accuracy(close: dict, gt: dict) -> dict:
                 ai_errors.append({"txn_id": tid, "got": s["account"], "expected": tr["account"],
                                   "confidence": s["confidence"]})
         out["ai"] = {**_ratio(ai_hits, ai_n), "errors": ai_errors}
+        resolved = [t for t in close["transactions"] if t["resolved_by"] == "ai"]
+        hits = sum(1 for t in resolved if t["account"] == gt["transactions"][t["id"]]["account"])
+        out["ai_resolved"] = _ratio(hits, len(resolved))
     return out
 
 

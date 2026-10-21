@@ -44,8 +44,8 @@ export default function Queue() {
         </>
       }
     >
-      <div className="-mx-4 overflow-x-auto px-4 pb-1">
-        <div className="flex gap-2">
+      <div className="-mx-4 overflow-x-auto px-4 pb-1 sm:mx-0 sm:px-0">
+        <div className="flex gap-2 sm:flex-wrap">
           {types.map(([t, c]) => (
             <button
               key={t}

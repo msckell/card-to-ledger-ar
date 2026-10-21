@@ -28,7 +28,7 @@ export default function RulesOrAI() {
       intro={
         <>
           Of {s.transactions} movements, rules resolved {s.split.rules}, the AI resolved {s.split.ai}
-          {e.ai_accounts && <> with {pct(rec?.accuracy ?? null)} accuracy on what it accepted</>}, and {s.split.review} went to a
+          {e.ai_resolved && <> ({e.ai_resolved.correct} of them coded right)</>}, and {s.split.review} went to a
           person. The generator wrote the correct answer for every movement, so each step below is scored against it.
         </>
       }
@@ -74,7 +74,7 @@ export default function RulesOrAI() {
               <ResponsiveContainer>
                 <LineChart data={chart} margin={{ top: 8, right: 12, bottom: 4, left: -12 }}>
                   <CartesianGrid stroke="#e2e0d8" vertical={false} />
-                  <XAxis dataKey="t" type="number" domain={[0.5, 0.95]} ticks={chart.map((c) => c.t)} tick={{ fontSize: 11 }} tickFormatter={(v: number) => v.toFixed(2)} />
+                  <XAxis dataKey="t" type="number" domain={['dataMin', 'dataMax']} ticks={chart.map((c) => c.t)} tick={{ fontSize: 11 }} tickFormatter={(v: number) => v.toFixed(2)} />
                   <YAxis domain={[0, 100]} tick={{ fontSize: 11 }} tickFormatter={(v: number) => `${v}%`} />
                   <Tooltip
                     formatter={(v, name) => [`${Number(v).toFixed(1)}%`, name === 'share' ? 'Auto accepted' : 'Accuracy of accepted']}

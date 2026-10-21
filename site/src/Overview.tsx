@@ -36,8 +36,8 @@ export default function Overview() {
 
       <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3">
         <Stat label="Movements in the month" value={total} sub={`${s.receipts} receipts and invoices`} />
-        <Stat label="Spend in USD" value={`USD ${s.spend_usd}`} sub={`Card ${s.card_net_usd} · USDC ${s.payouts_usdc}`} />
-        <Stat label="Spend in ARS" value={`ARS ${s.spend_ars}`} sub="At the official rate of each day" />
+        <Stat wide label="Spend in USD" value={`USD ${s.spend_usd}`} sub={`Card ${s.card_net_usd} · USDC ${s.payouts_usdc}`} />
+        <Stat wide label="Spend in ARS" value={`ARS ${s.spend_ars}`} sub="At the official rate of each day" />
         <Stat label="Resolved by rules" value={s.split.rules} tone="rules" />
         <Stat label="Accepted from AI" value={s.split.ai} tone="ai" sub={s.threshold ? `Confidence at or above ${s.threshold}` : 'AI not run'} />
         <Stat label="Sent to a person" value={s.split.review} tone="review" sub={`${s.exceptions} open exceptions`} />

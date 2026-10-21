@@ -45,12 +45,12 @@ export default function HowItWorks({ repoUrl }: { repoUrl: string }) {
       <p className="mt-1 text-sm text-muted">Every choice behind the numbers, labeled. The same list is in the Excel.</p>
       <div className="mt-4 divide-y divide-line rounded-lg border border-line bg-card">
         {site.methodology.map((m) => (
-          <div key={m.topic} className="grid gap-1 px-4 py-3 sm:grid-cols-[220px_110px_1fr] sm:gap-4">
+          <div key={m.topic} className="grid grid-cols-1 gap-1 px-4 py-3 sm:grid-cols-[220px_110px_minmax(0,1fr)] sm:gap-4">
             <p className="text-sm font-medium">{m.topic}</p>
             <p>
               <Badge tone={LABEL_TONE[m.label] ?? 'neutral'}>{m.label}</Badge>
             </p>
-            <p className="text-sm text-muted">{m.detail}</p>
+            <p className="min-w-0 text-sm text-muted [overflow-wrap:anywhere]">{m.detail}</p>
           </div>
         ))}
       </div>
