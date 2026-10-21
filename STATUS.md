@@ -15,11 +15,8 @@
 ## Next
 1. Deploy on Vercel: Root Directory `site`, framework Vite, no env vars. The domain must not contain the name of any real company.
 2. Open the deployed page on phone and desktop.
-3. Before making the repo public: decide on authorship lines, git history and a license (see open questions).
+3. Make the repo public when ready. Author name stays on the page only. Git history is kept as is.
 4. Edit the memo in `docs/memo.template.md`, then rerun `uv run ctl build`.
 
 ## Open questions
 - Rate convention (official seller rate on posting date) and USDC valuation: assumptions to validate with an accountant.
-- Authorship: the page subtitle and footer, `site/index.html` and `docs/README.template.md` carry the author name. Keep or remove before publishing.
-- Git history: earlier commits contain the original build spec. Publishing needs either a fresh repo with one clean commit or explicit approval to rewrite history.
-- No LICENSE file yet.
