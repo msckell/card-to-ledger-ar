@@ -14,6 +14,7 @@ from pipeline import engine, exception_text, methodology
 from pipeline.config import settings
 from pipeline.engine import txn_dict
 from pipeline.excel import write as write_excel
+from pipeline.jsonio import write_json
 from pipeline.money import cents_str, to_cents
 from pipeline.paths import AI_DIR, DATA, OUT
 from pipeline.receipt_text import parse_all
@@ -101,7 +102,7 @@ def run(source: str | None = None) -> dict:
         "methodology": methodology.items(),
     }
     OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / "close.json").write_text(json.dumps(close, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    write_json(OUT / "close.json", close)
     write_excel(close, OUT / EXCEL_NAME)
     return close
 

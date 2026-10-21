@@ -10,6 +10,7 @@ from decimal import Decimal
 
 from pipeline.config import settings
 from pipeline.engine import _tokens
+from pipeline.jsonio import write_json
 from pipeline.paths import AI_DIR, DATA, TRUTH
 from pipeline.receipt_text import parse_all
 
@@ -262,8 +263,7 @@ def run(close: dict, write: bool = True) -> dict:
         "llm_usage": _llm_usage(),
     }
     if write:
-        (DATA / "eval.json").write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n",
-                                        encoding="utf-8")
+        write_json(DATA / "eval.json", result)
     return result
 
 

@@ -15,6 +15,7 @@ from functools import cache
 import httpx
 
 from pipeline.config import settings
+from pipeline.jsonio import write_json
 from pipeline.paths import FX_DIR
 
 OFFICIAL_CSV = FX_DIR / "usd_ars_oficial.csv"
@@ -60,7 +61,7 @@ def snapshot() -> dict:
         "provider": "ArgentinaDatos (argentinadatos.com), public API, no key",
         "series": summary,
     }
-    SOURCE_JSON.write_text(json.dumps(record, indent=2) + "\n", encoding="utf-8")
+    write_json(SOURCE_JSON, record)
     return record
 
 
