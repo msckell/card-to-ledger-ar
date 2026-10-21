@@ -73,7 +73,7 @@ export type Anomaly = {
 }
 
 export type Site = {
-  meta: { title: string; subtitle: string; company: string; period: string; period_label: string; fx_downloaded: string; fx_source: string }
+  meta: { title: string; author: string; subtitle: string; company: string; period: string; period_label: string; fx_downloaded: string; fx_source: string }
   summary: {
     transactions: number
     by_type: Record<string, number>
@@ -85,6 +85,8 @@ export type Site = {
     card_net_usd: string
     payouts_usdc: string
     split: Split
+    no_touch: number
+    no_touch_share: string
     exceptions: number
     threshold: string | null
     ai_confident_but_in_review: number
@@ -96,7 +98,7 @@ export type Site = {
   queue: QueueItem[]
   journal: {
     rows: { account: string; name: string; debe: string; haber: string }[]
-    totals: { debe: string; haber: string; balanced: boolean }
+    totals: { debe: string; haber: string; balanced: boolean; difference: string }
     lines: number
     excel: string
     balances: { opening_rate: string; closing_rate: string }

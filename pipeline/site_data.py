@@ -11,7 +11,7 @@ import shutil
 from decimal import Decimal
 
 from pipeline import fx
-from pipeline.config import account_name, rules, settings
+from pipeline.config import account_name_en, chart, rules, settings
 from pipeline.jsonio import write_json
 from pipeline.money import fmt, to_cents
 from pipeline.paths import DOCS, OUT, RECEIPTS, ROOT, SITE, SITE_DATA
@@ -29,6 +29,20 @@ def money(amount: str) -> str:
     return fmt(to_cents(amount))
 
 
+def en(text: str | None) -> str | None:
+    """The page is in English. Account names in texts written for the accountant are swapped for
+    their English names. The Excel and the AI prompts keep the Spanish ones."""
+    if not text:
+        return text
+    for a in sorted(chart().values(), key=lambda a: -len(a["name"])):
+        text = text.replace(a["name"], a["name_en"])
+    return text
+
+
+def acct(code: str) -> str:
+    return f"{code} {account_name_en(code)}"
+
+
 def _queue(close: dict) -> list[dict]:
     txns = {t["id"]: t for t in close["transactions"]}
     out = []
@@ -41,8 +55,8 @@ def _queue(close: dict) -> list[dict]:
             "type": e["type"],
             "title": e["title"],
             "next_step": e["next_step"],
-            "facts": e["facts"],
-            "explanation": e["explanation"],
+            "facts": en(e["facts"]),
+            "explanation": en(e["explanation"]),
             "explanation_source": e["explanation_source"],
             "status": "Pending review",
         }
@@ -58,14 +72,14 @@ def _queue(close: dict) -> list[dict]:
                 "rate": str(Decimal(t["rate"]).quantize(Decimal("0.01"))),
                 "cardholder": t["export"].get("cardholder", ""),
                 "memo": t["export"].get("memo", ""),
-                "proposed_account": f"{t['account']} {account_name(t['account'])}" if t["account"] else None,
+                "proposed_account": acct(t["account"]) if t["account"] else None,
             }
             if t.get("ai"):
                 item["ai"] = {
                     "id": t["ai"]["id"],
-                    "account": f"{t['ai']['account']} {t['ai']['account_name']}",
+                    "account": acct(t["ai"]["account"]),
                     "confidence": t["ai"]["confidence"],
-                    "reason": t["ai"]["reason"],
+                    "reason": en(t["ai"]["reason"]),
                 }
         if r:
             amount = r.get("amount_cents")
@@ -125,7 +139,7 @@ def _spend_by_account(close: dict) -> list[dict]:
                 rows.append(
                     {
                         "account": r["account"],
-                        "name": r["name"],
+                        "name": account_name_en(r["account"]),
                         "ars": fmt(net),
                         "ars_compact": compact(str(Decimal(net) / 100)),
                         "cents": net,
@@ -185,7 +199,7 @@ def _examples(close: dict) -> list[dict]:
             "exception": None,
             "posting": {
                 "line": debit["id"],
-                "account": f"{debit['account']} {account_name(debit['account'])}",
+                "account": acct(debit["account"]),
                 "basis": debit["basis"],
                 "approved_by": debit["approved_by"],
                 "status": debit["status"],
@@ -197,22 +211,22 @@ def _examples(close: dict) -> list[dict]:
                 "by": "rule",
                 "id": t["rule_id"],
                 "pattern": rule.get("pattern") or rule.get("type"),
-                "account": f"{t['rule_account']} {account_name(t['rule_account'])}",
+                "account": acct(t["rule_account"]),
             }
         elif t.get("ai"):
             ex["coding"] = {
                 "by": "ai",
                 "id": t["ai"]["id"],
                 "confidence": t["ai"]["confidence"],
-                "reason": t["ai"]["reason"],
-                "account": f"{t['ai']['account']} {t['ai']['account_name']}",
+                "reason": en(t["ai"]["reason"]),
+                "account": acct(t["ai"]["account"]),
             }
         if t["id"] in exceptions:
             e = exceptions[t["id"]]
             ex["exception"] = {
                 "id": e["id"],
                 "title": e["title"],
-                "explanation": e["explanation"],
+                "explanation": en(e["explanation"]),
                 "source": e["explanation_source"],
                 "next_step": e["next_step"],
             }
@@ -346,7 +360,8 @@ def export(close: dict, ev: dict) -> dict:
     site = {
         "meta": {
             "title": "Card to Ledger AR",
-            "subtitle": "Independent prototype for Jeeves by Máximo Sckell",
+            "author": "Máximo Sckell",
+            "subtitle": "Independent demo for Jeeves",
             "company": s["company"],
             "period": s["period"],
             "period_label": "September 2026",
@@ -365,6 +380,8 @@ def export(close: dict, ev: dict) -> dict:
             "card_net_usd": money(s["totals"]["card_net_usd"]),
             "payouts_usdc": money(s["totals"]["payouts_usdc"]),
             "split": s["split"],
+            "no_touch": s["split"]["rules"] + s["split"]["ai"],
+            "no_touch_share": pct(str(Decimal(s["split"]["rules"] + s["split"]["ai"]) / Decimal(s["transactions"]))),
             "exceptions": s["exceptions"],
             "threshold": s["threshold"],
             "ai_confident_but_in_review": confident_in_review,
@@ -378,6 +395,7 @@ def export(close: dict, ev: dict) -> dict:
             "rows": [
                 {
                     **r,
+                    "name": account_name_en(r["account"]),
                     "debe": money(r["debe"]) if r["debe"] != "0.00" else "",
                     "haber": money(r["haber"]) if r["haber"] != "0.00" else "",
                 }
@@ -387,6 +405,7 @@ def export(close: dict, ev: dict) -> dict:
                 "debe": money(close["entry_totals"]["debe"]),
                 "haber": money(close["entry_totals"]["haber"]),
                 "balanced": close["entry_totals"]["balanced"],
+                "difference": fmt(to_cents(close["entry_totals"]["debe"]) - to_cents(close["entry_totals"]["haber"])),
             },
             "lines": len(close["journal_lines"]),
             "excel": f"downloads/{s['excel']}",
@@ -418,7 +437,7 @@ def export(close: dict, ev: dict) -> dict:
             "decision_table": _decision_table(ev),
             "llm_usage": ev.get("llm_usage"),
         },
-        "methodology": close["methodology"],
+        "methodology": [{**m, "detail": en(m["detail"])} for m in close["methodology"]],
     }
     _render_memo(site)
     _write(site)

@@ -27,5 +27,10 @@ def account_name(code: str) -> str:
     return chart()[code]["name"]
 
 
+def account_name_en(code: str) -> str:
+    """English name for the public page. The Excel and the AI prompts keep the Spanish one."""
+    return chart()[code]["name_en"]
+
+
 def ai_allowed_accounts() -> list[str]:
     return [code for code, a in chart().items() if a.get("ai_allowed")]

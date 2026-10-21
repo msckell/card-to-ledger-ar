@@ -1,59 +1,75 @@
 # Plan de cuentas de Andes Labs SRL (fictional company). Short Argentine style chart.
+# `name` is what the accountant reads (Excel). `name_en` is what the public page shows.
 # `kind` drives the journal: asset and liability accounts are monetary items in USD that are
 # remeasured at month end. `ai_allowed` marks the accounts the AI may suggest (expenses only).
 accounts:
   - code: "1.1.01"
     name: Banco cuenta corriente ARS
+    name_en: Bank account, ARS
     kind: asset_ars
   - code: "1.1.02"
     name: Cuenta USDC
+    name_en: USDC account
     kind: asset_usd
   - code: "1.1.09"
     name: Partidas pendientes de imputación
+    name_en: Suspense, pending review
     kind: suspense
   - code: "2.1.01"
     name: Tarjeta corporativa a pagar
+    name_en: Corporate card payable
     kind: liability_usd
   - code: "5.1.01"
     name: Publicidad y marketing
+    name_en: Advertising and marketing
     kind: expense
     ai_allowed: true
   - code: "5.1.02"
     name: Servicios de nube
+    name_en: Cloud services
     kind: expense
     ai_allowed: true
   - code: "5.1.03"
     name: Licencias de software
+    name_en: Software licenses
     kind: expense
     ai_allowed: true
   - code: "5.1.04"
     name: Honorarios de contratistas del exterior
+    name_en: Foreign contractor fees
     kind: expense
     ai_allowed: true
   - code: "5.1.05"
     name: Viajes y viáticos
+    name_en: Travel
     kind: expense
     ai_allowed: true
   - code: "5.1.06"
     name: Comidas y representación
+    name_en: Meals and entertainment
     kind: expense
     ai_allowed: true
   - code: "5.1.07"
     name: Eventos y conferencias
+    name_en: Events and conferences
     kind: expense
     ai_allowed: true
   - code: "5.1.08"
     name: Gastos de oficina y equipamiento menor
+    name_en: Office supplies and small equipment
     kind: expense
     ai_allowed: true
   - code: "5.1.09"
     name: Capacitación y suscripciones
+    name_en: Training and subscriptions
     kind: expense
     ai_allowed: true
   - code: "5.1.10"
     name: Comisiones y gastos bancarios
+    name_en: Bank fees and charges
     kind: expense
     ai_allowed: true
   - code: "5.2.01"
     name: Diferencias de cambio
+    name_en: Exchange differences
     kind: fx_result

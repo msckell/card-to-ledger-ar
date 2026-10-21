@@ -1,6 +1,24 @@
 import type { ReactNode } from 'react'
 import { pct, site } from './data'
-import { Arrow, Badge, ButtonLink, Check, Dot, GoldRule, WHO, type Who } from './ui'
+import { Arrow, Badge, ButtonLink, Dot, GoldRule, WHO, type Who } from './ui'
+
+const DOES: { title: string; body: string; icon: ReactNode }[] = [
+  {
+    title: 'Reads',
+    body: 'Every card charge, USDC payout and receipt of the month.',
+    icon: <path d="M5 3h7l3 3v11H5zM12 3v3h3M8 10h4M8 13h4" />,
+  },
+  {
+    title: 'Resolves',
+    body: 'Converts, matches and codes each one with rules, and AI where rules stop.',
+    icon: <path d="M4 6h12M4 10h12M4 14h7M14 13l1.5 1.5L18 12" />,
+  },
+  {
+    title: 'Delivers',
+    body: 'A balanced journal entry in pesos and a short review queue for a person.',
+    icon: <path d="M4 4h12v12H4zM4 8h12M9 8v8" />,
+  },
+]
 
 export default function Hero() {
   const s = site.summary
@@ -14,27 +32,64 @@ export default function Hero() {
   const planted = Object.values(e.anomalies).reduce((a, v) => a + v.planted, 0)
   const caught = Object.values(e.anomalies).reduce((a, v) => a + v.caught_in_review, 0)
   const rec = e.threshold.recommended_row
+  const usage = e.llm_usage
+
+  const found: { value: string; label: string }[] = [
+    { value: s.no_touch_share, label: `of movements posted with no human touch, ${s.no_touch} of ${total}` },
+    { value: `${caught} of ${planted}`, label: 'planted problems caught before posting' },
+    { value: pct(e.extraction.ai?.all_fields), label: 'of receipts read right by AI, all four fields' },
+    {
+      value: rec ? pct(rec.accuracy) : 'n/a',
+      label: rec ? `of AI coded accounts right at the ${e.threshold.recommended} threshold` : 'AI not run',
+    },
+    { value: `ARS ${site.journal.totals.difference}`, label: 'difference between debits and credits' },
+    {
+      value: usage ? `USD ${usage.total_cost_usd.toFixed(2)}` : 'n/a',
+      label: usage ? `in AI cost for the whole month, ${usage.total_calls} calls` : 'AI not run',
+    },
+  ]
 
   return (
     <section id="top" className="relative overflow-hidden bg-night text-on-night">
       <Curves />
-      <div className="relative mx-auto max-w-6xl px-4 pb-16 pt-14 sm:px-6 sm:pb-24 sm:pt-20">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_1fr] lg:gap-12">
-          <div>
-            <div className="flex flex-wrap items-center gap-2">
-              <Badge tone="gold">Close of {site.meta.period_label}</Badge>
-              <Badge tone="night">Fictional company · synthetic data</Badge>
-            </div>
+      <div className="relative mx-auto max-w-6xl px-4 pb-16 pt-10 sm:px-6 sm:pb-24 sm:pt-14">
+        {/* Who made it, and for whom */}
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+          <p className="text-sm sm:text-base">
+            <span className="font-semibold text-gold-light">{site.meta.author}</span>
+            <span className="text-on-night-muted"> · {site.meta.subtitle}</span>
+          </p>
+          <Badge tone="night">Fictional company · synthetic data</Badge>
+        </div>
 
-            <GoldRule className="mt-10" />
-            <h1 className="mt-6 max-w-4xl text-[2.4rem] font-semibold leading-[1.08] tracking-tight sm:text-6xl lg:text-[3.6rem]">
-              A month of dollar spending, <span className="text-gold-light">closed in pesos</span> and ready to review.
+        <div className="mt-10 grid items-center gap-14 lg:grid-cols-[1.05fr_1fr] lg:gap-12">
+          <div>
+            <GoldRule />
+            <h1 className="mt-6 text-[2.1rem] font-semibold leading-[1.1] tracking-tight sm:text-5xl lg:text-[2.85rem]">
+              <span className="text-gold-light">{site.meta.title}</span>
+              <span className="block">The month end close for Argentine companies that spend in dollars.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-on-night-muted sm:text-lg">
-              {site.meta.company} spends in dollars and keeps its books in pesos. Rules do everything they can, AI handles only
-              what rules cannot, and a person reviews the rest. Every split is measured against known correct answers.
+
+            <ol className="mt-8 grid gap-4 sm:grid-cols-3">
+              {DOES.map((d) => (
+                <li key={d.title} className="flex gap-3 sm:flex-col sm:gap-2">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-night-2 text-gold ring-1 ring-night-line">
+                    <svg viewBox="0 0 20 20" className="h-4.5 w-4.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      {d.icon}
+                    </svg>
+                  </span>
+                  <span>
+                    <span className="block text-sm font-semibold">{d.title}</span>
+                    <span className="block text-sm leading-relaxed text-on-night-muted">{d.body}</span>
+                  </span>
+                </li>
+              ))}
+            </ol>
+
+            <p className="mt-6 text-sm text-on-night-muted">
+              A working demo on one synthetic month, {site.meta.period_label}, for a fictional company, {site.meta.company}.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-3">
               <ButtonLink href="#results">
                 See the close <Arrow />
               </ButtonLink>
@@ -42,7 +97,6 @@ export default function Hero() {
                 How it works
               </ButtonLink>
             </div>
-            <p className="mt-5 text-xs text-on-night-muted">{site.meta.subtitle}</p>
           </div>
 
           {/* The headline result: who closed the month */}
@@ -54,7 +108,7 @@ export default function Hero() {
                   {total} <span className="text-lg font-medium text-on-night-muted sm:text-xl">movements</span>
                 </p>
               </div>
-              <p className="text-sm text-on-night-muted">{s.receipts} receipts and invoices, matched by code</p>
+              <p className="text-sm text-on-night-muted">{s.receipts} receipts and invoices</p>
             </div>
 
             <div
@@ -85,42 +139,21 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Four proof points */}
-        <dl className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-night-line bg-night-line lg:grid-cols-4">
-          <Kpi
-            value={
-              <>
-                USD {s.spend_usd_compact} <Arrow className="mx-0.5 inline text-gold" /> ARS {s.spend_ars_compact}
-              </>
-            }
-            label="Spend converted at the official rate of each day"
-          />
-          <Kpi value={`${caught}/${planted}`} label="Planted problems that reached a person" />
-          <Kpi
-            value={rec ? pct(rec.accuracy) : 'n/a'}
-            label={rec ? `Of AI account suggestions accepted at ${e.threshold.recommended} were right` : 'AI not run'}
-          />
-          <Kpi
-            value={
-              <span className="inline-flex items-center gap-2">
-                <Check className="h-6 w-6 text-gold" /> Debe = Haber
-              </span>
-            }
-            label={`Journal entry balanced to the cent, ARS ${site.journal.totals.debe}`}
-          />
-        </dl>
+        {/* What we found */}
+        <div className="mt-16">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-light">What we found</p>
+          <dl className="mt-4 grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-night-line bg-night-line lg:grid-cols-3">
+            {found.map((f) => (
+              <div key={f.label} className="bg-night p-5 sm:p-6">
+                <dt className="sr-only">{f.label}</dt>
+                <dd className="num text-2xl font-semibold text-gold-light sm:text-3xl">{f.value}</dd>
+                <dd className="mt-2 text-xs leading-relaxed text-on-night-muted sm:text-sm">{f.label}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </div>
     </section>
-  )
-}
-
-function Kpi({ value, label }: { value: ReactNode; label: string }) {
-  return (
-    <div className="bg-night p-5 sm:p-6">
-      <dt className="sr-only">{label}</dt>
-      <dd className="num text-xl font-semibold text-gold-light sm:text-2xl lg:text-xl xl:text-2xl">{value}</dd>
-      <dd className="mt-2 text-xs leading-relaxed text-on-night-muted sm:text-sm">{label}</dd>
-    </div>
   )
 }
 

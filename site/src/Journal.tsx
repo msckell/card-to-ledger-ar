@@ -1,7 +1,7 @@
 import { site } from './data'
 import { Arrow, ButtonLink, Check, Section } from './ui'
 
-const SHEETS = ['Resumen', 'Asiento', 'Movimientos', 'Excepciones', 'Metodología']
+const SHEETS = ['Summary', 'Entry', 'Movements', 'Exceptions', 'Methodology']
 
 export default function Journal() {
   const j = site.journal
@@ -14,7 +14,7 @@ export default function Journal() {
         <>
           One summary entry built from {j.lines} audited lines. Each movement is valued at the official seller rate of its
           posting day. The USDC account and the card payable are remeasured at the closing rate of{' '}
-          {site.summary.closing_rate}. Items still in review sit in Partidas pendientes de imputación.
+          {site.summary.closing_rate}. Items still in review sit in a suspense account until a person decides.
         </>
       }
     >
@@ -23,9 +23,9 @@ export default function Journal() {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-line bg-paper text-left text-[11px] uppercase tracking-[0.14em] text-faint">
-                <th className="px-4 py-3 font-semibold sm:px-6">Cuenta</th>
-                <th className="hidden px-3 py-3 text-right font-semibold sm:table-cell">Debe</th>
-                <th className="hidden px-4 py-3 text-right font-semibold sm:table-cell sm:px-6">Haber</th>
+                <th className="px-4 py-3 font-semibold sm:px-6">Account</th>
+                <th className="hidden px-3 py-3 text-right font-semibold sm:table-cell">Debit</th>
+                <th className="hidden px-4 py-3 text-right font-semibold sm:table-cell sm:px-6">Credit</th>
               </tr>
             </thead>
             <tbody>
@@ -35,7 +35,7 @@ export default function Journal() {
                     <span className="block leading-snug">{r.name}</span>
                     <span className="font-mono text-[11px] text-faint">{r.account}</span>
                     <span className="num mt-0.5 block text-[13px] sm:hidden">
-                      {r.debe ? <>Debe {r.debe}</> : <span className="text-muted">Haber {r.haber}</span>}
+                      {r.debe ? <>Debit {r.debe}</> : <span className="text-muted">Credit {r.haber}</span>}
                     </span>
                   </td>
                   <td className="num hidden px-3 py-2.5 text-right align-top sm:table-cell">{r.debe}</td>
@@ -46,9 +46,9 @@ export default function Journal() {
             <tfoot>
               <tr className="bg-night font-semibold text-on-night">
                 <td className="px-4 py-3.5 sm:px-6">
-                  Totales ARS
+                  Totals, ARS
                   <span className="num block text-[13px] font-medium text-gold-light sm:hidden">
-                    Debe {j.totals.debe} · Haber {j.totals.haber}
+                    Debit {j.totals.debe} · Credit {j.totals.haber}
                   </span>
                 </td>
                 <td className="num hidden px-3 py-3.5 text-right text-gold-light sm:table-cell">{j.totals.debe}</td>
@@ -64,12 +64,12 @@ export default function Journal() {
               <Check className="h-4 w-4" /> {j.totals.balanced ? 'Balanced to the cent' : 'Not balanced'}
             </p>
             <div className="mt-4 space-y-1">
-              <p className="text-xs text-faint">Debe</p>
+              <p className="text-xs text-faint">Debits</p>
               <p className="num text-2xl font-semibold">ARS {j.totals.debe}</p>
               <p className="py-1 text-xl font-semibold text-gold-text" aria-hidden>
                 =
               </p>
-              <p className="text-xs text-faint">Haber</p>
+              <p className="text-xs text-faint">Credits</p>
               <p className="num text-2xl font-semibold">ARS {j.totals.haber}</p>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-muted">
@@ -80,6 +80,7 @@ export default function Journal() {
 
           <div className="rounded-3xl bg-night p-6 text-on-night">
             <p className="text-lg font-semibold">The whole close, in one Excel file</p>
+            <p className="mt-1 text-xs text-on-night-muted">Labels in Spanish inside the file, the way a local accountant reads them.</p>
             <div className="mt-3 flex flex-wrap gap-1.5">
               {SHEETS.map((s) => (
                 <span key={s} className="rounded-md bg-night-2 px-2 py-1 text-xs text-on-night-muted ring-1 ring-night-line">

@@ -1,7 +1,8 @@
 {
   "meta": {
     "title": "Card to Ledger AR",
-    "subtitle": "Independent prototype for Jeeves by Máximo Sckell",
+    "author": "Máximo Sckell",
+    "subtitle": "Independent demo for Jeeves",
     "company": "Andes Labs SRL",
     "period": "2026-09",
     "period_label": "September 2026",
@@ -61,6 +62,8 @@
       "ai": 21,
       "review": 40
     },
+    "no_touch": 212,
+    "no_touch_share": "84.1%",
     "exceptions": 44,
     "threshold": "0.75",
     "ai_confident_but_in_review": 3,
@@ -105,7 +108,7 @@
   "spend_by_account": [
     {
       "account": "5.1.04",
-      "name": "Honorarios de contratistas del exterior",
+      "name": "Foreign contractor fees",
       "ars": "105,067,844.00",
       "ars_compact": "105.1M",
       "cents": 10506784400,
@@ -113,7 +116,7 @@
     },
     {
       "account": "5.1.01",
-      "name": "Publicidad y marketing",
+      "name": "Advertising and marketing",
       "ars": "26,016,104.75",
       "ars_compact": "26.0M",
       "cents": 2601610475,
@@ -121,7 +124,7 @@
     },
     {
       "account": "1.1.09",
-      "name": "Partidas pendientes de imputación",
+      "name": "Suspense, pending review",
       "ars": "22,744,110.40",
       "ars_compact": "22.7M",
       "cents": 2274411040,
@@ -129,7 +132,7 @@
     },
     {
       "account": "5.1.05",
-      "name": "Viajes y viáticos",
+      "name": "Travel",
       "ars": "16,183,534.75",
       "ars_compact": "16.2M",
       "cents": 1618353475,
@@ -137,7 +140,7 @@
     },
     {
       "account": "5.1.02",
-      "name": "Servicios de nube",
+      "name": "Cloud services",
       "ars": "14,647,522.10",
       "ars_compact": "14.6M",
       "cents": 1464752210,
@@ -145,7 +148,7 @@
     },
     {
       "account": "5.1.03",
-      "name": "Licencias de software",
+      "name": "Software licenses",
       "ars": "10,882,931.25",
       "ars_compact": "10.9M",
       "cents": 1088293125,
@@ -153,7 +156,7 @@
     },
     {
       "account": "5.1.06",
-      "name": "Comidas y representación",
+      "name": "Meals and entertainment",
       "ars": "4,166,090.90",
       "ars_compact": "4.2M",
       "cents": 416609090,
@@ -161,7 +164,7 @@
     },
     {
       "account": "5.1.07",
-      "name": "Eventos y conferencias",
+      "name": "Events and conferences",
       "ars": "1,725,948.80",
       "ars_compact": "1.7M",
       "cents": 172594880,
@@ -169,7 +172,7 @@
     },
     {
       "account": "5.1.09",
-      "name": "Capacitación y suscripciones",
+      "name": "Training and subscriptions",
       "ars": "1,232,143.50",
       "ars_compact": "1.2M",
       "cents": 123214350,
@@ -177,7 +180,7 @@
     },
     {
       "account": "5.1.10",
-      "name": "Comisiones y gastos bancarios",
+      "name": "Bank fees and charges",
       "ars": "494,719.25",
       "ars_compact": "494.7K",
       "cents": 49471925,
@@ -185,7 +188,7 @@
     },
     {
       "account": "5.1.08",
-      "name": "Gastos de oficina y equipamiento menor",
+      "name": "Office supplies and small equipment",
       "ars": "374,862.35",
       "ars_compact": "374.9K",
       "cents": 37486235,
@@ -217,12 +220,12 @@
         "by": "rule",
         "id": "R-009",
         "pattern": "^GOOGLE \\*(GSUITE|WORKSPACE)",
-        "account": "5.1.03 Licencias de software"
+        "account": "5.1.03 Software licenses"
       },
       "exception": null,
       "posting": {
         "line": "JL-0003",
-        "account": "5.1.03 Licencias de software",
+        "account": "5.1.03 Software licenses",
         "basis": "rule R-009",
         "approved_by": "rules engine (deterministic)",
         "status": "posted"
@@ -253,12 +256,12 @@
         "id": "AI-0001",
         "confidence": "0.95",
         "reason": "Receipt RC-0206 shows a 1-year Screen Studio license, billed to Andes Labs SRL through Paddle. This is a software license, so it fits software subscriptions and licenses.",
-        "account": "5.1.03 Licencias de software"
+        "account": "5.1.03 Software licenses"
       },
       "exception": null,
       "posting": {
         "line": "JL-0005",
-        "account": "5.1.03 Licencias de software",
+        "account": "5.1.03 Software licenses",
         "basis": "AI suggestion AI-0001",
         "approved_by": "auto accepted: AI confidence at or above threshold",
         "status": "posted"
@@ -280,7 +283,7 @@
         "by": "rule",
         "id": "R-019",
         "pattern": "^TST\\*|^STARBUCKS",
-        "account": "5.1.06 Comidas y representación"
+        "account": "5.1.06 Meals and entertainment"
       },
       "exception": {
         "id": "EX-001",
@@ -291,7 +294,7 @@
       },
       "posting": {
         "line": "JL-0009",
-        "account": "1.1.09 Partidas pendientes de imputación",
+        "account": "1.1.09 Suspense, pending review",
         "basis": "suspense until reviewed",
         "approved_by": "pending review",
         "status": "pending review"
@@ -319,7 +322,7 @@
         "rate": "1535.00",
         "cardholder": "Camila Ortiz",
         "memo": "",
-        "proposed_account": "5.1.06 Comidas y representación"
+        "proposed_account": "5.1.06 Meals and entertainment"
       }
     },
     {
@@ -342,7 +345,7 @@
         "rate": "1535.00",
         "cardholder": "Camila Ortiz",
         "memo": "",
-        "proposed_account": "5.1.06 Comidas y representación"
+        "proposed_account": "5.1.06 Meals and entertainment"
       }
     },
     {
@@ -365,7 +368,7 @@
         "rate": "1530.00",
         "cardholder": "Julián Castro",
         "memo": "",
-        "proposed_account": "5.1.05 Viajes y viáticos"
+        "proposed_account": "5.1.05 Travel"
       }
     },
     {
@@ -388,11 +391,11 @@
         "rate": "1530.00",
         "cardholder": "Martín Ibarra",
         "memo": "",
-        "proposed_account": "5.1.02 Servicios de nube"
+        "proposed_account": "5.1.02 Cloud services"
       },
       "ai": {
         "id": "AI-0004",
-        "account": "5.1.02 Servicios de nube",
+        "account": "5.1.02 Cloud services",
         "confidence": "0.68",
         "reason": "Namecheap is mainly a domain registrar and hosting provider, and the chart lists domains under cloud services. No receipt was matched, so I can't confirm what was bought. It could also be an SSL certificate, email service or a software-type product."
       }
@@ -402,7 +405,7 @@
       "type": "ai_below_threshold",
       "title": "AI suggestion below the threshold",
       "next_step": "Pick the account",
-      "facts": "TX-0033 · 2026-09-05 · NAMECHEAP.COM · USD 68.99 · Martín Ibarra · AI suggests 5.1.02 Servicios de nube with confidence 0.68 · threshold 0.75",
+      "facts": "TX-0033 · 2026-09-05 · NAMECHEAP.COM · USD 68.99 · Martín Ibarra · AI suggests 5.1.02 Cloud services with confidence 0.68 · threshold 0.75",
       "explanation": "The AI's cloud services suggestion [AI-0004] for this Namecheap charge [TX-0033] is not confident enough to accept, and no receipt is matched. Find the invoice or ask the cardholder what was bought, since it could be a domain, hosting, a certificate or email, then pick the account.",
       "explanation_source": "ai_verified",
       "status": "Pending review",
@@ -417,11 +420,11 @@
         "rate": "1530.00",
         "cardholder": "Martín Ibarra",
         "memo": "",
-        "proposed_account": "5.1.02 Servicios de nube"
+        "proposed_account": "5.1.02 Cloud services"
       },
       "ai": {
         "id": "AI-0004",
-        "account": "5.1.02 Servicios de nube",
+        "account": "5.1.02 Cloud services",
         "confidence": "0.68",
         "reason": "Namecheap is mainly a domain registrar and hosting provider, and the chart lists domains under cloud services. No receipt was matched, so I can't confirm what was bought. It could also be an SSL certificate, email service or a software-type product."
       }
@@ -446,7 +449,7 @@
         "rate": "1530.00",
         "cardholder": "Diego Romero",
         "memo": "",
-        "proposed_account": "5.1.06 Comidas y representación"
+        "proposed_account": "5.1.06 Meals and entertainment"
       }
     },
     {
@@ -454,7 +457,7 @@
       "type": "ai_below_threshold",
       "title": "AI suggestion below the threshold",
       "next_step": "Pick the account",
-      "facts": "TX-0048 · 2026-09-07 · WEWORK MEXICO · USD 42.95 · Valentina Sosa · AI suggests 5.1.08 Gastos de oficina y equipamiento menor with confidence 0.72 · threshold 0.75",
+      "facts": "TX-0048 · 2026-09-07 · WEWORK MEXICO · USD 42.95 · Valentina Sosa · AI suggests 5.1.08 Office supplies and small equipment with confidence 0.72 · threshold 0.75",
       "explanation": "The AI suggests office expenses for this coworking charge [TX-0048], but its confidence is under the threshold because the memo mentions a trip to Sao Paulo while the receipt [RC-0146] is from Mexico City. Check the receipt and ask the cardholder whether this was travel or office space, then pick the account (see AI-0005).",
       "explanation_source": "ai_verified",
       "status": "Pending review",
@@ -469,11 +472,11 @@
         "rate": "1530.00",
         "cardholder": "Valentina Sosa",
         "memo": "trip to Sao Paulo",
-        "proposed_account": "5.1.08 Gastos de oficina y equipamiento menor"
+        "proposed_account": "5.1.08 Office supplies and small equipment"
       },
       "ai": {
         "id": "AI-0005",
-        "account": "5.1.08 Gastos de oficina y equipamiento menor",
+        "account": "5.1.08 Office supplies and small equipment",
         "confidence": "0.72",
         "reason": "The receipt shows a WeWork coworking day pass for USD 42.95 in Mexico City, billed to Andes Labs SRL. Coworking passes belong in 5.1.08. The memo says \"trip to Sao Paulo\" but the receipt is from Mexico City, so travel (5.1.05) is possible but less likely."
       },
@@ -506,7 +509,7 @@
         "rate": "1530.00",
         "cardholder": "Valentina Sosa",
         "memo": "",
-        "proposed_account": "5.1.05 Viajes y viáticos"
+        "proposed_account": "5.1.05 Travel"
       }
     },
     {
@@ -529,7 +532,7 @@
         "rate": "1530.00",
         "cardholder": "Martín Ibarra",
         "memo": "",
-        "proposed_account": "5.1.05 Viajes y viáticos"
+        "proposed_account": "5.1.05 Travel"
       }
     },
     {
@@ -552,7 +555,7 @@
         "rate": "1535.00",
         "cardholder": "Tomás Herrera",
         "memo": "",
-        "proposed_account": "5.1.03 Licencias de software"
+        "proposed_account": "5.1.03 Software licenses"
       }
     },
     {
@@ -575,11 +578,11 @@
         "rate": "1535.00",
         "cardholder": "Sofía Paz",
         "memo": "",
-        "proposed_account": "5.1.04 Honorarios de contratistas del exterior"
+        "proposed_account": "5.1.04 Foreign contractor fees"
       },
       "ai": {
         "id": "AI-0010",
-        "account": "5.1.04 Honorarios de contratistas del exterior",
+        "account": "5.1.04 Foreign contractor fees",
         "confidence": "0.40",
         "reason": "PayPal payment to \"MGOMEZSTUDIO\", which looks like an individual or studio, for USD 588.58. No receipt or memo. Most likely a freelancer or contractor paid abroad, but it could be a software or design purchase."
       }
@@ -589,7 +592,7 @@
       "type": "ai_below_threshold",
       "title": "AI suggestion below the threshold",
       "next_step": "Pick the account",
-      "facts": "TX-0065 · 2026-09-10 · PAYPAL *MGOMEZSTUDIO · USD 588.58 · Sofía Paz · AI suggests 5.1.04 Honorarios de contratistas del exterior with confidence 0.40 · threshold 0.75",
+      "facts": "TX-0065 · 2026-09-10 · PAYPAL *MGOMEZSTUDIO · USD 588.58 · Sofía Paz · AI suggests 5.1.04 Foreign contractor fees with confidence 0.40 · threshold 0.75",
       "explanation": "The AI's contractor-fee suggestion [AI-0010] for this PayPal charge [TX-0065] is a weak guess, and no receipt or memo supports it. Confirm with the cardholder what was bought, and whether it was a freelancer or a software or design purchase, before choosing the account.",
       "explanation_source": "ai_verified",
       "status": "Pending review",
@@ -604,11 +607,11 @@
         "rate": "1535.00",
         "cardholder": "Sofía Paz",
         "memo": "",
-        "proposed_account": "5.1.04 Honorarios de contratistas del exterior"
+        "proposed_account": "5.1.04 Foreign contractor fees"
       },
       "ai": {
         "id": "AI-0010",
-        "account": "5.1.04 Honorarios de contratistas del exterior",
+        "account": "5.1.04 Foreign contractor fees",
         "confidence": "0.40",
         "reason": "PayPal payment to \"MGOMEZSTUDIO\", which looks like an individual or studio, for USD 588.58. No receipt or memo. Most likely a freelancer or contractor paid abroad, but it could be a software or design purchase."
       }
@@ -633,7 +636,7 @@
         "rate": "1535.00",
         "cardholder": "Camila Ortiz",
         "memo": "",
-        "proposed_account": "5.1.06 Comidas y representación"
+        "proposed_account": "5.1.06 Meals and entertainment"
       }
     },
     {
@@ -656,7 +659,7 @@
         "rate": "1535.00",
         "cardholder": "Tomás Herrera",
         "memo": "",
-        "proposed_account": "5.1.05 Viajes y viáticos"
+        "proposed_account": "5.1.05 Travel"
       }
     },
     {
@@ -679,7 +682,7 @@
         "rate": "1535.00",
         "cardholder": "Julián Castro",
         "memo": "",
-        "proposed_account": "5.1.05 Viajes y viáticos"
+        "proposed_account": "5.1.05 Travel"
       }
     },
     {
@@ -702,7 +705,7 @@
         "rate": "1535.00",
         "cardholder": "Sofía Paz",
         "memo": "",
-        "proposed_account": "5.1.07 Eventos y conferencias"
+        "proposed_account": "5.1.07 Events and conferences"
       },
       "receipt": {
         "id": "RC-0103",
@@ -733,7 +736,7 @@
         "rate": "1535.00",
         "cardholder": "Diego Romero",
         "memo": "",
-        "proposed_account": "5.1.03 Licencias de software"
+        "proposed_account": "5.1.03 Software licenses"
       }
     },
     {
@@ -756,7 +759,7 @@
         "rate": "1535.00",
         "cardholder": "Valentina Sosa",
         "memo": "",
-        "proposed_account": "5.1.05 Viajes y viáticos"
+        "proposed_account": "5.1.05 Travel"
       },
       "receipt": {
         "id": "RC-0192",
@@ -787,7 +790,7 @@
         "rate": "1530.00",
         "cardholder": "Diego Romero",
         "memo": "",
-        "proposed_account": "5.1.05 Viajes y viáticos"
+        "proposed_account": "5.1.05 Travel"
       }
     },
     {
@@ -810,7 +813,7 @@
         "rate": "1530.00",
         "cardholder": "Lucía Fernández",
         "memo": "",
-        "proposed_account": "5.1.06 Comidas y representación"
+        "proposed_account": "5.1.06 Meals and entertainment"
       }
     },
     {
@@ -833,7 +836,7 @@
         "rate": "1530.00",
         "cardholder": "",
         "memo": "",
-        "proposed_account": "5.1.04 Honorarios de contratistas del exterior"
+        "proposed_account": "5.1.04 Foreign contractor fees"
       },
       "receipt": {
         "id": "RC-0173",
@@ -864,11 +867,11 @@
         "rate": "1530.00",
         "cardholder": "Tomás Herrera",
         "memo": "coffee with a prospect",
-        "proposed_account": "5.1.06 Comidas y representación"
+        "proposed_account": "5.1.06 Meals and entertainment"
       },
       "ai": {
         "id": "AI-0012",
-        "account": "5.1.06 Comidas y representación",
+        "account": "5.1.06 Meals and entertainment",
         "confidence": "0.88",
         "reason": "Blue Bottle Coffee is a coffee merchant and the cardholder memo says it was coffee with a prospect, which fits meals and client representation. No receipt was matched."
       }
@@ -893,7 +896,7 @@
         "rate": "1530.00",
         "cardholder": "Camila Ortiz",
         "memo": "",
-        "proposed_account": "5.1.06 Comidas y representación"
+        "proposed_account": "5.1.06 Meals and entertainment"
       }
     },
     {
@@ -916,7 +919,7 @@
         "rate": "1530.00",
         "cardholder": "Diego Romero",
         "memo": "",
-        "proposed_account": "5.1.03 Licencias de software"
+        "proposed_account": "5.1.03 Software licenses"
       }
     },
     {
@@ -924,7 +927,7 @@
       "type": "ai_below_threshold",
       "title": "AI suggestion below the threshold",
       "next_step": "Pick the account",
-      "facts": "TX-0127 · 2026-09-16 · SQ *SUNSET PRINT SHOP · USD 95.69 · Camila Ortiz · AI suggests 5.1.01 Publicidad y marketing with confidence 0.72 · threshold 0.75",
+      "facts": "TX-0127 · 2026-09-16 · SQ *SUNSET PRINT SHOP · USD 95.69 · Camila Ortiz · AI suggests 5.1.01 Advertising and marketing with confidence 0.72 · threshold 0.75",
       "explanation": "The suggestion [AI-0014] for marketing is below the confidence cutoff because the cardholder memo on [TX-0127] (\"client meeting\") doesn't obviously fit printed business cards. Check the receipt [RC-0050] and confirm whether marketing is the right account or whether office supplies or printing fits better.",
       "explanation_source": "ai_verified",
       "status": "Pending review",
@@ -939,11 +942,11 @@
         "rate": "1530.00",
         "cardholder": "Camila Ortiz",
         "memo": "client meeting",
-        "proposed_account": "5.1.01 Publicidad y marketing"
+        "proposed_account": "5.1.01 Advertising and marketing"
       },
       "ai": {
         "id": "AI-0014",
-        "account": "5.1.01 Publicidad y marketing",
+        "account": "5.1.01 Advertising and marketing",
         "confidence": "0.72",
         "reason": "Receipt from Sunset Print Shop shows 500 business cards in 3 designs billed to Andes Labs SRL. Printed business cards are marketing materials. The memo \"client meeting\" is a possible hint at office printing, but the receipt shows the item."
       },
@@ -976,7 +979,7 @@
         "rate": "1530.00",
         "cardholder": "Camila Ortiz",
         "memo": "client meeting",
-        "proposed_account": "5.1.06 Comidas y representación"
+        "proposed_account": "5.1.06 Meals and entertainment"
       },
       "receipt": {
         "id": "RC-0155",
@@ -1007,7 +1010,7 @@
         "rate": "1535.00",
         "cardholder": "Sofía Paz",
         "memo": "",
-        "proposed_account": "5.1.09 Capacitación y suscripciones"
+        "proposed_account": "5.1.09 Training and subscriptions"
       },
       "receipt": {
         "id": "RC-0159",
@@ -1038,7 +1041,7 @@
         "rate": "1535.00",
         "cardholder": "Sofía Paz",
         "memo": "client meeting",
-        "proposed_account": "5.1.06 Comidas y representación"
+        "proposed_account": "5.1.06 Meals and entertainment"
       },
       "receipt": {
         "id": "RC-0029",
@@ -1069,11 +1072,11 @@
         "rate": "1535.00",
         "cardholder": "Lucía Fernández",
         "memo": "",
-        "proposed_account": "5.1.02 Servicios de nube"
+        "proposed_account": "5.1.02 Cloud services"
       },
       "ai": {
         "id": "AI-0018",
-        "account": "5.1.02 Servicios de nube",
+        "account": "5.1.02 Cloud services",
         "confidence": "0.80",
         "reason": "Descriptor is TWILIO, a usage-billed communications API (SMS, email delivery). No receipt or memo, so the exact service is not confirmed."
       }
@@ -1098,7 +1101,7 @@
         "rate": "1535.00",
         "cardholder": "Lucía Fernández",
         "memo": "",
-        "proposed_account": "5.1.05 Viajes y viáticos"
+        "proposed_account": "5.1.05 Travel"
       }
     },
     {
@@ -1121,7 +1124,7 @@
         "rate": "1535.00",
         "cardholder": "Julián Castro",
         "memo": "",
-        "proposed_account": "5.1.05 Viajes y viáticos"
+        "proposed_account": "5.1.05 Travel"
       },
       "receipt": {
         "id": "RC-0210",
@@ -1152,7 +1155,7 @@
         "rate": "1535.00",
         "cardholder": "Lucía Fernández",
         "memo": "",
-        "proposed_account": "5.1.05 Viajes y viáticos"
+        "proposed_account": "5.1.05 Travel"
       }
     },
     {
@@ -1175,11 +1178,11 @@
         "rate": "1535.00",
         "cardholder": "Tomás Herrera",
         "memo": "",
-        "proposed_account": "5.1.01 Publicidad y marketing"
+        "proposed_account": "5.1.01 Advertising and marketing"
       },
       "ai": {
         "id": "AI-0023",
-        "account": "5.1.01 Publicidad y marketing",
+        "account": "5.1.01 Advertising and marketing",
         "confidence": "0.60",
         "reason": "Sticker Mule sells custom stickers and branded printed items. The amount is USD 398.16 with no receipt or memo, so the items are unconfirmed. They are most likely logo merch or marketing materials."
       }
@@ -1189,7 +1192,7 @@
       "type": "ai_below_threshold",
       "title": "AI suggestion below the threshold",
       "next_step": "Pick the account",
-      "facts": "TX-0188 · 2026-09-23 · STICKERMULE.COM · USD 398.16 · Tomás Herrera · AI suggests 5.1.01 Publicidad y marketing with confidence 0.60 · threshold 0.75",
+      "facts": "TX-0188 · 2026-09-23 · STICKERMULE.COM · USD 398.16 · Tomás Herrera · AI suggests 5.1.01 Advertising and marketing with confidence 0.60 · threshold 0.75",
       "explanation": "The AI's marketing suggestion [AI-0023] for this Sticker Mule charge [TX-0188] is low confidence, and there is no receipt or memo to show what was bought. Ask the cardholder what the items were, then pick the account yourself, since the stickers could be marketing or something else.",
       "explanation_source": "ai_verified",
       "status": "Pending review",
@@ -1204,11 +1207,11 @@
         "rate": "1535.00",
         "cardholder": "Tomás Herrera",
         "memo": "",
-        "proposed_account": "5.1.01 Publicidad y marketing"
+        "proposed_account": "5.1.01 Advertising and marketing"
       },
       "ai": {
         "id": "AI-0023",
-        "account": "5.1.01 Publicidad y marketing",
+        "account": "5.1.01 Advertising and marketing",
         "confidence": "0.60",
         "reason": "Sticker Mule sells custom stickers and branded printed items. The amount is USD 398.16 with no receipt or memo, so the items are unconfirmed. They are most likely logo merch or marketing materials."
       }
@@ -1233,7 +1236,7 @@
         "rate": "1535.00",
         "cardholder": "Lucía Fernández",
         "memo": "",
-        "proposed_account": "5.1.05 Viajes y viáticos"
+        "proposed_account": "5.1.05 Travel"
       }
     },
     {
@@ -1256,7 +1259,7 @@
         "rate": "1535.00",
         "cardholder": "Lucía Fernández",
         "memo": "",
-        "proposed_account": "5.1.05 Viajes y viáticos"
+        "proposed_account": "5.1.05 Travel"
       }
     },
     {
@@ -1279,7 +1282,7 @@
         "rate": "1540.00",
         "cardholder": "Camila Ortiz",
         "memo": "",
-        "proposed_account": "5.1.01 Publicidad y marketing"
+        "proposed_account": "5.1.01 Advertising and marketing"
       }
     },
     {
@@ -1302,7 +1305,7 @@
         "rate": "1540.00",
         "cardholder": "Valentina Sosa",
         "memo": "",
-        "proposed_account": "5.1.06 Comidas y representación"
+        "proposed_account": "5.1.06 Meals and entertainment"
       },
       "receipt": {
         "id": "RC-0125",
@@ -1333,11 +1336,11 @@
         "rate": "1545.00",
         "cardholder": "Tomás Herrera",
         "memo": "team dinner",
-        "proposed_account": "5.1.06 Comidas y representación"
+        "proposed_account": "5.1.06 Meals and entertainment"
       },
       "ai": {
         "id": "AI-0026",
-        "account": "5.1.06 Comidas y representación",
+        "account": "5.1.06 Meals and entertainment",
         "confidence": "0.85",
         "reason": "DoorDash is a food delivery merchant and the cardholder memo says \"team dinner\". No receipt was matched, so the details are unconfirmed."
       }
@@ -1362,7 +1365,7 @@
         "rate": "1545.00",
         "cardholder": "Valentina Sosa",
         "memo": "",
-        "proposed_account": "5.1.06 Comidas y representación"
+        "proposed_account": "5.1.06 Meals and entertainment"
       }
     },
     {
@@ -1370,7 +1373,7 @@
       "type": "ai_below_threshold",
       "title": "AI suggestion below the threshold",
       "next_step": "Pick the account",
-      "facts": "TX-0214 · 2026-09-27 · APPLE.COM/BILL · USD 9.99 · Julián Castro · AI suggests 5.1.03 Licencias de software with confidence 0.72 · threshold 0.75",
+      "facts": "TX-0214 · 2026-09-27 · APPLE.COM/BILL · USD 9.99 · Julián Castro · AI suggests 5.1.03 Software licenses with confidence 0.72 · threshold 0.75",
       "explanation": "The AI's account suggestion [AI-0027] for this card charge [TX-0214] falls just short of the confidence bar, so it needs a person to choose. The receipt [RC-0046] reads like a flat-fee software subscription, but check that the other account the AI named is not a better fit before you pick.",
       "explanation_source": "ai_verified",
       "status": "Pending review",
@@ -1385,11 +1388,11 @@
         "rate": "1545.00",
         "cardholder": "Julián Castro",
         "memo": "",
-        "proposed_account": "5.1.03 Licencias de software"
+        "proposed_account": "5.1.03 Software licenses"
       },
       "ai": {
         "id": "AI-0027",
-        "account": "5.1.03 Licencias de software",
+        "account": "5.1.03 Software licenses",
         "confidence": "0.72",
         "reason": "Receipt RC-0046 from Apple Services shows a fixed monthly iCloud+ 2 TB plan for USD 9.99, billed to Andes Labs SRL. This is a flat-fee software subscription, not usage-based cloud infrastructure. 5.1.02 is the main alternative."
       },
@@ -1422,7 +1425,7 @@
         "rate": "1545.00",
         "cardholder": "Martín Ibarra",
         "memo": "",
-        "proposed_account": "5.1.06 Comidas y representación"
+        "proposed_account": "5.1.06 Meals and entertainment"
       }
     },
     {
@@ -1445,7 +1448,7 @@
         "rate": "1545.00",
         "cardholder": "",
         "memo": "",
-        "proposed_account": "5.1.04 Honorarios de contratistas del exterior"
+        "proposed_account": "5.1.04 Foreign contractor fees"
       }
     },
     {
@@ -1471,91 +1474,91 @@
     "rows": [
       {
         "account": "1.1.01",
-        "name": "Banco cuenta corriente ARS",
+        "name": "Bank account, ARS",
         "debe": "",
         "haber": "175,000,000.00"
       },
       {
         "account": "1.1.02",
-        "name": "Cuenta USDC",
+        "name": "USDC account",
         "debe": "",
         "haber": "10,315,172.70"
       },
       {
         "account": "1.1.09",
-        "name": "Partidas pendientes de imputación",
+        "name": "Suspense, pending review",
         "debe": "22,744,110.40",
         "haber": ""
       },
       {
         "account": "2.1.01",
-        "name": "Tarjeta corporativa a pagar",
+        "name": "Corporate card payable",
         "debe": "",
         "haber": "23,001,807.00"
       },
       {
         "account": "5.1.01",
-        "name": "Publicidad y marketing",
+        "name": "Advertising and marketing",
         "debe": "26,016,104.75",
         "haber": ""
       },
       {
         "account": "5.1.02",
-        "name": "Servicios de nube",
+        "name": "Cloud services",
         "debe": "14,647,522.10",
         "haber": ""
       },
       {
         "account": "5.1.03",
-        "name": "Licencias de software",
+        "name": "Software licenses",
         "debe": "10,882,931.25",
         "haber": ""
       },
       {
         "account": "5.1.04",
-        "name": "Honorarios de contratistas del exterior",
+        "name": "Foreign contractor fees",
         "debe": "105,067,844.00",
         "haber": ""
       },
       {
         "account": "5.1.05",
-        "name": "Viajes y viáticos",
+        "name": "Travel",
         "debe": "16,183,534.75",
         "haber": ""
       },
       {
         "account": "5.1.06",
-        "name": "Comidas y representación",
+        "name": "Meals and entertainment",
         "debe": "4,166,090.90",
         "haber": ""
       },
       {
         "account": "5.1.07",
-        "name": "Eventos y conferencias",
+        "name": "Events and conferences",
         "debe": "1,725,948.80",
         "haber": ""
       },
       {
         "account": "5.1.08",
-        "name": "Gastos de oficina y equipamiento menor",
+        "name": "Office supplies and small equipment",
         "debe": "374,862.35",
         "haber": ""
       },
       {
         "account": "5.1.09",
-        "name": "Capacitación y suscripciones",
+        "name": "Training and subscriptions",
         "debe": "1,232,143.50",
         "haber": ""
       },
       {
         "account": "5.1.10",
-        "name": "Comisiones y gastos bancarios",
+        "name": "Bank fees and charges",
         "debe": "494,719.25",
         "haber": ""
       },
       {
         "account": "5.2.01",
-        "name": "Diferencias de cambio",
+        "name": "Exchange differences",
         "debe": "4,781,167.65",
         "haber": ""
       }
@@ -1563,7 +1566,8 @@
     "totals": {
       "debe": "208,316,979.70",
       "haber": "208,316,979.70",
-      "balanced": true
+      "balanced": true,
+      "difference": "0.00"
     },
     "lines": 511,
     "excel": "downloads/cierre_2026-09_andes_labs.xlsx",
@@ -1897,12 +1901,12 @@
     {
       "topic": "ARS top ups",
       "label": "documented",
-      "detail": "USDC received is computed from the ARS sent at the crypto dollar seller rate of that day (https://api.argentinadatos.com/v1/cotizaciones/dolares/cripto). The gap against the official rate goes to Diferencias de cambio."
+      "detail": "USDC received is computed from the ARS sent at the crypto dollar seller rate of that day (https://api.argentinadatos.com/v1/cotizaciones/dolares/cripto). The gap against the official rate goes to Exchange differences."
     },
     {
       "topic": "Month end remeasurement",
       "label": "assumption",
-      "detail": "Cuenta USDC and Tarjeta corporativa a pagar are remeasured at the official seller rate of the last day of the month. The difference goes to Diferencias de cambio."
+      "detail": "USDC account and Corporate card payable are remeasured at the official seller rate of the last day of the month. The difference goes to Exchange differences."
     },
     {
       "topic": "Opening balances",
@@ -1912,7 +1916,7 @@
     {
       "topic": "Items in review",
       "label": "documented",
-      "detail": "Every movement with an open exception is posted to Partidas pendientes de imputación until a person resolves it. The entry still balances."
+      "detail": "Every movement with an open exception is posted to Suspense, pending review until a person resolves it. The entry still balances."
     },
     {
       "topic": "Rounding",

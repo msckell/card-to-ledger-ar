@@ -70,8 +70,8 @@ cd site && npm ci && npm run build
 
 ## Conventions
 
-- Code, comments, commit messages, README, page and memo: English.
-- Accounting labels an Argentine accountant reads (chart of accounts, journal entry columns, Excel sheet names): Spanish.
+- Code, comments, commit messages, README, page and memo: English. The page is fully in English, account names included (`name_en` in the chart of accounts).
+- Spanish only where the Argentine accountant reads: the Excel (sheet names, columns, account names) and the prompts that show accounts to the AI.
 - Prose on the page, README and memo uses no dashes and no semicolons.
 - Every number on the page, README and memo is read from `data/`. None is hardcoded.
 
