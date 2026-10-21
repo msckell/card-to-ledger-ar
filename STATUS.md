@@ -7,6 +7,7 @@
 - One command rebuilds everything: `uv run ctl build` (AI outputs cached in `data/ai/`, 0 new calls when nothing changed).
 - Page in `site/` builds clean and has no horizontal scroll at 375 px.
 - QA: every number on the page traced to `data/site/site.json`. `noindex,nofollow` meta, `robots.txt` disallows all, `X-Robots-Tag` header. Secret scan over the full git history clean.
+- Page redesigned as a visual story (black, white, own gold): result first, then how it works with three real movements, then the evidence. New site.json blocks `flow`, `spend_by_account`, `examples` from `pipeline/site_data.py`.
 - Repo hygiene for publishing: short agent instructions in `CLAUDE.md`, `AGENTS.md` points to it, CI workflow, code formatted with ruff.
 
 ## Results (data/eval.json)

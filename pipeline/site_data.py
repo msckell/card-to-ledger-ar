@@ -11,7 +11,7 @@ import shutil
 from decimal import Decimal
 
 from pipeline import fx
-from pipeline.config import account_name, settings
+from pipeline.config import account_name, rules, settings
 from pipeline.jsonio import write_json
 from pipeline.money import fmt, to_cents
 from pipeline.paths import DOCS, OUT, RECEIPTS, ROOT, SITE, SITE_DATA
@@ -81,6 +81,145 @@ def _queue(close: dict) -> list[dict]:
     return out
 
 
+def compact(amount: str) -> str:
+    """'203535812.05' -> '203.5M'. Display only, for the headline figures."""
+    value = Decimal(amount)
+    for size, suffix in ((Decimal("1e9"), "B"), (Decimal("1e6"), "M"), (Decimal("1e3"), "K")):
+        if abs(value) >= size:
+            return f"{(value / size).quantize(Decimal('0.1'))}{suffix}"
+    return str(value.quantize(Decimal("1")))
+
+
+def _flow(close: dict) -> dict:
+    """Who found the account, then who resolved the movement. Feeds the flow diagram."""
+    txns = close["transactions"]
+    by_rule = [t for t in txns if t["rule_id"]]
+    no_rule = [t for t in txns if not t["rule_id"]]
+    titles = {e["type"]: e["title"] for e in close["exceptions"]}
+    reasons: dict[str, int] = {}
+    for t in txns:
+        if t["resolved_by"] == "review":
+            first = t["exceptions"][0]
+            reasons[first] = reasons.get(first, 0) + 1
+    return {
+        "total": len(txns),
+        "by_rule": len(by_rule),
+        "no_rule": len(no_rule),
+        "rules_resolved": sum(1 for t in by_rule if t["resolved_by"] == "rules"),
+        "rules_to_review": sum(1 for t in by_rule if t["resolved_by"] == "review"),
+        "ai_resolved": sum(1 for t in no_rule if t["resolved_by"] == "ai"),
+        "ai_to_review": sum(1 for t in no_rule if t["resolved_by"] == "review"),
+        "review_reasons": [
+            {"type": k, "title": titles.get(k, k), "n": n} for k, n in sorted(reasons.items(), key=lambda kv: -kv[1])
+        ],
+    }
+
+
+def _spend_by_account(close: dict) -> list[dict]:
+    """Net debit per expense account (5.1.x) plus what still sits in suspense, from the summary entry."""
+    rows = []
+    for r in close["entry"]:
+        if r["account"].startswith("5.1.") or r["account"] == "1.1.09":
+            net = to_cents(r["debe"]) - to_cents(r["haber"])
+            if net > 0:
+                rows.append(
+                    {
+                        "account": r["account"],
+                        "name": r["name"],
+                        "ars": fmt(net),
+                        "ars_compact": compact(str(Decimal(net) / 100)),
+                        "cents": net,
+                        "pending": r["account"] == "1.1.09",
+                    }
+                )
+    return sorted(rows, key=lambda r: -r["cents"])
+
+
+def _rule(rule_id: str) -> dict:
+    cfg = rules()
+    for r in cfg["type_rules"] + cfg["descriptor_rules"]:
+        if r["id"] == rule_id:
+            return r
+    raise KeyError(rule_id)
+
+
+def _examples(close: dict) -> list[dict]:
+    """One real movement per path (rules, AI, a person): the first by ID that fits each one."""
+    txns = close["transactions"]
+    lines = close["journal_lines"]
+    exceptions = {e["txn_id"]: e for e in close["exceptions"] if e.get("txn_id")}
+    picks = {
+        "rules": next(
+            t for t in txns if t["resolved_by"] == "rules" and t["type"] == "card_purchase" and t["receipt_match"]
+        ),
+        "ai": next(t for t in txns if t["resolved_by"] == "ai" and t["receipt_match"]),
+        "review": next(t for t in txns if t["resolved_by"] == "review" and t["exceptions"] == ["missing_receipt"]),
+    }
+    out = []
+    for path, t in picks.items():
+        debit = next(j for j in lines if j["txn_id"] == t["id"] and j["debe"] != "0.00")
+        r = close["receipts"].get(t["receipt_id"]) if t["receipt_id"] else None
+        ex = {
+            "path": path,
+            "txn": {
+                "id": t["id"],
+                "date": t["posted_at"],
+                "descriptor": t["descriptor"],
+                "amount": money(t["amount"]),
+                "currency": t["currency"],
+                "rate": str(Decimal(t["rate"]).quantize(Decimal("0.01"))),
+                "ars": money(t["ars"]),
+            },
+            "receipt": {
+                "id": t["receipt_id"],
+                "vendor": r.get("vendor"),
+                "date": r.get("date"),
+                "amount": money(r["amount_cents"]) if r.get("amount_cents") else None,
+                "currency": r.get("currency"),
+                "file": f"receipts/{t['receipt_id']}.pdf",
+                "read_by": "AI" if r.get("source") == "ai" else "template parser",
+            }
+            if r
+            else None,
+            "coding": None,
+            "exception": None,
+            "posting": {
+                "line": debit["id"],
+                "account": f"{debit['account']} {account_name(debit['account'])}",
+                "basis": debit["basis"],
+                "approved_by": debit["approved_by"],
+                "status": debit["status"],
+            },
+        }
+        if t["rule_id"]:
+            rule = _rule(t["rule_id"])
+            ex["coding"] = {
+                "by": "rule",
+                "id": t["rule_id"],
+                "pattern": rule.get("pattern") or rule.get("type"),
+                "account": f"{t['rule_account']} {account_name(t['rule_account'])}",
+            }
+        elif t.get("ai"):
+            ex["coding"] = {
+                "by": "ai",
+                "id": t["ai"]["id"],
+                "confidence": t["ai"]["confidence"],
+                "reason": t["ai"]["reason"],
+                "account": f"{t['ai']['account']} {t['ai']['account_name']}",
+            }
+        if t["id"] in exceptions:
+            e = exceptions[t["id"]]
+            ex["exception"] = {
+                "id": e["id"],
+                "title": e["title"],
+                "explanation": e["explanation"],
+                "source": e["explanation_source"],
+                "next_step": e["next_step"],
+            }
+        out.append(ex)
+    return out
+
+
 def _decision_table(ev: dict) -> list[dict]:
     ai_ex = ev["extraction"]["ai"]
     tmpl = ev["extraction"]["template_parser"]
@@ -94,6 +233,8 @@ def _decision_table(ev: dict) -> list[dict]:
             "handled_by": "Rules",
             "why": "A fixed rate convention applied to cited rates. Arithmetic, not judgment.",
             "accuracy": "Exact by construction, covered by tests",
+            "headline": "Exact",
+            "note": "by construction, covered by tests",
         },
         {
             "step": "Read receipts",
@@ -108,24 +249,32 @@ def _decision_table(ev: dict) -> list[dict]:
                 if ai_ex
                 else "not run"
             ),
+            "headline": pct(ai_ex["per_field"]["all_fields"]["accuracy"]) if ai_ex else "n/a",
+            "note": "of receipts with all four fields right",
         },
         {
             "step": "Match receipts to movements",
             "handled_by": "Rules",
             "why": "Amount, date window and merchant name. Ties are not guessed, they go to a person.",
             "accuracy": f"{pct(ev['receipt_matching']['accuracy'])} of pairs right",
+            "headline": pct(ev["receipt_matching"]["accuracy"]),
+            "note": "of receipt pairs right",
         },
         {
             "step": "Flag duplicates, missing receipts, mismatches and refunds",
             "handled_by": "Rules",
             "why": "Each check is a precise condition that must behave the same every month.",
             "accuracy": f"{caught} of {planted} planted problems sent to review",
+            "headline": f"{caught}/{planted}",
+            "note": "planted problems reached a person",
         },
         {
             "step": "Code known merchants",
             "handled_by": "Rules",
             "why": "A short rule list covers most spend and is easy to audit.",
             "accuracy": f"{pct(ev['accounts']['rules']['accuracy'])} right",
+            "headline": pct(ev["accounts"]["rules"]["accuracy"]),
+            "note": "of rule coded movements right",
         },
     ]
     if ev["accounts"].get("ai"):
@@ -143,6 +292,13 @@ def _decision_table(ev: dict) -> list[dict]:
                         else "none accepted automatically"
                     )
                 ),
+                "headline": pct(rec["accuracy"]) if rec else pct(ev["accounts"]["ai"]["accuracy"]),
+                "note": (
+                    f"of the {rec['accepted']} accepted at {thr['recommended']}, "
+                    f"{pct(ev['accounts']['ai']['accuracy'])} across all suggestions"
+                    if rec
+                    else "across all suggestions, none accepted automatically"
+                ),
             }
         )
     if ev.get("explanations"):
@@ -155,6 +311,8 @@ def _decision_table(ev: dict) -> list[dict]:
                 "accuracy": (
                     f"{e['accepted_first_try'] + e['accepted_after_retry']} of {e['exceptions']} passed the verifier"
                 ),
+                "headline": f"{e['accepted_first_try'] + e['accepted_after_retry']}/{e['exceptions']}",
+                "note": "explanations passed the verifier",
             }
         )
     rows.append(
@@ -163,6 +321,8 @@ def _decision_table(ev: dict) -> list[dict]:
             "handled_by": "A person",
             "why": "The controller owns the close. Nothing posts as final without review.",
             "accuracy": "Not automated",
+            "headline": "Human",
+            "note": "nothing posts as final without review",
         }
     )
     return rows
@@ -173,6 +333,7 @@ def export(close: dict, ev: dict) -> dict:
     src = fx.source_record()
     thr = ev["threshold"]
     queue = _queue(close)
+    examples = _examples(close)
     thr_value = Decimal(s["threshold"]) if s["threshold"] else None
     confident_in_review = sum(
         1
@@ -199,6 +360,8 @@ def export(close: dict, ev: dict) -> dict:
             "receipts": s["receipts"],
             "spend_usd": money(s["totals"]["spend_usd"]),
             "spend_ars": money(s["totals"]["spend_ars"]),
+            "spend_usd_compact": compact(s["totals"]["spend_usd"]),
+            "spend_ars_compact": compact(s["totals"]["spend_ars"]),
             "card_net_usd": money(s["totals"]["card_net_usd"]),
             "payouts_usdc": money(s["totals"]["payouts_usdc"]),
             "split": s["split"],
@@ -207,6 +370,9 @@ def export(close: dict, ev: dict) -> dict:
             "ai_confident_but_in_review": confident_in_review,
             "closing_rate": str(Decimal(close["balances"]["closing_rate"]).quantize(Decimal("0.01"))),
         },
+        "flow": _flow(close),
+        "spend_by_account": _spend_by_account(close),
+        "examples": examples,
         "queue": queue,
         "journal": {
             "rows": [
@@ -256,7 +422,7 @@ def export(close: dict, ev: dict) -> dict:
     }
     _render_memo(site)
     _write(site)
-    _copy_files(close, queue)
+    _copy_files(close, queue + examples)
     return site
 
 
