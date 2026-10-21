@@ -1,0 +1,123 @@
+# Deterministic account rules. The first matching rule wins.
+# `pattern` is a case insensitive regular expression over the card descriptor.
+# `vendors` lists the names that appear on receipts from that merchant, used for matching.
+# Type rules apply to every movement of that type, whatever the descriptor.
+
+type_rules:
+  - id: R-PAYOUT
+    type: usdc_payout
+    account: "5.1.04"
+    note: USDC payout to a foreign contractor
+  - id: R-TOPUP
+    type: ars_topup
+    account: "1.1.02"
+    note: ARS sent from the local bank, received as USDC
+  - id: R-SETTLE
+    type: card_settlement
+    account: "2.1.01"
+    note: Previous card statement paid from the USDC account
+  - id: R-REFUND
+    type: card_refund
+    account: original
+    note: Refund offsets the account of its original charge
+
+descriptor_rules:
+  - id: R-001
+    pattern: "^FACEBK \\*"
+    account: "5.1.01"
+    vendors: [Meta Platforms Ireland Ltd]
+  - id: R-002
+    pattern: "^GOOGLE \\*ADS"
+    account: "5.1.01"
+    vendors: [Google Ireland Ltd]
+  - id: R-003
+    pattern: "^LINKEDIN"
+    account: "5.1.01"
+    vendors: [LinkedIn Ireland Unlimited Company]
+  - id: R-004
+    pattern: "^AWS EMEA|AMAZON WEB SERVICES"
+    account: "5.1.02"
+    vendors: [Amazon Web Services EMEA SARL]
+  - id: R-005
+    pattern: "^GOOGLE \\*CLOUD"
+    account: "5.1.02"
+    vendors: [Google Cloud EMEA Limited]
+  - id: R-006
+    pattern: "^VERCEL"
+    account: "5.1.02"
+    vendors: [Vercel Inc.]
+  - id: R-007
+    pattern: "^CLOUDFLARE"
+    account: "5.1.02"
+    vendors: [Cloudflare, Inc.]
+  - id: R-008
+    pattern: "^DATADOG"
+    account: "5.1.02"
+    vendors: [Datadog, Inc.]
+  - id: R-009
+    pattern: "^GOOGLE \\*(GSUITE|WORKSPACE)"
+    account: "5.1.03"
+    vendors: [Google Workspace]
+  - id: R-010
+    pattern: "^SLACK"
+    account: "5.1.03"
+    vendors: [Slack Technologies, LLC]
+  - id: R-011
+    pattern: "^FIGMA"
+    account: "5.1.03"
+    vendors: [Figma, Inc.]
+  - id: R-012
+    pattern: "^NOTION"
+    account: "5.1.03"
+    vendors: [Notion Labs, Inc.]
+  - id: R-013
+    pattern: "^GITHUB"
+    account: "5.1.03"
+    vendors: [GitHub, Inc.]
+  - id: R-014
+    pattern: "^ANTHROPIC|^OPENAI"
+    account: "5.1.03"
+    vendors: [Anthropic, PBC, OpenAI, LLC]
+  - id: R-015
+    pattern: "^LINEAR|^ATLASSIAN|^ZOOM|^1PASSWORD|^LOOM|^MIRO|^HUBSPOT|^DOCUSIGN|^CANVA"
+    account: "5.1.03"
+    vendors:
+      - Linear Orbit, Inc.
+      - Atlassian Pty Ltd
+      - Zoom Communications, Inc.
+      - 1Password
+      - Loom, Inc.
+      - RealtimeBoard, Inc. (Miro)
+      - HubSpot, Inc.
+      - Docusign, Inc.
+      - Canva Pty Ltd
+  # Deliberately broad, like a real first rule set. It also catches food delivery.
+  - id: R-016
+    pattern: "^UBER"
+    account: "5.1.05"
+    vendors: [Uber B.V.]
+  - id: R-017
+    pattern: "^LATAM|^AEROLINEAS|^AMERICAN AIR|^COPA AIR"
+    account: "5.1.05"
+    vendors: [LATAM Airlines Group, Aerolíneas Argentinas, American Airlines, Copa Airlines]
+  - id: R-018
+    pattern: "^MARRIOTT|^HILTON|^AIRBNB|^BOOKING\\.COM"
+    account: "5.1.05"
+    vendors: [Marriott International, Hilton Hotels, Airbnb Payments, Booking.com B.V.]
+  - id: R-019
+    pattern: "^TST\\*|^STARBUCKS"
+    account: "5.1.06"
+    vendors: [Starbucks Coffee Company]
+  - id: R-020
+    pattern: "^EVENTBRITE|^WEB SUMMIT|^SAASTR"
+    account: "5.1.07"
+    vendors: [Eventbrite, Web Summit, SaaStr Inc.]
+  - id: R-021
+    pattern: "^UDEMY|^COURSERA|^OREILLY|^SUBSTACK"
+    account: "5.1.09"
+    vendors: [Udemy, Inc., Coursera Inc., O'Reilly Media, Inc., Substack Inc.]
+  - id: R-022
+    pattern: "CARD PROGRAM FEE|INTL TXN FEE|FX MARKUP FEE"
+    account: "5.1.10"
+    vendors: []
+    receipt_exempt: true

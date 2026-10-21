@@ -1,0 +1,18 @@
+{
+  "downloaded_at": "2026-10-21T05:02:06Z",
+  "provider": "ArgentinaDatos (argentinadatos.com), public API, no key",
+  "series": {
+    "oficial": {
+      "url": "https://api.argentinadatos.com/v1/cotizaciones/dolares/oficial",
+      "rows": 37,
+      "from": "2026-08-25",
+      "to": "2026-09-30"
+    },
+    "cripto": {
+      "url": "https://api.argentinadatos.com/v1/cotizaciones/dolares/cripto",
+      "rows": 37,
+      "from": "2026-08-25",
+      "to": "2026-09-30"
+    }
+  }
+}
