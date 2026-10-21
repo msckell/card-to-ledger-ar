@@ -29,9 +29,38 @@ CARD_PAYABLE = "2.1.01"
 BANK_ARS = "1.1.01"
 FX_RESULT = "5.2.01"
 
-STOP = {"inc", "llc", "ltd", "the", "com", "bv", "b", "v", "sarl", "pbc", "co", "company", "www",
-        "store", "sq", "tst", "paypal", "paddle", "net", "lemsqzy", "dd", "sp", "mktp", "us",
-        "pty", "limited", "unlimited", "group", "services", "llc."}
+STOP = {
+    "inc",
+    "llc",
+    "ltd",
+    "the",
+    "com",
+    "bv",
+    "b",
+    "v",
+    "sarl",
+    "pbc",
+    "co",
+    "company",
+    "www",
+    "store",
+    "sq",
+    "tst",
+    "paypal",
+    "paddle",
+    "net",
+    "lemsqzy",
+    "dd",
+    "sp",
+    "mktp",
+    "us",
+    "pty",
+    "limited",
+    "unlimited",
+    "group",
+    "services",
+    "llc.",
+}
 
 
 class BalanceError(Exception):
@@ -87,6 +116,7 @@ def load_export() -> list[Txn]:
 
 # ---------- rules ----------
 
+
 def apply_rules(txns: list[Txn]) -> None:
     cfg = rules()
     by_type = {r["type"]: r for r in cfg["type_rules"]}
@@ -121,6 +151,7 @@ def receipt_required(t: Txn) -> bool:
 
 
 # ---------- receipt matching ----------
+
 
 def _tokens(s: str) -> set[str]:
     s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode().lower()
@@ -216,6 +247,7 @@ def match_receipts(txns: list[Txn], receipts: dict[str, dict]) -> dict[str, str]
 
 # ---------- checks ----------
 
+
 def _desc_key(desc: str) -> str:
     return re.sub(r"\s+", " ", desc.strip().upper())
 
@@ -233,8 +265,7 @@ def detect_duplicates(txns: list[Txn]) -> None:
         for i, t in enumerate(members):
             if t.receipt_id:
                 continue
-            twins = [o for o in members[:i] + members[i + 1:]
-                     if abs((o.posted_at - t.posted_at).days) <= window]
+            twins = [o for o in members[:i] + members[i + 1 :] if abs((o.posted_at - t.posted_at).days) <= window]
             if not twins:
                 continue
             anchor = next((o for o in twins if o.receipt_id), None)
@@ -263,7 +294,8 @@ def link_refunds(txns: list[Txn]) -> None:
         if t.type != "card_refund":
             continue
         cands = [
-            p for p in purchases
+            p
+            for p in purchases
             if _desc_key(p.descriptor) == _desc_key(t.descriptor)
             and p.amount_cents >= t.amount_cents
             and t.posted_at - timedelta(days=lookback) <= p.posted_at <= t.posted_at
@@ -281,6 +313,7 @@ def link_refunds(txns: list[Txn]) -> None:
 
 
 # ---------- resolution ----------
+
 
 def resolve(txns: list[Txn], ai: dict[str, dict] | None, threshold: Decimal | None) -> None:
     by_id = {t.id: t for t in txns}
@@ -320,6 +353,7 @@ def resolve(txns: list[Txn], ai: dict[str, dict] | None, threshold: Decimal | No
 
 # ---------- journal ----------
 
+
 @dataclass
 class Line:
     id: str
@@ -347,8 +381,7 @@ def build_journal(txns: list[Txn]) -> tuple[list[Line], dict]:
     usdc_per_usd = Decimal(settings()["fx"]["usdc_per_usd"])
 
     def add(t_id, d, account, debe, haber, basis, status, approved, detail):
-        lines.append(Line(f"JL-{len(lines) + 1:04d}", t_id, d, account, debe, haber, basis, status,
-                          approved, detail))
+        lines.append(Line(f"JL-{len(lines) + 1:04d}", t_id, d, account, debe, haber, basis, status, approved, detail))
 
     for t in txns:
         t.rate = fx.rate(t.posted_at)
@@ -379,16 +412,23 @@ def build_journal(txns: list[Txn]) -> tuple[list[Line], dict]:
             usdc = to_cents(t.raw["credited_amount"])
             book = convert(usdc, t.rate * usdc_per_usd)
             t.ars_cents = t.amount_cents
-            add(t.id, d, USDC_ACCOUNT, book, 0, basis, t.status, approved,
-                "USDC received, valued at the official rate")
+            add(t.id, d, USDC_ACCOUNT, book, 0, basis, t.status, approved, "USDC received, valued at the official rate")
             add(t.id, d, BANK_ARS, 0, t.amount_cents, basis, t.status, approved, "ARS sent from the bank")
             diff = t.amount_cents - book
             if diff > 0:
-                add(t.id, d, FX_RESULT, diff, 0, basis, t.status, approved,
-                    "Cost of buying USDC above the official rate")
+                add(
+                    t.id,
+                    d,
+                    FX_RESULT,
+                    diff,
+                    0,
+                    basis,
+                    t.status,
+                    approved,
+                    "Cost of buying USDC above the official rate",
+                )
             elif diff < 0:
-                add(t.id, d, FX_RESULT, 0, -diff, basis, t.status, approved,
-                    "USDC bought below the official rate")
+                add(t.id, d, FX_RESULT, 0, -diff, basis, t.status, approved, "USDC bought below the official rate")
         else:
             raise ValueError(f"unknown type {t.type}")
 
@@ -442,22 +482,50 @@ def _remeasure(txns: list[Txn], lines: list[Line], add) -> dict:
     diff_card = card_target - card_book
     if diff_card > 0:
         add("REMEASURE", d, FX_RESULT, diff_card, 0, basis, "posted", approved, "Loss on the card balance")
-        add("REMEASURE", d, CARD_PAYABLE, 0, diff_card, basis, "posted", approved,
-            "Tarjeta corporativa a pagar at the closing rate")
+        add(
+            "REMEASURE",
+            d,
+            CARD_PAYABLE,
+            0,
+            diff_card,
+            basis,
+            "posted",
+            approved,
+            "Tarjeta corporativa a pagar at the closing rate",
+        )
     elif diff_card < 0:
-        add("REMEASURE", d, CARD_PAYABLE, -diff_card, 0, basis, "posted", approved,
-            "Tarjeta corporativa a pagar at the closing rate")
+        add(
+            "REMEASURE",
+            d,
+            CARD_PAYABLE,
+            -diff_card,
+            0,
+            basis,
+            "posted",
+            approved,
+            "Tarjeta corporativa a pagar at the closing rate",
+        )
         add("REMEASURE", d, FX_RESULT, 0, -diff_card, basis, "posted", approved, "Gain on the card balance")
 
     return {
         "opening_rate": str(open_rate),
         "closing_rate": str(close_rate),
-        "usdc": {"opening_usd": cents_str(usdc_open), "closing_usd": cents_str(usdc_bal),
-                 "opening_ars": cents_str(usdc_open_ars), "book_before_ars": cents_str(usdc_book),
-                 "closing_ars": cents_str(usdc_target), "remeasurement_ars": cents_str(diff)},
-        "card_payable": {"opening_usd": cents_str(card_open), "closing_usd": cents_str(card_bal),
-                         "opening_ars": cents_str(card_open_ars), "book_before_ars": cents_str(card_book),
-                         "closing_ars": cents_str(card_target), "remeasurement_ars": cents_str(diff_card)},
+        "usdc": {
+            "opening_usd": cents_str(usdc_open),
+            "closing_usd": cents_str(usdc_bal),
+            "opening_ars": cents_str(usdc_open_ars),
+            "book_before_ars": cents_str(usdc_book),
+            "closing_ars": cents_str(usdc_target),
+            "remeasurement_ars": cents_str(diff),
+        },
+        "card_payable": {
+            "opening_usd": cents_str(card_open),
+            "closing_usd": cents_str(card_bal),
+            "opening_ars": cents_str(card_open_ars),
+            "book_before_ars": cents_str(card_book),
+            "closing_ars": cents_str(card_target),
+            "remeasurement_ars": cents_str(diff_card),
+        },
     }
 
 
@@ -475,8 +543,14 @@ def summarize_journal(lines: list[Line]) -> tuple[list[dict], int, int]:
         if code not in by_acc or by_acc[code] == 0:
             continue
         net = by_acc[code]
-        rows.append({"account": code, "name": account_name(code),
-                     "debe": cents_str(max(net, 0)), "haber": cents_str(max(-net, 0))})
+        rows.append(
+            {
+                "account": code,
+                "name": account_name(code),
+                "debe": cents_str(max(net, 0)),
+                "haber": cents_str(max(-net, 0)),
+            }
+        )
     sd = sum(to_cents(r["debe"]) for r in rows)
     sh = sum(to_cents(r["haber"]) for r in rows)
     if sd != sh:
@@ -485,6 +559,7 @@ def summarize_journal(lines: list[Line]) -> tuple[list[dict], int, int]:
 
 
 # ---------- exceptions ----------
+
 
 def build_exceptions(txns: list[Txn], receipts: dict[str, dict]) -> list[dict]:
     out = []
@@ -507,8 +582,8 @@ def build_exceptions(txns: list[Txn], receipts: dict[str, dict]) -> list[dict]:
 
 # ---------- run ----------
 
-def run(receipts: dict[str, dict], ai: dict[str, dict] | None = None,
-        threshold: Decimal | None = None) -> dict:
+
+def run(receipts: dict[str, dict], ai: dict[str, dict] | None = None, threshold: Decimal | None = None) -> dict:
     txns = load_export()
     apply_rules(txns)
     match_receipts(txns, receipts)
@@ -525,8 +600,7 @@ def run(receipts: dict[str, dict], ai: dict[str, dict] | None = None,
         "lines": lines,
         "balances": balances,
         "entry": summary_rows,
-        "entry_totals": {"debe": cents_str(total_d), "haber": cents_str(total_h),
-                         "balanced": total_d == total_h},
+        "entry_totals": {"debe": cents_str(total_d), "haber": cents_str(total_h), "balanced": total_d == total_h},
         "exceptions": exceptions,
         "receipts": receipts,
         "threshold": str(threshold) if threshold is not None else None,

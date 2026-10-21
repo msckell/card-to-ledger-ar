@@ -78,8 +78,9 @@ def _prompt(e: dict, t: dict | None, allowed: dict[str, str]) -> str:
         if t["export"].get("memo"):
             lines.append(f"Cardholder memo: {t['export']['memo']}")
         if t.get("ai"):
-            lines.append(f"AI account suggestion {t['ai']['id']}: {t['ai']['account_name']}. "
-                         f"Reason given: {t['ai']['reason']}")
+            lines.append(
+                f"AI account suggestion {t['ai']['id']}: {t['ai']['account_name']}. Reason given: {t['ai']['reason']}"
+            )
     lines.append("IDs you may cite: " + "; ".join(f"{k} ({v})" for k, v in sorted(allowed.items())))
     return "\n".join(lines)
 
@@ -104,10 +105,20 @@ def _one(item: tuple[str, str, dict[str, str]]) -> tuple[str, dict]:
         violations = verifier.check(text, allowed)
         log.append({"attempt": attempt, "text": text, "violations": violations})
         if not violations:
-            return key, {"accepted": True, "text": text, "attempts": attempt, "log": log,
-                         "key": _key(prompt), "model": reply.model}
-        current = (prompt + "\n\nYour previous note was rejected by the verifier for these reasons:\n- "
-                   + "\n- ".join(violations) + f"\nPrevious note: {text}\nWrite a new note that follows every rule.")
+            return key, {
+                "accepted": True,
+                "text": text,
+                "attempts": attempt,
+                "log": log,
+                "key": _key(prompt),
+                "model": reply.model,
+            }
+        current = (
+            prompt
+            + "\n\nYour previous note was rejected by the verifier for these reasons:\n- "
+            + "\n- ".join(violations)
+            + f"\nPrevious note: {text}\nWrite a new note that follows every rule."
+        )
     return key, {"accepted": False, "text": None, "attempts": len(log), "log": log, "key": _key(prompt)}
 
 
@@ -136,5 +147,9 @@ def run() -> dict:
     store["backend"] = llm.backend()
     save("explain.json", store)
     ex = store["explanations"].values()
-    return {"called": len(items), "accepted": sum(1 for v in ex if v["accepted"]),
-            "fallback_to_template": sum(1 for v in ex if not v["accepted"]), "total": len(ex)}
+    return {
+        "called": len(items),
+        "accepted": sum(1 for v in ex if v["accepted"]),
+        "fallback_to_template": sum(1 for v in ex if not v["accepted"]),
+        "total": len(ex),
+    }

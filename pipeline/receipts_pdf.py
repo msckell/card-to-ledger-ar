@@ -14,8 +14,18 @@ from reportlab.lib.units import mm
 from reportlab.pdfgen.canvas import Canvas
 
 MONTHS_EN = [
-    "January", "February", "March", "April", "May", "June", "July", "August",
-    "September", "October", "November", "December",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
 ]
 
 
@@ -65,7 +75,9 @@ def _saas(r: dict, path: Path) -> None:
     c.setFont("Helvetica-Bold", 13)
     c.drawString(20 * mm, h - 48 * mm, "Invoice" if r.get("kind") == "invoice" else "Receipt")
     y = _rows(
-        c, 20 * mm, h - 58 * mm,
+        c,
+        20 * mm,
+        h - 58 * mm,
         [
             f"Invoice number   {r['number']}",
             f"Date paid   {MONTHS_EN[d.month - 1]} {d.day}, {d.year}",
@@ -77,11 +89,12 @@ def _saas(r: dict, path: Path) -> None:
     c.drawString(20 * mm, y, "Description")
     c.drawRightString(w - 20 * mm, y, "Amount")
     y -= 6 * mm
-    y = _rows(c, 20 * mm, y, [(desc, f"{sym}{en_amount(a)}") for desc, a in r["items"]],
-              right=w - 20 * mm)
+    y = _rows(c, 20 * mm, y, [(desc, f"{sym}{en_amount(a)}") for desc, a in r["items"]], right=w - 20 * mm)
     y -= 3 * mm
     y = _rows(
-        c, 20 * mm, y,
+        c,
+        20 * mm,
+        y,
         [
             ("Subtotal", f"{sym}{en_amount(r['total_cents'])}"),
             ("Total", f"{sym}{en_amount(r['total_cents'])}"),
@@ -114,7 +127,9 @@ def _es(r: dict, path: Path) -> None:
     c.setFont("Helvetica", 9)
     c.drawString(20 * mm, h - 41 * mm, r["address"])
     y = _rows(
-        c, 20 * mm, h - 55 * mm,
+        c,
+        20 * mm,
+        h - 55 * mm,
         [
             f"N° {r['number']}",
             f"Fecha: {d.day:02d}/{d.month:02d}/{d.year}",
@@ -126,8 +141,7 @@ def _es(r: dict, path: Path) -> None:
     c.drawString(20 * mm, y, "Descripción")
     c.drawRightString(w - 20 * mm, y, "Importe")
     y -= 6 * mm
-    y = _rows(c, 20 * mm, y, [(desc, f"{sym} {es_amount(a)}") for desc, a in r["items"]],
-              right=w - 20 * mm)
+    y = _rows(c, 20 * mm, y, [(desc, f"{sym} {es_amount(a)}") for desc, a in r["items"]], right=w - 20 * mm)
     y -= 4 * mm
     c.setFont("Helvetica-Bold", 11)
     c.drawString(20 * mm, y, "TOTAL")
@@ -211,7 +225,9 @@ def _travel(r: dict, path: Path) -> None:
         y = _rows(c, 20 * mm, h - 56 * mm, rows)
         y -= 4 * mm
         y = _rows(
-            c, 20 * mm, y,
+            c,
+            20 * mm,
+            y,
             [(desc, f"USD {en_amount(a)}") for desc, a in r["items"]]
             + [("Total", f"USD {en_amount(r['total_cents'])}")],
             right=w - 20 * mm,
@@ -229,10 +245,11 @@ def _travel(r: dict, path: Path) -> None:
         ]
         y = _rows(c, 20 * mm, h - 56 * mm, rows)
         y -= 4 * mm
-        y = _rows(c, 20 * mm, y, [(desc, en_amount(a_)) for desc, a_ in r["items"]],
-                  right=w - 20 * mm)
+        y = _rows(c, 20 * mm, y, [(desc, en_amount(a_)) for desc, a_ in r["items"]], right=w - 20 * mm)
         y = _rows(
-            c, 20 * mm, y - 2 * mm,
+            c,
+            20 * mm,
+            y - 2 * mm,
             [
                 ("Total charges", en_amount(r["total_cents"])),
                 ("Payments", "-" + en_amount(r["total_cents"])),

@@ -29,22 +29,31 @@ def cmd_close(_args) -> None:
     c = close.run()
     ev = eval.run(c)
     s = c["summary"]
-    _print({
-        "receipt_source": s["receipt_source"],
-        "transactions": s["transactions"],
-        "totals": s["totals"],
-        "split": s["split"],
-        "no_rule": s["no_rule"],
-        "exceptions": s["exceptions"],
-        "threshold": s["threshold"],
-        "entry_balanced": c["entry_totals"],
-        "anomalies": {k: {kk: vv for kk, vv in v.items() if kk in ("planted", "found", "true_positives",
-                                                                    "false_positives", "caught_in_review")}
-                      if isinstance(v, dict) else v for k, v in ev["anomalies"].items()},
-        "receipt_matching": {k: ev["receipt_matching"][k] for k in ("correct", "total", "accuracy")},
-        "rules_accuracy": {k: ev["accounts"]["rules"][k] for k in ("correct", "total", "accuracy")},
-        "template_parser_all_fields": ev["extraction"]["template_parser"]["per_field"]["all_fields"],
-    })
+    _print(
+        {
+            "receipt_source": s["receipt_source"],
+            "transactions": s["transactions"],
+            "totals": s["totals"],
+            "split": s["split"],
+            "no_rule": s["no_rule"],
+            "exceptions": s["exceptions"],
+            "threshold": s["threshold"],
+            "entry_balanced": c["entry_totals"],
+            "anomalies": {
+                k: {
+                    kk: vv
+                    for kk, vv in v.items()
+                    if kk in ("planted", "found", "true_positives", "false_positives", "caught_in_review")
+                }
+                if isinstance(v, dict)
+                else v
+                for k, v in ev["anomalies"].items()
+            },
+            "receipt_matching": {k: ev["receipt_matching"][k] for k in ("correct", "total", "accuracy")},
+            "rules_accuracy": {k: ev["accounts"]["rules"][k] for k in ("correct", "total", "accuracy")},
+            "template_parser_all_fields": ev["extraction"]["template_parser"]["per_field"]["all_fields"],
+        }
+    )
 
 
 def _ai(step: str):
@@ -56,8 +65,7 @@ def _ai(step: str):
         mod = importlib.import_module(f"pipeline.ai.{step}")
         out = mod.run()
         usage = store.record_usage()
-        _print({"result": out, "llm_calls_total": usage["total_calls"],
-                "llm_cost_usd_total": usage["total_cost_usd"]})
+        _print({"result": out, "llm_calls_total": usage["total_calls"], "llm_cost_usd_total": usage["total_cost_usd"]})
 
     return run
 
@@ -86,15 +94,17 @@ def cmd_build(_args) -> None:
     except ImportError:
         pass
     s = c["summary"]
-    _print({
-        "ai_steps": steps,
-        "split": s["split"],
-        "threshold": s["threshold"],
-        "exceptions": s["exceptions"],
-        "entry_balanced": c["entry_totals"]["balanced"],
-        "llm_calls_total": usage["total_calls"],
-        "llm_cost_usd_total": usage["total_cost_usd"],
-    })
+    _print(
+        {
+            "ai_steps": steps,
+            "split": s["split"],
+            "threshold": s["threshold"],
+            "exceptions": s["exceptions"],
+            "entry_balanced": c["entry_totals"]["balanced"],
+            "llm_calls_total": usage["total_calls"],
+            "llm_cost_usd_total": usage["total_cost_usd"],
+        }
+    )
 
 
 COMMANDS = {

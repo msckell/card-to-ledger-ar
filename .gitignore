@@ -23,3 +23,7 @@ Thumbs.db
 
 # Local logs
 .logs/
+
+# Personal agent preferences and the original build spec (local only, not published)
+CLAUDE.local.md
+docs/original-spec.md

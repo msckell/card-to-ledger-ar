@@ -25,7 +25,7 @@ from pipeline.receipt_text import text
 GUIDE = {
     "5.1.01": "advertising, paid media, marketing materials, creative work for campaigns, merch with the logo",
     "5.1.02": "cloud infrastructure and usage based developer services: hosting, APIs billed by usage, "
-              "domains, email and SMS delivery",
+    "domains, email and SMS delivery",
     "5.1.03": "software subscriptions and licenses (SaaS seats, apps, design and productivity tools)",
     "5.1.04": "work by independent contractors or freelancers abroad, including marketplace escrow for them",
     "5.1.05": "travel: flights, lodging, ground transport, connectivity and lounges while traveling",
@@ -94,8 +94,15 @@ def _one(item: tuple[str, str, str]) -> tuple[str, dict]:
         llm.failed_call("suggest")
         return tid, {"id": sid, "error": str(exc), "key": _key(prompt)}
     conf = str(Decimal(str(r.data.confidence)).quantize(Decimal("0.01")))
-    return tid, {"id": sid, "account": r.data.account, "account_name": account_name(r.data.account),
-                 "reason": r.data.reason, "confidence": conf, "key": _key(prompt), "model": r.model}
+    return tid, {
+        "id": sid,
+        "account": r.data.account,
+        "account_name": account_name(r.data.account),
+        "reason": r.data.reason,
+        "confidence": conf,
+        "key": _key(prompt),
+        "model": r.model,
+    }
 
 
 def run() -> dict:

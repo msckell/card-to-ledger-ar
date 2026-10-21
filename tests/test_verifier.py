@@ -33,14 +33,18 @@ def test_missing_citation_fails():
 
 
 def test_clean_explanation_passes():
-    text = ("The receipt [RC-0107] matches [TX-0042] by merchant and date, but it was printed before "
-            "the tip was added. Ask the cardholder for the final ticket.")
+    text = (
+        "The receipt [RC-0107] matches [TX-0042] by merchant and date, but it was printed before "
+        "the tip was added. Ask the cardholder for the final ticket."
+    )
     assert check(text, ALLOWED) == []
 
 
 def test_paraphrase_passes():
-    text = ("[TX-0042] repeats the merchant and amount of [TX-0041] on the same card, and only "
-            "one receipt exists, so it may be a double charge worth confirming with the cardholder.")
+    text = (
+        "[TX-0042] repeats the merchant and amount of [TX-0041] on the same card, and only "
+        "one receipt exists, so it may be a double charge worth confirming with the cardholder."
+    )
     assert check(text, ALLOWED) == []
 
 

@@ -16,8 +16,9 @@ from pypdf import PdfReader
 
 from pipeline.paths import RECEIPTS
 
-MONTHS = {m: i for i, m in enumerate(
-    ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], 1)}
+MONTHS = {
+    m: i for i, m in enumerate(["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], 1)
+}
 
 ES_AMOUNT = re.compile(r"(\d{1,3}(?:\.\d{3})*,\d{2})")
 EN_AMOUNT = re.compile(r"(\d{1,3}(?:,\d{3})*\.\d{2})")
@@ -55,8 +56,11 @@ def _date(lines: list[str]) -> date | None:
     m = re.search(r"Departure\s+(\d{2})-([A-Z]{3})-(\d{4})", joined)
     if m:
         return date(int(m.group(3)), MONTHS[m.group(2).lower()], int(m.group(1)))
-    m = re.search(r"(January|February|March|April|May|June|July|August|September|October|"
-                  r"November|December) (\d{1,2}), (\d{4})", joined)
+    m = re.search(
+        r"(January|February|March|April|May|June|July|August|September|October|"
+        r"November|December) (\d{1,2}), (\d{4})",
+        joined,
+    )
     if m:
         return date(int(m.group(3)), MONTHS[m.group(1)[:3].lower()], int(m.group(2)))
     m = re.search(r"Fecha:\s*(\d{2})/(\d{2})/(\d{4})", joined)
@@ -93,7 +97,7 @@ def parse(receipt_text: str) -> dict:
         idx = [i for i, ln in enumerate(lines) if ln == label]
         if idx:
             i = idx[-1]
-            for ln in lines[i + 1:i + 2]:
+            for ln in lines[i + 1 : i + 2]:
                 found = _amount(ln)
                 if found:
                     amount, fmt = found

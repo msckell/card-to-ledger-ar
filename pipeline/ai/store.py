@@ -26,8 +26,7 @@ def record_usage() -> dict:
     """Adds this run's calls to data/ai/usage.json, which keeps the running total."""
     current = load("usage.json") or {"backend": llm.backend(), "steps": {}}
     for step, row in llm.usage().items():
-        acc = current["steps"].setdefault(step, {"calls": 0, "cost_usd": 0.0, "input_tokens": 0,
-                                                 "output_tokens": 0})
+        acc = current["steps"].setdefault(step, {"calls": 0, "cost_usd": 0.0, "input_tokens": 0, "output_tokens": 0})
         for k in acc:
             acc[k] += row[k]
     current["models"] = {step: llm.model_name(step) for step in current["steps"]}

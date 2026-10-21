@@ -3,7 +3,7 @@
 Two backends, same contract (system prompt, user prompt, Pydantic model in, validated model out):
 - `api`: the Anthropic Python SDK with structured outputs, when ANTHROPIC_API_KEY is set.
 - `cli`: Claude Code in headless mode (`claude -p --json-schema`), on the logged in Claude
-  subscription. Same setup as the wFIAT project. No API key needed.
+  subscription. No API key needed.
 
 Every call is counted in a process wide ledger that `usage()` returns.
 """
@@ -139,19 +139,25 @@ def _ask_cli(model: str, system: str, prompt: str, schema: type[BaseModel], time
     if exe is None:
         raise LlmError("claude CLI not found on PATH and no ANTHROPIC_API_KEY set")
     cmd = [
-        exe, "-p",
-        "--system-prompt", system,
-        "--setting-sources", "",
+        exe,
+        "-p",
+        "--system-prompt",
+        system,
+        "--setting-sources",
+        "",
         "--strict-mcp-config",
-        "--tools", "",
+        "--tools",
+        "",
         "--no-session-persistence",
-        "--output-format", "json",
-        "--model", model,
-        "--json-schema", json.dumps(schema.model_json_schema()),
+        "--output-format",
+        "json",
+        "--model",
+        model,
+        "--json-schema",
+        json.dumps(schema.model_json_schema()),
     ]
     try:
-        proc = subprocess.run(cmd, input=prompt, capture_output=True, text=True, encoding="utf-8",
-                              timeout=timeout)
+        proc = subprocess.run(cmd, input=prompt, capture_output=True, text=True, encoding="utf-8", timeout=timeout)
     except subprocess.TimeoutExpired as exc:
         raise LlmError(f"claude timed out after {timeout}s") from exc
     if proc.returncode != 0 and not proc.stdout:
@@ -167,7 +173,11 @@ def _ask_cli(model: str, system: str, prompt: str, schema: type[BaseModel], time
     except ValidationError as exc:
         raise LlmError(f"schema validation failed: {str(exc)[:300]}") from exc
     u = out.get("usage") or {}
-    tokens_in = int(u.get("input_tokens", 0)) + int(u.get("cache_read_input_tokens", 0)) + int(
-        u.get("cache_creation_input_tokens", 0))
-    return Reply(data, model, "cli", 0.0, float(out.get("total_cost_usd") or 0.0), tokens_in,
-                 int(u.get("output_tokens", 0)))
+    tokens_in = (
+        int(u.get("input_tokens", 0))
+        + int(u.get("cache_read_input_tokens", 0))
+        + int(u.get("cache_creation_input_tokens", 0))
+    )
+    return Reply(
+        data, model, "cli", 0.0, float(out.get("total_cost_usd") or 0.0), tokens_in, int(u.get("output_tokens", 0))
+    )
