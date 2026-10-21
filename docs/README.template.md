@@ -1,6 +1,6 @@
 # Card to Ledger AR
 
-Independent prototype by Máximo Sckell. A month end close in Argentine pesos for a fictional company that spends in US dollars with a corporate card and pays foreign contractors in USDC.
+Independent prototype. A month end close in Argentine pesos for a fictional company that spends in US dollars with a corporate card and pays foreign contractors in USDC.
 
 > Not affiliated with Jeeves. Fictional company and synthetic transactions. Exchange rates from a public source. Taxes out of scope.
 
