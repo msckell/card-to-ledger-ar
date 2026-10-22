@@ -11,8 +11,7 @@ import Queue from './Queue'
 import RulesOrAI from './RulesOrAI'
 import { Arrow, ButtonLink } from './ui'
 
-// Shown only once the repository is public.
-const REPO_URL = ''
+const REPO_URL = 'https://github.com/msckell/card-to-ledger-ar'
 
 const NAV = [
   ['results', 'Results'],

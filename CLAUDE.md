@@ -61,7 +61,7 @@ cd site && npm ci && npm run build
 
 **Publishing**
 - The page keeps `noindex,nofollow`, a `robots.txt` that disallows everything and the `X-Robots-Tag` header in `site/vercel.json`.
-- Visual identity: black, white and an own gold (tokens in `site/src/index.css`), inspired by the audience's aesthetic but never their exact brand colors, logo or fonts. Chart colors for rules, AI and a person were checked with a colorblind palette validator and always carry direct labels.
+- Visual identity: black, white and a custom gold (tokens in `site/src/index.css`). No third party brand colors, logos or fonts. Chart colors for rules, AI and a person were checked with a colorblind palette validator and always carry direct labels.
 - The data is synthetic and the page says so. Never imply the company is a real customer or describe how any real company works internally.
 
 **Repo**
