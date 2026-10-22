@@ -13,9 +13,10 @@ export default function Journal() {
       title={`The ${site.meta.period_label} entry, in pesos, ready to post.`}
       intro={
         <>
-          One summary entry built from {j.lines} audited lines. Each movement is valued at the official seller rate of its
-          posting day. The USDC account and the card payable are remeasured at the closing rate of{' '}
-          {site.summary.closing_rate}. Items still in review sit in a suspense account until a person decides.
+          One summary entry built from {j.lines} audited lines. Dollar card spend is valued at the official seller rate of
+          its posting day and USDC at the crypto dollar seller rate. At month end the card payable is remeasured at the
+          official closing rate of {site.summary.closing_rate} and the USDC account at the crypto closing rate of{' '}
+          {site.summary.usdc_closing_rate}. Items still in review sit in a suspense account until a person decides.
         </>
       }
     >

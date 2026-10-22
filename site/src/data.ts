@@ -91,6 +91,7 @@ export type Site = {
     threshold: string | null
     ai_confident_but_in_review: number
     closing_rate: string
+    usdc_closing_rate: string
   }
   flow: Flow
   spend_by_account: SpendRow[]

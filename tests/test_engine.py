@@ -148,3 +148,26 @@ def test_refund_without_original_goes_to_review():
     engine.resolve([ref], None, None)
     assert ref.exceptions == ["refund_original_not_found"]
     assert ref.posted_account == engine.SUSPENSE
+
+
+def test_usdc_at_the_crypto_rate_and_card_spend_at_the_official_rate():
+    from pipeline.jsonio import read_json
+    from pipeline.paths import OUT
+
+    close = read_json(OUT / "close.json")
+    seen = set()
+    for t in close["transactions"]:
+        day = date.fromisoformat(t["posted_at"])
+        if t["type"] == "usdc_payout":
+            expected = fx.rate(day, "cripto")
+        elif t["type"] in ("card_purchase", "card_fee", "card_refund"):
+            expected = fx.rate(day)
+        else:
+            continue
+        seen.add(t["type"])
+        assert Decimal(t["rate"]) == expected, t["id"]
+        assert to_cents(t["ars"]) == convert(to_cents(t["amount"]), expected), t["id"]
+    assert {"usdc_payout", "card_purchase"} <= seen
+    b = close["balances"]
+    assert Decimal(b["usdc_closing_rate"]) == fx.rate(date(2026, 9, 30), "cripto")
+    assert Decimal(b["closing_rate"]) == fx.rate(date(2026, 9, 30))

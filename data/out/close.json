@@ -17,9 +17,9 @@
       "card_net_usd": "55724.72",
       "card_net_ars": "85530312.05",
       "payouts_usdc": "76550.00",
-      "payouts_ars": "118005500.00",
+      "payouts_ars": "123181487.00",
       "spend_usd": "132274.72",
-      "spend_ars": "203535812.05",
+      "spend_ars": "208711799.05",
       "topups_ars": "175000000.00"
     },
     "split": {
@@ -43,12 +43,12 @@
       "account": "1.1.02",
       "name": "Cuenta USDC",
       "debe": "0.00",
-      "haber": "10315172.70"
+      "haber": "10887596.18"
     },
     {
       "account": "1.1.09",
       "name": "Partidas pendientes de imputación",
-      "debe": "22744110.40",
+      "debe": "23373642.40",
       "haber": "0.00"
     },
     {
@@ -78,7 +78,7 @@
     {
       "account": "5.1.04",
       "name": "Honorarios de contratistas del exterior",
-      "debe": "105067844.00",
+      "debe": "109614299.00",
       "haber": "0.00"
     },
     {
@@ -120,25 +120,28 @@
     {
       "account": "5.2.01",
       "name": "Diferencias de cambio",
-      "debe": "4781167.65",
+      "debe": "177604.13",
       "haber": "0.00"
     }
   ],
   "entry_totals": {
-    "debe": "208316979.70",
-    "haber": "208316979.70",
+    "debe": "208889403.18",
+    "haber": "208889403.18",
     "balanced": true
   },
   "balances": {
     "opening_rate": "1530",
     "closing_rate": "1545",
+    "usdc_series": "cripto",
+    "usdc_opening_rate": "1597.34",
+    "usdc_closing_rate": "1612.31",
     "usdc": {
       "opening_usd": "180000.00",
       "closing_usd": "171575.94",
-      "opening_ars": "275400000.00",
-      "book_before_ars": "262465954.75",
-      "closing_ars": "265084827.30",
-      "remeasurement_ars": "2618872.55"
+      "opening_ars": "287521200.00",
+      "book_before_ars": "274384938.92",
+      "closing_ars": "276633603.82",
+      "remeasurement_ars": "2248664.90"
     },
     "card_payable": {
       "opening_usd": "41237.18",
@@ -458,7 +461,7 @@
       "account": "1.1.02",
       "posted_account": "1.1.02",
       "status": "posted",
-      "rate": "1535",
+      "rate": "1586.98",
       "amount": "60000000.00",
       "ars": "60000000.00",
       "export": {
@@ -1242,7 +1245,7 @@
       "status": "posted",
       "rate": "1530",
       "amount": "41237.18",
-      "ars": "63092885.40",
+      "ars": "64954744.08",
       "export": {
         "id": "TX-0031",
         "posted_at": "2026-09-05",
@@ -3468,9 +3471,9 @@
       "account": "5.1.04",
       "posted_account": "1.1.09",
       "status": "pending review",
-      "rate": "1530",
+      "rate": "1594.25",
       "amount": "4600.00",
-      "ars": "7038000.00",
+      "ars": "7333550.00",
       "export": {
         "id": "TX-0092",
         "posted_at": "2026-09-12",
@@ -4098,7 +4101,7 @@
       "account": "1.1.02",
       "posted_account": "1.1.02",
       "status": "posted",
-      "rate": "1530",
+      "rate": "1593.47",
       "amount": "45000000.00",
       "ars": "45000000.00",
       "export": {
@@ -4511,9 +4514,9 @@
       "account": "5.1.04",
       "posted_account": "5.1.04",
       "status": "posted",
-      "rate": "1530",
+      "rate": "1593.47",
       "amount": "5450.00",
-      "ars": "8338500.00",
+      "ars": "8684411.50",
       "export": {
         "id": "TX-0121",
         "posted_at": "2026-09-15",
@@ -4546,9 +4549,9 @@
       "account": "5.1.04",
       "posted_account": "5.1.04",
       "status": "posted",
-      "rate": "1530",
+      "rate": "1593.47",
       "amount": "4200.00",
-      "ars": "6426000.00",
+      "ars": "6692574.00",
       "export": {
         "id": "TX-0122",
         "posted_at": "2026-09-15",
@@ -6771,9 +6774,9 @@
       "account": "5.1.04",
       "posted_account": "5.1.04",
       "status": "posted",
-      "rate": "1535",
+      "rate": "1594.83",
       "amount": "5050.00",
-      "ars": "7751750.00",
+      "ars": "8053891.50",
       "export": {
         "id": "TX-0183",
         "posted_at": "2026-09-22",
@@ -8403,7 +8406,7 @@
       "account": "1.1.02",
       "posted_account": "1.1.02",
       "status": "posted",
-      "rate": "1545",
+      "rate": "1616.06",
       "amount": "70000000.00",
       "ars": "70000000.00",
       "export": {
@@ -8516,9 +8519,9 @@
       "account": "5.1.04",
       "posted_account": "5.1.04",
       "status": "posted",
-      "rate": "1545",
+      "rate": "1616.06",
       "amount": "3600.00",
-      "ars": "5562000.00",
+      "ars": "5817816.00",
       "export": {
         "id": "TX-0231",
         "posted_at": "2026-09-29",
@@ -8551,9 +8554,9 @@
       "account": "5.1.04",
       "posted_account": "5.1.04",
       "status": "posted",
-      "rate": "1545",
+      "rate": "1616.06",
       "amount": "3300.00",
-      "ars": "5098500.00",
+      "ars": "5332998.00",
       "export": {
         "id": "TX-0232",
         "posted_at": "2026-09-29",
@@ -8586,9 +8589,9 @@
       "account": "5.1.04",
       "posted_account": "5.1.04",
       "status": "posted",
-      "rate": "1545",
+      "rate": "1616.06",
       "amount": "2900.00",
-      "ars": "4480500.00",
+      "ars": "4686574.00",
       "export": {
         "id": "TX-0233",
         "posted_at": "2026-09-29",
@@ -8621,9 +8624,9 @@
       "account": "5.1.04",
       "posted_account": "5.1.04",
       "status": "posted",
-      "rate": "1545",
+      "rate": "1616.06",
       "amount": "2800.00",
-      "ars": "4326000.00",
+      "ars": "4524968.00",
       "export": {
         "id": "TX-0234",
         "posted_at": "2026-09-29",
@@ -8656,9 +8659,9 @@
       "account": "5.1.04",
       "posted_account": "5.1.04",
       "status": "posted",
-      "rate": "1545",
+      "rate": "1616.06",
       "amount": "3000.00",
-      "ars": "4635000.00",
+      "ars": "4848180.00",
       "export": {
         "id": "TX-0235",
         "posted_at": "2026-09-29",
@@ -8693,9 +8696,9 @@
       "account": "5.1.04",
       "posted_account": "1.1.09",
       "status": "pending review",
-      "rate": "1545",
+      "rate": "1616.06",
       "amount": "4700.00",
-      "ars": "7261500.00",
+      "ars": "7595482.00",
       "export": {
         "id": "TX-0236",
         "posted_at": "2026-09-29",
@@ -8728,9 +8731,9 @@
       "account": "5.1.04",
       "posted_account": "5.1.04",
       "status": "posted",
-      "rate": "1545",
+      "rate": "1616.06",
       "amount": "5200.00",
-      "ars": "8034000.00",
+      "ars": "8403512.00",
       "export": {
         "id": "TX-0237",
         "posted_at": "2026-09-29",
@@ -8763,9 +8766,9 @@
       "account": "5.1.04",
       "posted_account": "5.1.04",
       "status": "posted",
-      "rate": "1545",
+      "rate": "1616.06",
       "amount": "4450.00",
-      "ars": "6875250.00",
+      "ars": "7191467.00",
       "export": {
         "id": "TX-0238",
         "posted_at": "2026-09-29",
@@ -9022,9 +9025,9 @@
       "account": "5.1.04",
       "posted_account": "5.1.04",
       "status": "posted",
-      "rate": "1545",
+      "rate": "1612.31",
       "amount": "2700.00",
-      "ars": "4171500.00",
+      "ars": "4353237.00",
       "export": {
         "id": "TX-0245",
         "posted_at": "2026-09-30",
@@ -9057,9 +9060,9 @@
       "account": "5.1.04",
       "posted_account": "5.1.04",
       "status": "posted",
-      "rate": "1545",
+      "rate": "1612.31",
       "amount": "4100.00",
-      "ars": "6334500.00",
+      "ars": "6610471.00",
       "export": {
         "id": "TX-0246",
         "posted_at": "2026-09-30",
@@ -9092,9 +9095,9 @@
       "account": "5.1.04",
       "posted_account": "5.1.04",
       "status": "posted",
-      "rate": "1545",
+      "rate": "1612.31",
       "amount": "2500.00",
-      "ars": "3862500.00",
+      "ars": "4030775.00",
       "export": {
         "id": "TX-0247",
         "posted_at": "2026-09-30",
@@ -9127,9 +9130,9 @@
       "account": "5.1.04",
       "posted_account": "5.1.04",
       "status": "posted",
-      "rate": "1545",
+      "rate": "1612.31",
       "amount": "3900.00",
-      "ars": "6025500.00",
+      "ars": "6288009.00",
       "export": {
         "id": "TX-0248",
         "posted_at": "2026-09-30",
@@ -9162,9 +9165,9 @@
       "account": "5.1.04",
       "posted_account": "5.1.04",
       "status": "posted",
-      "rate": "1545",
+      "rate": "1612.31",
       "amount": "4650.00",
-      "ars": "7184250.00",
+      "ars": "7497241.50",
       "export": {
         "id": "TX-0249",
         "posted_at": "2026-09-30",
@@ -9197,9 +9200,9 @@
       "account": "5.1.04",
       "posted_account": "5.1.04",
       "status": "posted",
-      "rate": "1545",
+      "rate": "1612.31",
       "amount": "3400.00",
-      "ars": "5253000.00",
+      "ars": "5481854.00",
       "export": {
         "id": "TX-0250",
         "posted_at": "2026-09-30",
@@ -9232,9 +9235,9 @@
       "account": "5.1.04",
       "posted_account": "5.1.04",
       "status": "posted",
-      "rate": "1545",
+      "rate": "1612.31",
       "amount": "2700.00",
-      "ars": "4171500.00",
+      "ars": "4353237.00",
       "export": {
         "id": "TX-0251",
         "posted_at": "2026-09-30",
@@ -9267,9 +9270,9 @@
       "account": "5.1.04",
       "posted_account": "5.1.04",
       "status": "posted",
-      "rate": "1545",
+      "rate": "1612.31",
       "amount": "3350.00",
-      "ars": "5175750.00",
+      "ars": "5401238.50",
       "export": {
         "id": "TX-0252",
         "posted_at": "2026-09-30",
@@ -9481,12 +9484,12 @@
       "txn_id": "TX-0009",
       "date": "2026-09-02",
       "account": "1.1.02",
-      "debe": "58034742.75",
+      "debe": "59999984.40",
       "haber": "0.00",
       "basis": "rule R-TOPUP",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
-      "detail": "USDC received, valued at the official rate"
+      "detail": "USDC received, valued at the crypto rate"
     },
     {
       "id": "JL-0018",
@@ -9505,12 +9508,12 @@
       "txn_id": "TX-0009",
       "date": "2026-09-02",
       "account": "5.2.01",
-      "debe": "1965257.25",
+      "debe": "15.60",
       "haber": "0.00",
       "basis": "rule R-TOPUP",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
-      "detail": "Cost of buying USDC above the official rate"
+      "detail": "ARS sent above the USDC received"
     },
     {
       "id": "JL-0020",
@@ -10034,7 +10037,7 @@
       "date": "2026-09-05",
       "account": "1.1.02",
       "debe": "0.00",
-      "haber": "63092885.40",
+      "haber": "64954744.08",
       "basis": "rule R-SETTLE",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
@@ -10042,6 +10045,18 @@
     },
     {
       "id": "JL-0064",
+      "txn_id": "TX-0031",
+      "date": "2026-09-05",
+      "account": "5.2.01",
+      "debe": "1861858.68",
+      "haber": "0.00",
+      "basis": "rule R-SETTLE",
+      "status": "posted",
+      "approved_by": "rules engine (deterministic)",
+      "detail": "Card paid with USDC valued above the official rate"
+    },
+    {
+      "id": "JL-0065",
       "txn_id": "TX-0032",
       "date": "2026-09-05",
       "account": "5.1.01",
@@ -10053,7 +10068,7 @@
       "detail": "BETALIST"
     },
     {
-      "id": "JL-0065",
+      "id": "JL-0066",
       "txn_id": "TX-0032",
       "date": "2026-09-05",
       "account": "2.1.01",
@@ -10065,7 +10080,7 @@
       "detail": "BETALIST"
     },
     {
-      "id": "JL-0066",
+      "id": "JL-0067",
       "txn_id": "TX-0033",
       "date": "2026-09-05",
       "account": "1.1.09",
@@ -10077,7 +10092,7 @@
       "detail": "NAMECHEAP.COM"
     },
     {
-      "id": "JL-0067",
+      "id": "JL-0068",
       "txn_id": "TX-0033",
       "date": "2026-09-05",
       "account": "2.1.01",
@@ -10089,7 +10104,7 @@
       "detail": "NAMECHEAP.COM"
     },
     {
-      "id": "JL-0068",
+      "id": "JL-0069",
       "txn_id": "TX-0034",
       "date": "2026-09-05",
       "account": "5.1.03",
@@ -10101,7 +10116,7 @@
       "detail": "NOTION LABS"
     },
     {
-      "id": "JL-0069",
+      "id": "JL-0070",
       "txn_id": "TX-0034",
       "date": "2026-09-05",
       "account": "2.1.01",
@@ -10113,7 +10128,7 @@
       "detail": "NOTION LABS"
     },
     {
-      "id": "JL-0070",
+      "id": "JL-0071",
       "txn_id": "TX-0035",
       "date": "2026-09-05",
       "account": "5.1.09",
@@ -10125,7 +10140,7 @@
       "detail": "SUBSTACK *VD53A"
     },
     {
-      "id": "JL-0071",
+      "id": "JL-0072",
       "txn_id": "TX-0035",
       "date": "2026-09-05",
       "account": "2.1.01",
@@ -10137,7 +10152,7 @@
       "detail": "SUBSTACK *VD53A"
     },
     {
-      "id": "JL-0072",
+      "id": "JL-0073",
       "txn_id": "TX-0036",
       "date": "2026-09-05",
       "account": "5.1.05",
@@ -10149,7 +10164,7 @@
       "detail": "UBER *TRIP R25NV"
     },
     {
-      "id": "JL-0073",
+      "id": "JL-0074",
       "txn_id": "TX-0036",
       "date": "2026-09-05",
       "account": "2.1.01",
@@ -10161,7 +10176,7 @@
       "detail": "UBER *TRIP R25NV"
     },
     {
-      "id": "JL-0074",
+      "id": "JL-0075",
       "txn_id": "TX-0037",
       "date": "2026-09-06",
       "account": "5.1.01",
@@ -10173,7 +10188,7 @@
       "detail": "GOOGLE *ADSZUFNW"
     },
     {
-      "id": "JL-0075",
+      "id": "JL-0076",
       "txn_id": "TX-0037",
       "date": "2026-09-06",
       "account": "2.1.01",
@@ -10185,7 +10200,7 @@
       "detail": "GOOGLE *ADSZUFNW"
     },
     {
-      "id": "JL-0076",
+      "id": "JL-0077",
       "txn_id": "TX-0038",
       "date": "2026-09-06",
       "account": "1.1.09",
@@ -10197,7 +10212,7 @@
       "detail": "TST* SWEETGREEN MARKET "
     },
     {
-      "id": "JL-0077",
+      "id": "JL-0078",
       "txn_id": "TX-0038",
       "date": "2026-09-06",
       "account": "2.1.01",
@@ -10209,7 +10224,7 @@
       "detail": "TST* SWEETGREEN MARKET "
     },
     {
-      "id": "JL-0078",
+      "id": "JL-0079",
       "txn_id": "TX-0039",
       "date": "2026-09-06",
       "account": "5.1.06",
@@ -10221,7 +10236,7 @@
       "detail": "TST* THE SMITH MIDTOWN"
     },
     {
-      "id": "JL-0079",
+      "id": "JL-0080",
       "txn_id": "TX-0039",
       "date": "2026-09-06",
       "account": "2.1.01",
@@ -10233,7 +10248,7 @@
       "detail": "TST* THE SMITH MIDTOWN"
     },
     {
-      "id": "JL-0080",
+      "id": "JL-0081",
       "txn_id": "TX-0040",
       "date": "2026-09-06",
       "account": "5.1.05",
@@ -10245,7 +10260,7 @@
       "detail": "UBER *TRIP Z97RJ"
     },
     {
-      "id": "JL-0081",
+      "id": "JL-0082",
       "txn_id": "TX-0040",
       "date": "2026-09-06",
       "account": "2.1.01",
@@ -10257,7 +10272,7 @@
       "detail": "UBER *TRIP Z97RJ"
     },
     {
-      "id": "JL-0082",
+      "id": "JL-0083",
       "txn_id": "TX-0041",
       "date": "2026-09-06",
       "account": "5.1.02",
@@ -10269,7 +10284,7 @@
       "detail": "VERCEL INC."
     },
     {
-      "id": "JL-0083",
+      "id": "JL-0084",
       "txn_id": "TX-0041",
       "date": "2026-09-06",
       "account": "2.1.01",
@@ -10281,7 +10296,7 @@
       "detail": "VERCEL INC."
     },
     {
-      "id": "JL-0084",
+      "id": "JL-0085",
       "txn_id": "TX-0042",
       "date": "2026-09-07",
       "account": "5.1.03",
@@ -10293,7 +10308,7 @@
       "detail": "FIGMA"
     },
     {
-      "id": "JL-0085",
+      "id": "JL-0086",
       "txn_id": "TX-0042",
       "date": "2026-09-07",
       "account": "2.1.01",
@@ -10305,7 +10320,7 @@
       "detail": "FIGMA"
     },
     {
-      "id": "JL-0086",
+      "id": "JL-0087",
       "txn_id": "TX-0043",
       "date": "2026-09-07",
       "account": "5.1.06",
@@ -10317,7 +10332,7 @@
       "detail": "TST* THE SMITH MIDTOWN"
     },
     {
-      "id": "JL-0087",
+      "id": "JL-0088",
       "txn_id": "TX-0043",
       "date": "2026-09-07",
       "account": "2.1.01",
@@ -10329,7 +10344,7 @@
       "detail": "TST* THE SMITH MIDTOWN"
     },
     {
-      "id": "JL-0088",
+      "id": "JL-0089",
       "txn_id": "TX-0044",
       "date": "2026-09-07",
       "account": "5.1.05",
@@ -10341,7 +10356,7 @@
       "detail": "UBER *TRIP JYF9Q"
     },
     {
-      "id": "JL-0089",
+      "id": "JL-0090",
       "txn_id": "TX-0044",
       "date": "2026-09-07",
       "account": "2.1.01",
@@ -10353,7 +10368,7 @@
       "detail": "UBER *TRIP JYF9Q"
     },
     {
-      "id": "JL-0090",
+      "id": "JL-0091",
       "txn_id": "TX-0045",
       "date": "2026-09-07",
       "account": "5.1.05",
@@ -10365,7 +10380,7 @@
       "detail": "UBER *TRIP PGQFF"
     },
     {
-      "id": "JL-0091",
+      "id": "JL-0092",
       "txn_id": "TX-0045",
       "date": "2026-09-07",
       "account": "2.1.01",
@@ -10377,7 +10392,7 @@
       "detail": "UBER *TRIP PGQFF"
     },
     {
-      "id": "JL-0092",
+      "id": "JL-0093",
       "txn_id": "TX-0046",
       "date": "2026-09-07",
       "account": "5.1.05",
@@ -10389,7 +10404,7 @@
       "detail": "UBER *TRIP Z4JRF"
     },
     {
-      "id": "JL-0093",
+      "id": "JL-0094",
       "txn_id": "TX-0046",
       "date": "2026-09-07",
       "account": "2.1.01",
@@ -10401,7 +10416,7 @@
       "detail": "UBER *TRIP Z4JRF"
     },
     {
-      "id": "JL-0094",
+      "id": "JL-0095",
       "txn_id": "TX-0047",
       "date": "2026-09-07",
       "account": "5.1.09",
@@ -10413,7 +10428,7 @@
       "detail": "UDEMY ONLINE COURSE"
     },
     {
-      "id": "JL-0095",
+      "id": "JL-0096",
       "txn_id": "TX-0047",
       "date": "2026-09-07",
       "account": "2.1.01",
@@ -10425,7 +10440,7 @@
       "detail": "UDEMY ONLINE COURSE"
     },
     {
-      "id": "JL-0096",
+      "id": "JL-0097",
       "txn_id": "TX-0048",
       "date": "2026-09-07",
       "account": "1.1.09",
@@ -10437,7 +10452,7 @@
       "detail": "WEWORK MEXICO"
     },
     {
-      "id": "JL-0097",
+      "id": "JL-0098",
       "txn_id": "TX-0048",
       "date": "2026-09-07",
       "account": "2.1.01",
@@ -10449,7 +10464,7 @@
       "detail": "WEWORK MEXICO"
     },
     {
-      "id": "JL-0098",
+      "id": "JL-0099",
       "txn_id": "TX-0049",
       "date": "2026-09-08",
       "account": "2.1.01",
@@ -10461,7 +10476,7 @@
       "detail": "BOOKING.COM HOTEL"
     },
     {
-      "id": "JL-0099",
+      "id": "JL-0100",
       "txn_id": "TX-0049",
       "date": "2026-09-08",
       "account": "1.1.09",
@@ -10473,7 +10488,7 @@
       "detail": "BOOKING.COM HOTEL"
     },
     {
-      "id": "JL-0100",
+      "id": "JL-0101",
       "txn_id": "TX-0050",
       "date": "2026-09-08",
       "account": "5.1.04",
@@ -10485,7 +10500,7 @@
       "detail": "FIVERR"
     },
     {
-      "id": "JL-0101",
+      "id": "JL-0102",
       "txn_id": "TX-0050",
       "date": "2026-09-08",
       "account": "2.1.01",
@@ -10497,7 +10512,7 @@
       "detail": "FIVERR"
     },
     {
-      "id": "JL-0102",
+      "id": "JL-0103",
       "txn_id": "TX-0051",
       "date": "2026-09-08",
       "account": "5.1.03",
@@ -10509,7 +10524,7 @@
       "detail": "GITHUB, INC."
     },
     {
-      "id": "JL-0103",
+      "id": "JL-0104",
       "txn_id": "TX-0051",
       "date": "2026-09-08",
       "account": "2.1.01",
@@ -10521,7 +10536,7 @@
       "detail": "GITHUB, INC."
     },
     {
-      "id": "JL-0104",
+      "id": "JL-0105",
       "txn_id": "TX-0052",
       "date": "2026-09-08",
       "account": "5.1.03",
@@ -10533,7 +10548,7 @@
       "detail": "GITHUB, INC."
     },
     {
-      "id": "JL-0105",
+      "id": "JL-0106",
       "txn_id": "TX-0052",
       "date": "2026-09-08",
       "account": "2.1.01",
@@ -10545,7 +10560,7 @@
       "detail": "GITHUB, INC."
     },
     {
-      "id": "JL-0106",
+      "id": "JL-0107",
       "txn_id": "TX-0053",
       "date": "2026-09-08",
       "account": "5.1.09",
@@ -10557,7 +10572,7 @@
       "detail": "SUBSTACK *6PCY3"
     },
     {
-      "id": "JL-0107",
+      "id": "JL-0108",
       "txn_id": "TX-0053",
       "date": "2026-09-08",
       "account": "2.1.01",
@@ -10569,7 +10584,7 @@
       "detail": "SUBSTACK *6PCY3"
     },
     {
-      "id": "JL-0108",
+      "id": "JL-0109",
       "txn_id": "TX-0054",
       "date": "2026-09-08",
       "account": "5.1.05",
@@ -10581,7 +10596,7 @@
       "detail": "UBER *EATS MAQ7K"
     },
     {
-      "id": "JL-0109",
+      "id": "JL-0110",
       "txn_id": "TX-0054",
       "date": "2026-09-08",
       "account": "2.1.01",
@@ -10593,7 +10608,7 @@
       "detail": "UBER *EATS MAQ7K"
     },
     {
-      "id": "JL-0110",
+      "id": "JL-0111",
       "txn_id": "TX-0055",
       "date": "2026-09-08",
       "account": "5.1.05",
@@ -10605,7 +10620,7 @@
       "detail": "UBER *TRIP C5FCF"
     },
     {
-      "id": "JL-0111",
+      "id": "JL-0112",
       "txn_id": "TX-0055",
       "date": "2026-09-08",
       "account": "2.1.01",
@@ -10617,7 +10632,7 @@
       "detail": "UBER *TRIP C5FCF"
     },
     {
-      "id": "JL-0112",
+      "id": "JL-0113",
       "txn_id": "TX-0056",
       "date": "2026-09-08",
       "account": "5.1.05",
@@ -10629,7 +10644,7 @@
       "detail": "UBER *TRIP TQ72G"
     },
     {
-      "id": "JL-0113",
+      "id": "JL-0114",
       "txn_id": "TX-0056",
       "date": "2026-09-08",
       "account": "2.1.01",
@@ -10641,7 +10656,7 @@
       "detail": "UBER *TRIP TQ72G"
     },
     {
-      "id": "JL-0114",
+      "id": "JL-0115",
       "txn_id": "TX-0057",
       "date": "2026-09-08",
       "account": "1.1.09",
@@ -10653,7 +10668,7 @@
       "detail": "UBER *TRIP TQ72G"
     },
     {
-      "id": "JL-0115",
+      "id": "JL-0116",
       "txn_id": "TX-0057",
       "date": "2026-09-08",
       "account": "2.1.01",
@@ -10665,7 +10680,7 @@
       "detail": "UBER *TRIP TQ72G"
     },
     {
-      "id": "JL-0116",
+      "id": "JL-0117",
       "txn_id": "TX-0058",
       "date": "2026-09-09",
       "account": "5.1.02",
@@ -10677,7 +10692,7 @@
       "detail": "CLOUDFLARE"
     },
     {
-      "id": "JL-0117",
+      "id": "JL-0118",
       "txn_id": "TX-0058",
       "date": "2026-09-09",
       "account": "2.1.01",
@@ -10689,7 +10704,7 @@
       "detail": "CLOUDFLARE"
     },
     {
-      "id": "JL-0118",
+      "id": "JL-0119",
       "txn_id": "TX-0059",
       "date": "2026-09-09",
       "account": "5.1.07",
@@ -10701,7 +10716,7 @@
       "detail": "SQ *SF DEVS MEETUP"
     },
     {
-      "id": "JL-0119",
+      "id": "JL-0120",
       "txn_id": "TX-0059",
       "date": "2026-09-09",
       "account": "2.1.01",
@@ -10713,7 +10728,7 @@
       "detail": "SQ *SF DEVS MEETUP"
     },
     {
-      "id": "JL-0120",
+      "id": "JL-0121",
       "txn_id": "TX-0060",
       "date": "2026-09-09",
       "account": "5.1.09",
@@ -10725,7 +10740,7 @@
       "detail": "THE ECONOMIST"
     },
     {
-      "id": "JL-0121",
+      "id": "JL-0122",
       "txn_id": "TX-0060",
       "date": "2026-09-09",
       "account": "2.1.01",
@@ -10737,7 +10752,7 @@
       "detail": "THE ECONOMIST"
     },
     {
-      "id": "JL-0122",
+      "id": "JL-0123",
       "txn_id": "TX-0061",
       "date": "2026-09-10",
       "account": "5.1.05",
@@ -10749,7 +10764,7 @@
       "detail": "AIRBNB * HMM7983"
     },
     {
-      "id": "JL-0123",
+      "id": "JL-0124",
       "txn_id": "TX-0061",
       "date": "2026-09-10",
       "account": "2.1.01",
@@ -10761,7 +10776,7 @@
       "detail": "AIRBNB * HMM7983"
     },
     {
-      "id": "JL-0124",
+      "id": "JL-0125",
       "txn_id": "TX-0062",
       "date": "2026-09-10",
       "account": "5.1.01",
@@ -10773,7 +10788,7 @@
       "detail": "FACEBK *ADS T34CC"
     },
     {
-      "id": "JL-0125",
+      "id": "JL-0126",
       "txn_id": "TX-0062",
       "date": "2026-09-10",
       "account": "2.1.01",
@@ -10785,7 +10800,7 @@
       "detail": "FACEBK *ADS T34CC"
     },
     {
-      "id": "JL-0126",
+      "id": "JL-0127",
       "txn_id": "TX-0063",
       "date": "2026-09-10",
       "account": "5.1.09",
@@ -10797,7 +10812,7 @@
       "detail": "GUMROAD.COM* SHAPEUP"
     },
     {
-      "id": "JL-0127",
+      "id": "JL-0128",
       "txn_id": "TX-0063",
       "date": "2026-09-10",
       "account": "2.1.01",
@@ -10809,7 +10824,7 @@
       "detail": "GUMROAD.COM* SHAPEUP"
     },
     {
-      "id": "JL-0128",
+      "id": "JL-0129",
       "txn_id": "TX-0064",
       "date": "2026-09-10",
       "account": "1.1.09",
@@ -10821,7 +10836,7 @@
       "detail": "LINEAR ORBIT"
     },
     {
-      "id": "JL-0129",
+      "id": "JL-0130",
       "txn_id": "TX-0064",
       "date": "2026-09-10",
       "account": "2.1.01",
@@ -10833,7 +10848,7 @@
       "detail": "LINEAR ORBIT"
     },
     {
-      "id": "JL-0130",
+      "id": "JL-0131",
       "txn_id": "TX-0065",
       "date": "2026-09-10",
       "account": "1.1.09",
@@ -10845,7 +10860,7 @@
       "detail": "PAYPAL *MGOMEZSTUDIO"
     },
     {
-      "id": "JL-0131",
+      "id": "JL-0132",
       "txn_id": "TX-0065",
       "date": "2026-09-10",
       "account": "2.1.01",
@@ -10857,7 +10872,7 @@
       "detail": "PAYPAL *MGOMEZSTUDIO"
     },
     {
-      "id": "JL-0132",
+      "id": "JL-0133",
       "txn_id": "TX-0066",
       "date": "2026-09-10",
       "account": "5.1.06",
@@ -10869,7 +10884,7 @@
       "detail": "TST* COYA MIAMI"
     },
     {
-      "id": "JL-0133",
+      "id": "JL-0134",
       "txn_id": "TX-0066",
       "date": "2026-09-10",
       "account": "2.1.01",
@@ -10881,7 +10896,7 @@
       "detail": "TST* COYA MIAMI"
     },
     {
-      "id": "JL-0134",
+      "id": "JL-0135",
       "txn_id": "TX-0067",
       "date": "2026-09-10",
       "account": "1.1.09",
@@ -10893,7 +10908,7 @@
       "detail": "TST* JOES PIZZA"
     },
     {
-      "id": "JL-0135",
+      "id": "JL-0136",
       "txn_id": "TX-0067",
       "date": "2026-09-10",
       "account": "2.1.01",
@@ -10905,7 +10920,7 @@
       "detail": "TST* JOES PIZZA"
     },
     {
-      "id": "JL-0136",
+      "id": "JL-0137",
       "txn_id": "TX-0068",
       "date": "2026-09-10",
       "account": "5.1.06",
@@ -10917,7 +10932,7 @@
       "detail": "TST* SWEETGREEN MARKET "
     },
     {
-      "id": "JL-0137",
+      "id": "JL-0138",
       "txn_id": "TX-0068",
       "date": "2026-09-10",
       "account": "2.1.01",
@@ -10929,7 +10944,7 @@
       "detail": "TST* SWEETGREEN MARKET "
     },
     {
-      "id": "JL-0138",
+      "id": "JL-0139",
       "txn_id": "TX-0069",
       "date": "2026-09-10",
       "account": "1.1.09",
@@ -10941,7 +10956,7 @@
       "detail": "UBER *EATS HC9E7"
     },
     {
-      "id": "JL-0139",
+      "id": "JL-0140",
       "txn_id": "TX-0069",
       "date": "2026-09-10",
       "account": "2.1.01",
@@ -10953,7 +10968,7 @@
       "detail": "UBER *EATS HC9E7"
     },
     {
-      "id": "JL-0140",
+      "id": "JL-0141",
       "txn_id": "TX-0070",
       "date": "2026-09-10",
       "account": "5.1.05",
@@ -10965,7 +10980,7 @@
       "detail": "UBER *TRIP 36L78"
     },
     {
-      "id": "JL-0141",
+      "id": "JL-0142",
       "txn_id": "TX-0070",
       "date": "2026-09-10",
       "account": "2.1.01",
@@ -10977,7 +10992,7 @@
       "detail": "UBER *TRIP 36L78"
     },
     {
-      "id": "JL-0142",
+      "id": "JL-0143",
       "txn_id": "TX-0071",
       "date": "2026-09-10",
       "account": "1.1.09",
@@ -10989,7 +11004,7 @@
       "detail": "UBER *TRIP T386M"
     },
     {
-      "id": "JL-0143",
+      "id": "JL-0144",
       "txn_id": "TX-0071",
       "date": "2026-09-10",
       "account": "2.1.01",
@@ -11001,7 +11016,7 @@
       "detail": "UBER *TRIP T386M"
     },
     {
-      "id": "JL-0144",
+      "id": "JL-0145",
       "txn_id": "TX-0072",
       "date": "2026-09-10",
       "account": "1.1.09",
@@ -11013,7 +11028,7 @@
       "detail": "WEB SUMMIT RIO"
     },
     {
-      "id": "JL-0145",
+      "id": "JL-0146",
       "txn_id": "TX-0072",
       "date": "2026-09-10",
       "account": "2.1.01",
@@ -11025,7 +11040,7 @@
       "detail": "WEB SUMMIT RIO"
     },
     {
-      "id": "JL-0146",
+      "id": "JL-0147",
       "txn_id": "TX-0073",
       "date": "2026-09-11",
       "account": "1.1.09",
@@ -11037,7 +11052,7 @@
       "detail": "ATLASSIAN"
     },
     {
-      "id": "JL-0147",
+      "id": "JL-0148",
       "txn_id": "TX-0073",
       "date": "2026-09-11",
       "account": "2.1.01",
@@ -11049,7 +11064,7 @@
       "detail": "ATLASSIAN"
     },
     {
-      "id": "JL-0148",
+      "id": "JL-0149",
       "txn_id": "TX-0074",
       "date": "2026-09-11",
       "account": "5.1.09",
@@ -11061,7 +11076,7 @@
       "detail": "COURSERA"
     },
     {
-      "id": "JL-0149",
+      "id": "JL-0150",
       "txn_id": "TX-0074",
       "date": "2026-09-11",
       "account": "2.1.01",
@@ -11073,7 +11088,7 @@
       "detail": "COURSERA"
     },
     {
-      "id": "JL-0150",
+      "id": "JL-0151",
       "txn_id": "TX-0075",
       "date": "2026-09-11",
       "account": "5.1.07",
@@ -11085,7 +11100,7 @@
       "detail": "EVENTBRITE 2VMZ3"
     },
     {
-      "id": "JL-0151",
+      "id": "JL-0152",
       "txn_id": "TX-0075",
       "date": "2026-09-11",
       "account": "2.1.01",
@@ -11097,7 +11112,7 @@
       "detail": "EVENTBRITE 2VMZ3"
     },
     {
-      "id": "JL-0152",
+      "id": "JL-0153",
       "txn_id": "TX-0076",
       "date": "2026-09-11",
       "account": "5.1.01",
@@ -11109,7 +11124,7 @@
       "detail": "FACEBK *ADS EJZS5"
     },
     {
-      "id": "JL-0153",
+      "id": "JL-0154",
       "txn_id": "TX-0076",
       "date": "2026-09-11",
       "account": "2.1.01",
@@ -11121,7 +11136,7 @@
       "detail": "FACEBK *ADS EJZS5"
     },
     {
-      "id": "JL-0154",
+      "id": "JL-0155",
       "txn_id": "TX-0077",
       "date": "2026-09-11",
       "account": "5.1.01",
@@ -11133,7 +11148,7 @@
       "detail": "GOOGLE *ADSW2TGE"
     },
     {
-      "id": "JL-0155",
+      "id": "JL-0156",
       "txn_id": "TX-0077",
       "date": "2026-09-11",
       "account": "2.1.01",
@@ -11145,7 +11160,7 @@
       "detail": "GOOGLE *ADSW2TGE"
     },
     {
-      "id": "JL-0156",
+      "id": "JL-0157",
       "txn_id": "TX-0078",
       "date": "2026-09-11",
       "account": "5.1.01",
@@ -11157,7 +11172,7 @@
       "detail": "GOOGLE *ADSYHPLP"
     },
     {
-      "id": "JL-0157",
+      "id": "JL-0158",
       "txn_id": "TX-0078",
       "date": "2026-09-11",
       "account": "2.1.01",
@@ -11169,7 +11184,7 @@
       "detail": "GOOGLE *ADSYHPLP"
     },
     {
-      "id": "JL-0158",
+      "id": "JL-0159",
       "txn_id": "TX-0079",
       "date": "2026-09-11",
       "account": "1.1.09",
@@ -11181,7 +11196,7 @@
       "detail": "MARRIOTT SAO PAULO"
     },
     {
-      "id": "JL-0159",
+      "id": "JL-0160",
       "txn_id": "TX-0079",
       "date": "2026-09-11",
       "account": "2.1.01",
@@ -11193,7 +11208,7 @@
       "detail": "MARRIOTT SAO PAULO"
     },
     {
-      "id": "JL-0160",
+      "id": "JL-0161",
       "txn_id": "TX-0080",
       "date": "2026-09-11",
       "account": "5.1.06",
@@ -11205,7 +11220,7 @@
       "detail": "STARBUCKS STORE SK4EU"
     },
     {
-      "id": "JL-0161",
+      "id": "JL-0162",
       "txn_id": "TX-0080",
       "date": "2026-09-11",
       "account": "2.1.01",
@@ -11217,7 +11232,7 @@
       "detail": "STARBUCKS STORE SK4EU"
     },
     {
-      "id": "JL-0162",
+      "id": "JL-0163",
       "txn_id": "TX-0081",
       "date": "2026-09-11",
       "account": "5.1.06",
@@ -11229,7 +11244,7 @@
       "detail": "TST* LA MAR CEBICHERIA"
     },
     {
-      "id": "JL-0163",
+      "id": "JL-0164",
       "txn_id": "TX-0081",
       "date": "2026-09-11",
       "account": "2.1.01",
@@ -11241,7 +11256,7 @@
       "detail": "TST* LA MAR CEBICHERIA"
     },
     {
-      "id": "JL-0164",
+      "id": "JL-0165",
       "txn_id": "TX-0082",
       "date": "2026-09-11",
       "account": "5.1.05",
@@ -11253,7 +11268,7 @@
       "detail": "UBER *TRIP KLUEW"
     },
     {
-      "id": "JL-0165",
+      "id": "JL-0166",
       "txn_id": "TX-0082",
       "date": "2026-09-11",
       "account": "2.1.01",
@@ -11265,7 +11280,7 @@
       "detail": "UBER *TRIP KLUEW"
     },
     {
-      "id": "JL-0166",
+      "id": "JL-0167",
       "txn_id": "TX-0083",
       "date": "2026-09-12",
       "account": "2.1.01",
@@ -11277,7 +11292,7 @@
       "detail": "AIRBNB * HMM7983"
     },
     {
-      "id": "JL-0167",
+      "id": "JL-0168",
       "txn_id": "TX-0083",
       "date": "2026-09-12",
       "account": "1.1.09",
@@ -11289,7 +11304,7 @@
       "detail": "AIRBNB * HMM7983"
     },
     {
-      "id": "JL-0168",
+      "id": "JL-0169",
       "txn_id": "TX-0084",
       "date": "2026-09-12",
       "account": "5.1.05",
@@ -11301,7 +11316,7 @@
       "detail": "AMERICAN AIR A6S2L"
     },
     {
-      "id": "JL-0169",
+      "id": "JL-0170",
       "txn_id": "TX-0084",
       "date": "2026-09-12",
       "account": "2.1.01",
@@ -11313,7 +11328,7 @@
       "detail": "AMERICAN AIR A6S2L"
     },
     {
-      "id": "JL-0170",
+      "id": "JL-0171",
       "txn_id": "TX-0085",
       "date": "2026-09-12",
       "account": "5.1.01",
@@ -11325,7 +11340,7 @@
       "detail": "FACEBK *ADS 2WE3C"
     },
     {
-      "id": "JL-0171",
+      "id": "JL-0172",
       "txn_id": "TX-0085",
       "date": "2026-09-12",
       "account": "2.1.01",
@@ -11337,7 +11352,7 @@
       "detail": "FACEBK *ADS 2WE3C"
     },
     {
-      "id": "JL-0172",
+      "id": "JL-0173",
       "txn_id": "TX-0086",
       "date": "2026-09-12",
       "account": "5.1.01",
@@ -11349,7 +11364,7 @@
       "detail": "FACEBK *ADS TKQHQ"
     },
     {
-      "id": "JL-0173",
+      "id": "JL-0174",
       "txn_id": "TX-0086",
       "date": "2026-09-12",
       "account": "2.1.01",
@@ -11361,7 +11376,7 @@
       "detail": "FACEBK *ADS TKQHQ"
     },
     {
-      "id": "JL-0174",
+      "id": "JL-0175",
       "txn_id": "TX-0087",
       "date": "2026-09-12",
       "account": "5.1.10",
@@ -11373,7 +11388,7 @@
       "detail": "INTL TXN FEE"
     },
     {
-      "id": "JL-0175",
+      "id": "JL-0176",
       "txn_id": "TX-0087",
       "date": "2026-09-12",
       "account": "2.1.01",
@@ -11385,7 +11400,7 @@
       "detail": "INTL TXN FEE"
     },
     {
-      "id": "JL-0176",
+      "id": "JL-0177",
       "txn_id": "TX-0088",
       "date": "2026-09-12",
       "account": "5.1.06",
@@ -11397,7 +11412,7 @@
       "detail": "STARBUCKS STORE W6G3V"
     },
     {
-      "id": "JL-0177",
+      "id": "JL-0178",
       "txn_id": "TX-0088",
       "date": "2026-09-12",
       "account": "2.1.01",
@@ -11409,7 +11424,7 @@
       "detail": "STARBUCKS STORE W6G3V"
     },
     {
-      "id": "JL-0178",
+      "id": "JL-0179",
       "txn_id": "TX-0089",
       "date": "2026-09-12",
       "account": "1.1.09",
@@ -11421,7 +11436,7 @@
       "detail": "TST* ZUMA MIAMI"
     },
     {
-      "id": "JL-0179",
+      "id": "JL-0180",
       "txn_id": "TX-0089",
       "date": "2026-09-12",
       "account": "2.1.01",
@@ -11433,7 +11448,7 @@
       "detail": "TST* ZUMA MIAMI"
     },
     {
-      "id": "JL-0180",
+      "id": "JL-0181",
       "txn_id": "TX-0090",
       "date": "2026-09-12",
       "account": "5.1.05",
@@ -11445,7 +11460,7 @@
       "detail": "UBER *EATS S5KNQ"
     },
     {
-      "id": "JL-0181",
+      "id": "JL-0182",
       "txn_id": "TX-0090",
       "date": "2026-09-12",
       "account": "2.1.01",
@@ -11457,7 +11472,7 @@
       "detail": "UBER *EATS S5KNQ"
     },
     {
-      "id": "JL-0182",
+      "id": "JL-0183",
       "txn_id": "TX-0091",
       "date": "2026-09-12",
       "account": "5.1.05",
@@ -11469,7 +11484,7 @@
       "detail": "UBER *TRIP VLSPY"
     },
     {
-      "id": "JL-0183",
+      "id": "JL-0184",
       "txn_id": "TX-0091",
       "date": "2026-09-12",
       "account": "2.1.01",
@@ -11481,11 +11496,11 @@
       "detail": "UBER *TRIP VLSPY"
     },
     {
-      "id": "JL-0184",
+      "id": "JL-0185",
       "txn_id": "TX-0092",
       "date": "2026-09-12",
       "account": "1.1.09",
-      "debe": "7038000.00",
+      "debe": "7333550.00",
       "haber": "0.00",
       "basis": "suspense until reviewed",
       "status": "pending review",
@@ -11493,19 +11508,19 @@
       "detail": "USDC PAYOUT LUCAS MOREAU"
     },
     {
-      "id": "JL-0185",
+      "id": "JL-0186",
       "txn_id": "TX-0092",
       "date": "2026-09-12",
       "account": "1.1.02",
       "debe": "0.00",
-      "haber": "7038000.00",
+      "haber": "7333550.00",
       "basis": "suspense until reviewed",
       "status": "pending review",
       "approved_by": "pending review",
       "detail": "USDC PAYOUT LUCAS MOREAU"
     },
     {
-      "id": "JL-0186",
+      "id": "JL-0187",
       "txn_id": "TX-0093",
       "date": "2026-09-12",
       "account": "5.1.03",
@@ -11517,7 +11532,7 @@
       "detail": "ZOOM.COM 888-799-9666"
     },
     {
-      "id": "JL-0187",
+      "id": "JL-0188",
       "txn_id": "TX-0093",
       "date": "2026-09-12",
       "account": "2.1.01",
@@ -11529,7 +11544,7 @@
       "detail": "ZOOM.COM 888-799-9666"
     },
     {
-      "id": "JL-0188",
+      "id": "JL-0189",
       "txn_id": "TX-0094",
       "date": "2026-09-13",
       "account": "5.1.03",
@@ -11541,7 +11556,7 @@
       "detail": "1PASSWORD"
     },
     {
-      "id": "JL-0189",
+      "id": "JL-0190",
       "txn_id": "TX-0094",
       "date": "2026-09-13",
       "account": "2.1.01",
@@ -11553,7 +11568,7 @@
       "detail": "1PASSWORD"
     },
     {
-      "id": "JL-0190",
+      "id": "JL-0191",
       "txn_id": "TX-0095",
       "date": "2026-09-13",
       "account": "5.1.01",
@@ -11565,7 +11580,7 @@
       "detail": "FACEBK *ADS 24JUX"
     },
     {
-      "id": "JL-0191",
+      "id": "JL-0192",
       "txn_id": "TX-0095",
       "date": "2026-09-13",
       "account": "2.1.01",
@@ -11577,7 +11592,7 @@
       "detail": "FACEBK *ADS 24JUX"
     },
     {
-      "id": "JL-0192",
+      "id": "JL-0193",
       "txn_id": "TX-0096",
       "date": "2026-09-13",
       "account": "5.1.01",
@@ -11589,7 +11604,7 @@
       "detail": "FACEBK *ADS 9CLXD"
     },
     {
-      "id": "JL-0193",
+      "id": "JL-0194",
       "txn_id": "TX-0096",
       "date": "2026-09-13",
       "account": "2.1.01",
@@ -11601,7 +11616,7 @@
       "detail": "FACEBK *ADS 9CLXD"
     },
     {
-      "id": "JL-0194",
+      "id": "JL-0195",
       "txn_id": "TX-0097",
       "date": "2026-09-13",
       "account": "5.1.03",
@@ -11613,7 +11628,7 @@
       "detail": "OPENAI *API"
     },
     {
-      "id": "JL-0195",
+      "id": "JL-0196",
       "txn_id": "TX-0097",
       "date": "2026-09-13",
       "account": "2.1.01",
@@ -11625,7 +11640,7 @@
       "detail": "OPENAI *API"
     },
     {
-      "id": "JL-0196",
+      "id": "JL-0197",
       "txn_id": "TX-0098",
       "date": "2026-09-13",
       "account": "5.1.09",
@@ -11637,7 +11652,7 @@
       "detail": "OREILLY MEDIA"
     },
     {
-      "id": "JL-0197",
+      "id": "JL-0198",
       "txn_id": "TX-0098",
       "date": "2026-09-13",
       "account": "2.1.01",
@@ -11649,7 +11664,7 @@
       "detail": "OREILLY MEDIA"
     },
     {
-      "id": "JL-0198",
+      "id": "JL-0199",
       "txn_id": "TX-0099",
       "date": "2026-09-13",
       "account": "5.1.05",
@@ -11661,7 +11676,7 @@
       "detail": "UBER *TRIP 364HW"
     },
     {
-      "id": "JL-0199",
+      "id": "JL-0200",
       "txn_id": "TX-0099",
       "date": "2026-09-13",
       "account": "2.1.01",
@@ -11673,7 +11688,7 @@
       "detail": "UBER *TRIP 364HW"
     },
     {
-      "id": "JL-0200",
+      "id": "JL-0201",
       "txn_id": "TX-0100",
       "date": "2026-09-13",
       "account": "5.1.05",
@@ -11685,7 +11700,7 @@
       "detail": "UBER *TRIP QVNYN"
     },
     {
-      "id": "JL-0201",
+      "id": "JL-0202",
       "txn_id": "TX-0100",
       "date": "2026-09-13",
       "account": "2.1.01",
@@ -11697,7 +11712,7 @@
       "detail": "UBER *TRIP QVNYN"
     },
     {
-      "id": "JL-0202",
+      "id": "JL-0203",
       "txn_id": "TX-0101",
       "date": "2026-09-14",
       "account": "5.1.01",
@@ -11709,7 +11724,7 @@
       "detail": "FACEBK *ADS R45RM"
     },
     {
-      "id": "JL-0203",
+      "id": "JL-0204",
       "txn_id": "TX-0101",
       "date": "2026-09-14",
       "account": "2.1.01",
@@ -11721,7 +11736,7 @@
       "detail": "FACEBK *ADS R45RM"
     },
     {
-      "id": "JL-0204",
+      "id": "JL-0205",
       "txn_id": "TX-0102",
       "date": "2026-09-14",
       "account": "5.1.01",
@@ -11733,7 +11748,7 @@
       "detail": "LINKEDIN *ADS L3AUH"
     },
     {
-      "id": "JL-0205",
+      "id": "JL-0206",
       "txn_id": "TX-0102",
       "date": "2026-09-14",
       "account": "2.1.01",
@@ -11745,7 +11760,7 @@
       "detail": "LINKEDIN *ADS L3AUH"
     },
     {
-      "id": "JL-0206",
+      "id": "JL-0207",
       "txn_id": "TX-0103",
       "date": "2026-09-14",
       "account": "5.1.03",
@@ -11757,7 +11772,7 @@
       "detail": "LOOM SUBSCRIPTION"
     },
     {
-      "id": "JL-0207",
+      "id": "JL-0208",
       "txn_id": "TX-0103",
       "date": "2026-09-14",
       "account": "2.1.01",
@@ -11769,7 +11784,7 @@
       "detail": "LOOM SUBSCRIPTION"
     },
     {
-      "id": "JL-0208",
+      "id": "JL-0209",
       "txn_id": "TX-0104",
       "date": "2026-09-14",
       "account": "5.1.06",
@@ -11781,7 +11796,7 @@
       "detail": "STARBUCKS STORE YLFHT"
     },
     {
-      "id": "JL-0209",
+      "id": "JL-0210",
       "txn_id": "TX-0104",
       "date": "2026-09-14",
       "account": "2.1.01",
@@ -11793,7 +11808,7 @@
       "detail": "STARBUCKS STORE YLFHT"
     },
     {
-      "id": "JL-0210",
+      "id": "JL-0211",
       "txn_id": "TX-0105",
       "date": "2026-09-14",
       "account": "5.1.06",
@@ -11805,7 +11820,7 @@
       "detail": "TST* SWEETGREEN MARKET "
     },
     {
-      "id": "JL-0211",
+      "id": "JL-0212",
       "txn_id": "TX-0105",
       "date": "2026-09-14",
       "account": "2.1.01",
@@ -11817,7 +11832,7 @@
       "detail": "TST* SWEETGREEN MARKET "
     },
     {
-      "id": "JL-0212",
+      "id": "JL-0213",
       "txn_id": "TX-0106",
       "date": "2026-09-14",
       "account": "5.1.06",
@@ -11829,7 +11844,7 @@
       "detail": "TST* SWEETGREEN MARKET "
     },
     {
-      "id": "JL-0213",
+      "id": "JL-0214",
       "txn_id": "TX-0106",
       "date": "2026-09-14",
       "account": "2.1.01",
@@ -11841,7 +11856,7 @@
       "detail": "TST* SWEETGREEN MARKET "
     },
     {
-      "id": "JL-0214",
+      "id": "JL-0215",
       "txn_id": "TX-0107",
       "date": "2026-09-14",
       "account": "5.1.06",
@@ -11853,7 +11868,7 @@
       "detail": "TST* THE SMITH MIDTOWN"
     },
     {
-      "id": "JL-0215",
+      "id": "JL-0216",
       "txn_id": "TX-0107",
       "date": "2026-09-14",
       "account": "2.1.01",
@@ -11865,7 +11880,7 @@
       "detail": "TST* THE SMITH MIDTOWN"
     },
     {
-      "id": "JL-0216",
+      "id": "JL-0217",
       "txn_id": "TX-0108",
       "date": "2026-09-14",
       "account": "5.1.05",
@@ -11877,7 +11892,7 @@
       "detail": "UBER *TRIP 6KLUN"
     },
     {
-      "id": "JL-0217",
+      "id": "JL-0218",
       "txn_id": "TX-0108",
       "date": "2026-09-14",
       "account": "2.1.01",
@@ -11889,7 +11904,7 @@
       "detail": "UBER *TRIP 6KLUN"
     },
     {
-      "id": "JL-0218",
+      "id": "JL-0219",
       "txn_id": "TX-0109",
       "date": "2026-09-14",
       "account": "5.1.05",
@@ -11901,7 +11916,7 @@
       "detail": "UBER *TRIP WJKU8"
     },
     {
-      "id": "JL-0219",
+      "id": "JL-0220",
       "txn_id": "TX-0109",
       "date": "2026-09-14",
       "account": "2.1.01",
@@ -11913,19 +11928,19 @@
       "detail": "UBER *TRIP WJKU8"
     },
     {
-      "id": "JL-0220",
+      "id": "JL-0221",
       "txn_id": "TX-0110",
       "date": "2026-09-15",
       "account": "1.1.02",
-      "debe": "43207582.50",
+      "debe": "44999991.17",
       "haber": "0.00",
       "basis": "rule R-TOPUP",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
-      "detail": "USDC received, valued at the official rate"
+      "detail": "USDC received, valued at the crypto rate"
     },
     {
-      "id": "JL-0221",
+      "id": "JL-0222",
       "txn_id": "TX-0110",
       "date": "2026-09-15",
       "account": "1.1.01",
@@ -11937,19 +11952,19 @@
       "detail": "ARS sent from the bank"
     },
     {
-      "id": "JL-0222",
+      "id": "JL-0223",
       "txn_id": "TX-0110",
       "date": "2026-09-15",
       "account": "5.2.01",
-      "debe": "1792417.50",
+      "debe": "8.83",
       "haber": "0.00",
       "basis": "rule R-TOPUP",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
-      "detail": "Cost of buying USDC above the official rate"
+      "detail": "ARS sent above the USDC received"
     },
     {
-      "id": "JL-0223",
+      "id": "JL-0224",
       "txn_id": "TX-0111",
       "date": "2026-09-15",
       "account": "5.1.05",
@@ -11961,7 +11976,7 @@
       "detail": "AIRALO"
     },
     {
-      "id": "JL-0224",
+      "id": "JL-0225",
       "txn_id": "TX-0111",
       "date": "2026-09-15",
       "account": "2.1.01",
@@ -11973,7 +11988,7 @@
       "detail": "AIRALO"
     },
     {
-      "id": "JL-0225",
+      "id": "JL-0226",
       "txn_id": "TX-0112",
       "date": "2026-09-15",
       "account": "5.1.03",
@@ -11985,7 +12000,7 @@
       "detail": "ANTHROPIC"
     },
     {
-      "id": "JL-0226",
+      "id": "JL-0227",
       "txn_id": "TX-0112",
       "date": "2026-09-15",
       "account": "2.1.01",
@@ -11997,7 +12012,7 @@
       "detail": "ANTHROPIC"
     },
     {
-      "id": "JL-0227",
+      "id": "JL-0228",
       "txn_id": "TX-0113",
       "date": "2026-09-15",
       "account": "5.1.01",
@@ -12009,7 +12024,7 @@
       "detail": "FACEBK *ADS QV4BD"
     },
     {
-      "id": "JL-0228",
+      "id": "JL-0229",
       "txn_id": "TX-0113",
       "date": "2026-09-15",
       "account": "2.1.01",
@@ -12021,7 +12036,7 @@
       "detail": "FACEBK *ADS QV4BD"
     },
     {
-      "id": "JL-0229",
+      "id": "JL-0230",
       "txn_id": "TX-0114",
       "date": "2026-09-15",
       "account": "5.1.03",
@@ -12033,7 +12048,7 @@
       "detail": "MIRO.COM"
     },
     {
-      "id": "JL-0230",
+      "id": "JL-0231",
       "txn_id": "TX-0114",
       "date": "2026-09-15",
       "account": "2.1.01",
@@ -12045,7 +12060,7 @@
       "detail": "MIRO.COM"
     },
     {
-      "id": "JL-0231",
+      "id": "JL-0232",
       "txn_id": "TX-0115",
       "date": "2026-09-15",
       "account": "1.1.09",
@@ -12057,7 +12072,7 @@
       "detail": "SQ *BLUE BOTTLE COFFEE"
     },
     {
-      "id": "JL-0232",
+      "id": "JL-0233",
       "txn_id": "TX-0115",
       "date": "2026-09-15",
       "account": "2.1.01",
@@ -12069,7 +12084,7 @@
       "detail": "SQ *BLUE BOTTLE COFFEE"
     },
     {
-      "id": "JL-0233",
+      "id": "JL-0234",
       "txn_id": "TX-0116",
       "date": "2026-09-15",
       "account": "5.1.06",
@@ -12081,7 +12096,7 @@
       "detail": "SQ *BLUE BOTTLE COFFEE"
     },
     {
-      "id": "JL-0234",
+      "id": "JL-0235",
       "txn_id": "TX-0116",
       "date": "2026-09-15",
       "account": "2.1.01",
@@ -12093,7 +12108,7 @@
       "detail": "SQ *BLUE BOTTLE COFFEE"
     },
     {
-      "id": "JL-0235",
+      "id": "JL-0236",
       "txn_id": "TX-0117",
       "date": "2026-09-15",
       "account": "1.1.09",
@@ -12105,7 +12120,7 @@
       "detail": "STARBUCKS STORE YLFHT"
     },
     {
-      "id": "JL-0236",
+      "id": "JL-0237",
       "txn_id": "TX-0117",
       "date": "2026-09-15",
       "account": "2.1.01",
@@ -12117,7 +12132,7 @@
       "detail": "STARBUCKS STORE YLFHT"
     },
     {
-      "id": "JL-0237",
+      "id": "JL-0238",
       "txn_id": "TX-0118",
       "date": "2026-09-15",
       "account": "5.1.06",
@@ -12129,7 +12144,7 @@
       "detail": "TST* SHAKE SHACK MADISO"
     },
     {
-      "id": "JL-0238",
+      "id": "JL-0239",
       "txn_id": "TX-0118",
       "date": "2026-09-15",
       "account": "2.1.01",
@@ -12141,7 +12156,7 @@
       "detail": "TST* SHAKE SHACK MADISO"
     },
     {
-      "id": "JL-0239",
+      "id": "JL-0240",
       "txn_id": "TX-0119",
       "date": "2026-09-15",
       "account": "5.1.06",
@@ -12153,7 +12168,7 @@
       "detail": "TST* SWEETGREEN MARKET "
     },
     {
-      "id": "JL-0240",
+      "id": "JL-0241",
       "txn_id": "TX-0119",
       "date": "2026-09-15",
       "account": "2.1.01",
@@ -12165,7 +12180,7 @@
       "detail": "TST* SWEETGREEN MARKET "
     },
     {
-      "id": "JL-0241",
+      "id": "JL-0242",
       "txn_id": "TX-0120",
       "date": "2026-09-15",
       "account": "5.1.05",
@@ -12177,7 +12192,7 @@
       "detail": "UBER *TRIP HR8A7"
     },
     {
-      "id": "JL-0242",
+      "id": "JL-0243",
       "txn_id": "TX-0120",
       "date": "2026-09-15",
       "account": "2.1.01",
@@ -12189,24 +12204,12 @@
       "detail": "UBER *TRIP HR8A7"
     },
     {
-      "id": "JL-0243",
-      "txn_id": "TX-0121",
-      "date": "2026-09-15",
-      "account": "5.1.04",
-      "debe": "8338500.00",
-      "haber": "0.00",
-      "basis": "rule R-PAYOUT",
-      "status": "posted",
-      "approved_by": "rules engine (deterministic)",
-      "detail": "USDC PAYOUT SARA LINDQVIST"
-    },
-    {
       "id": "JL-0244",
       "txn_id": "TX-0121",
       "date": "2026-09-15",
-      "account": "1.1.02",
-      "debe": "0.00",
-      "haber": "8338500.00",
+      "account": "5.1.04",
+      "debe": "8684411.50",
+      "haber": "0.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
@@ -12214,10 +12217,22 @@
     },
     {
       "id": "JL-0245",
+      "txn_id": "TX-0121",
+      "date": "2026-09-15",
+      "account": "1.1.02",
+      "debe": "0.00",
+      "haber": "8684411.50",
+      "basis": "rule R-PAYOUT",
+      "status": "posted",
+      "approved_by": "rules engine (deterministic)",
+      "detail": "USDC PAYOUT SARA LINDQVIST"
+    },
+    {
+      "id": "JL-0246",
       "txn_id": "TX-0122",
       "date": "2026-09-15",
       "account": "5.1.04",
-      "debe": "6426000.00",
+      "debe": "6692574.00",
       "haber": "0.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
@@ -12225,19 +12240,19 @@
       "detail": "USDC PAYOUT TOMASZ NOWAK"
     },
     {
-      "id": "JL-0246",
+      "id": "JL-0247",
       "txn_id": "TX-0122",
       "date": "2026-09-15",
       "account": "1.1.02",
       "debe": "0.00",
-      "haber": "6426000.00",
+      "haber": "6692574.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
       "detail": "USDC PAYOUT TOMASZ NOWAK"
     },
     {
-      "id": "JL-0247",
+      "id": "JL-0248",
       "txn_id": "TX-0123",
       "date": "2026-09-16",
       "account": "1.1.09",
@@ -12249,7 +12264,7 @@
       "detail": "ANTHROPIC"
     },
     {
-      "id": "JL-0248",
+      "id": "JL-0249",
       "txn_id": "TX-0123",
       "date": "2026-09-16",
       "account": "2.1.01",
@@ -12261,7 +12276,7 @@
       "detail": "ANTHROPIC"
     },
     {
-      "id": "JL-0249",
+      "id": "JL-0250",
       "txn_id": "TX-0124",
       "date": "2026-09-16",
       "account": "5.1.03",
@@ -12273,7 +12288,7 @@
       "detail": "HUBSPOT INC"
     },
     {
-      "id": "JL-0250",
+      "id": "JL-0251",
       "txn_id": "TX-0124",
       "date": "2026-09-16",
       "account": "2.1.01",
@@ -12285,7 +12300,7 @@
       "detail": "HUBSPOT INC"
     },
     {
-      "id": "JL-0251",
+      "id": "JL-0252",
       "txn_id": "TX-0125",
       "date": "2026-09-16",
       "account": "5.1.05",
@@ -12297,7 +12312,7 @@
       "detail": "LATAM AIRLINES AXUEN"
     },
     {
-      "id": "JL-0252",
+      "id": "JL-0253",
       "txn_id": "TX-0125",
       "date": "2026-09-16",
       "account": "2.1.01",
@@ -12309,7 +12324,7 @@
       "detail": "LATAM AIRLINES AXUEN"
     },
     {
-      "id": "JL-0253",
+      "id": "JL-0254",
       "txn_id": "TX-0126",
       "date": "2026-09-16",
       "account": "5.1.05",
@@ -12321,7 +12336,7 @@
       "detail": "MARRIOTT SAO PAULO"
     },
     {
-      "id": "JL-0254",
+      "id": "JL-0255",
       "txn_id": "TX-0126",
       "date": "2026-09-16",
       "account": "2.1.01",
@@ -12333,7 +12348,7 @@
       "detail": "MARRIOTT SAO PAULO"
     },
     {
-      "id": "JL-0255",
+      "id": "JL-0256",
       "txn_id": "TX-0127",
       "date": "2026-09-16",
       "account": "1.1.09",
@@ -12345,7 +12360,7 @@
       "detail": "SQ *SUNSET PRINT SHOP"
     },
     {
-      "id": "JL-0256",
+      "id": "JL-0257",
       "txn_id": "TX-0127",
       "date": "2026-09-16",
       "account": "2.1.01",
@@ -12357,7 +12372,7 @@
       "detail": "SQ *SUNSET PRINT SHOP"
     },
     {
-      "id": "JL-0257",
+      "id": "JL-0258",
       "txn_id": "TX-0128",
       "date": "2026-09-16",
       "account": "5.1.06",
@@ -12369,7 +12384,7 @@
       "detail": "TST* SHAKE SHACK MADISO"
     },
     {
-      "id": "JL-0258",
+      "id": "JL-0259",
       "txn_id": "TX-0128",
       "date": "2026-09-16",
       "account": "2.1.01",
@@ -12381,7 +12396,7 @@
       "detail": "TST* SHAKE SHACK MADISO"
     },
     {
-      "id": "JL-0259",
+      "id": "JL-0260",
       "txn_id": "TX-0129",
       "date": "2026-09-16",
       "account": "1.1.09",
@@ -12393,7 +12408,7 @@
       "detail": "TST* SHAKE SHACK MADISO"
     },
     {
-      "id": "JL-0260",
+      "id": "JL-0261",
       "txn_id": "TX-0129",
       "date": "2026-09-16",
       "account": "2.1.01",
@@ -12405,7 +12420,7 @@
       "detail": "TST* SHAKE SHACK MADISO"
     },
     {
-      "id": "JL-0261",
+      "id": "JL-0262",
       "txn_id": "TX-0130",
       "date": "2026-09-16",
       "account": "5.1.06",
@@ -12417,7 +12432,7 @@
       "detail": "TST* SHAKE SHACK MADISO"
     },
     {
-      "id": "JL-0262",
+      "id": "JL-0263",
       "txn_id": "TX-0130",
       "date": "2026-09-16",
       "account": "2.1.01",
@@ -12429,7 +12444,7 @@
       "detail": "TST* SHAKE SHACK MADISO"
     },
     {
-      "id": "JL-0263",
+      "id": "JL-0264",
       "txn_id": "TX-0131",
       "date": "2026-09-16",
       "account": "5.1.05",
@@ -12441,7 +12456,7 @@
       "detail": "UBER *TRIP 35CTW"
     },
     {
-      "id": "JL-0264",
+      "id": "JL-0265",
       "txn_id": "TX-0131",
       "date": "2026-09-16",
       "account": "2.1.01",
@@ -12453,7 +12468,7 @@
       "detail": "UBER *TRIP 35CTW"
     },
     {
-      "id": "JL-0265",
+      "id": "JL-0266",
       "txn_id": "TX-0132",
       "date": "2026-09-16",
       "account": "5.1.05",
@@ -12465,7 +12480,7 @@
       "detail": "UBER *TRIP WAFG9"
     },
     {
-      "id": "JL-0266",
+      "id": "JL-0267",
       "txn_id": "TX-0132",
       "date": "2026-09-16",
       "account": "2.1.01",
@@ -12477,7 +12492,7 @@
       "detail": "UBER *TRIP WAFG9"
     },
     {
-      "id": "JL-0267",
+      "id": "JL-0268",
       "txn_id": "TX-0133",
       "date": "2026-09-17",
       "account": "5.1.03",
@@ -12489,7 +12504,7 @@
       "detail": "DOCUSIGN INC"
     },
     {
-      "id": "JL-0268",
+      "id": "JL-0269",
       "txn_id": "TX-0133",
       "date": "2026-09-17",
       "account": "2.1.01",
@@ -12501,7 +12516,7 @@
       "detail": "DOCUSIGN INC"
     },
     {
-      "id": "JL-0269",
+      "id": "JL-0270",
       "txn_id": "TX-0134",
       "date": "2026-09-17",
       "account": "5.1.06",
@@ -12513,7 +12528,7 @@
       "detail": "DUTY FREE AMERICAS 23MZD"
     },
     {
-      "id": "JL-0270",
+      "id": "JL-0271",
       "txn_id": "TX-0134",
       "date": "2026-09-17",
       "account": "2.1.01",
@@ -12525,7 +12540,7 @@
       "detail": "DUTY FREE AMERICAS 23MZD"
     },
     {
-      "id": "JL-0271",
+      "id": "JL-0272",
       "txn_id": "TX-0135",
       "date": "2026-09-17",
       "account": "5.1.01",
@@ -12537,7 +12552,7 @@
       "detail": "GOOGLE *ADSEC9DB"
     },
     {
-      "id": "JL-0272",
+      "id": "JL-0273",
       "txn_id": "TX-0135",
       "date": "2026-09-17",
       "account": "2.1.01",
@@ -12549,7 +12564,7 @@
       "detail": "GOOGLE *ADSEC9DB"
     },
     {
-      "id": "JL-0273",
+      "id": "JL-0274",
       "txn_id": "TX-0136",
       "date": "2026-09-17",
       "account": "5.1.05",
@@ -12561,7 +12576,7 @@
       "detail": "UBER *TRIP UP58B"
     },
     {
-      "id": "JL-0274",
+      "id": "JL-0275",
       "txn_id": "TX-0136",
       "date": "2026-09-17",
       "account": "2.1.01",
@@ -12573,7 +12588,7 @@
       "detail": "UBER *TRIP UP58B"
     },
     {
-      "id": "JL-0275",
+      "id": "JL-0276",
       "txn_id": "TX-0137",
       "date": "2026-09-18",
       "account": "5.1.05",
@@ -12585,7 +12600,7 @@
       "detail": "AEROLINEAS ARG MGPZV"
     },
     {
-      "id": "JL-0276",
+      "id": "JL-0277",
       "txn_id": "TX-0137",
       "date": "2026-09-18",
       "account": "2.1.01",
@@ -12597,7 +12612,7 @@
       "detail": "AEROLINEAS ARG MGPZV"
     },
     {
-      "id": "JL-0277",
+      "id": "JL-0278",
       "txn_id": "TX-0138",
       "date": "2026-09-18",
       "account": "5.1.03",
@@ -12609,7 +12624,7 @@
       "detail": "CANVA* I04512"
     },
     {
-      "id": "JL-0278",
+      "id": "JL-0279",
       "txn_id": "TX-0138",
       "date": "2026-09-18",
       "account": "2.1.01",
@@ -12621,7 +12636,7 @@
       "detail": "CANVA* I04512"
     },
     {
-      "id": "JL-0279",
+      "id": "JL-0280",
       "txn_id": "TX-0139",
       "date": "2026-09-18",
       "account": "5.1.01",
@@ -12633,7 +12648,7 @@
       "detail": "GOOGLE *ADS9GM6N"
     },
     {
-      "id": "JL-0280",
+      "id": "JL-0281",
       "txn_id": "TX-0139",
       "date": "2026-09-18",
       "account": "2.1.01",
@@ -12645,7 +12660,7 @@
       "detail": "GOOGLE *ADS9GM6N"
     },
     {
-      "id": "JL-0281",
+      "id": "JL-0282",
       "txn_id": "TX-0140",
       "date": "2026-09-18",
       "account": "5.1.09",
@@ -12657,7 +12672,7 @@
       "detail": "SUBSTACK *8CLHH"
     },
     {
-      "id": "JL-0282",
+      "id": "JL-0283",
       "txn_id": "TX-0140",
       "date": "2026-09-18",
       "account": "2.1.01",
@@ -12669,7 +12684,7 @@
       "detail": "SUBSTACK *8CLHH"
     },
     {
-      "id": "JL-0283",
+      "id": "JL-0284",
       "txn_id": "TX-0141",
       "date": "2026-09-18",
       "account": "5.1.05",
@@ -12681,7 +12696,7 @@
       "detail": "UBER *TRIP HHHUQ"
     },
     {
-      "id": "JL-0284",
+      "id": "JL-0285",
       "txn_id": "TX-0141",
       "date": "2026-09-18",
       "account": "2.1.01",
@@ -12693,7 +12708,7 @@
       "detail": "UBER *TRIP HHHUQ"
     },
     {
-      "id": "JL-0285",
+      "id": "JL-0286",
       "txn_id": "TX-0142",
       "date": "2026-09-18",
       "account": "5.1.04",
@@ -12705,7 +12720,7 @@
       "detail": "UPWORK *ESCROW RHX2D"
     },
     {
-      "id": "JL-0286",
+      "id": "JL-0287",
       "txn_id": "TX-0142",
       "date": "2026-09-18",
       "account": "2.1.01",
@@ -12717,7 +12732,7 @@
       "detail": "UPWORK *ESCROW RHX2D"
     },
     {
-      "id": "JL-0287",
+      "id": "JL-0288",
       "txn_id": "TX-0143",
       "date": "2026-09-19",
       "account": "5.1.03",
@@ -12729,7 +12744,7 @@
       "detail": "ANTHROPIC"
     },
     {
-      "id": "JL-0288",
+      "id": "JL-0289",
       "txn_id": "TX-0143",
       "date": "2026-09-19",
       "account": "2.1.01",
@@ -12741,7 +12756,7 @@
       "detail": "ANTHROPIC"
     },
     {
-      "id": "JL-0289",
+      "id": "JL-0290",
       "txn_id": "TX-0144",
       "date": "2026-09-19",
       "account": "5.1.03",
@@ -12753,7 +12768,7 @@
       "detail": "FIGMA"
     },
     {
-      "id": "JL-0290",
+      "id": "JL-0291",
       "txn_id": "TX-0144",
       "date": "2026-09-19",
       "account": "2.1.01",
@@ -12765,7 +12780,7 @@
       "detail": "FIGMA"
     },
     {
-      "id": "JL-0291",
+      "id": "JL-0292",
       "txn_id": "TX-0145",
       "date": "2026-09-19",
       "account": "5.1.06",
@@ -12777,7 +12792,7 @@
       "detail": "STARBUCKS STORE MQU7N"
     },
     {
-      "id": "JL-0292",
+      "id": "JL-0293",
       "txn_id": "TX-0145",
       "date": "2026-09-19",
       "account": "2.1.01",
@@ -12789,7 +12804,7 @@
       "detail": "STARBUCKS STORE MQU7N"
     },
     {
-      "id": "JL-0293",
+      "id": "JL-0294",
       "txn_id": "TX-0146",
       "date": "2026-09-19",
       "account": "5.1.06",
@@ -12801,7 +12816,7 @@
       "detail": "STARBUCKS STORE NHXNB"
     },
     {
-      "id": "JL-0294",
+      "id": "JL-0295",
       "txn_id": "TX-0146",
       "date": "2026-09-19",
       "account": "2.1.01",
@@ -12813,7 +12828,7 @@
       "detail": "STARBUCKS STORE NHXNB"
     },
     {
-      "id": "JL-0295",
+      "id": "JL-0296",
       "txn_id": "TX-0147",
       "date": "2026-09-19",
       "account": "5.1.06",
@@ -12825,7 +12840,7 @@
       "detail": "TST* COYA MIAMI"
     },
     {
-      "id": "JL-0296",
+      "id": "JL-0297",
       "txn_id": "TX-0147",
       "date": "2026-09-19",
       "account": "2.1.01",
@@ -12837,7 +12852,7 @@
       "detail": "TST* COYA MIAMI"
     },
     {
-      "id": "JL-0297",
+      "id": "JL-0298",
       "txn_id": "TX-0148",
       "date": "2026-09-19",
       "account": "5.1.05",
@@ -12849,7 +12864,7 @@
       "detail": "UBER *TRIP 2FJRU"
     },
     {
-      "id": "JL-0298",
+      "id": "JL-0299",
       "txn_id": "TX-0148",
       "date": "2026-09-19",
       "account": "2.1.01",
@@ -12861,7 +12876,7 @@
       "detail": "UBER *TRIP 2FJRU"
     },
     {
-      "id": "JL-0299",
+      "id": "JL-0300",
       "txn_id": "TX-0149",
       "date": "2026-09-19",
       "account": "5.1.05",
@@ -12873,7 +12888,7 @@
       "detail": "UBER *TRIP 2SN97"
     },
     {
-      "id": "JL-0300",
+      "id": "JL-0301",
       "txn_id": "TX-0149",
       "date": "2026-09-19",
       "account": "2.1.01",
@@ -12885,7 +12900,7 @@
       "detail": "UBER *TRIP 2SN97"
     },
     {
-      "id": "JL-0301",
+      "id": "JL-0302",
       "txn_id": "TX-0150",
       "date": "2026-09-19",
       "account": "5.1.05",
@@ -12897,7 +12912,7 @@
       "detail": "UBER *TRIP 6AW9B"
     },
     {
-      "id": "JL-0302",
+      "id": "JL-0303",
       "txn_id": "TX-0150",
       "date": "2026-09-19",
       "account": "2.1.01",
@@ -12909,7 +12924,7 @@
       "detail": "UBER *TRIP 6AW9B"
     },
     {
-      "id": "JL-0303",
+      "id": "JL-0304",
       "txn_id": "TX-0151",
       "date": "2026-09-19",
       "account": "5.1.05",
@@ -12921,7 +12936,7 @@
       "detail": "UBER *TRIP BHCNF"
     },
     {
-      "id": "JL-0304",
+      "id": "JL-0305",
       "txn_id": "TX-0151",
       "date": "2026-09-19",
       "account": "2.1.01",
@@ -12933,7 +12948,7 @@
       "detail": "UBER *TRIP BHCNF"
     },
     {
-      "id": "JL-0305",
+      "id": "JL-0306",
       "txn_id": "TX-0152",
       "date": "2026-09-19",
       "account": "5.1.05",
@@ -12945,7 +12960,7 @@
       "detail": "UBER *TRIP HDZKW"
     },
     {
-      "id": "JL-0306",
+      "id": "JL-0307",
       "txn_id": "TX-0152",
       "date": "2026-09-19",
       "account": "2.1.01",
@@ -12957,7 +12972,7 @@
       "detail": "UBER *TRIP HDZKW"
     },
     {
-      "id": "JL-0307",
+      "id": "JL-0308",
       "txn_id": "TX-0153",
       "date": "2026-09-19",
       "account": "5.1.05",
@@ -12969,7 +12984,7 @@
       "detail": "UBER *TRIP VZ92P"
     },
     {
-      "id": "JL-0308",
+      "id": "JL-0309",
       "txn_id": "TX-0153",
       "date": "2026-09-19",
       "account": "2.1.01",
@@ -12981,7 +12996,7 @@
       "detail": "UBER *TRIP VZ92P"
     },
     {
-      "id": "JL-0309",
+      "id": "JL-0310",
       "txn_id": "TX-0154",
       "date": "2026-09-19",
       "account": "5.1.05",
@@ -12993,7 +13008,7 @@
       "detail": "UBER *TRIP WTB9G"
     },
     {
-      "id": "JL-0310",
+      "id": "JL-0311",
       "txn_id": "TX-0154",
       "date": "2026-09-19",
       "account": "2.1.01",
@@ -13005,7 +13020,7 @@
       "detail": "UBER *TRIP WTB9G"
     },
     {
-      "id": "JL-0311",
+      "id": "JL-0312",
       "txn_id": "TX-0155",
       "date": "2026-09-19",
       "account": "1.1.09",
@@ -13017,7 +13032,7 @@
       "detail": "UDEMY ONLINE COURSE"
     },
     {
-      "id": "JL-0312",
+      "id": "JL-0313",
       "txn_id": "TX-0155",
       "date": "2026-09-19",
       "account": "2.1.01",
@@ -13029,7 +13044,7 @@
       "detail": "UDEMY ONLINE COURSE"
     },
     {
-      "id": "JL-0313",
+      "id": "JL-0314",
       "txn_id": "TX-0156",
       "date": "2026-09-20",
       "account": "5.1.08",
@@ -13041,7 +13056,7 @@
       "detail": "BEST BUY 00012"
     },
     {
-      "id": "JL-0314",
+      "id": "JL-0315",
       "txn_id": "TX-0156",
       "date": "2026-09-20",
       "account": "2.1.01",
@@ -13053,7 +13068,7 @@
       "detail": "BEST BUY 00012"
     },
     {
-      "id": "JL-0315",
+      "id": "JL-0316",
       "txn_id": "TX-0157",
       "date": "2026-09-20",
       "account": "5.1.01",
@@ -13065,7 +13080,7 @@
       "detail": "FACEBK *ADS ZN3HE"
     },
     {
-      "id": "JL-0316",
+      "id": "JL-0317",
       "txn_id": "TX-0157",
       "date": "2026-09-20",
       "account": "2.1.01",
@@ -13077,7 +13092,7 @@
       "detail": "FACEBK *ADS ZN3HE"
     },
     {
-      "id": "JL-0317",
+      "id": "JL-0318",
       "txn_id": "TX-0158",
       "date": "2026-09-20",
       "account": "5.1.01",
@@ -13089,7 +13104,7 @@
       "detail": "LINKEDIN *ADS 465QS"
     },
     {
-      "id": "JL-0318",
+      "id": "JL-0319",
       "txn_id": "TX-0158",
       "date": "2026-09-20",
       "account": "2.1.01",
@@ -13101,7 +13116,7 @@
       "detail": "LINKEDIN *ADS 465QS"
     },
     {
-      "id": "JL-0319",
+      "id": "JL-0320",
       "txn_id": "TX-0159",
       "date": "2026-09-20",
       "account": "5.1.06",
@@ -13113,7 +13128,7 @@
       "detail": "STARBUCKS STORE WZ2FU"
     },
     {
-      "id": "JL-0320",
+      "id": "JL-0321",
       "txn_id": "TX-0159",
       "date": "2026-09-20",
       "account": "2.1.01",
@@ -13125,7 +13140,7 @@
       "detail": "STARBUCKS STORE WZ2FU"
     },
     {
-      "id": "JL-0321",
+      "id": "JL-0322",
       "txn_id": "TX-0160",
       "date": "2026-09-20",
       "account": "5.1.06",
@@ -13137,7 +13152,7 @@
       "detail": "TST* SHAKE SHACK MADISO"
     },
     {
-      "id": "JL-0322",
+      "id": "JL-0323",
       "txn_id": "TX-0160",
       "date": "2026-09-20",
       "account": "2.1.01",
@@ -13149,7 +13164,7 @@
       "detail": "TST* SHAKE SHACK MADISO"
     },
     {
-      "id": "JL-0323",
+      "id": "JL-0324",
       "txn_id": "TX-0161",
       "date": "2026-09-20",
       "account": "1.1.09",
@@ -13161,7 +13176,7 @@
       "detail": "TST* ZUMA MIAMI"
     },
     {
-      "id": "JL-0324",
+      "id": "JL-0325",
       "txn_id": "TX-0161",
       "date": "2026-09-20",
       "account": "2.1.01",
@@ -13173,7 +13188,7 @@
       "detail": "TST* ZUMA MIAMI"
     },
     {
-      "id": "JL-0325",
+      "id": "JL-0326",
       "txn_id": "TX-0162",
       "date": "2026-09-20",
       "account": "1.1.09",
@@ -13185,7 +13200,7 @@
       "detail": "TWILIO FWB2B"
     },
     {
-      "id": "JL-0326",
+      "id": "JL-0327",
       "txn_id": "TX-0162",
       "date": "2026-09-20",
       "account": "2.1.01",
@@ -13197,7 +13212,7 @@
       "detail": "TWILIO FWB2B"
     },
     {
-      "id": "JL-0327",
+      "id": "JL-0328",
       "txn_id": "TX-0163",
       "date": "2026-09-20",
       "account": "5.1.05",
@@ -13209,7 +13224,7 @@
       "detail": "UBER *EATS 9AVFX"
     },
     {
-      "id": "JL-0328",
+      "id": "JL-0329",
       "txn_id": "TX-0163",
       "date": "2026-09-20",
       "account": "2.1.01",
@@ -13221,7 +13236,7 @@
       "detail": "UBER *EATS 9AVFX"
     },
     {
-      "id": "JL-0329",
+      "id": "JL-0330",
       "txn_id": "TX-0164",
       "date": "2026-09-20",
       "account": "5.1.05",
@@ -13233,7 +13248,7 @@
       "detail": "UBER *TRIP 9HKXM"
     },
     {
-      "id": "JL-0330",
+      "id": "JL-0331",
       "txn_id": "TX-0164",
       "date": "2026-09-20",
       "account": "2.1.01",
@@ -13245,7 +13260,7 @@
       "detail": "UBER *TRIP 9HKXM"
     },
     {
-      "id": "JL-0331",
+      "id": "JL-0332",
       "txn_id": "TX-0165",
       "date": "2026-09-20",
       "account": "1.1.09",
@@ -13257,7 +13272,7 @@
       "detail": "UBER *TRIP AXJQT"
     },
     {
-      "id": "JL-0332",
+      "id": "JL-0333",
       "txn_id": "TX-0165",
       "date": "2026-09-20",
       "account": "2.1.01",
@@ -13269,7 +13284,7 @@
       "detail": "UBER *TRIP AXJQT"
     },
     {
-      "id": "JL-0333",
+      "id": "JL-0334",
       "txn_id": "TX-0166",
       "date": "2026-09-20",
       "account": "5.1.05",
@@ -13281,7 +13296,7 @@
       "detail": "UBER *TRIP CPF94"
     },
     {
-      "id": "JL-0334",
+      "id": "JL-0335",
       "txn_id": "TX-0166",
       "date": "2026-09-20",
       "account": "2.1.01",
@@ -13293,7 +13308,7 @@
       "detail": "UBER *TRIP CPF94"
     },
     {
-      "id": "JL-0335",
+      "id": "JL-0336",
       "txn_id": "TX-0167",
       "date": "2026-09-21",
       "account": "5.1.08",
@@ -13305,7 +13320,7 @@
       "detail": "AMZN MKTP US*H7N3G"
     },
     {
-      "id": "JL-0336",
+      "id": "JL-0337",
       "txn_id": "TX-0167",
       "date": "2026-09-21",
       "account": "2.1.01",
@@ -13317,7 +13332,7 @@
       "detail": "AMZN MKTP US*H7N3G"
     },
     {
-      "id": "JL-0337",
+      "id": "JL-0338",
       "txn_id": "TX-0168",
       "date": "2026-09-21",
       "account": "1.1.09",
@@ -13329,7 +13344,7 @@
       "detail": "HILTON MIAMI DOWNTOWN"
     },
     {
-      "id": "JL-0338",
+      "id": "JL-0339",
       "txn_id": "TX-0168",
       "date": "2026-09-21",
       "account": "2.1.01",
@@ -13341,7 +13356,7 @@
       "detail": "HILTON MIAMI DOWNTOWN"
     },
     {
-      "id": "JL-0339",
+      "id": "JL-0340",
       "txn_id": "TX-0169",
       "date": "2026-09-21",
       "account": "5.1.05",
@@ -13353,7 +13368,7 @@
       "detail": "LATAM AIRLINES B2LK8"
     },
     {
-      "id": "JL-0340",
+      "id": "JL-0341",
       "txn_id": "TX-0169",
       "date": "2026-09-21",
       "account": "2.1.01",
@@ -13365,7 +13380,7 @@
       "detail": "LATAM AIRLINES B2LK8"
     },
     {
-      "id": "JL-0341",
+      "id": "JL-0342",
       "txn_id": "TX-0170",
       "date": "2026-09-21",
       "account": "5.1.03",
@@ -13377,7 +13392,7 @@
       "detail": "LEMSQZY* TAILWIND LABS"
     },
     {
-      "id": "JL-0342",
+      "id": "JL-0343",
       "txn_id": "TX-0170",
       "date": "2026-09-21",
       "account": "2.1.01",
@@ -13389,7 +13404,7 @@
       "detail": "LEMSQZY* TAILWIND LABS"
     },
     {
-      "id": "JL-0343",
+      "id": "JL-0344",
       "txn_id": "TX-0171",
       "date": "2026-09-21",
       "account": "5.1.05",
@@ -13401,7 +13416,7 @@
       "detail": "LYFT *RIDE WV4T9"
     },
     {
-      "id": "JL-0344",
+      "id": "JL-0345",
       "txn_id": "TX-0171",
       "date": "2026-09-21",
       "account": "2.1.01",
@@ -13413,7 +13428,7 @@
       "detail": "LYFT *RIDE WV4T9"
     },
     {
-      "id": "JL-0345",
+      "id": "JL-0346",
       "txn_id": "TX-0172",
       "date": "2026-09-21",
       "account": "5.1.06",
@@ -13425,7 +13440,7 @@
       "detail": "STARBUCKS STORE CB37H"
     },
     {
-      "id": "JL-0346",
+      "id": "JL-0347",
       "txn_id": "TX-0172",
       "date": "2026-09-21",
       "account": "2.1.01",
@@ -13437,7 +13452,7 @@
       "detail": "STARBUCKS STORE CB37H"
     },
     {
-      "id": "JL-0347",
+      "id": "JL-0348",
       "txn_id": "TX-0173",
       "date": "2026-09-21",
       "account": "5.1.06",
@@ -13449,7 +13464,7 @@
       "detail": "STARBUCKS STORE GB9QW"
     },
     {
-      "id": "JL-0348",
+      "id": "JL-0349",
       "txn_id": "TX-0173",
       "date": "2026-09-21",
       "account": "2.1.01",
@@ -13461,7 +13476,7 @@
       "detail": "STARBUCKS STORE GB9QW"
     },
     {
-      "id": "JL-0349",
+      "id": "JL-0350",
       "txn_id": "TX-0174",
       "date": "2026-09-21",
       "account": "5.1.06",
@@ -13473,7 +13488,7 @@
       "detail": "TST* ZUMA MIAMI"
     },
     {
-      "id": "JL-0350",
+      "id": "JL-0351",
       "txn_id": "TX-0174",
       "date": "2026-09-21",
       "account": "2.1.01",
@@ -13485,7 +13500,7 @@
       "detail": "TST* ZUMA MIAMI"
     },
     {
-      "id": "JL-0351",
+      "id": "JL-0352",
       "txn_id": "TX-0175",
       "date": "2026-09-21",
       "account": "5.1.05",
@@ -13497,7 +13512,7 @@
       "detail": "UBER *TRIP 3UG79"
     },
     {
-      "id": "JL-0352",
+      "id": "JL-0353",
       "txn_id": "TX-0175",
       "date": "2026-09-21",
       "account": "2.1.01",
@@ -13509,7 +13524,7 @@
       "detail": "UBER *TRIP 3UG79"
     },
     {
-      "id": "JL-0353",
+      "id": "JL-0354",
       "txn_id": "TX-0176",
       "date": "2026-09-21",
       "account": "5.1.05",
@@ -13521,7 +13536,7 @@
       "detail": "UBER *TRIP WS9E6"
     },
     {
-      "id": "JL-0354",
+      "id": "JL-0355",
       "txn_id": "TX-0176",
       "date": "2026-09-21",
       "account": "2.1.01",
@@ -13533,7 +13548,7 @@
       "detail": "UBER *TRIP WS9E6"
     },
     {
-      "id": "JL-0355",
+      "id": "JL-0356",
       "txn_id": "TX-0177",
       "date": "2026-09-22",
       "account": "5.1.01",
@@ -13545,7 +13560,7 @@
       "detail": "FACEBK *ADS LQKD8"
     },
     {
-      "id": "JL-0356",
+      "id": "JL-0357",
       "txn_id": "TX-0177",
       "date": "2026-09-22",
       "account": "2.1.01",
@@ -13557,7 +13572,7 @@
       "detail": "FACEBK *ADS LQKD8"
     },
     {
-      "id": "JL-0357",
+      "id": "JL-0358",
       "txn_id": "TX-0178",
       "date": "2026-09-22",
       "account": "5.1.05",
@@ -13569,7 +13584,7 @@
       "detail": "LYFT *RIDE J7H7L"
     },
     {
-      "id": "JL-0358",
+      "id": "JL-0359",
       "txn_id": "TX-0178",
       "date": "2026-09-22",
       "account": "2.1.01",
@@ -13581,7 +13596,7 @@
       "detail": "LYFT *RIDE J7H7L"
     },
     {
-      "id": "JL-0359",
+      "id": "JL-0360",
       "txn_id": "TX-0179",
       "date": "2026-09-22",
       "account": "1.1.09",
@@ -13593,7 +13608,7 @@
       "detail": "MARRIOTT SAO PAULO"
     },
     {
-      "id": "JL-0360",
+      "id": "JL-0361",
       "txn_id": "TX-0179",
       "date": "2026-09-22",
       "account": "2.1.01",
@@ -13605,24 +13620,12 @@
       "detail": "MARRIOTT SAO PAULO"
     },
     {
-      "id": "JL-0361",
+      "id": "JL-0362",
       "txn_id": "TX-0180",
       "date": "2026-09-22",
       "account": "5.1.05",
       "debe": "38559.20",
       "haber": "0.00",
-      "basis": "rule R-016",
-      "status": "posted",
-      "approved_by": "rules engine (deterministic)",
-      "detail": "UBER *TRIP QKEZE"
-    },
-    {
-      "id": "JL-0362",
-      "txn_id": "TX-0180",
-      "date": "2026-09-22",
-      "account": "2.1.01",
-      "debe": "0.00",
-      "haber": "38559.20",
       "basis": "rule R-016",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
@@ -13630,11 +13633,11 @@
     },
     {
       "id": "JL-0363",
-      "txn_id": "TX-0181",
+      "txn_id": "TX-0180",
       "date": "2026-09-22",
-      "account": "5.1.05",
-      "debe": "38559.20",
-      "haber": "0.00",
+      "account": "2.1.01",
+      "debe": "0.00",
+      "haber": "38559.20",
       "basis": "rule R-016",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
@@ -13644,6 +13647,18 @@
       "id": "JL-0364",
       "txn_id": "TX-0181",
       "date": "2026-09-22",
+      "account": "5.1.05",
+      "debe": "38559.20",
+      "haber": "0.00",
+      "basis": "rule R-016",
+      "status": "posted",
+      "approved_by": "rules engine (deterministic)",
+      "detail": "UBER *TRIP QKEZE"
+    },
+    {
+      "id": "JL-0365",
+      "txn_id": "TX-0181",
+      "date": "2026-09-22",
       "account": "2.1.01",
       "debe": "0.00",
       "haber": "38559.20",
@@ -13653,7 +13668,7 @@
       "detail": "UBER *TRIP QKEZE"
     },
     {
-      "id": "JL-0365",
+      "id": "JL-0366",
       "txn_id": "TX-0182",
       "date": "2026-09-22",
       "account": "5.1.05",
@@ -13665,7 +13680,7 @@
       "detail": "UBER *TRIP RR3HG"
     },
     {
-      "id": "JL-0366",
+      "id": "JL-0367",
       "txn_id": "TX-0182",
       "date": "2026-09-22",
       "account": "2.1.01",
@@ -13677,11 +13692,11 @@
       "detail": "UBER *TRIP RR3HG"
     },
     {
-      "id": "JL-0367",
+      "id": "JL-0368",
       "txn_id": "TX-0183",
       "date": "2026-09-22",
       "account": "5.1.04",
-      "debe": "7751750.00",
+      "debe": "8053891.50",
       "haber": "0.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
@@ -13689,19 +13704,19 @@
       "detail": "USDC PAYOUT KENJI WATANABE"
     },
     {
-      "id": "JL-0368",
+      "id": "JL-0369",
       "txn_id": "TX-0183",
       "date": "2026-09-22",
       "account": "1.1.02",
       "debe": "0.00",
-      "haber": "7751750.00",
+      "haber": "8053891.50",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
       "detail": "USDC PAYOUT KENJI WATANABE"
     },
     {
-      "id": "JL-0369",
+      "id": "JL-0370",
       "txn_id": "TX-0184",
       "date": "2026-09-23",
       "account": "5.1.05",
@@ -13713,7 +13728,7 @@
       "detail": "AIRBNB * HMET2KL"
     },
     {
-      "id": "JL-0370",
+      "id": "JL-0371",
       "txn_id": "TX-0184",
       "date": "2026-09-23",
       "account": "2.1.01",
@@ -13725,7 +13740,7 @@
       "detail": "AIRBNB * HMET2KL"
     },
     {
-      "id": "JL-0371",
+      "id": "JL-0372",
       "txn_id": "TX-0185",
       "date": "2026-09-23",
       "account": "5.1.10",
@@ -13737,7 +13752,7 @@
       "detail": "INTL TXN FEE"
     },
     {
-      "id": "JL-0372",
+      "id": "JL-0373",
       "txn_id": "TX-0185",
       "date": "2026-09-23",
       "account": "2.1.01",
@@ -13749,7 +13764,7 @@
       "detail": "INTL TXN FEE"
     },
     {
-      "id": "JL-0373",
+      "id": "JL-0374",
       "txn_id": "TX-0186",
       "date": "2026-09-23",
       "account": "5.1.06",
@@ -13761,7 +13776,7 @@
       "detail": "STARBUCKS STORE RU6UJ"
     },
     {
-      "id": "JL-0374",
+      "id": "JL-0375",
       "txn_id": "TX-0186",
       "date": "2026-09-23",
       "account": "2.1.01",
@@ -13773,7 +13788,7 @@
       "detail": "STARBUCKS STORE RU6UJ"
     },
     {
-      "id": "JL-0375",
+      "id": "JL-0376",
       "txn_id": "TX-0187",
       "date": "2026-09-23",
       "account": "5.1.06",
@@ -13785,7 +13800,7 @@
       "detail": "STARBUCKS STORE ZULFZ"
     },
     {
-      "id": "JL-0376",
+      "id": "JL-0377",
       "txn_id": "TX-0187",
       "date": "2026-09-23",
       "account": "2.1.01",
@@ -13797,7 +13812,7 @@
       "detail": "STARBUCKS STORE ZULFZ"
     },
     {
-      "id": "JL-0377",
+      "id": "JL-0378",
       "txn_id": "TX-0188",
       "date": "2026-09-23",
       "account": "1.1.09",
@@ -13809,7 +13824,7 @@
       "detail": "STICKERMULE.COM"
     },
     {
-      "id": "JL-0378",
+      "id": "JL-0379",
       "txn_id": "TX-0188",
       "date": "2026-09-23",
       "account": "2.1.01",
@@ -13821,7 +13836,7 @@
       "detail": "STICKERMULE.COM"
     },
     {
-      "id": "JL-0379",
+      "id": "JL-0380",
       "txn_id": "TX-0189",
       "date": "2026-09-23",
       "account": "5.1.07",
@@ -13833,7 +13848,7 @@
       "detail": "TICKETTAILOR* PRODUCTCAMP"
     },
     {
-      "id": "JL-0380",
+      "id": "JL-0381",
       "txn_id": "TX-0189",
       "date": "2026-09-23",
       "account": "2.1.01",
@@ -13845,7 +13860,7 @@
       "detail": "TICKETTAILOR* PRODUCTCAMP"
     },
     {
-      "id": "JL-0381",
+      "id": "JL-0382",
       "txn_id": "TX-0190",
       "date": "2026-09-23",
       "account": "5.1.05",
@@ -13857,7 +13872,7 @@
       "detail": "UBER *TRIP 8EVBR"
     },
     {
-      "id": "JL-0382",
+      "id": "JL-0383",
       "txn_id": "TX-0190",
       "date": "2026-09-23",
       "account": "2.1.01",
@@ -13869,7 +13884,7 @@
       "detail": "UBER *TRIP 8EVBR"
     },
     {
-      "id": "JL-0383",
+      "id": "JL-0384",
       "txn_id": "TX-0191",
       "date": "2026-09-23",
       "account": "5.1.05",
@@ -13881,7 +13896,7 @@
       "detail": "UBER *TRIP STAW6"
     },
     {
-      "id": "JL-0384",
+      "id": "JL-0385",
       "txn_id": "TX-0191",
       "date": "2026-09-23",
       "account": "2.1.01",
@@ -13893,7 +13908,7 @@
       "detail": "UBER *TRIP STAW6"
     },
     {
-      "id": "JL-0385",
+      "id": "JL-0386",
       "txn_id": "TX-0192",
       "date": "2026-09-23",
       "account": "5.1.05",
@@ -13905,7 +13920,7 @@
       "detail": "UBER *TRIP Z3JLT"
     },
     {
-      "id": "JL-0386",
+      "id": "JL-0387",
       "txn_id": "TX-0192",
       "date": "2026-09-23",
       "account": "2.1.01",
@@ -13917,7 +13932,7 @@
       "detail": "UBER *TRIP Z3JLT"
     },
     {
-      "id": "JL-0387",
+      "id": "JL-0388",
       "txn_id": "TX-0193",
       "date": "2026-09-24",
       "account": "5.1.03",
@@ -13929,7 +13944,7 @@
       "detail": "ANTHROPIC"
     },
     {
-      "id": "JL-0388",
+      "id": "JL-0389",
       "txn_id": "TX-0193",
       "date": "2026-09-24",
       "account": "2.1.01",
@@ -13941,7 +13956,7 @@
       "detail": "ANTHROPIC"
     },
     {
-      "id": "JL-0389",
+      "id": "JL-0390",
       "txn_id": "TX-0194",
       "date": "2026-09-24",
       "account": "5.1.05",
@@ -13953,7 +13968,7 @@
       "detail": "COPA AIR PCXUD"
     },
     {
-      "id": "JL-0390",
+      "id": "JL-0391",
       "txn_id": "TX-0194",
       "date": "2026-09-24",
       "account": "2.1.01",
@@ -13965,7 +13980,7 @@
       "detail": "COPA AIR PCXUD"
     },
     {
-      "id": "JL-0391",
+      "id": "JL-0392",
       "txn_id": "TX-0195",
       "date": "2026-09-24",
       "account": "5.1.06",
@@ -13977,7 +13992,7 @@
       "detail": "COSTCO WHSE #0144"
     },
     {
-      "id": "JL-0392",
+      "id": "JL-0393",
       "txn_id": "TX-0195",
       "date": "2026-09-24",
       "account": "2.1.01",
@@ -13989,7 +14004,7 @@
       "detail": "COSTCO WHSE #0144"
     },
     {
-      "id": "JL-0393",
+      "id": "JL-0394",
       "txn_id": "TX-0196",
       "date": "2026-09-24",
       "account": "5.1.07",
@@ -14001,7 +14016,7 @@
       "detail": "EVENTBRITE 6W8PJ"
     },
     {
-      "id": "JL-0394",
+      "id": "JL-0395",
       "txn_id": "TX-0196",
       "date": "2026-09-24",
       "account": "2.1.01",
@@ -14013,7 +14028,7 @@
       "detail": "EVENTBRITE 6W8PJ"
     },
     {
-      "id": "JL-0395",
+      "id": "JL-0396",
       "txn_id": "TX-0197",
       "date": "2026-09-24",
       "account": "5.1.01",
@@ -14025,7 +14040,7 @@
       "detail": "GOOGLE *ADSNSJ98"
     },
     {
-      "id": "JL-0396",
+      "id": "JL-0397",
       "txn_id": "TX-0197",
       "date": "2026-09-24",
       "account": "2.1.01",
@@ -14037,7 +14052,7 @@
       "detail": "GOOGLE *ADSNSJ98"
     },
     {
-      "id": "JL-0397",
+      "id": "JL-0398",
       "txn_id": "TX-0198",
       "date": "2026-09-24",
       "account": "2.1.01",
@@ -14049,7 +14064,7 @@
       "detail": "LATAM AIRLINES B2LK8"
     },
     {
-      "id": "JL-0398",
+      "id": "JL-0399",
       "txn_id": "TX-0198",
       "date": "2026-09-24",
       "account": "1.1.09",
@@ -14061,7 +14076,7 @@
       "detail": "LATAM AIRLINES B2LK8"
     },
     {
-      "id": "JL-0399",
+      "id": "JL-0400",
       "txn_id": "TX-0199",
       "date": "2026-09-24",
       "account": "5.1.06",
@@ -14073,7 +14088,7 @@
       "detail": "STARBUCKS STORE X5TU9"
     },
     {
-      "id": "JL-0400",
+      "id": "JL-0401",
       "txn_id": "TX-0199",
       "date": "2026-09-24",
       "account": "2.1.01",
@@ -14085,7 +14100,7 @@
       "detail": "STARBUCKS STORE X5TU9"
     },
     {
-      "id": "JL-0401",
+      "id": "JL-0402",
       "txn_id": "TX-0200",
       "date": "2026-09-24",
       "account": "5.1.06",
@@ -14097,7 +14112,7 @@
       "detail": "TST* ZUMA MIAMI"
     },
     {
-      "id": "JL-0402",
+      "id": "JL-0403",
       "txn_id": "TX-0200",
       "date": "2026-09-24",
       "account": "2.1.01",
@@ -14109,7 +14124,7 @@
       "detail": "TST* ZUMA MIAMI"
     },
     {
-      "id": "JL-0403",
+      "id": "JL-0404",
       "txn_id": "TX-0201",
       "date": "2026-09-24",
       "account": "1.1.09",
@@ -14121,7 +14136,7 @@
       "detail": "UBER *TRIP GFDW2"
     },
     {
-      "id": "JL-0404",
+      "id": "JL-0405",
       "txn_id": "TX-0201",
       "date": "2026-09-24",
       "account": "2.1.01",
@@ -14133,7 +14148,7 @@
       "detail": "UBER *TRIP GFDW2"
     },
     {
-      "id": "JL-0405",
+      "id": "JL-0406",
       "txn_id": "TX-0202",
       "date": "2026-09-25",
       "account": "5.1.05",
@@ -14145,7 +14160,7 @@
       "detail": "AMERICAN AIR THDVF"
     },
     {
-      "id": "JL-0406",
+      "id": "JL-0407",
       "txn_id": "TX-0202",
       "date": "2026-09-25",
       "account": "2.1.01",
@@ -14157,7 +14172,7 @@
       "detail": "AMERICAN AIR THDVF"
     },
     {
-      "id": "JL-0407",
+      "id": "JL-0408",
       "txn_id": "TX-0203",
       "date": "2026-09-25",
       "account": "1.1.09",
@@ -14169,7 +14184,7 @@
       "detail": "FACEBK *ADS TKMC3"
     },
     {
-      "id": "JL-0408",
+      "id": "JL-0409",
       "txn_id": "TX-0203",
       "date": "2026-09-25",
       "account": "2.1.01",
@@ -14181,7 +14196,7 @@
       "detail": "FACEBK *ADS TKMC3"
     },
     {
-      "id": "JL-0409",
+      "id": "JL-0410",
       "txn_id": "TX-0204",
       "date": "2026-09-25",
       "account": "2.1.01",
@@ -14193,7 +14208,7 @@
       "detail": "FIGMA"
     },
     {
-      "id": "JL-0410",
+      "id": "JL-0411",
       "txn_id": "TX-0204",
       "date": "2026-09-25",
       "account": "5.1.03",
@@ -14205,7 +14220,7 @@
       "detail": "FIGMA"
     },
     {
-      "id": "JL-0411",
+      "id": "JL-0412",
       "txn_id": "TX-0205",
       "date": "2026-09-25",
       "account": "1.1.09",
@@ -14217,7 +14232,7 @@
       "detail": "TST* ZUMA MIAMI"
     },
     {
-      "id": "JL-0412",
+      "id": "JL-0413",
       "txn_id": "TX-0205",
       "date": "2026-09-25",
       "account": "2.1.01",
@@ -14229,7 +14244,7 @@
       "detail": "TST* ZUMA MIAMI"
     },
     {
-      "id": "JL-0413",
+      "id": "JL-0414",
       "txn_id": "TX-0206",
       "date": "2026-09-25",
       "account": "5.1.05",
@@ -14241,7 +14256,7 @@
       "detail": "UBER *TRIP E5RGK"
     },
     {
-      "id": "JL-0414",
+      "id": "JL-0415",
       "txn_id": "TX-0206",
       "date": "2026-09-25",
       "account": "2.1.01",
@@ -14253,7 +14268,7 @@
       "detail": "UBER *TRIP E5RGK"
     },
     {
-      "id": "JL-0415",
+      "id": "JL-0416",
       "txn_id": "TX-0207",
       "date": "2026-09-25",
       "account": "5.1.05",
@@ -14265,7 +14280,7 @@
       "detail": "UBER *TRIP RDPMB"
     },
     {
-      "id": "JL-0416",
+      "id": "JL-0417",
       "txn_id": "TX-0207",
       "date": "2026-09-25",
       "account": "2.1.01",
@@ -14277,7 +14292,7 @@
       "detail": "UBER *TRIP RDPMB"
     },
     {
-      "id": "JL-0417",
+      "id": "JL-0418",
       "txn_id": "TX-0208",
       "date": "2026-09-26",
       "account": "1.1.09",
@@ -14289,7 +14304,7 @@
       "detail": "DD *DOORDASH DEHYT"
     },
     {
-      "id": "JL-0418",
+      "id": "JL-0419",
       "txn_id": "TX-0208",
       "date": "2026-09-26",
       "account": "2.1.01",
@@ -14301,7 +14316,7 @@
       "detail": "DD *DOORDASH DEHYT"
     },
     {
-      "id": "JL-0419",
+      "id": "JL-0420",
       "txn_id": "TX-0209",
       "date": "2026-09-26",
       "account": "5.1.07",
@@ -14313,7 +14328,7 @@
       "detail": "EVENTBRITE 7D2E7"
     },
     {
-      "id": "JL-0420",
+      "id": "JL-0421",
       "txn_id": "TX-0209",
       "date": "2026-09-26",
       "account": "2.1.01",
@@ -14325,7 +14340,7 @@
       "detail": "EVENTBRITE 7D2E7"
     },
     {
-      "id": "JL-0421",
+      "id": "JL-0422",
       "txn_id": "TX-0210",
       "date": "2026-09-26",
       "account": "5.1.06",
@@ -14337,7 +14352,7 @@
       "detail": "STARBUCKS STORE DEC7E"
     },
     {
-      "id": "JL-0422",
+      "id": "JL-0423",
       "txn_id": "TX-0210",
       "date": "2026-09-26",
       "account": "2.1.01",
@@ -14349,7 +14364,7 @@
       "detail": "STARBUCKS STORE DEC7E"
     },
     {
-      "id": "JL-0423",
+      "id": "JL-0424",
       "txn_id": "TX-0211",
       "date": "2026-09-26",
       "account": "1.1.09",
@@ -14361,7 +14376,7 @@
       "detail": "STARBUCKS STORE DEC7E"
     },
     {
-      "id": "JL-0424",
+      "id": "JL-0425",
       "txn_id": "TX-0211",
       "date": "2026-09-26",
       "account": "2.1.01",
@@ -14373,7 +14388,7 @@
       "detail": "STARBUCKS STORE DEC7E"
     },
     {
-      "id": "JL-0425",
+      "id": "JL-0426",
       "txn_id": "TX-0212",
       "date": "2026-09-26",
       "account": "5.1.06",
@@ -14385,7 +14400,7 @@
       "detail": "STARBUCKS STORE HRPYY"
     },
     {
-      "id": "JL-0426",
+      "id": "JL-0427",
       "txn_id": "TX-0212",
       "date": "2026-09-26",
       "account": "2.1.01",
@@ -14397,7 +14412,7 @@
       "detail": "STARBUCKS STORE HRPYY"
     },
     {
-      "id": "JL-0427",
+      "id": "JL-0428",
       "txn_id": "TX-0213",
       "date": "2026-09-26",
       "account": "5.1.05",
@@ -14409,7 +14424,7 @@
       "detail": "UBER *TRIP M4URA"
     },
     {
-      "id": "JL-0428",
+      "id": "JL-0429",
       "txn_id": "TX-0213",
       "date": "2026-09-26",
       "account": "2.1.01",
@@ -14421,7 +14436,7 @@
       "detail": "UBER *TRIP M4URA"
     },
     {
-      "id": "JL-0429",
+      "id": "JL-0430",
       "txn_id": "TX-0214",
       "date": "2026-09-27",
       "account": "1.1.09",
@@ -14433,7 +14448,7 @@
       "detail": "APPLE.COM/BILL"
     },
     {
-      "id": "JL-0430",
+      "id": "JL-0431",
       "txn_id": "TX-0214",
       "date": "2026-09-27",
       "account": "2.1.01",
@@ -14445,7 +14460,7 @@
       "detail": "APPLE.COM/BILL"
     },
     {
-      "id": "JL-0431",
+      "id": "JL-0432",
       "txn_id": "TX-0215",
       "date": "2026-09-27",
       "account": "5.1.01",
@@ -14457,7 +14472,7 @@
       "detail": "LINKEDIN *ADS 4GEXW"
     },
     {
-      "id": "JL-0432",
+      "id": "JL-0433",
       "txn_id": "TX-0215",
       "date": "2026-09-27",
       "account": "2.1.01",
@@ -14469,7 +14484,7 @@
       "detail": "LINKEDIN *ADS 4GEXW"
     },
     {
-      "id": "JL-0433",
+      "id": "JL-0434",
       "txn_id": "TX-0216",
       "date": "2026-09-27",
       "account": "5.1.06",
@@ -14481,7 +14496,7 @@
       "detail": "TST* JOES PIZZA"
     },
     {
-      "id": "JL-0434",
+      "id": "JL-0435",
       "txn_id": "TX-0216",
       "date": "2026-09-27",
       "account": "2.1.01",
@@ -14493,7 +14508,7 @@
       "detail": "TST* JOES PIZZA"
     },
     {
-      "id": "JL-0435",
+      "id": "JL-0436",
       "txn_id": "TX-0217",
       "date": "2026-09-27",
       "account": "1.1.09",
@@ -14505,7 +14520,7 @@
       "detail": "TST* JOES PIZZA"
     },
     {
-      "id": "JL-0436",
+      "id": "JL-0437",
       "txn_id": "TX-0217",
       "date": "2026-09-27",
       "account": "2.1.01",
@@ -14517,7 +14532,7 @@
       "detail": "TST* JOES PIZZA"
     },
     {
-      "id": "JL-0437",
+      "id": "JL-0438",
       "txn_id": "TX-0218",
       "date": "2026-09-27",
       "account": "5.1.06",
@@ -14529,7 +14544,7 @@
       "detail": "TST* THE SMITH MIDTOWN"
     },
     {
-      "id": "JL-0438",
+      "id": "JL-0439",
       "txn_id": "TX-0218",
       "date": "2026-09-27",
       "account": "2.1.01",
@@ -14541,7 +14556,7 @@
       "detail": "TST* THE SMITH MIDTOWN"
     },
     {
-      "id": "JL-0439",
+      "id": "JL-0440",
       "txn_id": "TX-0219",
       "date": "2026-09-27",
       "account": "5.1.05",
@@ -14553,7 +14568,7 @@
       "detail": "UBER *TRIP FKYWJ"
     },
     {
-      "id": "JL-0440",
+      "id": "JL-0441",
       "txn_id": "TX-0219",
       "date": "2026-09-27",
       "account": "2.1.01",
@@ -14565,7 +14580,7 @@
       "detail": "UBER *TRIP FKYWJ"
     },
     {
-      "id": "JL-0441",
+      "id": "JL-0442",
       "txn_id": "TX-0220",
       "date": "2026-09-27",
       "account": "5.1.05",
@@ -14577,7 +14592,7 @@
       "detail": "UBER *TRIP RY22G"
     },
     {
-      "id": "JL-0442",
+      "id": "JL-0443",
       "txn_id": "TX-0220",
       "date": "2026-09-27",
       "account": "2.1.01",
@@ -14589,7 +14604,7 @@
       "detail": "UBER *TRIP RY22G"
     },
     {
-      "id": "JL-0443",
+      "id": "JL-0444",
       "txn_id": "TX-0221",
       "date": "2026-09-28",
       "account": "5.1.05",
@@ -14601,7 +14616,7 @@
       "detail": "AIRBNB * HM9FSNF"
     },
     {
-      "id": "JL-0444",
+      "id": "JL-0445",
       "txn_id": "TX-0221",
       "date": "2026-09-28",
       "account": "2.1.01",
@@ -14613,7 +14628,7 @@
       "detail": "AIRBNB * HM9FSNF"
     },
     {
-      "id": "JL-0445",
+      "id": "JL-0446",
       "txn_id": "TX-0222",
       "date": "2026-09-28",
       "account": "5.1.03",
@@ -14625,7 +14640,7 @@
       "detail": "ANTHROPIC"
     },
     {
-      "id": "JL-0446",
+      "id": "JL-0447",
       "txn_id": "TX-0222",
       "date": "2026-09-28",
       "account": "2.1.01",
@@ -14637,7 +14652,7 @@
       "detail": "ANTHROPIC"
     },
     {
-      "id": "JL-0447",
+      "id": "JL-0448",
       "txn_id": "TX-0223",
       "date": "2026-09-28",
       "account": "5.1.01",
@@ -14649,7 +14664,7 @@
       "detail": "FACEBK *ADS 8A8ZY"
     },
     {
-      "id": "JL-0448",
+      "id": "JL-0449",
       "txn_id": "TX-0223",
       "date": "2026-09-28",
       "account": "2.1.01",
@@ -14661,7 +14676,7 @@
       "detail": "FACEBK *ADS 8A8ZY"
     },
     {
-      "id": "JL-0449",
+      "id": "JL-0450",
       "txn_id": "TX-0224",
       "date": "2026-09-28",
       "account": "5.1.01",
@@ -14673,7 +14688,7 @@
       "detail": "GOOGLE *ADSRP988"
     },
     {
-      "id": "JL-0450",
+      "id": "JL-0451",
       "txn_id": "TX-0224",
       "date": "2026-09-28",
       "account": "2.1.01",
@@ -14685,7 +14700,7 @@
       "detail": "GOOGLE *ADSRP988"
     },
     {
-      "id": "JL-0451",
+      "id": "JL-0452",
       "txn_id": "TX-0225",
       "date": "2026-09-28",
       "account": "5.1.05",
@@ -14697,7 +14712,7 @@
       "detail": "LATAM AIRLINES YJ8XQ"
     },
     {
-      "id": "JL-0452",
+      "id": "JL-0453",
       "txn_id": "TX-0225",
       "date": "2026-09-28",
       "account": "2.1.01",
@@ -14709,7 +14724,7 @@
       "detail": "LATAM AIRLINES YJ8XQ"
     },
     {
-      "id": "JL-0453",
+      "id": "JL-0454",
       "txn_id": "TX-0226",
       "date": "2026-09-28",
       "account": "5.1.06",
@@ -14721,7 +14736,7 @@
       "detail": "TST* JOES PIZZA"
     },
     {
-      "id": "JL-0454",
+      "id": "JL-0455",
       "txn_id": "TX-0226",
       "date": "2026-09-28",
       "account": "2.1.01",
@@ -14733,7 +14748,7 @@
       "detail": "TST* JOES PIZZA"
     },
     {
-      "id": "JL-0455",
+      "id": "JL-0456",
       "txn_id": "TX-0227",
       "date": "2026-09-28",
       "account": "5.1.05",
@@ -14745,7 +14760,7 @@
       "detail": "UBER *TRIP TR695"
     },
     {
-      "id": "JL-0456",
+      "id": "JL-0457",
       "txn_id": "TX-0227",
       "date": "2026-09-28",
       "account": "2.1.01",
@@ -14757,19 +14772,19 @@
       "detail": "UBER *TRIP TR695"
     },
     {
-      "id": "JL-0457",
+      "id": "JL-0458",
       "txn_id": "TX-0228",
       "date": "2026-09-29",
       "account": "1.1.02",
-      "debe": "66922014.90",
+      "debe": "69999994.43",
       "haber": "0.00",
       "basis": "rule R-TOPUP",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
-      "detail": "USDC received, valued at the official rate"
+      "detail": "USDC received, valued at the crypto rate"
     },
     {
-      "id": "JL-0458",
+      "id": "JL-0459",
       "txn_id": "TX-0228",
       "date": "2026-09-29",
       "account": "1.1.01",
@@ -14781,19 +14796,19 @@
       "detail": "ARS sent from the bank"
     },
     {
-      "id": "JL-0459",
+      "id": "JL-0460",
       "txn_id": "TX-0228",
       "date": "2026-09-29",
       "account": "5.2.01",
-      "debe": "3077985.10",
+      "debe": "5.57",
       "haber": "0.00",
       "basis": "rule R-TOPUP",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
-      "detail": "Cost of buying USDC above the official rate"
+      "detail": "ARS sent above the USDC received"
     },
     {
-      "id": "JL-0460",
+      "id": "JL-0461",
       "txn_id": "TX-0229",
       "date": "2026-09-29",
       "account": "5.1.02",
@@ -14805,7 +14820,7 @@
       "detail": "SENDGRID"
     },
     {
-      "id": "JL-0461",
+      "id": "JL-0462",
       "txn_id": "TX-0229",
       "date": "2026-09-29",
       "account": "2.1.01",
@@ -14817,7 +14832,7 @@
       "detail": "SENDGRID"
     },
     {
-      "id": "JL-0462",
+      "id": "JL-0463",
       "txn_id": "TX-0230",
       "date": "2026-09-29",
       "account": "5.1.05",
@@ -14829,7 +14844,7 @@
       "detail": "UBER *TRIP 3UY9W"
     },
     {
-      "id": "JL-0463",
+      "id": "JL-0464",
       "txn_id": "TX-0230",
       "date": "2026-09-29",
       "account": "2.1.01",
@@ -14841,24 +14856,12 @@
       "detail": "UBER *TRIP 3UY9W"
     },
     {
-      "id": "JL-0464",
-      "txn_id": "TX-0231",
-      "date": "2026-09-29",
-      "account": "5.1.04",
-      "debe": "5562000.00",
-      "haber": "0.00",
-      "basis": "rule R-PAYOUT",
-      "status": "posted",
-      "approved_by": "rules engine (deterministic)",
-      "detail": "USDC PAYOUT ANA RIBEIRO"
-    },
-    {
       "id": "JL-0465",
       "txn_id": "TX-0231",
       "date": "2026-09-29",
-      "account": "1.1.02",
-      "debe": "0.00",
-      "haber": "5562000.00",
+      "account": "5.1.04",
+      "debe": "5817816.00",
+      "haber": "0.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
@@ -14866,23 +14869,23 @@
     },
     {
       "id": "JL-0466",
-      "txn_id": "TX-0232",
+      "txn_id": "TX-0231",
       "date": "2026-09-29",
-      "account": "5.1.04",
-      "debe": "5098500.00",
-      "haber": "0.00",
+      "account": "1.1.02",
+      "debe": "0.00",
+      "haber": "5817816.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
-      "detail": "USDC PAYOUT ANDREI POPESCU"
+      "detail": "USDC PAYOUT ANA RIBEIRO"
     },
     {
       "id": "JL-0467",
       "txn_id": "TX-0232",
       "date": "2026-09-29",
-      "account": "1.1.02",
-      "debe": "0.00",
-      "haber": "5098500.00",
+      "account": "5.1.04",
+      "debe": "5332998.00",
+      "haber": "0.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
@@ -14890,23 +14893,23 @@
     },
     {
       "id": "JL-0468",
-      "txn_id": "TX-0233",
+      "txn_id": "TX-0232",
       "date": "2026-09-29",
-      "account": "5.1.04",
-      "debe": "4480500.00",
-      "haber": "0.00",
+      "account": "1.1.02",
+      "debe": "0.00",
+      "haber": "5332998.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
-      "detail": "USDC PAYOUT BRUNO COSTA"
+      "detail": "USDC PAYOUT ANDREI POPESCU"
     },
     {
       "id": "JL-0469",
       "txn_id": "TX-0233",
       "date": "2026-09-29",
-      "account": "1.1.02",
-      "debe": "0.00",
-      "haber": "4480500.00",
+      "account": "5.1.04",
+      "debe": "4686574.00",
+      "haber": "0.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
@@ -14914,23 +14917,23 @@
     },
     {
       "id": "JL-0470",
-      "txn_id": "TX-0234",
+      "txn_id": "TX-0233",
       "date": "2026-09-29",
-      "account": "5.1.04",
-      "debe": "4326000.00",
-      "haber": "0.00",
+      "account": "1.1.02",
+      "debe": "0.00",
+      "haber": "4686574.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
-      "detail": "USDC PAYOUT DANIEL OKAFOR"
+      "detail": "USDC PAYOUT BRUNO COSTA"
     },
     {
       "id": "JL-0471",
       "txn_id": "TX-0234",
       "date": "2026-09-29",
-      "account": "1.1.02",
-      "debe": "0.00",
-      "haber": "4326000.00",
+      "account": "5.1.04",
+      "debe": "4524968.00",
+      "haber": "0.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
@@ -14938,23 +14941,23 @@
     },
     {
       "id": "JL-0472",
-      "txn_id": "TX-0235",
+      "txn_id": "TX-0234",
       "date": "2026-09-29",
-      "account": "5.1.04",
-      "debe": "4635000.00",
-      "haber": "0.00",
+      "account": "1.1.02",
+      "debe": "0.00",
+      "haber": "4524968.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
-      "detail": "USDC PAYOUT LAURA MÉNDEZ"
+      "detail": "USDC PAYOUT DANIEL OKAFOR"
     },
     {
       "id": "JL-0473",
       "txn_id": "TX-0235",
       "date": "2026-09-29",
-      "account": "1.1.02",
-      "debe": "0.00",
-      "haber": "4635000.00",
+      "account": "5.1.04",
+      "debe": "4848180.00",
+      "haber": "0.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
@@ -14962,23 +14965,23 @@
     },
     {
       "id": "JL-0474",
-      "txn_id": "TX-0236",
+      "txn_id": "TX-0235",
       "date": "2026-09-29",
-      "account": "1.1.09",
-      "debe": "7261500.00",
-      "haber": "0.00",
-      "basis": "suspense until reviewed",
-      "status": "pending review",
-      "approved_by": "pending review",
-      "detail": "USDC PAYOUT LUCAS MOREAU"
+      "account": "1.1.02",
+      "debe": "0.00",
+      "haber": "4848180.00",
+      "basis": "rule R-PAYOUT",
+      "status": "posted",
+      "approved_by": "rules engine (deterministic)",
+      "detail": "USDC PAYOUT LAURA MÉNDEZ"
     },
     {
       "id": "JL-0475",
       "txn_id": "TX-0236",
       "date": "2026-09-29",
-      "account": "1.1.02",
-      "debe": "0.00",
-      "haber": "7261500.00",
+      "account": "1.1.09",
+      "debe": "7595482.00",
+      "haber": "0.00",
       "basis": "suspense until reviewed",
       "status": "pending review",
       "approved_by": "pending review",
@@ -14986,23 +14989,23 @@
     },
     {
       "id": "JL-0476",
-      "txn_id": "TX-0237",
+      "txn_id": "TX-0236",
       "date": "2026-09-29",
-      "account": "5.1.04",
-      "debe": "8034000.00",
-      "haber": "0.00",
-      "basis": "rule R-PAYOUT",
-      "status": "posted",
-      "approved_by": "rules engine (deterministic)",
-      "detail": "USDC PAYOUT SARA LINDQVIST"
+      "account": "1.1.02",
+      "debe": "0.00",
+      "haber": "7595482.00",
+      "basis": "suspense until reviewed",
+      "status": "pending review",
+      "approved_by": "pending review",
+      "detail": "USDC PAYOUT LUCAS MOREAU"
     },
     {
       "id": "JL-0477",
       "txn_id": "TX-0237",
       "date": "2026-09-29",
-      "account": "1.1.02",
-      "debe": "0.00",
-      "haber": "8034000.00",
+      "account": "5.1.04",
+      "debe": "8403512.00",
+      "haber": "0.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
@@ -15010,10 +15013,22 @@
     },
     {
       "id": "JL-0478",
+      "txn_id": "TX-0237",
+      "date": "2026-09-29",
+      "account": "1.1.02",
+      "debe": "0.00",
+      "haber": "8403512.00",
+      "basis": "rule R-PAYOUT",
+      "status": "posted",
+      "approved_by": "rules engine (deterministic)",
+      "detail": "USDC PAYOUT SARA LINDQVIST"
+    },
+    {
+      "id": "JL-0479",
       "txn_id": "TX-0238",
       "date": "2026-09-29",
       "account": "5.1.04",
-      "debe": "6875250.00",
+      "debe": "7191467.00",
       "haber": "0.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
@@ -15021,19 +15036,19 @@
       "detail": "USDC PAYOUT TOMASZ NOWAK"
     },
     {
-      "id": "JL-0479",
+      "id": "JL-0480",
       "txn_id": "TX-0238",
       "date": "2026-09-29",
       "account": "1.1.02",
       "debe": "0.00",
-      "haber": "6875250.00",
+      "haber": "7191467.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
       "detail": "USDC PAYOUT TOMASZ NOWAK"
     },
     {
-      "id": "JL-0480",
+      "id": "JL-0481",
       "txn_id": "TX-0239",
       "date": "2026-09-30",
       "account": "5.1.09",
@@ -15045,7 +15060,7 @@
       "detail": "AMZN MKTP US*D8TEW"
     },
     {
-      "id": "JL-0481",
+      "id": "JL-0482",
       "txn_id": "TX-0239",
       "date": "2026-09-30",
       "account": "2.1.01",
@@ -15057,7 +15072,7 @@
       "detail": "AMZN MKTP US*D8TEW"
     },
     {
-      "id": "JL-0482",
+      "id": "JL-0483",
       "txn_id": "TX-0240",
       "date": "2026-09-30",
       "account": "5.1.03",
@@ -15069,7 +15084,7 @@
       "detail": "ANTHROPIC"
     },
     {
-      "id": "JL-0483",
+      "id": "JL-0484",
       "txn_id": "TX-0240",
       "date": "2026-09-30",
       "account": "2.1.01",
@@ -15081,7 +15096,7 @@
       "detail": "ANTHROPIC"
     },
     {
-      "id": "JL-0484",
+      "id": "JL-0485",
       "txn_id": "TX-0241",
       "date": "2026-09-30",
       "account": "5.1.05",
@@ -15093,7 +15108,7 @@
       "detail": "COPA AIR FTPH8"
     },
     {
-      "id": "JL-0485",
+      "id": "JL-0486",
       "txn_id": "TX-0241",
       "date": "2026-09-30",
       "account": "2.1.01",
@@ -15105,7 +15120,7 @@
       "detail": "COPA AIR FTPH8"
     },
     {
-      "id": "JL-0486",
+      "id": "JL-0487",
       "txn_id": "TX-0242",
       "date": "2026-09-30",
       "account": "5.1.10",
@@ -15117,7 +15132,7 @@
       "detail": "FX MARKUP FEE"
     },
     {
-      "id": "JL-0487",
+      "id": "JL-0488",
       "txn_id": "TX-0242",
       "date": "2026-09-30",
       "account": "2.1.01",
@@ -15129,7 +15144,7 @@
       "detail": "FX MARKUP FEE"
     },
     {
-      "id": "JL-0488",
+      "id": "JL-0489",
       "txn_id": "TX-0243",
       "date": "2026-09-30",
       "account": "5.1.06",
@@ -15141,7 +15156,7 @@
       "detail": "TST* LA MAR CEBICHERIA"
     },
     {
-      "id": "JL-0489",
+      "id": "JL-0490",
       "txn_id": "TX-0243",
       "date": "2026-09-30",
       "account": "2.1.01",
@@ -15153,7 +15168,7 @@
       "detail": "TST* LA MAR CEBICHERIA"
     },
     {
-      "id": "JL-0490",
+      "id": "JL-0491",
       "txn_id": "TX-0244",
       "date": "2026-09-30",
       "account": "5.1.02",
@@ -15165,7 +15180,7 @@
       "detail": "TWILIO 2NWKH"
     },
     {
-      "id": "JL-0491",
+      "id": "JL-0492",
       "txn_id": "TX-0244",
       "date": "2026-09-30",
       "account": "2.1.01",
@@ -15177,24 +15192,12 @@
       "detail": "TWILIO 2NWKH"
     },
     {
-      "id": "JL-0492",
-      "txn_id": "TX-0245",
-      "date": "2026-09-30",
-      "account": "5.1.04",
-      "debe": "4171500.00",
-      "haber": "0.00",
-      "basis": "rule R-PAYOUT",
-      "status": "posted",
-      "approved_by": "rules engine (deterministic)",
-      "detail": "USDC PAYOUT CAMILA RESTREPO"
-    },
-    {
       "id": "JL-0493",
       "txn_id": "TX-0245",
       "date": "2026-09-30",
-      "account": "1.1.02",
-      "debe": "0.00",
-      "haber": "4171500.00",
+      "account": "5.1.04",
+      "debe": "4353237.00",
+      "haber": "0.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
@@ -15202,23 +15205,23 @@
     },
     {
       "id": "JL-0494",
-      "txn_id": "TX-0246",
+      "txn_id": "TX-0245",
       "date": "2026-09-30",
-      "account": "5.1.04",
-      "debe": "6334500.00",
-      "haber": "0.00",
+      "account": "1.1.02",
+      "debe": "0.00",
+      "haber": "4353237.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
-      "detail": "USDC PAYOUT EMILY CARTER"
+      "detail": "USDC PAYOUT CAMILA RESTREPO"
     },
     {
       "id": "JL-0495",
       "txn_id": "TX-0246",
       "date": "2026-09-30",
-      "account": "1.1.02",
-      "debe": "0.00",
-      "haber": "6334500.00",
+      "account": "5.1.04",
+      "debe": "6610471.00",
+      "haber": "0.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
@@ -15226,23 +15229,23 @@
     },
     {
       "id": "JL-0496",
-      "txn_id": "TX-0247",
+      "txn_id": "TX-0246",
       "date": "2026-09-30",
-      "account": "5.1.04",
-      "debe": "3862500.00",
-      "haber": "0.00",
+      "account": "1.1.02",
+      "debe": "0.00",
+      "haber": "6610471.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
-      "detail": "USDC PAYOUT FATIMA ALAOUI"
+      "detail": "USDC PAYOUT EMILY CARTER"
     },
     {
       "id": "JL-0497",
       "txn_id": "TX-0247",
       "date": "2026-09-30",
-      "account": "1.1.02",
-      "debe": "0.00",
-      "haber": "3862500.00",
+      "account": "5.1.04",
+      "debe": "4030775.00",
+      "haber": "0.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
@@ -15250,23 +15253,23 @@
     },
     {
       "id": "JL-0498",
-      "txn_id": "TX-0248",
+      "txn_id": "TX-0247",
       "date": "2026-09-30",
-      "account": "5.1.04",
-      "debe": "6025500.00",
-      "haber": "0.00",
+      "account": "1.1.02",
+      "debe": "0.00",
+      "haber": "4030775.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
-      "detail": "USDC PAYOUT IVAN PETRENKO"
+      "detail": "USDC PAYOUT FATIMA ALAOUI"
     },
     {
       "id": "JL-0499",
       "txn_id": "TX-0248",
       "date": "2026-09-30",
-      "account": "1.1.02",
-      "debe": "0.00",
-      "haber": "6025500.00",
+      "account": "5.1.04",
+      "debe": "6288009.00",
+      "haber": "0.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
@@ -15274,23 +15277,23 @@
     },
     {
       "id": "JL-0500",
-      "txn_id": "TX-0249",
+      "txn_id": "TX-0248",
       "date": "2026-09-30",
-      "account": "5.1.04",
-      "debe": "7184250.00",
-      "haber": "0.00",
+      "account": "1.1.02",
+      "debe": "0.00",
+      "haber": "6288009.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
-      "detail": "USDC PAYOUT KENJI WATANABE"
+      "detail": "USDC PAYOUT IVAN PETRENKO"
     },
     {
       "id": "JL-0501",
       "txn_id": "TX-0249",
       "date": "2026-09-30",
-      "account": "1.1.02",
-      "debe": "0.00",
-      "haber": "7184250.00",
+      "account": "5.1.04",
+      "debe": "7497241.50",
+      "haber": "0.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
@@ -15298,23 +15301,23 @@
     },
     {
       "id": "JL-0502",
-      "txn_id": "TX-0250",
+      "txn_id": "TX-0249",
       "date": "2026-09-30",
-      "account": "5.1.04",
-      "debe": "5253000.00",
-      "haber": "0.00",
+      "account": "1.1.02",
+      "debe": "0.00",
+      "haber": "7497241.50",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
-      "detail": "USDC PAYOUT MATEO SILVA"
+      "detail": "USDC PAYOUT KENJI WATANABE"
     },
     {
       "id": "JL-0503",
       "txn_id": "TX-0250",
       "date": "2026-09-30",
-      "account": "1.1.02",
-      "debe": "0.00",
-      "haber": "5253000.00",
+      "account": "5.1.04",
+      "debe": "5481854.00",
+      "haber": "0.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
@@ -15322,23 +15325,23 @@
     },
     {
       "id": "JL-0504",
-      "txn_id": "TX-0251",
+      "txn_id": "TX-0250",
       "date": "2026-09-30",
-      "account": "5.1.04",
-      "debe": "4171500.00",
-      "haber": "0.00",
+      "account": "1.1.02",
+      "debe": "0.00",
+      "haber": "5481854.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
-      "detail": "USDC PAYOUT NIKHIL RAO"
+      "detail": "USDC PAYOUT MATEO SILVA"
     },
     {
       "id": "JL-0505",
       "txn_id": "TX-0251",
       "date": "2026-09-30",
-      "account": "1.1.02",
-      "debe": "0.00",
-      "haber": "4171500.00",
+      "account": "5.1.04",
+      "debe": "4353237.00",
+      "haber": "0.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
@@ -15346,23 +15349,23 @@
     },
     {
       "id": "JL-0506",
-      "txn_id": "TX-0252",
+      "txn_id": "TX-0251",
       "date": "2026-09-30",
-      "account": "5.1.04",
-      "debe": "5175750.00",
-      "haber": "0.00",
+      "account": "1.1.02",
+      "debe": "0.00",
+      "haber": "4353237.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
-      "detail": "USDC PAYOUT PRIYA RAMAN"
+      "detail": "USDC PAYOUT NIKHIL RAO"
     },
     {
       "id": "JL-0507",
       "txn_id": "TX-0252",
       "date": "2026-09-30",
-      "account": "1.1.02",
-      "debe": "0.00",
-      "haber": "5175750.00",
+      "account": "5.1.04",
+      "debe": "5401238.50",
+      "haber": "0.00",
       "basis": "rule R-PAYOUT",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
@@ -15370,10 +15373,22 @@
     },
     {
       "id": "JL-0508",
+      "txn_id": "TX-0252",
+      "date": "2026-09-30",
+      "account": "1.1.02",
+      "debe": "0.00",
+      "haber": "5401238.50",
+      "basis": "rule R-PAYOUT",
+      "status": "posted",
+      "approved_by": "rules engine (deterministic)",
+      "detail": "USDC PAYOUT PRIYA RAMAN"
+    },
+    {
+      "id": "JL-0509",
       "txn_id": "REMEASURE",
       "date": "2026-09-30",
       "account": "1.1.02",
-      "debe": "2618872.55",
+      "debe": "2248664.90",
       "haber": "0.00",
       "basis": "month end remeasurement",
       "status": "posted",
@@ -15381,19 +15396,19 @@
       "detail": "Cuenta USDC at the closing rate"
     },
     {
-      "id": "JL-0509",
+      "id": "JL-0510",
       "txn_id": "REMEASURE",
       "date": "2026-09-30",
       "account": "5.2.01",
       "debe": "0.00",
-      "haber": "2618872.55",
+      "haber": "2248664.90",
       "basis": "month end remeasurement",
       "status": "posted",
       "approved_by": "rules engine (deterministic)",
       "detail": "Gain on the USDC balance"
     },
     {
-      "id": "JL-0510",
+      "id": "JL-0511",
       "txn_id": "REMEASURE",
       "date": "2026-09-30",
       "account": "5.2.01",
@@ -15405,7 +15420,7 @@
       "detail": "Loss on the card balance"
     },
     {
-      "id": "JL-0511",
+      "id": "JL-0512",
       "txn_id": "REMEASURE",
       "date": "2026-09-30",
       "account": "2.1.01",
@@ -17420,7 +17435,7 @@
     {
       "topic": "Which rate and which day",
       "label": "assumption",
-      "detail": "Official seller rate (venta) on the posting date of each movement. To validate with an accountant: buyer rate for assets, transaction date versus posting date, and Banco Nación versus BCRA Comunicación A 3500."
+      "detail": "Seller rate (venta) on the posting date of each movement: official for dollar card spend, crypto dollar for USDC. To validate with an accountant: buyer rate for assets, transaction date versus posting date, and Banco Nación versus BCRA Comunicación A 3500."
     },
     {
       "topic": "Weekend and holiday rates",
@@ -17430,22 +17445,22 @@
     {
       "topic": "USDC valuation",
       "label": "assumption",
-      "detail": "One USDC is treated as one US dollar at the official rate. Whether USDC should be valued at the official, MEP or crypto rate is an open question for the accountant."
+      "detail": "USDC is valued at the crypto dollar seller rate of each day (https://api.argentinadatos.com/v1/cotizaciones/dolares/cripto), the rate at which it can be turned into pesos. One USDC is treated as one crypto dollar. Dollar card spend stays at the official rate. Whether USDC should be valued at the crypto, MEP or official rate is a question for the accountant."
     },
     {
       "topic": "ARS top ups",
       "label": "documented",
-      "detail": "USDC received is computed from the ARS sent at the crypto dollar seller rate of that day (https://api.argentinadatos.com/v1/cotizaciones/dolares/cripto). The gap against the official rate goes to Diferencias de cambio."
+      "detail": "USDC received is computed from the ARS sent at the crypto dollar seller rate of that day and booked at the same rate. Only the rounding the exchange keeps goes to Diferencias de cambio."
     },
     {
       "topic": "Month end remeasurement",
       "label": "assumption",
-      "detail": "Cuenta USDC and Tarjeta corporativa a pagar are remeasured at the official seller rate of the last day of the month. The difference goes to Diferencias de cambio."
+      "detail": "Cuenta USDC is remeasured at the crypto dollar seller rate of the last day of the month and Tarjeta corporativa a pagar at the official seller rate of that day. Paying the card with USDC moves the gap between the two rates to Diferencias de cambio, and so does each remeasurement."
     },
     {
       "topic": "Opening balances",
       "label": "assumption",
-      "detail": "Synthetic opening balances as of 2026-08-31, valued at that day's official seller rate."
+      "detail": "Synthetic opening balances as of 2026-08-31, valued at that day's crypto seller rate for USDC and official seller rate for the card payable."
     },
     {
       "topic": "Items in review",

@@ -77,6 +77,7 @@ def write(close: dict, path: Path) -> None:
         ["Excepciones abiertas", s["exceptions"]],
         ["Asiento balanceado (Debe = Haber)", "Sí" if close["entry_totals"]["balanced"] else "No"],
         ["Tipo de cambio de cierre (oficial vendedor)", _num(close["balances"]["closing_rate"])],
+        ["Tipo de cambio de cierre USDC (dólar cripto vendedor)", _num(close["balances"]["usdc_closing_rate"])],
     ]
     ws = _sheet(wb, "Resumen", ["Concepto", "Valor"], resumen, widths=[48, 28])
     for row in (6, 7, 8, 9):
