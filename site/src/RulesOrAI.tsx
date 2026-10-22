@@ -36,34 +36,17 @@ export default function RulesOrAI() {
       id="rules-or-ai"
       tone="paper"
       eyebrow="Rules or AI?"
-      title="Every step has an owner, and every owner has a score."
+      title="When should AI decide on its own?"
       intro={
         <>
-          The data generator wrote the correct answer for every movement, so each step below is scored against it. Rules
-          own what must behave the same every month. AI owns the long tail. A person owns the decision to post.
+          The data generator wrote the correct answer for every movement, so every handoff is scored. The key product
+          decision is how sure the AI must be before an account posts with no one looking.
         </>
       }
     >
-      <ul className="divide-y divide-line overflow-hidden rounded-3xl border border-line">
-        {e.decision_table.map((r) => (
-          <li key={r.step} className="grid gap-3 bg-card p-5 sm:grid-cols-[minmax(0,1.3fr)_minmax(0,1.6fr)_auto] sm:items-center sm:gap-8 sm:px-7">
-            <div>
-              <p className="font-semibold">{r.step}</p>
-              <p className="mt-1.5">
-                <Badge tone={who(r.handled_by)}>{r.handled_by}</Badge>
-              </p>
-            </div>
-            <p className="text-sm leading-relaxed text-muted">{r.why}</p>
-            <div className="sm:w-48 sm:text-right">
-              <p className="num text-2xl font-semibold">{r.headline}</p>
-              <p className="text-xs leading-snug text-faint">{r.note}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
 
       {thr.rows.length > 0 && (
-        <div className="mt-12 grid gap-5 lg:grid-cols-[1.5fr_1fr]">
+        <div className="grid gap-5 lg:grid-cols-[1.5fr_1fr]">
           <Card className="p-5 sm:p-7">
             <Eyebrow>The confidence threshold</Eyebrow>
             <h3 className="mt-2 text-xl font-semibold tracking-tight">How sure must the AI be before an account posts on its own?</h3>
@@ -159,52 +142,85 @@ export default function RulesOrAI() {
       )}
 
       <div className="mt-12">
-        <Eyebrow>Planted problems</Eyebrow>
-        <h3 className="mt-2 text-xl font-semibold tracking-tight">The generator hid these on purpose. Did each one reach a person?</h3>
-        <div className="mt-5 grid grid-cols-2 gap-3 lg:grid-cols-4">
-          {Object.entries(e.anomalies).map(([k, a]) => {
-            const all = a.caught_in_review === a.planted
-            return (
-              <div key={k} className="rounded-2xl border border-line bg-card p-5">
-                <p className="flex items-center gap-2 text-sm font-semibold">
-                  {all && <Check className="h-4 w-4 text-gold-text" />} {ANOMALY_LABEL[k] ?? k}
+        <Eyebrow>Every step, its owner and its score</Eyebrow>
+        <div className="mt-4 divide-y divide-line overflow-hidden rounded-3xl border border-line bg-card">
+          {e.decision_table.map((r) => (
+            <details key={r.step} className="group">
+              <summary className="grid cursor-pointer list-none grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-5 py-3.5 hover:bg-paper sm:grid-cols-[minmax(0,1fr)_auto_7rem] sm:gap-6 sm:px-7">
+                <span className="flex items-center gap-2 text-sm font-semibold">
+                  <span className="inline-block text-faint transition-transform group-open:rotate-90">›</span> {r.step}
+                </span>
+                <span className="hidden sm:block">
+                  <Badge tone={who(r.handled_by)}>{r.handled_by}</Badge>
+                </span>
+                <span className="num text-right text-lg font-semibold">{r.headline}</span>
+              </summary>
+              <div className="px-5 pb-4 pl-10 text-sm leading-relaxed text-muted sm:px-7 sm:pl-12">
+                <p className="sm:hidden">
+                  <Badge tone={who(r.handled_by)}>{r.handled_by}</Badge>
                 </p>
-                <p className="num mt-3 text-3xl font-semibold">
-                  {a.caught_in_review}
-                  <span className="text-lg text-faint">/{a.planted}</span>
-                </p>
-                <p className="text-xs text-faint">reached review · {a.true_positives} named exactly</p>
+                <p className="mt-1">{r.why}</p>
+                <p className="mt-1 text-xs text-faint">{/^\d/.test(r.headline) ? `${r.headline} ${r.note}` : `${r.headline}, ${r.note}`}</p>
               </div>
-            )
-          })}
+            </details>
+          ))}
         </div>
-        <p className="mt-3 max-w-3xl text-xs text-faint">
-          “Named exactly” means the check that fired is the one the problem calls for. A problem can reach review under a
-          different name, for example a refund of an earlier month linked tentatively by merchant.
-        </p>
       </div>
 
-      <div className="mt-12 grid gap-5 lg:grid-cols-[1fr_1.2fr] lg:items-center">
-        <div>
-          <Eyebrow>Reading {e.extraction.receipts} receipts</Eyebrow>
-          <h3 className="mt-2 text-xl font-semibold tracking-tight">AI against a parser written for these exact layouts.</h3>
-          <p className="mt-2 text-sm leading-relaxed text-muted">
-            The template parser was written for the four synthetic layouts, so it is a ceiling, not a fair rival. Real
-            receipts arrive in layouts nobody wrote a template for. That is where the AI reader earns its place, and why
-            code still checks every amount it reads.
+      <details className="group mt-6 rounded-3xl border border-line bg-card p-5 sm:p-7">
+        <summary className="cursor-pointer list-none text-sm font-semibold">
+          <span className="inline-block transition-transform group-open:rotate-90">›</span> See the detail: planted problems and
+          receipt reading
+        </summary>
+        <div className="mt-2">
+          <Eyebrow>Planted problems</Eyebrow>
+          <h3 className="mt-2 text-xl font-semibold tracking-tight">The generator hid these on purpose. Did each one reach a person?</h3>
+          <div className="mt-5 grid grid-cols-2 gap-3 lg:grid-cols-4">
+            {Object.entries(e.anomalies).map(([k, a]) => {
+              const all = a.caught_in_review === a.planted
+              return (
+                <div key={k} className="rounded-2xl border border-line bg-card p-5">
+                  <p className="flex items-center gap-2 text-sm font-semibold">
+                    {all && <Check className="h-4 w-4 text-gold-text" />} {ANOMALY_LABEL[k] ?? k}
+                  </p>
+                  <p className="num mt-3 text-3xl font-semibold">
+                    {a.caught_in_review}
+                    <span className="text-lg text-faint">/{a.planted}</span>
+                  </p>
+                  <p className="text-xs text-faint">reached review · {a.true_positives} named exactly</p>
+                </div>
+              )
+            })}
+          </div>
+          <p className="mt-3 max-w-3xl text-xs text-faint">
+            “Named exactly” means the check that fired is the one the problem calls for. A problem can reach review under a
+            different name, for example a refund of an earlier month linked tentatively by merchant.
           </p>
         </div>
-        <Card className="p-5">
-          <div className="grid grid-cols-[1fr_auto_auto] gap-x-6 gap-y-2 text-sm">
-            <span className="text-xs text-faint">Field</span>
-            <span className="text-right text-xs text-faint">AI</span>
-            <span className="text-right text-xs text-faint">Template parser</span>
-            {['vendor', 'date', 'amount', 'currency', 'all_fields'].map((f) => (
-              <Row key={f} label={f === 'all_fields' ? 'All four' : f[0].toUpperCase() + f.slice(1)} ai={e.extraction.ai?.[f]} tmpl={e.extraction.template[f]} strong={f === 'all_fields'} />
-            ))}
+
+        <div className="mt-12 grid gap-5 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+          <div>
+            <Eyebrow>Reading {e.extraction.receipts} receipts</Eyebrow>
+            <h3 className="mt-2 text-xl font-semibold tracking-tight">AI against a parser written for these exact layouts.</h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted">
+              The template parser was written for the four synthetic layouts, so it is a ceiling, not a fair rival. Real
+              receipts arrive in layouts nobody wrote a template for. That is where the AI reader earns its place, and why
+              code still checks every amount it reads.
+            </p>
           </div>
-        </Card>
-      </div>
+          <Card className="p-5">
+            <div className="grid grid-cols-[1fr_auto_auto] gap-x-6 gap-y-2 text-sm">
+              <span className="text-xs text-faint">Field</span>
+              <span className="text-right text-xs text-faint">AI</span>
+              <span className="text-right text-xs text-faint">Template parser</span>
+              {['vendor', 'date', 'amount', 'currency', 'all_fields'].map((f) => (
+                <Row key={f} label={f === 'all_fields' ? 'All four' : f[0].toUpperCase() + f.slice(1)} ai={e.extraction.ai?.[f]} tmpl={e.extraction.template[f]} strong={f === 'all_fields'} />
+              ))}
+            </div>
+          </Card>
+        </div>
+
+      </details>
 
       {e.llm_usage && (
         <p className="mt-10 text-xs text-faint">
