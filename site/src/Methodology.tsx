@@ -9,8 +9,13 @@ const LABEL_TONE: Record<string, 'rules' | 'ai' | 'review' | 'neutral'> = {
 
 const ORDER = ['documented', 'assumption', 'out of scope']
 
+// The choices that move the numbers most, shown open. The rest stay folded.
+const KEY = ['Which rate and which day', 'USDC valuation', 'Taxes', 'Company and transactions']
+
 export default function Methodology({ repoUrl }: { repoUrl: string }) {
   const m = site.methodology
+  const key = KEY.map((t) => m.find((x) => x.topic === t)).filter((x) => x !== undefined)
+  const rest = m.filter((x) => !KEY.includes(x.topic))
   const counts = ORDER.map((l) => ({ label: l, n: m.filter((x) => x.label === l).length })).filter((c) => c.n > 0)
   return (
     <Section
@@ -28,8 +33,21 @@ export default function Methodology({ repoUrl }: { repoUrl: string }) {
         ))}
       </div>
 
-      <div className="mt-6 divide-y divide-line overflow-hidden rounded-3xl border border-line bg-card">
-        {m.map((x) => (
+      <div className="mt-6 grid gap-3 sm:grid-cols-2">
+        {key.map((x) => (
+          <div key={x.topic} className="rounded-2xl bg-paper p-5 ring-1 ring-line">
+            <div className="flex items-start justify-between gap-3">
+              <p className="font-semibold">{x.topic}</p>
+              <Badge tone={LABEL_TONE[x.label] ?? 'neutral'}>{x.label}</Badge>
+            </div>
+            <p className="mt-2 text-sm leading-relaxed text-muted [overflow-wrap:anywhere]">{x.detail}</p>
+          </div>
+        ))}
+      </div>
+
+      <p className="mt-8 text-[11px] font-semibold uppercase tracking-[0.2em] text-faint">Every other choice</p>
+      <div className="mt-3 divide-y divide-line overflow-hidden rounded-3xl border border-line bg-card">
+        {rest.map((x) => (
           <details key={x.topic} className="group px-5 py-4 sm:px-6">
             <summary className="flex cursor-pointer list-none items-center justify-between gap-3">
               <span className="flex items-center gap-2 text-sm font-semibold">
