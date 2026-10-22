@@ -14,7 +14,8 @@ const ORDER = [
   'no_rule',
 ]
 
-const PAGE = 3
+const PAGE = 8
+const ALL = 'all'
 
 export default function Queue() {
   const items = site.queue
@@ -27,9 +28,11 @@ export default function Queue() {
     }
     return [...count.entries()].sort((a, b) => ORDER.indexOf(a[0]) - ORDER.indexOf(b[0]))
   }, [items])
-  const [filter, setFilter] = useState<string>(types[0]?.[0] ?? '')
+  const tabs: [string, { title: string; n: number }][] = [[ALL, { title: 'All', n: items.length }], ...types]
+  const [filter, setFilter] = useState<string>(ALL)
   const [showAll, setShowAll] = useState(false)
-  const shown = items.filter((q) => q.type === filter)
+  const shown = filter === ALL ? items : items.filter((q) => q.type === filter)
+  const pending = site.spend_by_account.find((a) => a.pending)
   const visible = showAll ? shown : shown.slice(0, PAGE)
 
   return (
@@ -43,9 +46,20 @@ export default function Queue() {
       }
       intro="This is the review queue a controller works through. Facts and figures come from code. The plain sentence is written by AI and checked by the verifier. Nothing here posts until a person decides, so these items wait in a suspense account."
     >
+      {pending && (
+        <div className="mb-8 flex flex-wrap items-end gap-x-6 gap-y-2">
+          <p className="num text-4xl font-semibold sm:text-5xl">
+            ARS {pending.ars_compact}
+          </p>
+          <p className="pb-1 text-sm text-muted">
+            waiting for a decision, across {site.summary.split.review} movements held in a suspense account
+          </p>
+        </div>
+      )}
+
       <div className="-mx-4 overflow-x-auto px-4 pb-1 sm:mx-0 sm:px-0">
         <div className="flex gap-2 sm:flex-wrap" role="tablist" aria-label="Exception type">
-          {types.map(([t, c]) => (
+          {tabs.map(([t, c]) => (
             <button
               key={t}
               role="tab"
@@ -64,9 +78,9 @@ export default function Queue() {
         </div>
       </div>
 
-      <div className="mt-6 grid gap-4">
+      <div className="mt-6 divide-y divide-line overflow-hidden rounded-3xl border border-line bg-card">
         {visible.map((q) => (
-          <Item key={q.id} q={q} />
+          <Row key={q.id} q={q} />
         ))}
       </div>
       {shown.length > visible.length && (
@@ -81,10 +95,33 @@ export default function Queue() {
   )
 }
 
+function Row({ q }: { q: QueueItem }) {
+  const t = q.txn
+  return (
+    <details className="group">
+      <summary className="grid cursor-pointer list-none grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3.5 hover:bg-paper sm:grid-cols-[11rem_minmax(0,1fr)_minmax(0,1fr)_7rem] sm:gap-5 sm:px-6">
+        <span className="hidden text-xs font-semibold text-review sm:block">{q.title}</span>
+        <span className="min-w-0">
+          <span className="flex items-center gap-2">
+            <span className="inline-block text-faint transition-transform group-open:rotate-90">›</span>
+            <span className="truncate text-sm font-semibold">{t ? t.descriptor : q.title}</span>
+          </span>
+          <span className="block pl-4 text-xs text-faint sm:hidden">{q.title}</span>
+        </span>
+        <span className="hidden truncate text-sm text-muted sm:block">{q.next_step}</span>
+        <span className="num text-right text-sm font-semibold">{t ? `${t.currency} ${t.amount}` : ''}</span>
+      </summary>
+      <div className="px-4 pb-5 sm:px-6">
+        <Item q={q} />
+      </div>
+    </details>
+  )
+}
+
 function Item({ q }: { q: QueueItem }) {
   const t = q.txn
   return (
-    <article className="rounded-3xl border border-line bg-paper p-5 sm:p-6">
+    <article className="rounded-2xl bg-paper p-5 ring-1 ring-line sm:p-6">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-faint">
@@ -118,7 +155,7 @@ function Item({ q }: { q: QueueItem }) {
       {(q.receipt || q.ai) && (
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           {q.receipt && (
-            <div className="rounded-2xl bg-paper p-4 text-sm ring-1 ring-line">
+            <div className="rounded-2xl bg-card p-4 text-sm ring-1 ring-line">
               <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-faint">Receipt evidence</p>
               <p className="mt-1.5">
                 {q.receipt.vendor}{' '}
@@ -161,7 +198,7 @@ function Item({ q }: { q: QueueItem }) {
           <span className="inline-block transition-transform group-open:rotate-90">›</span> Facts from code
           {t?.proposed_account && ' and proposed account'}
         </summary>
-        <p className="mt-2 rounded-xl bg-paper px-3 py-2 font-mono text-[12px] leading-relaxed ring-1 ring-line">{q.facts}</p>
+        <p className="mt-2 rounded-xl bg-card px-3 py-2 font-mono text-[12px] leading-relaxed ring-1 ring-line">{q.facts}</p>
         {t?.proposed_account && <p className="mt-2">Proposed account: {t.proposed_account}</p>}
       </details>
     </article>
