@@ -1476,91 +1476,121 @@
         "account": "1.1.01",
         "name": "Bank account, ARS",
         "debe": "",
-        "haber": "175,000,000.00"
+        "haber": "175,000,000.00",
+        "debe_compact": "",
+        "haber_compact": "175.0M"
       },
       {
         "account": "1.1.02",
         "name": "USDC account",
         "debe": "",
-        "haber": "10,315,172.70"
+        "haber": "10,315,172.70",
+        "debe_compact": "",
+        "haber_compact": "10.3M"
       },
       {
         "account": "1.1.09",
         "name": "Suspense, pending review",
         "debe": "22,744,110.40",
-        "haber": ""
+        "haber": "",
+        "debe_compact": "22.7M",
+        "haber_compact": ""
       },
       {
         "account": "2.1.01",
         "name": "Corporate card payable",
         "debe": "",
-        "haber": "23,001,807.00"
+        "haber": "23,001,807.00",
+        "debe_compact": "",
+        "haber_compact": "23.0M"
       },
       {
         "account": "5.1.01",
         "name": "Advertising and marketing",
         "debe": "26,016,104.75",
-        "haber": ""
+        "haber": "",
+        "debe_compact": "26.0M",
+        "haber_compact": ""
       },
       {
         "account": "5.1.02",
         "name": "Cloud services",
         "debe": "14,647,522.10",
-        "haber": ""
+        "haber": "",
+        "debe_compact": "14.6M",
+        "haber_compact": ""
       },
       {
         "account": "5.1.03",
         "name": "Software licenses",
         "debe": "10,882,931.25",
-        "haber": ""
+        "haber": "",
+        "debe_compact": "10.9M",
+        "haber_compact": ""
       },
       {
         "account": "5.1.04",
         "name": "Foreign contractor fees",
         "debe": "105,067,844.00",
-        "haber": ""
+        "haber": "",
+        "debe_compact": "105.1M",
+        "haber_compact": ""
       },
       {
         "account": "5.1.05",
         "name": "Travel",
         "debe": "16,183,534.75",
-        "haber": ""
+        "haber": "",
+        "debe_compact": "16.2M",
+        "haber_compact": ""
       },
       {
         "account": "5.1.06",
         "name": "Meals and entertainment",
         "debe": "4,166,090.90",
-        "haber": ""
+        "haber": "",
+        "debe_compact": "4.2M",
+        "haber_compact": ""
       },
       {
         "account": "5.1.07",
         "name": "Events and conferences",
         "debe": "1,725,948.80",
-        "haber": ""
+        "haber": "",
+        "debe_compact": "1.7M",
+        "haber_compact": ""
       },
       {
         "account": "5.1.08",
         "name": "Office supplies and small equipment",
         "debe": "374,862.35",
-        "haber": ""
+        "haber": "",
+        "debe_compact": "374.9K",
+        "haber_compact": ""
       },
       {
         "account": "5.1.09",
         "name": "Training and subscriptions",
         "debe": "1,232,143.50",
-        "haber": ""
+        "haber": "",
+        "debe_compact": "1.2M",
+        "haber_compact": ""
       },
       {
         "account": "5.1.10",
         "name": "Bank fees and charges",
         "debe": "494,719.25",
-        "haber": ""
+        "haber": "",
+        "debe_compact": "494.7K",
+        "haber_compact": ""
       },
       {
         "account": "5.2.01",
         "name": "Exchange differences",
         "debe": "4,781,167.65",
-        "haber": ""
+        "haber": "",
+        "debe_compact": "4.8M",
+        "haber_compact": ""
       }
     ],
     "totals": {
