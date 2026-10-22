@@ -9,7 +9,7 @@ import Methodology from './Methodology'
 import Problem from './Problem'
 import Queue from './Queue'
 import RulesOrAI from './RulesOrAI'
-import { ButtonLink } from './ui'
+import { Arrow, ButtonLink } from './ui'
 
 // Shown only once the repository is public.
 const REPO_URL = ''
@@ -65,6 +65,21 @@ export default function App() {
       </main>
 
       <footer className="bg-night text-on-night">
+        <div className="mx-auto max-w-6xl px-4 pt-20 sm:px-6 sm:pt-28">
+          <div className="h-px w-24 bg-gradient-to-r from-gold via-gold-light to-transparent" aria-hidden />
+          <p className="mt-6 max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
+            Happy to walk you through it.
+          </p>
+          <p className="mt-4 max-w-xl text-on-night-muted">
+            {site.meta.subtitle} by {site.meta.author}. The rules, the AI steps and every number on this page come from
+            one reproducible build.
+          </p>
+          <div className="mt-8">
+            <ButtonLink href="https://www.linkedin.com/in/msckell">
+              Talk on LinkedIn <Arrow />
+            </ButtonLink>
+          </div>
+        </div>
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
           <div className="flex flex-wrap items-center justify-between gap-6">
             <p className="flex items-center gap-2.5 font-semibold">

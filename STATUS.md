@@ -8,14 +8,15 @@
 - Page in `site/` builds clean and has no horizontal scroll at 375 px.
 - QA: every number on the page traced to `data/site/site.json`. `noindex,nofollow` meta, `robots.txt` disallows all, `X-Robots-Tag` header. Secret scan over the full git history clean.
 - Page redesigned as a visual story (black, white, own gold): result first, then how it works with three real movements, then the evidence. New site.json blocks `flow`, `spend_by_account`, `examples` from `pipeline/site_data.py`.
+- Interactive review with the owner, section by section (2026-10-22): page fully in English (account names from `name_en`), author line first, hook "Dollars in. Pesos out.", problem with real counts, examples merged into How it works, threshold first in Rules or AI, queue as an inbox with money waiting, entry grouped with subtotals, key assumptions open, closing contact block.
 - Repo hygiene for publishing: short agent instructions in `CLAUDE.md`, `AGENTS.md` points to it, CI workflow, code formatted with ruff.
 
 ## Results (data/eval.json)
-252 movements: 191 resolved by rules, 21 by AI above the 0.75 threshold (20 coded right), 40 sent to review. All 35 planted problems reached review. Entry balanced: Debe = Haber = ARS 208,316,979.70. 556 LLM calls in total, about USD 0.94 at API prices.
+252 movements: 191 resolved by rules, 21 by AI above the 0.75 threshold (20 coded right), 40 sent to review. All 35 planted problems reached review. Entry balanced: debits = credits = ARS 208,316,979.70. 556 LLM calls in total, about USD 0.94 at API prices.
 
 ## Next
-1. Deploy on Vercel: Root Directory `site`, framework Vite, no env vars. The domain must not contain the name of any real company.
-2. Open the deployed page on phone and desktop.
+1. Push the review commits so Vercel redeploys, then open the page on phone and desktop.
+2. Make the closing LinkedIn button open in a new tab if wanted.
 3. Make the repo public when ready. Author name stays on the page only. Git history is kept as is.
 4. Edit the memo in `docs/memo.template.md`, then rerun `uv run ctl build`.
 
