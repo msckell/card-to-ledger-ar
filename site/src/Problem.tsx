@@ -39,7 +39,7 @@ export default function Problem() {
           <ul className="mt-4 space-y-3">
             <Input label="Card charges, fees and refunds" n={card} unit="USD" />
             <Input label="Payouts to contractors abroad" n={t.usdc_payout ?? 0} unit="USDC" />
-            <Input label="Receipts and invoices, not linked to anything" n={site.summary.receipts} unit="PDF" />
+            <Input label="Receipts and invoices, uploaded loose, with no transaction ID" n={site.summary.receipts} unit="PDF" />
           </ul>
         </div>
 
