@@ -29,21 +29,42 @@ export default function Journal() {
                 <th className="hidden px-4 py-3 text-right font-semibold sm:table-cell sm:px-6">Credit</th>
               </tr>
             </thead>
-            <tbody>
-              {j.rows.map((r) => (
-                <tr key={r.account} className="border-b border-line last:border-0">
-                  <td className="px-4 py-2.5 sm:px-6">
-                    <span className="block leading-snug">{r.name}</span>
-                    <span className="font-mono text-[11px] text-faint">{r.account}</span>
-                    <span className="num mt-0.5 block text-[13px] sm:hidden">
-                      {r.debe ? <>Debit {r.debe}</> : <span className="text-muted">Credit {r.haber}</span>}
+            {j.groups.map((g) => (
+              <tbody key={g.name} className="border-b border-line">
+                <tr className="bg-paper/60">
+                  <td colSpan={3} className="px-4 pb-1.5 pt-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-text sm:px-6">
+                    {g.name}
+                  </td>
+                </tr>
+                {j.rows
+                  .filter((r) => g.accounts.includes(r.account))
+                  .map((r) => (
+                    <tr key={r.account} className="border-t border-line/60">
+                      <td className="px-4 py-2.5 sm:px-6">
+                        <span className="block leading-snug">{r.name}</span>
+                        <span className="font-mono text-[11px] text-faint">{r.account}</span>
+                        <span className="num mt-0.5 block text-[13px] sm:hidden">
+                          {r.debe ? <>Debit {r.debe}</> : <span className="text-muted">Credit {r.haber}</span>}
+                        </span>
+                      </td>
+                      <td className="num hidden px-3 py-2.5 text-right align-top sm:table-cell">{r.debe}</td>
+                      <td className="num hidden px-4 py-2.5 text-right align-top sm:table-cell sm:px-6">{r.haber}</td>
+                    </tr>
+                  ))}
+                <tr className="border-t border-line font-semibold">
+                  <td className="px-4 py-2.5 text-sm sm:px-6">
+                    Subtotal
+                    <span className="num block text-[13px] font-medium text-muted sm:hidden">
+                      {g.debe && <>Debit {g.debe}</>}
+                      {g.debe && g.haber && ' · '}
+                      {g.haber && <>Credit {g.haber}</>}
                     </span>
                   </td>
-                  <td className="num hidden px-3 py-2.5 text-right align-top sm:table-cell">{r.debe}</td>
-                  <td className="num hidden px-4 py-2.5 text-right align-top sm:table-cell sm:px-6">{r.haber}</td>
+                  <td className="num hidden px-3 py-2.5 text-right sm:table-cell">{g.debe}</td>
+                  <td className="num hidden px-4 py-2.5 text-right sm:table-cell sm:px-6">{g.haber}</td>
                 </tr>
-              ))}
-            </tbody>
+              </tbody>
+            ))}
             <tfoot>
               <tr className="bg-night font-semibold text-on-night">
                 <td className="px-4 py-3.5 sm:px-6">
