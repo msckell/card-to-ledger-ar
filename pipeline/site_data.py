@@ -12,7 +12,7 @@ from decimal import Decimal
 
 from pipeline import fx
 from pipeline.config import account_name_en, chart, rules, settings
-from pipeline.jsonio import write_json
+from pipeline.jsonio import read_json, write_json
 from pipeline.money import fmt, to_cents
 from pipeline.paths import DOCS, OUT, RECEIPTS, ROOT, SITE, SITE_DATA
 
@@ -363,6 +363,36 @@ def _decision_table(ev: dict) -> list[dict]:
     return rows
 
 
+QBO_SCREENSHOT = "quickbooks/journal-entry.png"
+
+
+def _quickbooks() -> dict | None:
+    """What `ctl qbo-post` read back from the QuickBooks Online sandbox company. Omitted when the
+    command has not run, so the build never needs QuickBooks."""
+    path = OUT / "qbo_post.json"
+    if not path.exists():
+        return None
+    q = read_json(path)
+    return {
+        "environment": q["environment"],
+        "doc_number": q["doc_number"],
+        "posted_at": (q.get("posted_at") or "")[:10],
+        "verified_at": q["verified_at"][:10],
+        "currency": q["currency"],
+        "home_currency": q["home_currency"],
+        "lines": q["lines"],
+        "accounts": q["accounts"],
+        "accounts_matched": sum(1 for a in q["per_account"] if a["match"]),
+        "entry_total": money(q["entry_total_debit"]),
+        "lines_total": money(q["lines_total_debit"]),
+        "checks_passed": sum(1 for ok in q["checks"].values() if ok),
+        "checks_total": len(q["checks"]),
+        "result": q["result"],
+        "exchange_rate_stored": q["exchange_rate_usd_per_ars"],
+        "screenshot": QBO_SCREENSHOT if (SITE / "public" / QBO_SCREENSHOT).exists() else None,
+    }
+
+
 def export(close: dict, ev: dict) -> dict:
     s = close["summary"]
     src = fx.source_record()
@@ -463,6 +493,8 @@ def export(close: dict, ev: dict) -> dict:
         },
         "methodology": [{**m, "detail": en(m["detail"])} for m in close["methodology"]],
     }
+    if qbo := _quickbooks():
+        site["quickbooks"] = qbo
     _render_memo(site)
     _write(site)
     _copy_files(close, queue + examples)
@@ -530,11 +562,26 @@ def memo_values(site: dict) -> dict[str, str]:
         vals["explain_passed"] = str(ex["accepted_first_try"] + ex["accepted_after_retry"])
         vals["explain_total"] = str(ex["exceptions"])
         vals["explain_fallback"] = str(ex["fell_back_to_template"])
+    if q := site.get("quickbooks"):
+        vals["quickbooks"] = "1"
+        vals["qbo_doc"] = q["doc_number"]
+        vals["qbo_lines"] = str(q["lines"])
+        vals["qbo_accounts"] = str(q["accounts"])
+        vals["qbo_total"] = q["entry_total"]
+        vals["qbo_checks"] = f"{q['checks_passed']} of {q['checks_total']}"
     return vals
 
 
 def _fill(template_name: str, vals: dict[str, str]) -> str:
+    """`{{name}}` is replaced by its value. `{{#name}}...{{/name}}` is kept only when `name` has a
+    value, so optional outputs (the QuickBooks handoff) disappear when they were not produced."""
     text = (DOCS / template_name).read_text(encoding="utf-8")
+    text = re.sub(
+        r"\{\{#(\w+)\}\}(.*?)\{\{/\1\}\}",
+        lambda m: m.group(2) if vals.get(m.group(1)) else "",
+        text,
+        flags=re.S,
+    )
 
     def sub(m):
         key = m.group(1)

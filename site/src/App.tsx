@@ -75,7 +75,7 @@ export default function App() {
             one reproducible build.
           </p>
           <div className="mt-8">
-            <ButtonLink href="https://www.linkedin.com/in/msckell">
+            <ButtonLink href="https://www.linkedin.com/in/msckell" newTab>
               Talk on LinkedIn <Arrow />
             </ButtonLink>
           </div>

@@ -107,6 +107,23 @@ def cmd_build(_args) -> None:
     )
 
 
+def cmd_qbo_auth(_args) -> None:
+    """Refresh the QuickBooks token (saved back to .env) and show the sandbox company. Never in CI."""
+    from pipeline.qbo.client import Client, read_env
+
+    _print(Client(read_env()).company())
+
+
+def cmd_qbo_post(_args) -> None:
+    """Post the close to the QuickBooks sandbox (once), read it back and verify it. Never in CI."""
+    from pipeline.qbo import post
+
+    r = post.run()
+    keys = ("action", "doc_number", "qbo_entry_id", "lines", "entry_total_debit", "entry_total_credit")
+    keys += ("lines_total_debit", "lines_total_credit", "checks", "result")
+    _print({k: r[k] for k in keys})
+
+
 COMMANDS = {
     "build": (cmd_build, "full pipeline: AI steps (cached), close, eval, site data"),
     "fx": (cmd_fx, "download the exchange rate snapshot"),
@@ -115,6 +132,8 @@ COMMANDS = {
     "ai-explain": (_ai("explain"), "AI explains each exception, verified (cached)"),
     "generate": (cmd_generate, "write the synthetic month and its ground truth"),
     "close": (cmd_close, "run the close, write close.json, the Excel and eval.json"),
+    "qbo-auth": (cmd_qbo_auth, "refresh the QuickBooks sandbox token and show the company"),
+    "qbo-post": (cmd_qbo_post, "post the entry to the QuickBooks sandbox once, read it back, verify it"),
 }
 
 

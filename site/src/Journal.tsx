@@ -118,6 +118,66 @@ export default function Journal() {
           </div>
         </div>
       </div>
+      <QuickBooksStrip />
     </Section>
+  )
+}
+
+function QuickBooksStrip() {
+  const q = site.quickbooks
+  if (!q) return null
+  const passed = q.result === 'pass'
+  const facts = [
+    { label: 'Entry number', value: q.doc_number },
+    { label: 'Lines posted', value: String(q.lines) },
+    { label: 'Accounts matched', value: `${q.accounts_matched} of ${q.accounts}` },
+    { label: 'Checks passed', value: `${q.checks_passed} of ${q.checks_total}` },
+  ]
+  return (
+    <div className="mt-5 overflow-hidden rounded-3xl border border-line bg-card">
+      <div className="grid gap-6 p-6 sm:p-8 lg:grid-cols-[1fr_1.15fr] lg:items-center">
+        <div>
+          <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-gold-text">
+            <Check className="h-4 w-4" /> QuickBooks Online sandbox company
+          </p>
+          <p className="mt-3 text-xl font-semibold leading-snug">
+            {passed
+              ? 'Posted to a QuickBooks Online sandbox company through the API. Read back and verified to the cent.'
+              : 'Posted to a QuickBooks Online sandbox company through the API. The read back did not match.'}
+          </p>
+          <dl className="mt-5 grid grid-cols-2 gap-x-4 gap-y-3">
+            {facts.map((f) => (
+              <div key={f.label}>
+                <dt className="text-xs text-faint">{f.label}</dt>
+                <dd className="num text-lg font-semibold">{f.value}</dd>
+              </div>
+            ))}
+          </dl>
+          <p className="mt-5 text-sm leading-relaxed text-muted">
+            The same {q.lines} lines in {q.currency} went in through the Intuit Accounting API on {q.posted_at}. The command
+            reads the entry back and compares every line, each account and the totals with this close. Debits and credits
+            in QuickBooks are ARS {q.entry_total} once each account is netted. It never posts the same entry twice. The
+            sandbox keeps its books in {q.home_currency} and shows a {q.home_currency} column of its own, which is not
+            checked. In real use a controller approves the close before this step.
+          </p>
+        </div>
+        {q.screenshot && (
+          <figure className="min-w-0">
+            <a href={q.screenshot} target="_blank" rel="noreferrer" className="block overflow-hidden rounded-xl border border-line">
+              <img
+                src={q.screenshot}
+                alt={`Journal entry ${q.doc_number} open in the QuickBooks Online sandbox company, dated 30 September 2026, with its first lines: account, debit, credit and a description that starts with the journal line ID.`}
+                className="block h-auto w-full"
+                loading="lazy"
+              />
+            </a>
+            <figcaption className="mt-2 text-xs leading-relaxed text-faint">
+              Screenshot of the sandbox. QuickBooks prints the peso amounts with the $ sign. The entry currency is{' '}
+              {q.currency}.
+            </figcaption>
+          </figure>
+        )}
+      </div>
+    </div>
   )
 }

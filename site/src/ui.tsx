@@ -83,11 +83,12 @@ export function Dot({ who, night = false }: { who: Who; night?: boolean }) {
   return <span className={`inline-block h-2.5 w-2.5 shrink-0 rounded-full ${c}`} aria-hidden />
 }
 
-export function ButtonLink({ href, children, variant = 'gold', download }: {
+export function ButtonLink({ href, children, variant = 'gold', download, newTab }: {
   href: string
   children: ReactNode
   variant?: 'gold' | 'light' | 'dark' | 'outline'
   download?: boolean
+  newTab?: boolean
 }) {
   const v = {
     gold: 'bg-gold text-night hover:bg-gold-light',
@@ -99,6 +100,8 @@ export function ButtonLink({ href, children, variant = 'gold', download }: {
     <a
       href={href}
       download={download}
+      target={newTab ? '_blank' : undefined}
+      rel={newTab ? 'noreferrer' : undefined}
       className={`inline-flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-colors ${v}`}
     >
       {children}
