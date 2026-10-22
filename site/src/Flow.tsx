@@ -64,8 +64,7 @@ export default function Flow() {
       eyebrow="The result"
       title={
         <>
-          {f.total} movements in. <span className="text-gold-light">{f.rules_resolved + f.ai_resolved} posted</span>{' '}
-          without anyone touching them.
+          Most of the month closes itself. <span className="text-gold-light">The rest waits for a person.</span>
         </>
       }
       intro={
