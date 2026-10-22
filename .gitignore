@@ -16,6 +16,7 @@ site/dist/
 .vercel/
 
 # OS / editors
+.claude/
 .DS_Store
 Thumbs.db
 .vscode/
@@ -24,6 +25,6 @@ Thumbs.db
 # Local logs
 .logs/
 
-# Personal agent preferences and the original build spec (local only, not published)
+# Local agent preferences and private notes (not committed)
 CLAUDE.local.md
 docs/original-spec.md
