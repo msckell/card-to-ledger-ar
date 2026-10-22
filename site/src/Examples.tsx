@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { site, type Example } from './data'
-import { Badge, Check, Cited, Mono, Section, WHO } from './ui'
+import { Badge, Check, Cited, Mono, WHO } from './ui'
 
 const HEAD: Record<Example['path'], { title: string; line: string }> = {
   rules: { title: 'Rules handle it end to end', line: 'A known merchant with its receipt. No one needs to look.' },
@@ -8,19 +8,20 @@ const HEAD: Record<Example['path'], { title: string; line: string }> = {
   review: { title: 'A person decides', line: 'A rule knows the account, but the receipt is missing. It waits.' },
 }
 
+/** Three real movements, one per path, shown inside How it works. */
 export default function Examples() {
   const threshold = site.eval.threshold.recommended
   return (
-    <Section
-      id="examples"
-      tone="paper"
-      eyebrow="Three real movements"
-      title="Follow one charge down each path."
-      intro="Taken from the September close as it is. Every figure on these cards is computed by code. Open the receipt PDFs to see what the AI read."
-    >
-      <div className="grid gap-5 lg:grid-cols-3">
+    <div id="examples" className="mt-16 scroll-mt-20">
+      <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-text">Three real movements</p>
+      <h3 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">Follow one charge down each path.</h3>
+      <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
+        Taken from the September close as it is. Every figure on these cards is computed by code. Open the receipt PDFs to
+        see what the AI read.
+      </p>
+      <div className="mt-8 grid gap-5 lg:grid-cols-3">
         {site.examples.map((x) => (
-          <article key={x.path} className="flex flex-col rounded-3xl border border-line bg-card p-5 sm:p-6">
+          <article key={x.path} className="flex flex-col rounded-3xl border border-line bg-paper p-5 sm:p-6">
             <div className="flex items-center gap-2">
               <span className={`h-2.5 w-2.5 rounded-full ${WHO[x.path].dot}`} aria-hidden />
               <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-faint">{WHO[x.path].label}</span>
@@ -103,7 +104,7 @@ export default function Examples() {
           </article>
         ))}
       </div>
-    </Section>
+    </div>
   )
 }
 

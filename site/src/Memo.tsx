@@ -25,6 +25,7 @@ export default function Memo() {
   return (
     <Section
       id="memo"
+      tone="paper"
       eyebrow="Product memo"
       title="What I would ship first."
       intro="A short memo for the product team. Every number in it is filled in at build time from the same data as this page."
@@ -43,13 +44,13 @@ export default function Memo() {
 
         <div>
           {!open && teaser && (
-            <article className="prose-memo rounded-3xl border border-line bg-paper p-6 sm:p-8">
+            <article className="prose-memo rounded-3xl border border-line bg-card p-6 sm:p-8">
               <h2>{teaser.heading}</h2>
               <div dangerouslySetInnerHTML={html(teaser.body)} />
             </article>
           )}
           {open && (
-            <article className="prose-memo rounded-3xl border border-line bg-paper p-6 sm:p-8" dangerouslySetInnerHTML={html(site.memo)} />
+            <article className="prose-memo rounded-3xl border border-line bg-card p-6 sm:p-8" dangerouslySetInnerHTML={html(site.memo)} />
           )}
           <button
             onClick={() => setOpen((v) => !v)}
