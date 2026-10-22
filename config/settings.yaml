@@ -17,11 +17,15 @@ fx:
   # Assumption, to validate with an accountant: which side of the quote and which day.
   rate_side: venta # official seller rate
   date_basis: posted_at # the day the movement is posted in the export
-  # USDC is treated as 1 USD. Assumption, to validate with an accountant.
+  # USDC is valued at the crypto dollar seller rate of the day (one USDC = one crypto dollar),
+  # the rate at which it can be turned into pesos. Dollar card spend stays at the official rate.
+  # Assumption, to validate with an accountant.
+  usdc_series: cripto
   usdc_per_usd: "1"
 
 opening_balances:
-  # Synthetic. Valued at the official seller rate of the last day of the previous month.
+  # Synthetic. Valued on the last day of the previous month: USDC at the crypto rate, the card
+  # payable at the official rate.
   as_of: "2026-08-31"
   usdc: "180000.00"
   card_payable_usd: "41237.18" # August card statement, settled in September

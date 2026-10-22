@@ -376,15 +376,21 @@ def _approval(t: Txn) -> tuple[str, str]:
     return "suspense until reviewed", "pending review"
 
 
+def usdc_rate(day: date) -> Decimal:
+    """ARS per USDC: the configured series (crypto dollar by default) times USDC per USD."""
+    cfg = settings()["fx"]
+    return fx.rate(day, cfg["usdc_series"]) * Decimal(cfg["usdc_per_usd"])
+
+
 def build_journal(txns: list[Txn]) -> tuple[list[Line], dict]:
     lines: list[Line] = []
-    usdc_per_usd = Decimal(settings()["fx"]["usdc_per_usd"])
 
     def add(t_id, d, account, debe, haber, basis, status, approved, detail):
         lines.append(Line(f"JL-{len(lines) + 1:04d}", t_id, d, account, debe, haber, basis, status, approved, detail))
 
     for t in txns:
-        t.rate = fx.rate(t.posted_at)
+        # Card movements are dollars at the official rate. Anything that moves USDC uses the USDC rate.
+        t.rate = usdc_rate(t.posted_at) if t.type in ("usdc_payout", "ars_topup") else fx.rate(t.posted_at)
         d = t.posted_at.isoformat()
         basis, approved = _approval(t)
         if t.type in ("card_purchase", "card_fee"):
@@ -399,36 +405,26 @@ def build_journal(txns: list[Txn]) -> tuple[list[Line], dict]:
             add(t.id, d, CARD_PAYABLE, ars, 0, basis, t.status, approved, t.descriptor)
             add(t.id, d, t.posted_account, 0, ars, basis, t.status, approved, t.descriptor)
         elif t.type == "usdc_payout":
-            ars = convert(t.amount_cents, t.rate * usdc_per_usd)
+            ars = convert(t.amount_cents, t.rate)
             t.ars_cents = ars
             add(t.id, d, t.posted_account, ars, 0, basis, t.status, approved, t.descriptor)
             add(t.id, d, USDC_ACCOUNT, 0, ars, basis, t.status, approved, t.descriptor)
         elif t.type == "card_settlement":
-            ars = convert(t.amount_cents, t.rate * usdc_per_usd)
-            t.ars_cents = ars
-            add(t.id, d, CARD_PAYABLE, ars, 0, basis, t.status, approved, t.descriptor)
-            add(t.id, d, USDC_ACCOUNT, 0, ars, basis, t.status, approved, t.descriptor)
+            # The card debt is in dollars at the official rate. It is paid with USDC, which leaves
+            # the books at the USDC rate. The gap between the two goes to exchange differences.
+            card = convert(t.amount_cents, t.rate)
+            usdc = convert(t.amount_cents, usdc_rate(t.posted_at))
+            t.ars_cents = usdc
+            add(t.id, d, CARD_PAYABLE, card, 0, basis, t.status, approved, t.descriptor)
+            add(t.id, d, USDC_ACCOUNT, 0, usdc, basis, t.status, approved, t.descriptor)
+            _fx_line(add, t, d, basis, approved, usdc - card, "Card paid with USDC valued above the official rate")
         elif t.type == "ars_topup":
             usdc = to_cents(t.raw["credited_amount"])
-            book = convert(usdc, t.rate * usdc_per_usd)
+            book = convert(usdc, t.rate)
             t.ars_cents = t.amount_cents
-            add(t.id, d, USDC_ACCOUNT, book, 0, basis, t.status, approved, "USDC received, valued at the official rate")
+            add(t.id, d, USDC_ACCOUNT, book, 0, basis, t.status, approved, "USDC received, valued at the crypto rate")
             add(t.id, d, BANK_ARS, 0, t.amount_cents, basis, t.status, approved, "ARS sent from the bank")
-            diff = t.amount_cents - book
-            if diff > 0:
-                add(
-                    t.id,
-                    d,
-                    FX_RESULT,
-                    diff,
-                    0,
-                    basis,
-                    t.status,
-                    approved,
-                    "Cost of buying USDC above the official rate",
-                )
-            elif diff < 0:
-                add(t.id, d, FX_RESULT, 0, -diff, basis, t.status, approved, "USDC bought below the official rate")
+            _fx_line(add, t, d, basis, approved, t.amount_cents - book, "ARS sent above the USDC received")
         else:
             raise ValueError(f"unknown type {t.type}")
 
@@ -436,13 +432,22 @@ def build_journal(txns: list[Txn]) -> tuple[list[Line], dict]:
     return lines, balances
 
 
+def _fx_line(add, t: Txn, d: str, basis: str, approved: str, diff: int, detail: str) -> None:
+    """A loss (diff > 0) is a debit to exchange differences, a gain a credit."""
+    if diff > 0:
+        add(t.id, d, FX_RESULT, diff, 0, basis, t.status, approved, detail)
+    elif diff < 0:
+        add(t.id, d, FX_RESULT, 0, -diff, basis, t.status, approved, detail)
+
+
 def _remeasure(txns: list[Txn], lines: list[Line], add) -> dict:
     s = settings()
     end = date.fromisoformat(s["period"]["end"])
     opening_day = date.fromisoformat(s["opening_balances"]["as_of"])
-    usdc_per_usd = Decimal(s["fx"]["usdc_per_usd"])
     close_rate = fx.rate(end)
     open_rate = fx.rate(opening_day)
+    usdc_close_rate = usdc_rate(end)
+    usdc_open_rate = usdc_rate(opening_day)
     usdc_open = to_cents(s["opening_balances"]["usdc"])
     card_open = to_cents(s["opening_balances"]["card_payable_usd"])
 
@@ -463,11 +468,11 @@ def _remeasure(txns: list[Txn], lines: list[Line], add) -> dict:
     def book(account: str) -> int:
         return sum(ln.debe - ln.haber for ln in lines if ln.account == account)
 
-    usdc_open_ars = convert(usdc_open, open_rate * usdc_per_usd)
+    usdc_open_ars = convert(usdc_open, usdc_open_rate)
     card_open_ars = convert(card_open, open_rate)
     usdc_book = usdc_open_ars + book(USDC_ACCOUNT)
     card_book = card_open_ars - book(CARD_PAYABLE)  # credit balance as a positive number
-    usdc_target = convert(usdc_bal, close_rate * usdc_per_usd)
+    usdc_target = convert(usdc_bal, usdc_close_rate)
     card_target = convert(card_bal, close_rate)
     d = end.isoformat()
     basis, approved = "month end remeasurement", "rules engine (deterministic)"
@@ -510,6 +515,9 @@ def _remeasure(txns: list[Txn], lines: list[Line], add) -> dict:
     return {
         "opening_rate": str(open_rate),
         "closing_rate": str(close_rate),
+        "usdc_series": s["fx"]["usdc_series"],
+        "usdc_opening_rate": str(usdc_open_rate),
+        "usdc_closing_rate": str(usdc_close_rate),
         "usdc": {
             "opening_usd": cents_str(usdc_open),
             "closing_usd": cents_str(usdc_bal),

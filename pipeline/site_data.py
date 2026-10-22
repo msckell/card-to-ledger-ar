@@ -437,6 +437,7 @@ def export(close: dict, ev: dict) -> dict:
             "threshold": s["threshold"],
             "ai_confident_but_in_review": confident_in_review,
             "closing_rate": str(Decimal(close["balances"]["closing_rate"]).quantize(Decimal("0.01"))),
+            "usdc_closing_rate": str(Decimal(close["balances"]["usdc_closing_rate"]).quantize(Decimal("0.01"))),
         },
         "flow": _flow(close),
         "spend_by_account": _spend_by_account(close),

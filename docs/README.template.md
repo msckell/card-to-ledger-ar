@@ -46,7 +46,7 @@ Full detail in `data/eval.json`.
 
 ## Assumptions
 
-Every assumption is listed and labeled (documented, assumption, out of scope) in the Excel sheet Metodología and on the page. The main ones: official seller rate on the posting date, one USDC equals one US dollar, month end remeasurement at the closing rate, and no taxes.
+Every assumption is listed and labeled (documented, assumption, out of scope) in the Excel sheet Metodología and on the page. The main ones: official seller rate on the posting date for dollar card spend, crypto dollar seller rate for USDC (one USDC equals one crypto dollar), month end remeasurement at the closing rate of each, and no taxes.
 
 ## How to run
 

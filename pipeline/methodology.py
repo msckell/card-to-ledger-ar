@@ -27,7 +27,8 @@ def items() -> list[dict]:
             "topic": "Which rate and which day",
             "label": "assumption",
             "detail": (
-                f"Official seller rate ({s['fx']['rate_side']}) on the posting date of each movement. "
+                f"Seller rate ({s['fx']['rate_side']}) on the posting date of each movement: official "
+                "for dollar card spend, crypto dollar for USDC. "
                 "To validate with an accountant: buyer rate for assets, transaction date versus "
                 "posting date, and Banco Nación versus BCRA Comunicación A 3500."
             ),
@@ -41,8 +42,11 @@ def items() -> list[dict]:
             "topic": "USDC valuation",
             "label": "assumption",
             "detail": (
-                "One USDC is treated as one US dollar at the official rate. Whether USDC should be "
-                "valued at the official, MEP or crypto rate is an open question for the accountant."
+                "USDC is valued at the crypto dollar seller rate of each day "
+                f"({s['fx']['crypto_source_url']}), the rate at which it can be turned into pesos. "
+                "One USDC is treated as one crypto dollar. Dollar card spend stays at the official "
+                "rate. Whether USDC should be valued at the crypto, MEP or official rate is a question "
+                "for the accountant."
             ),
         },
         {
@@ -50,7 +54,7 @@ def items() -> list[dict]:
             "label": "documented",
             "detail": (
                 "USDC received is computed from the ARS sent at the crypto dollar seller rate of "
-                f"that day ({s['fx']['crypto_source_url']}). The gap against the official rate goes "
+                "that day and booked at the same rate. Only the rounding the exchange keeps goes "
                 "to Diferencias de cambio."
             ),
         },
@@ -58,8 +62,10 @@ def items() -> list[dict]:
             "topic": "Month end remeasurement",
             "label": "assumption",
             "detail": (
-                "Cuenta USDC and Tarjeta corporativa a pagar are remeasured at the official seller "
-                "rate of the last day of the month. The difference goes to Diferencias de cambio."
+                "Cuenta USDC is remeasured at the crypto dollar seller rate of the last day of the "
+                "month and Tarjeta corporativa a pagar at the official seller rate of that day. "
+                "Paying the card with USDC moves the gap between the two rates to Diferencias de "
+                "cambio, and so does each remeasurement."
             ),
         },
         {
@@ -67,7 +73,7 @@ def items() -> list[dict]:
             "label": "assumption",
             "detail": (
                 f"Synthetic opening balances as of {s['opening_balances']['as_of']}, valued at that "
-                "day's official seller rate."
+                "day's crypto seller rate for USDC and official seller rate for the card payable."
             ),
         },
         {

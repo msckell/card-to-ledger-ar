@@ -18,7 +18,7 @@ The prototype closes one synthetic month for Andes Labs SRL (fictional) and answ
 |---|---|
 | Movements | 252 |
 | Receipts and invoices | 215 |
-| Spend | USD 132,274.72 = ARS 203,535,812.05 |
+| Spend | USD 132,274.72 = ARS 208,711,799.05 |
 | Resolved by rules | 191 (75.8%) |
 | Resolved by AI above the threshold | 21 |
 | Sent to a person | 40 (15.9%) |
@@ -40,13 +40,13 @@ Full detail in `data/eval.json`.
 4. **AI, three uses, at build time only.** `pipeline/ai/extract.py` reads receipts. `pipeline/ai/suggest.py` suggests an account from the allowed list when no rule applies. `pipeline/ai/explain.py` writes one note per exception. Outputs are committed in `data/ai/`.
 5. **Verifier.** Code checks every amount the AI read against the charge. `pipeline/ai/verifier.py` rejects notes with figures, invented IDs or claims like "approved", with up to two retries before a template takes over.
 6. **Journal entry.** Balanced summary entry in ARS with month end remeasurement and an audit trail per line. The build stops if debits and credits differ by one cent. Excel in `data/out/`.
-7. **QuickBooks Online sandbox.** `uv run ctl qbo-post` posts the same entry to a QuickBooks Online sandbox company through the Intuit Accounting API, in ARS, one line per journal line (511 lines, number CTL-2026-09). It never posts twice. It reads the entry back and compares every line, each of the 15 accounts and the totals to the cent (7 of 7 checks passed). Result in `data/out/qbo_post.json`, without tokens or the company ID.
+7. **QuickBooks Online sandbox.** `uv run ctl qbo-post` posts the same entry to a QuickBooks Online sandbox company through the Intuit Accounting API, in ARS, one line per journal line (512 lines, number CTL-2026-09). It never posts twice. It reads the entry back and compares every line, each of the 15 accounts and the totals to the cent (7 of 7 checks passed). Result in `data/out/qbo_post.json`, without tokens or the company ID.
 8. **Measurement.** `pipeline/eval.py` scores every step against the ground truth and picks the confidence threshold.
 9. **Page.** `site/` is a static Vite and React page that reads `data/site/site.json`. No backend, no live AI.
 
 ## Assumptions
 
-Every assumption is listed and labeled (documented, assumption, out of scope) in the Excel sheet Metodología and on the page. The main ones: official seller rate on the posting date, one USDC equals one US dollar, month end remeasurement at the closing rate, and no taxes.
+Every assumption is listed and labeled (documented, assumption, out of scope) in the Excel sheet Metodología and on the page. The main ones: official seller rate on the posting date for dollar card spend, crypto dollar seller rate for USDC (one USDC equals one crypto dollar), month end remeasurement at the closing rate of each, and no taxes.
 
 ## How to run
 

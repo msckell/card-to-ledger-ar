@@ -15,7 +15,7 @@ export default function Problem() {
   const card = (t.card_purchase ?? 0) + (t.card_fee ?? 0) + (t.card_refund ?? 0)
   const s = site.summary
   const steps = [
-    { title: 'Convert', body: `${s.transactions} movements to pesos, each at the official rate of its day` },
+    { title: 'Convert', body: `${s.transactions} movements to pesos at a rate they can defend: official for the card, crypto for USDC` },
     { title: 'Match', body: `${s.receipts} receipts and invoices to their charges, in English or Spanish` },
     { title: 'Code', body: `Each movement to one of ${site.journal.rows.length} accounts in a local chart` },
     { title: 'Chase', body: `The ${s.split.review} movements with a missing receipt, a duplicate or an odd amount` },
