@@ -34,7 +34,7 @@ cd site && npm ci && npm run build
   - `ai/`: the three LLM steps (`extract.py`, `suggest.py`, `explain.py`), the verifier (`verifier.py`), the cache (`store.py`) and the single entry point to Claude (`llm.py`).
 - `data/`: committed outputs. `data/truth/` is the ground truth, `data/ai/` the cached LLM outputs, `data/site/site.json` what the page reads.
 - `docs/`: `memo.template.md` and `README.template.md`. The build fills in their numbers and writes `docs/memo.md` and `README.md`. Edit the templates, never the outputs.
-- `site/`: static Vite + React + TypeScript + Tailwind page. It reads only `site.json`. Sections tell one story in order: hero, problem, result flow, how it works, three real examples, rules or AI, review queue, journal entry, methodology, memo.
+- `site/`: static Vite + React + TypeScript + Tailwind page. It reads only `site.json`. Sections tell one story in order: hero, problem, result flow, how it works (with three real examples), rules or AI, review queue, journal entry, methodology, memo.
 - `tests/`: pytest, offline.
 
 ## Rules that must not be broken

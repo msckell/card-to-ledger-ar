@@ -35,7 +35,6 @@ export default function Queue() {
   return (
     <Section
       id="queue"
-      tone="paper"
       eyebrow="The controller's view"
       title={
         <>
@@ -85,7 +84,7 @@ export default function Queue() {
 function Item({ q }: { q: QueueItem }) {
   const t = q.txn
   return (
-    <article className="rounded-3xl border border-line bg-card p-5 sm:p-6">
+    <article className="rounded-3xl border border-line bg-paper p-5 sm:p-6">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-faint">

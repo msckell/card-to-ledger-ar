@@ -8,6 +8,7 @@ export default function Journal() {
   return (
     <Section
       id="journal"
+      tone="paper"
       eyebrow="The deliverable"
       title={`The ${site.meta.period_label} entry, in pesos, ready to post.`}
       intro={
@@ -19,7 +20,7 @@ export default function Journal() {
       }
     >
       <div className="grid gap-5 lg:grid-cols-[1.6fr_1fr]">
-        <div className="overflow-hidden rounded-3xl border border-line">
+        <div className="overflow-hidden rounded-3xl border border-line bg-card">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-line bg-paper text-left text-[11px] uppercase tracking-[0.14em] text-faint">

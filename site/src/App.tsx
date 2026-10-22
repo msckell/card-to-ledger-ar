@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { site } from './data'
-import Examples from './Examples'
 import Flow from './Flow'
 import Hero from './Hero'
 import HowItWorks from './HowItWorks'
@@ -58,7 +57,6 @@ export default function App() {
         <Problem />
         <Flow />
         <HowItWorks />
-        <Examples />
         <RulesOrAI />
         <Queue />
         <Journal />

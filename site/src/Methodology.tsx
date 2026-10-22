@@ -15,7 +15,6 @@ export default function Methodology({ repoUrl }: { repoUrl: string }) {
   return (
     <Section
       id="methodology"
-      tone="paper"
       eyebrow="Methodology"
       title="Every choice behind the numbers, labeled."
       intro="Documented means it rests on a cited source. Assumption means it is a choice to validate with an accountant. The same list is in the Excel, on its methodology sheet."

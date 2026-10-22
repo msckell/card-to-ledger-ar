@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { pct, site } from './data'
+import Examples from './Examples'
 import { Badge, Section, type Who } from './ui'
 
 type Step = { title: string; body: string; who: Who | 'input' | 'output'; tag: string; icon: ReactNode }
@@ -110,6 +111,8 @@ export default function HowItWorks() {
           </li>
         ))}
       </ol>
+
+      <Examples />
 
       <div className="mt-16 rounded-3xl bg-night p-6 text-on-night sm:p-10">
         <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-light">AI is used in exactly three places</p>

@@ -34,6 +34,7 @@ export default function RulesOrAI() {
   return (
     <Section
       id="rules-or-ai"
+      tone="paper"
       eyebrow="Rules or AI?"
       title="Every step has an owner, and every owner has a score."
       intro={
