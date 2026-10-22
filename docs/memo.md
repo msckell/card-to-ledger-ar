@@ -22,6 +22,7 @@ A synthetic month of 252 movements and 215 receipts, scored against the correct 
 - **AI account suggestions** for the 30 merchants no rule covers were right 90.0% of the time. At the threshold of 0.75, 24 were accepted automatically and 95.8% of those were right.
 - **AI receipt reading** got all four fields right on 99.5% of receipts. Code checks every amount it reads against the charge.
 - **AI explanations** passed the verifier in 44 of 44 cases. 0 fell back to a template.
+- **ERP handoff.** The same entry was posted to a QuickBooks Online sandbox company through its API, 511 lines in pesos, then read back and verified to the cent. A local Argentine system would still need its own import.
 
 ## Rules, AI or a person
 

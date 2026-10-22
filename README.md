@@ -40,8 +40,9 @@ Full detail in `data/eval.json`.
 4. **AI, three uses, at build time only.** `pipeline/ai/extract.py` reads receipts. `pipeline/ai/suggest.py` suggests an account from the allowed list when no rule applies. `pipeline/ai/explain.py` writes one note per exception. Outputs are committed in `data/ai/`.
 5. **Verifier.** Code checks every amount the AI read against the charge. `pipeline/ai/verifier.py` rejects notes with figures, invented IDs or claims like "approved", with up to two retries before a template takes over.
 6. **Journal entry.** Balanced summary entry in ARS with month end remeasurement and an audit trail per line. The build stops if debits and credits differ by one cent. Excel in `data/out/`.
-7. **Measurement.** `pipeline/eval.py` scores every step against the ground truth and picks the confidence threshold.
-8. **Page.** `site/` is a static Vite and React page that reads `data/site/site.json`. No backend, no live AI.
+7. **QuickBooks Online sandbox.** `uv run ctl qbo-post` posts the same entry to a QuickBooks Online sandbox company through the Intuit Accounting API, in ARS, one line per journal line (511 lines, number CTL-2026-09). It never posts twice. It reads the entry back and compares every line, each of the 15 accounts and the totals to the cent (7 of 7 checks passed). Result in `data/out/qbo_post.json`, without tokens or the company ID.
+8. **Measurement.** `pipeline/eval.py` scores every step against the ground truth and picks the confidence threshold.
+9. **Page.** `site/` is a static Vite and React page that reads `data/site/site.json`. No backend, no live AI.
 
 ## Assumptions
 
@@ -56,6 +57,13 @@ uv run ctl generate   # synthetic month and ground truth
 uv run ctl build      # AI steps (cached), close, eval, site data
 uv run pytest
 cd site && npm install && npm run build
+```
+
+Posting to the QuickBooks Online sandbox is a separate step that never runs in `ctl build` or CI. It needs a free Intuit Developer account, a sandbox company with multicurrency turned on and the `QBO_` values in `.env` (see `.env.example`).
+
+```bash
+uv run ctl qbo-auth   # refresh the token, show the sandbox company and its currency
+uv run ctl qbo-post   # post once, read back, verify to the cent
 ```
 
 The AI steps call Claude through the Anthropic Python SDK when `ANTHROPIC_API_KEY` is set, or through Claude Code in headless mode otherwise. See `.env.example`.

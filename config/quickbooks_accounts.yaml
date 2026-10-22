@@ -1,0 +1,26 @@
+# Map from our chart of accounts (chart_of_accounts.yaml) to accounts in the QuickBooks Online
+# sandbox company. `ctl qbo-post` reuses an account with the same name and creates it otherwise.
+# The sandbox has account numbers turned off, so the code goes at the start of the name.
+#
+# `currency` is set only on the types QuickBooks lets carry a currency (bank, credit card,
+# receivables, payables). Our books are in ARS, so those accounts are ARS accounts. Every other
+# account uses the company's home currency, as QuickBooks requires, and still takes ARS amounts
+# inside an ARS journal entry.
+company_currency: ARS
+doc_number: CTL-2026-09
+accounts:
+  "1.1.01": {name: "1.1.01 Bank account, ARS", type: Bank, detail_type: Checking, currency: ARS}
+  "1.1.02": {name: "1.1.02 USDC account", type: Bank, detail_type: CashOnHand, currency: ARS}
+  "1.1.09": {name: "1.1.09 Suspense, pending review", type: Other Current Asset, detail_type: OtherCurrentAssets}
+  "2.1.01": {name: "2.1.01 Corporate card payable", type: Credit Card, detail_type: CreditCard, currency: ARS}
+  "5.1.01": {name: "5.1.01 Advertising and marketing", type: Expense, detail_type: AdvertisingPromotional}
+  "5.1.02": {name: "5.1.02 Cloud services", type: Expense, detail_type: OfficeGeneralAdministrativeExpenses}
+  "5.1.03": {name: "5.1.03 Software licenses", type: Expense, detail_type: DuesSubscriptions}
+  "5.1.04": {name: "5.1.04 Foreign contractor fees", type: Expense, detail_type: LegalProfessionalFees}
+  "5.1.05": {name: "5.1.05 Travel", type: Expense, detail_type: Travel}
+  "5.1.06": {name: "5.1.06 Meals and entertainment", type: Expense, detail_type: EntertainmentMeals}
+  "5.1.07": {name: "5.1.07 Events and conferences", type: Expense, detail_type: AdvertisingPromotional}
+  "5.1.08": {name: "5.1.08 Office supplies and small equipment", type: Expense, detail_type: SuppliesMaterials}
+  "5.1.09": {name: "5.1.09 Training and subscriptions", type: Expense, detail_type: DuesSubscriptions}
+  "5.1.10": {name: "5.1.10 Bank fees and charges", type: Expense, detail_type: BankCharges}
+  "5.2.01": {name: "5.2.01 Exchange differences", type: Other Expense, detail_type: ExchangeGainOrLoss}

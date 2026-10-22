@@ -22,7 +22,8 @@ A synthetic month of {{transactions}} movements and {{receipts}} receipts, score
 - **AI account suggestions** for the {{no_rule}} merchants no rule covers were right {{ai_accounts_accuracy}} of the time. At the threshold of {{threshold}}, {{threshold_accepted}} were accepted automatically and {{threshold_accuracy}} of those were right.
 - **AI receipt reading** got all four fields right on {{ai_extract_all}} of receipts. Code checks every amount it reads against the charge.
 - **AI explanations** passed the verifier in {{explain_passed}} of {{explain_total}} cases. {{explain_fallback}} fell back to a template.
-
+{{#quickbooks}}- **ERP handoff.** The same entry was posted to a QuickBooks Online sandbox company through its API, {{qbo_lines}} lines in pesos, then read back and verified to the cent. A local Argentine system would still need its own import.
+{{/quickbooks}}
 ## Rules, AI or a person
 
 Rules take anything that must behave the same every month: the rate convention, receipt matching, duplicate and refund checks, and known merchants. AI takes what is open ended: receipts in any layout, the long tail of merchants, and the note a reviewer reads. People keep judgment and accountability: ties, missing evidence, low confidence and the final approval. The AI never types a number into the ledger.

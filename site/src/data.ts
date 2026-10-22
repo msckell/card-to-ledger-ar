@@ -123,6 +123,25 @@ export type Site = {
     llm_usage: { total_calls: number; total_cost_usd: number; models: Record<string, string>; backend: string } | null
   }
   methodology: { topic: string; label: string; detail: string }[]
+  // Present only after `ctl qbo-post` ran against the QuickBooks Online sandbox company.
+  quickbooks?: {
+    environment: string
+    doc_number: string
+    posted_at: string
+    verified_at: string
+    currency: string
+    home_currency: string
+    lines: number
+    accounts: number
+    accounts_matched: number
+    entry_total: string
+    lines_total: string
+    checks_passed: number
+    checks_total: number
+    result: 'pass' | 'fail'
+    exchange_rate_stored: string
+    screenshot: string | null
+  }
   memo?: string
 }
 
