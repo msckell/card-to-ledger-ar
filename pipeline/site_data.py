@@ -149,6 +149,27 @@ def _spend_by_account(close: dict) -> list[dict]:
     return sorted(rows, key=lambda r: -r["cents"])
 
 
+GROUPS = (("1.", "Assets"), ("2.", "Liabilities"), ("5.", "Expenses and FX results"))
+
+
+def _journal_groups(close: dict) -> list[dict]:
+    """The summary entry grouped the way an accountant reads it, with a subtotal per group."""
+    out = []
+    for prefix, name in GROUPS:
+        rows = [r for r in close["entry"] if r["account"].startswith(prefix)]
+        debe = sum(to_cents(r["debe"]) for r in rows)
+        haber = sum(to_cents(r["haber"]) for r in rows)
+        out.append(
+            {
+                "name": name,
+                "accounts": [r["account"] for r in rows],
+                "debe": fmt(debe) if debe else "",
+                "haber": fmt(haber) if haber else "",
+            }
+        )
+    return out
+
+
 def _rule(rule_id: str) -> dict:
     cfg = rules()
     for r in cfg["type_rules"] + cfg["descriptor_rules"]:
@@ -392,6 +413,7 @@ def export(close: dict, ev: dict) -> dict:
         "examples": examples,
         "queue": queue,
         "journal": {
+            "groups": _journal_groups(close),
             "rows": [
                 {
                     **r,
