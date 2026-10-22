@@ -397,6 +397,8 @@ def export(close: dict, ev: dict) -> dict:
                     **r,
                     "name": account_name_en(r["account"]),
                     "debe": money(r["debe"]) if r["debe"] != "0.00" else "",
+                    "debe_compact": compact(r["debe"]) if r["debe"] != "0.00" else "",
+                    "haber_compact": compact(r["haber"]) if r["haber"] != "0.00" else "",
                     "haber": money(r["haber"]) if r["haber"] != "0.00" else "",
                 }
                 for r in close["entry"]

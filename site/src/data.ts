@@ -97,7 +97,7 @@ export type Site = {
   examples: Example[]
   queue: QueueItem[]
   journal: {
-    rows: { account: string; name: string; debe: string; haber: string }[]
+    rows: { account: string; name: string; debe: string; haber: string; debe_compact: string; haber_compact: string }[]
     totals: { debe: string; haber: string; balanced: boolean; difference: string }
     lines: number
     excel: string

@@ -2,17 +2,25 @@ import type { ReactNode } from 'react'
 import { site } from './data'
 import { Badge, Eyebrow, Section } from './ui'
 
-const CHORES: { title: string; body: string; icon: ReactNode }[] = [
-  { title: 'Convert', body: 'Each movement to pesos, at a rate they can defend', icon: <path d="M4 8h12l-3-3M16 12H4l3 3" /> },
-  { title: 'Match', body: 'Each charge to its receipt, in English or Spanish', icon: <path d="M5 4h7l3 3v9H5zM12 4v3h3M8 11l1.5 1.5L12.5 9" /> },
-  { title: 'Code', body: 'Each one to the local chart of accounts', icon: <path d="M4 6h12M4 10h8M4 14h10" /> },
-  { title: 'Chase', body: 'Missing receipts, duplicates and odd amounts', icon: <path d="M9 4a5 5 0 1 0 0 10A5 5 0 0 0 9 4zM13 13l3.5 3.5" /> },
-  { title: 'Post', body: 'One entry, typed into a local accounting system', icon: <path d="M4 15h12M6 15V9M10 15V5M14 15v-4" /> },
+const ICONS: ReactNode[] = [
+  <path d="M4 8h12l-3-3M16 12H4l3 3" />,
+  <path d="M5 4h7l3 3v9H5zM12 4v3h3M8 11l1.5 1.5L12.5 9" />,
+  <path d="M4 6h12M4 10h8M4 14h10" />,
+  <path d="M9 4a5 5 0 1 0 0 10A5 5 0 0 0 9 4zM13 13l3.5 3.5" />,
+  <path d="M4 15h12M6 15V9M10 15V5M14 15v-4" />,
 ]
 
 export default function Problem() {
   const t = site.summary.by_type
   const card = (t.card_purchase ?? 0) + (t.card_fee ?? 0) + (t.card_refund ?? 0)
+  const s = site.summary
+  const steps = [
+    { title: 'Convert', body: `${s.transactions} movements to pesos, each at the official rate of its day` },
+    { title: 'Match', body: `${s.receipts} receipts and invoices to their charges, in English or Spanish` },
+    { title: 'Code', body: `Each movement to one of ${site.journal.rows.length} accounts in a local chart` },
+    { title: 'Chase', body: `The ${s.split.review} movements with a missing receipt, a duplicate or an odd amount` },
+    { title: 'Post', body: `One entry built from ${site.journal.lines} lines, balanced to the cent` },
+  ]
   const preview = [
     ...site.journal.rows.filter((r) => r.account.startsWith('5.1.') && r.debe).slice(0, 3),
     ...site.journal.rows.filter((r) => r.account === '2.1.01'),
@@ -21,13 +29,8 @@ export default function Problem() {
     <Section
       id="problem"
       eyebrow="The problem"
-      title="Global integrations stop one step before a peso ledger."
-      intro={
-        <>
-          An Argentine company spends in dollars, but its books are in pesos. Every month someone does five chores by
-          hand before the close is done. <Badge tone="neutral">Hypothesis to validate with controllers</Badge>
-        </>
-      }
+      title="Turning raw transactions into real information."
+      intro="An Argentine company spends in dollars, but its books are in pesos. In between, five steps turn a month of raw movements into an entry an accountant can post. These are the real counts for September."
     >
       <div className="grid items-stretch gap-4 lg:grid-cols-[1fr_auto_1.1fr_auto_1fr]">
         {/* What arrives */}
@@ -44,13 +47,13 @@ export default function Problem() {
 
         {/* The manual work */}
         <div className="rounded-2xl border border-line p-5">
-          <Eyebrow>What someone does by hand</Eyebrow>
+          <Eyebrow>What has to happen</Eyebrow>
           <ol className="mt-4 space-y-3">
-            {CHORES.map((c, i) => (
+            {steps.map((c, i) => (
               <li key={c.title} className="flex items-center gap-3">
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-night text-gold">
                   <svg viewBox="0 0 20 20" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                    {c.icon}
+                    {ICONS[i]}
                   </svg>
                 </span>
                 <span>
@@ -78,16 +81,20 @@ export default function Problem() {
             {preview.map((r) => (
               <div key={r.account} className="grid grid-cols-[1fr_auto_auto] gap-3 border-b border-night-line px-3 py-2 last:border-0">
                 <span className="truncate">{r.name}</span>
-                <span className="num text-right">{r.debe ? '●' : ''}</span>
-                <span className="num text-right">{r.haber ? '●' : ''}</span>
+                <span className="num text-right">{r.debe_compact}</span>
+                <span className="num text-right">{r.haber_compact}</span>
               </div>
             ))}
           </div>
           <p className="mt-3 text-xs text-on-night-muted">
-            One balanced entry in ARS, with an audit trail per line.
+            Part of the real September entry, in ARS. Every line keeps its audit trail.
           </p>
         </div>
       </div>
+      <p className="mt-5 text-xs text-faint">
+        <Badge tone="neutral">Hypothesis</Badge> The problem comes from public information, not from interviews. It is the
+        first thing to validate with controllers.
+      </p>
     </Section>
   )
 }
